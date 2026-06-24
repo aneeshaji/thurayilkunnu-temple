@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Burgundy circle background -->
+  <circle cx="50" cy="50" r="50" fill="#722F37"/>
+
+  <!-- Subtle inner ring -->
+  <circle cx="50" cy="50" r="46" fill="none" stroke="#F89B29" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Gold Vel (spear/weapon of Murugan) -->
+  <!-- Vel Head (leaf shape) -->
+  <path d="M50 12 Q38 28 38 44 Q50 57 62 44 Q62 28 50 12Z" fill="url(#fav_grad)" stroke="#DAA520" stroke-width="1.5"/>
+  <!-- Centre line of the Vel head -->
+  <line x1="50" y1="12" x2="50" y2="44" stroke="#DAA520" stroke-width="1" opacity="0.7"/>
+  <!-- Vel Shaft -->
+  <rect x="48.5" y="44" width="3" height="40" fill="#DAA520"/>
+  <!-- Decorative band top -->
+  <rect x="46" y="43" width="8" height="3" rx="1" fill="#F89B29"/>
+  <!-- Decorative band bottom -->
+  <rect x="46" y="81" width="8" height="3" rx="1" fill="#F89B29"/>
+
+  <defs>
+    <linearGradient id="fav_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+</svg>

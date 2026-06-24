@@ -1,0 +1,86 @@
+.top-bar {
+    position: relative;
+    z-index: 1001;
+    background-color: #ffffff;
+    color: #666;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.top-bar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.top-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+}
+
+.top-bar-item:hover {
+    color: var(--color-primary);
+}
+
+.top-bar-item .icon {
+    color: var(--color-primary);
+}
+
+.top-bar-divider {
+    margin: 0 12px;
+    opacity: 0.2;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0 4px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    opacity: 0.6;
+}
+
+.lang-btn:hover {
+    color: var(--color-primary);
+    opacity: 1;
+}
+
+.lang-btn.active {
+    color: var(--color-primary);
+    font-weight: 700;
+    opacity: 1;
+}
+
+.lang-divider {
+    font-size: 0.7rem;
+    opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        display: none;
+    }
+}

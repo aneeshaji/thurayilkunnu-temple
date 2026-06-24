@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  /* Color Palette - Traditional & Divine (Burgundy/Gold) */
+  --color-primary: #722F37;      /* Deep Burgundy */
+  --color-primary-light: #8E3A44; /* Lighter Burgundy */
+  --color-secondary: #D4AF37;    /* Gold */
+  --color-secondary-dark: #B8860B; /* Dark Goldenrod */
+  --color-accent: #DAA520;       /* Goldenrod Highlights */
+  
+  --color-bg-warm: #FCF9F5;      /* Light Cream / Off-White */
+  --color-bg-light: #FFFFFF;     /* Pure White */
+  --color-text-main: #2C1810;    /* Deep Brown/Black */
+  --color-text-light: #5D4037;   /* Medium Brown */
+  
+  /* Typography */
+  --font-heading: 'Playfair Display', serif; /* Elegant serif for headings */
+  --font-body: 'Inter', sans-serif;          /* Clean sans-serif for reading */
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 15px rgba(255, 215, 0, 0.3); /* Golden glow */
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease-in-out;
+}
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-warm);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-body);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+.highlight-gold {
+  color: var(--color-secondary-dark);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 2px solid var(--color-primary);
+  transition: all var(--transition-normal);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--color-primary);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 2px solid var(--color-primary);
+  transition: all var(--transition-normal);
+}
+
+.btn-secondary:hover {
+  background: var(--color-primary);
+  color: white;
+}
