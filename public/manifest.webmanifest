@@ -1,0 +1,50 @@
+{
+  "name": "Thurayilkunnu Sree Subramanya Swami Temple",
+  "short_name": "Thurayilkunnu",
+  "description": "Daily Panchangam, Pooja Timings, Festivals & Online Vazhipadu Portal for Thurayilkunnu Sree Subramanya Swami Temple, Karunagappally, Kerala",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0C0A09",
+  "theme_color": "#1C1917",
+  "lang": "en",
+  "categories": ["lifestyle", "utilities", "social"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Daily Panchangam",
+      "short_name": "Panchangam",
+      "description": "View today's tithi, nakshatra & auspicious timings",
+      "url": "/#panchangam",
+      "icons": [{ "src": "/favicon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Temple Offerings",
+      "short_name": "Offerings",
+      "description": "Book poojas & vazhipadu online",
+      "url": "/offerings",
+      "icons": [{ "src": "/favicon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Festivals & Events",
+      "short_name": "Festivals",
+      "description": "Check upcoming temple celebrations",
+      "url": "/festivals",
+      "icons": [{ "src": "/favicon.svg", "sizes": "192x192" }]
+    }
+  ]
+}

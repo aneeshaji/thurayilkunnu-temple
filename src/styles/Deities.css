@@ -1,108 +1,291 @@
+/* =============================================
+   DEITIES PAGE — AUTHENTIC TEAKWOOD & NILAVILAKKU BRASS
+   ============================================= */
+
 .deities-page {
-  padding-top: 100px;
-  padding-bottom: 4rem;
-  background-color: var(--color-bg-warm);
-  min-height: 100vh;
+    background: #FAFAF9;
+    color: #1C1917;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
 }
 
-.page-title {
-  text-align: center;
-  font-size: 3rem;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
+/* ── HERO (Standardized with other pages) ── */
+.deities-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 450px;
+    background: url('/images/banners/banner2.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    padding-top: 140px;
 }
 
-.page-intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  color: var(--color-text-main);
-  font-size: 1.2rem;
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, rgba(12, 10, 9, 0.92) 0%, rgba(28, 25, 23, 0.65) 55%, rgba(12, 10, 9, 0.45) 100%);
+    z-index: 1;
 }
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.6rem 1.5rem;
+    background: rgba(217, 119, 6, 0.18);
+    border: 1px solid rgba(252, 211, 77, 0.50);
+    border-radius: 50px;
+    color: #FCD34D;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    font-family: 'Outfit', sans-serif;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 800;
+    margin: 0;
+    text-shadow: 0 4px 24px rgba(12, 10, 9, 0.80);
+}
+
+.hero-subtitle {
+    margin-top: 1.5rem;
+    font-size: 1.12rem;
+    color: rgba(255, 255, 255, 0.88);
+    max-width: 600px;
+    line-height: 1.65;
+}
+
+/* ── DEITIES GRID SECTION ── */
+.deities-container { background: #F5F5F4; }
+.section-padding   { padding: 6rem 0; }
 
 .deities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
 }
 
 .deity-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-  display: flex;
-  flex-direction: column;
+    background: #FFFFFF;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 32px rgba(28, 25, 23, 0.06);
+    border: 1px solid rgba(28, 25, 23, 0.10);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: box-shadow 0.38s ease, border-color 0.38s ease;
 }
 
 .deity-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
+    box-shadow: 0 24px 60px rgba(28, 25, 23, 0.15);
+    border-color: rgba(217, 119, 6, 0.45);
 }
 
+/* ── MAIN PRESIDING DEITY BANNER ── */
 .main-deity {
-  grid-column: 1 / -1; /* Main deity spans full width if grid allows, or just distinct styling */
-  border: 2px solid var(--color-secondary);
-  display: flex;
-  flex-direction: row;
+    grid-column: 1 / -1;
+    border: 2px solid rgba(217, 119, 6, 0.45);
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 16px 45px rgba(28, 25, 23, 0.10), 0 0 0 1px rgba(217, 119, 6, 0.20);
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
 }
 
 .main-deity .deity-image-wrapper {
-  flex: 1;
-  max-width: 50%;
+    flex: 1;
+    max-width: 48%;
+    min-height: 420px;
+    height: auto;
 }
 
 .main-deity .deity-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 3rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.5rem;
+    text-align: left;
 }
 
-@media (max-width: 768px) {
-  .main-deity {
-    flex-direction: column;
-  }
-  .main-deity .deity-image-wrapper {
-    max-width: 100%;
-  }
+.main-deity .deity-heading {
+    font-size: 2.3rem;
 }
 
 .deity-image-wrapper {
-  height: 300px;
-  overflow: hidden;
-}
-
-.main-deity .deity-image-wrapper {
-  height: auto;
-  min-height: 300px;
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+    background: #1C1917;
 }
 
 .deity-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.deity-card:hover .deity-image {
-  transform: scale(1.05);
+.deity-card:hover .deity-image { transform: scale(1.08); }
+
+.deity-badge-holder {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    z-index: 2;
+}
+
+.deity-sanctum-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(12, 10, 9, 0.85);
+    color: #FCD34D;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(252, 211, 77, 0.40);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.deity-img-aura {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(12, 10, 9, 0.75) 0%, transparent 60%);
+    pointer-events: none;
 }
 
 .deity-info {
-  padding: 1.5rem;
-  text-align: center;
+    padding: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-.deity-info h2 {
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+.deity-heading {
+    font-family: 'Cinzel', serif;
+    color: #1C1917;
+    margin-bottom: 0.3rem;
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 
-.deity-info p {
-  color: var(--color-text-light);
-  font-size: 1rem;
+.deity-subtitle {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #D97706;
+    font-family: 'Outfit', sans-serif;
+    margin-bottom: 1.1rem;
+}
+
+.deity-desc {
+    color: #44403C;
+    font-size: 0.96rem;
+    line-height: 1.72;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.deity-attributes-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 1.6rem;
+}
+
+.attribute-tag {
+    background: #F5F5F4;
+    color: #1C1917;
+    border: 1px solid rgba(28, 25, 23, 0.10);
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+.mantra-strip {
+    position: relative;
+    margin-top: auto;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(28, 25, 23, 0.08);
+}
+
+.mantra-pill {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(217, 119, 6, 0.08);
+    border: 1px solid rgba(217, 119, 6, 0.30);
+    color: #1C1917;
+    padding: 0.75rem 1.2rem;
+    border-radius: 50px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.84rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.mantra-pill:hover, .mantra-pill.active {
+    background: #1C1917;
+    color: #FCD34D;
+    border-color: #1C1917;
+    box-shadow: 0 4px 16px rgba(28, 25, 23, 0.25);
+}
+
+.mantra-sound-icon { color: #D97706; }
+.mantra-pill:hover .mantra-sound-icon, .mantra-pill.active .mantra-sound-icon { color: #FCD34D; }
+
+.chant-blessing-popup {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    background: linear-gradient(135deg, #FCD34D, #F59E0B);
+    color: #0C0A09;
+    font-size: 0.75rem;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    padding: 3px 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(217, 119, 6, 0.40);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+    .deities-grid { grid-template-columns: 1fr; }
+    .main-deity { flex-direction: column; }
+    .main-deity .deity-image-wrapper { max-width: 100%; min-height: 320px; }
+    .main-deity .deity-info { padding: 2.5rem 1.8rem; }
+}
+
+@media (max-width: 600px) {
+    .section-padding { padding: 4rem 0; }
+    .hero-title { font-size: 2.5rem; }
+    .deity-info { padding: 1.8rem 1.4rem; }
+    .main-deity .deity-heading { font-size: 1.8rem; }
 }

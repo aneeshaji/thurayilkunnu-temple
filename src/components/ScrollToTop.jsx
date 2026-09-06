@@ -42,7 +42,7 @@ export default function ScrollToTopButton() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    background: 'linear-gradient(135deg, var(--primary, #722F37), var(--gold, #F89B29))',
+                    background: 'linear-gradient(135deg, var(--primary, #0F766E), var(--gold, #D9A62E))',
                     color: '#fff',
                     boxShadow: '0 4px 20px rgba(0,0,0,0.25)',
                     opacity: visible ? 1 : 0,

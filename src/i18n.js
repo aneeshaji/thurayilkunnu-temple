@@ -46,6 +46,7 @@ const resources = {
                     title: "Temple Offerings",
                     desc: "Participate in the divine rituals of the temple.",
                     view_all: "View All Offerings",
+                    card_link: "Learn More",
                     ganapathy_homam: "Ganapathy Homam",
                     ganapathy_homam_desc: "Sacred fire ritual invoking divine blessings of Lord Ganapathy for prosperity and obstacle removal.",
                     vazhipadu: "Vazhipadu",
@@ -76,6 +77,28 @@ const resources = {
                         title: "Traditional Majesty",
                         subtitle: "A sanctuary for devotees at Thurayilkunnu"
                     }
+                },
+                testimonials: {
+                    eyebrow: "Devotee Voices",
+                    title: "Words of Devotion",
+                    subtitle: "Devotees who have found peace, blessings and spiritual renewal at Thurayilkunnu.",
+                    list: {
+                        r1: {
+                            name: "Rajesh Menon",
+                            location: "Kollam",
+                            quote: "Visiting Thurayilkunnu has been our family's weekly ritual for years. The serene sreekovil and the evening deeparadhana fill us with a peace we find nowhere else."
+                        },
+                        r2: {
+                            name: "Meena Nair",
+                            location: "Karunagappally",
+                            quote: "My son's Annaprashan and my husband's Thulabharam were both conducted here. The sincerity of the priests and the temple's warmth made every occasion feel deeply sacred."
+                        },
+                        r3: {
+                            name: "Anand Pillai",
+                            location: "Kochi",
+                            quote: "I travel from Kochi every Thaipusam to witness the Kavad procession. The devotion in the air is overwhelming — it is a spiritual home away from home."
+                        }
+                    }
                 }
             },
             about: {
@@ -102,23 +125,27 @@ const resources = {
             },
             deities: {
                 page_title: "Divine Deities",
-                page_intro: "The temple is the abode of Sree Subramanya Swami. The aura of the deity fills the hearts of devotees with peace and devotion.",
+                page_intro: "The temple is the abode of Sree Subramanya Swami along with revered Upadevathas. The divine aura fills the hearts of devotees with peace and devotion.",
                 list: {
                     subramanya: {
                         name: "Sree Subramanya Swami",
-                        desc: "The presiding deity, Lord Murugan, is worshipped here in his divine form as the commander of the gods. He is the son of Lord Shiva and Goddess Parvati."
+                        desc: "The presiding deity, Lord Murugan, is worshipped here in his divine form as the commander of the gods and dispeller of sorrows."
                     },
                     ganapathy: {
                         name: "Lord Ganapathy",
-                        desc: "The remover of obstacles, Lord Ganesha is worshipped daily for prosperity and success."
+                        desc: "The remover of obstacles, Lord Ganesha is worshipped daily for prosperity, wisdom, and auspicious beginnings."
                     },
-                    ayyappan: {
-                        name: "Dharma Sastha (Ayyappan)",
-                        desc: "Worshipped as the upholder of Dharma and truth."
+                    bhagavathy: {
+                        name: "Goddess Bhagavathy",
+                        desc: "The divine Mother Goddess (Devi), showering boundless motherly grace, protection, and prosperity upon all devotees."
+                    },
+                    sivan: {
+                        name: "Lord Shiva (Mahadeva)",
+                        desc: "The supreme cosmic lord Mahadeva, the auspicious source of all yogic wisdom, peace, and spiritual liberation."
                     },
                     nagaraja: {
-                        name: "Nagaraja",
-                        desc: "The serpent gods are worshipped in the distinct Sarpa Kavu within the temple precinct."
+                        name: "Nagaraja & Nagayakshi",
+                        desc: "The sacred serpent deities worshipped in the serene Sarpa Kavu for family wellness and protection."
                     }
                 }
             },
@@ -167,6 +194,11 @@ const resources = {
                         name: "Thrikarthika",
                         date: "November / December",
                         desc: "The festival of lights, celebrated on the Karthika star in the month of Vrischikam."
+                    },
+                    uthrattathi: {
+                        name: "Uthrattathi Mahotsavam",
+                        date: "Chingam (August / September)",
+                        desc: "The grand annual Uthrattathi festival celebrated with special tantric rituals, grand poojas, Panchavadyam, and radiant deeparadhana."
                     }
                 }
             },
@@ -201,6 +233,41 @@ const resources = {
                 footer_title: "Capturing Centuries of Faith",
                 footer_desc: "Our gallery is continuously updated with photos from recent festivals and temple rituals. Visit often to stay connected with the divine aura of Thurayilkunnu."
             },
+            panchangam: {
+                badge: "Daily Panchangam",
+                title: "Today's Panchangam",
+                subtitle: "Karunagappally, Kerala • Lahiri Ayanamsa",
+                temple_loc: "Thurayilkunnu Temple",
+                today: "Today",
+                tithi: "Tithi",
+                nakshatra: "Nakshatra",
+                yoga: "Yoga",
+                karana: "Karana",
+                weekday: "Weekday",
+                paksha: "Paksha",
+                sunrise: "Sunrise",
+                sunset: "Sunset",
+                rahu_kalam: "Rahu Kalam",
+                yamagandam: "Yamagandam",
+                rahu_note: "Rahu Kalam & Yamagandam are inauspicious periods — avoid starting important events during these times",
+                computing: "Computing…",
+                error: "Could not compute Panchangam for this date.",
+                retry: "Retry",
+                shukla_paksha: "Shukla Paksha (Waxing)",
+                krishna_paksha: "Krishna Paksha (Waning)"
+            },
+            notices: {
+                banner_badge: "Temple Notice",
+                view_all: "View All Notices",
+                modal_title: "Temple Notice Board & Announcements",
+                short_label: "Notices",
+                helpline_note: "For special pooja bookings or festival inquiries, call temple office"
+            },
+            pwa: {
+                title: "Install Temple App",
+                desc: "Add to home screen for daily Panchangam, pooja timings & instant notices.",
+                install_btn: "Install App"
+            },
             footer: {
                 description: "A sacred center for spiritual heritage and traditional values, serving the Thurayilkunnu community for generations. Experience the divine grace and tranquility.",
                 navigation: "Navigation",
@@ -212,7 +279,7 @@ const resources = {
                     support: "Devotee Support"
                 },
                 reach_us: "Reach Us",
-                address: "Thurayilkunnu, Karunagappally, Kerala",
+                address: "Thurayilkunnu, Alumkadavu P.O., Karunagappally, Kollam, Kerala - 690573",
                 all_rights: "All rights reserved.",
                 developed_by: "Developed and maintained by TechnoByteInnovations"
             }
@@ -222,7 +289,7 @@ const resources = {
         translation: {
             navbar: {
                 home: "ഹോം",
-                about: "ക്ഷേത്രത്തെക്കുറിച്ച്",
+                about: "ക്ഷേത്രം",
                 deities: "ദേവതകൾ",
                 festivals: "ഉത്സവങ്ങൾ",
                 offerings: "വഴിപാടുകൾ",
@@ -260,6 +327,7 @@ const resources = {
                     title: "ക്ഷേത്ര വഴിപാടുകൾ",
                     desc: "ക്ഷേത്രത്തിലെ ദിവ്യമായ അനുഷ്ഠാനങ്ങളിൽ പങ്കുചേരുക.",
                     view_all: "എല്ലാ വഴിപാടുകളും കാണുക",
+                    card_link: "കൂടുതലറിയാൻ",
                     ganapathy_homam: "ഗണപതി ഹോമം",
                     ganapathy_homam_desc: "ഐശ്വര്യത്തിനും തടസ്സനിവാരണത്തിനും ഭഗവാൻ ഗണപതിയുടെ ദിവ്യ അനുഗ്രഹം തേടിക്കൊണ്ടുള്ള പുണ്യ ഹോമം.",
                     vazhipadu: "വഴിപാട്",
@@ -290,6 +358,28 @@ const resources = {
                         title: "പരമ്പരാഗത പ്രൗഢി",
                         subtitle: "തുറയിൽകുന്നിലെ ഭക്തർക്കുള്ള പുണ്യ സങ്കേതം"
                     }
+                },
+                testimonials: {
+                    eyebrow: "ഭക്തരുടെ ശബ്ദം",
+                    title: "ഭക്തിനിർഭരമായ വാക്കുകൾ",
+                    subtitle: "തുറയിൽകുന്നിൽ ശാന്തിയും അനുഗ്രഹവും ആത്മീയ നവീകരണവും കണ്ടെത്തിയ ഭക്തർ.",
+                    list: {
+                        r1: {
+                            name: "രാജേഷ് മേനോൻ",
+                            location: "കൊല്ലം",
+                            quote: "വർഷങ്ങളായി ഞങ്ങളുടെ കുടുംബത്തിന്റെ പ്രതിവാര ചടങ്ങാണ് തുറയിൽകുന്ന് ദർശനം. ശാന്തമായ ശ്രീകോവിലും വൈകുന്നേരത്തെ ദീപാരാധനയും മറ്റെവിടെയും കിട്ടാത്ത സമാധാനം നൽകുന്നു."
+                        },
+                        r2: {
+                            name: "മീന നായർ",
+                            location: "കരുനാഗപ്പള്ളി",
+                            quote: "എന്റെ മകന്റെ അന്നപ്രാശനവും ഭർത്താവിന്റെ തുലാഭാരവും ഇവിടെ നടത്തി. തന്ത്രിമാരുടെ ആത്മാർത്ഥതയും ക്ഷേത്രത്തിന്റെ സ്നേഹാത്മകതയും ഓരോ ചടങ്ങിനെയും അതീവ പുണ്യകരമാക്കി."
+                        },
+                        r3: {
+                            name: "ആനന്ദ് പിള്ള",
+                            location: "കൊച്ചി",
+                            quote: "എല്ലാ തൈപ്പൂയത്തിനും കാവടി ഘോഷയാത്ര കാണാൻ കൊച്ചിയിൽ നിന്നാണ് ഞാൻ എത്തുന്നത്. അവിടത്തെ ഭക്തിയുടെ അനുഭൂതി അതിശക്തമാണ് — വീട്ടിൽ നിന്നകലെയുള്ള ഒരു ആത്മീയ ഭവനമാണ് ഇത്."
+                        }
+                    }
                 }
             },
             about: {
@@ -316,23 +406,27 @@ const resources = {
             },
             deities: {
                 page_title: "ദിവ്യ ദേവതകൾ",
-                page_intro: "ശ്രീ സുബ്രഹ്മണ്യസ്വാമി കുടികൊള്ളുന്ന പുണ്യധാമമാണിത്. ഭഗവാന്റെ സാന്നിധ്യം ഭക്തരുടെ ഹൃദയങ്ങളിൽ സമാധാനവും ഭക്തിയും നിറയ്ക്കുന്നു.",
+                page_intro: "ശ്രീ സുബ്രഹ്മണ്യസ്വാമിയും ഉപദേവതകളും കുടികൊള്ളുന്ന പുണ്യധാമമാണിത്. ഭഗവാന്റെ സാന്നിധ്യം ഭക്തരുടെ ഹൃദയങ്ങളിൽ സമാധാനവും ഭക്തിയും നിറയ്ക്കുന്നു.",
                 list: {
                     subramanya: {
                         name: "ശ്രീ സുബ്രഹ്മണ്യസ്വാമി",
-                        desc: "ദേവസേനാധിപനായി ഭഗവാൻ സുബ്രഹ്മണ്യനെ ഇവിടെ ആരാധിക്കുന്നു. ഭഗവാൻ ശിവന്റെയും പാർവതി ദേവിയുടെയും പുത്രനാണ് ഇദ്ദേഹം."
+                        desc: "ദേവസേനാധിപനായി ഭഗവാൻ സുബ്രഹ്മണ്യനെ പ്രധാന പ്രതിഷ്ഠയായി ആരാധിക്കുന്നു. സർവ്വ ദുഃഖങ്ങളും അകറ്റുന്ന കാരുണ്യമൂർത്തി."
                     },
                     ganapathy: {
                         name: "ഗണപതി ഭഗവാൻ",
-                        desc: "വിഘ്നങ്ങൾ നീക്കുന്ന ഭഗവാൻ ഗണപതിയെ സർവ്വ ഐശ്വര്യങ്ങൾക്കുമായി ദിവസവും ആരാധിക്കുന്നു."
+                        desc: "വിഘ്നങ്ങൾ നീക്കുന്ന ഭഗവാൻ ഗണപതിയെ സർവ്വ ഐശ്വര്യങ്ങൾക്കും വിജയത്തിനുമായി ദിവസവും ആരാധിക്കുന്നു."
                     },
-                    ayyappan: {
-                        name: "ധർമ്മശാസ്താവ് (അയ്യപ്പൻ)",
-                        desc: "സത്യത്തിന്റെയും ധർമ്മത്തിന്റെയും പരിപാലകനായി ഭഗവാൻ അയ്യപ്പനെ ആരാധിക്കുന്നു."
+                    bhagavathy: {
+                        name: "ശ്രീ ഭഗവതി (ഭദ്രകാളി)",
+                        desc: "സർവ്വമംഗളങ്ങളും ഐശ്വര്യങ്ങളും അഭയവും നൽകി അനുഗ്രഹിക്കുന്ന ജഗന്മയയായ ദേവി."
+                    },
+                    sivan: {
+                        name: "പരമശിവൻ (മഹാദേവൻ)",
+                        desc: "കൈലാസനാഥനായ പരമശിവൻ, ലോകരക്ഷകനും സർവ്വജ്ഞാനസ്വരൂപനുമായി ശാന്തിയും മുക്തിയും പ്രദാനം ചെയ്യുന്നു."
                     },
                     nagaraja: {
-                        name: "നാഗരാജാവ്",
-                        desc: "ക്ഷേത്രവളപ്പിലെ പ്രത്യേക സർപ്പക്കാവിൽ നാഗദൈവങ്ങളെ ആരാധിക്കുന്നു."
+                        name: "നാഗരാജാവും നാഗയക്ഷിയും",
+                        desc: "ക്ഷേത്രവളപ്പിലെ പ്രത്യേക സർപ്പക്കാവിൽ നാഗദൈവങ്ങളെ പ്രീതിപ്പെടുത്തി കുടുംബൈശ്വര്യത്തിനായി ആരാധിക്കുന്നു."
                     }
                 }
             },
@@ -381,6 +475,11 @@ const resources = {
                         name: "തൃക്കാർത്തിക",
                         date: "നവംബർ / ഡിസംബർ",
                         desc: "വൃശ്ചിക മാസത്തിലെ കാർത്തിക നക്ഷത്രത്തിൽ ദീപങ്ങൾ തെളിയിച്ച് ആഘോഷിക്കുന്ന വിജ്ഞാനത്തിന്റെയും വെളിച്ചത്തിന്റെയും ഉത്സവം."
+                    },
+                    uthrattathi: {
+                        name: "ഉത്രട്ടാതി മഹോത്സവം",
+                        date: "ചിങ്ങം (ആഗസ്റ്റ് / സെപ്റ്റംബർ)",
+                        desc: "ക്ഷേത്രത്തിലെ അതീവ പ്രാധാന്യമുള്ള വാർഷിക ഉത്രട്ടാതി മഹോത്സവം. തന്ത്രിമുഖ്യരുടെ കാർമ്മികത്വത്തിൽ പ്രത്യേക പൂജകൾ, പഞ്ചവാദ്യം, മേളപ്പെരുക്കം, ദീപാരാധന എന്നിവയോടെ ഭക്തിസാന്ദ്രമായി കൊണ്ടാടുന്നു."
                     }
                 }
             },
@@ -414,6 +513,41 @@ const resources = {
                 hero_subtitle: "ക്യാമറ കണ്ണിലൂടെ തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിന്റെ ആത്മീയ സൗന്ദര്യവും വാസ്തുശില്പ മഹിമയും ആസ്വദിക്കുക.",
                 footer_title: "നൂറ്റാണ്ടുകളുടെ വിശ്വാസം ചിത്രത്തിൽ",
                 footer_desc: "സമീപകാല ഉത്സവങ്ങളുടെയും ക്ഷേത്ര അനുഷ്ഠാനങ്ങളുടെയും ഫോട്ടോകൾ ഗാലറിയിൽ നിരന്തരം അപ്ഡേറ്റ് ചെയ്യുന്നു. തുറയിൽകുന്നിന്റെ ദിവ്യ ഭാവവുമായി ബന്ധം നിലനിർത്താൻ ഇടയ്ക്കിടെ സന്ദർശിക്കുക."
+            },
+            panchangam: {
+                badge: "ദൈനിക പഞ്ചാംഗം",
+                title: "ഇന്നത്തെ പഞ്ചാംഗം",
+                subtitle: "കരുനാഗപ്പള്ളി, കേരളം • ലാഹിരി അയനാംശം",
+                temple_loc: "തുറയിൽകുന്ന് ക്ഷേത്രം",
+                today: "ഇന്ന്",
+                tithi: "തിഥി",
+                nakshatra: "നക്ഷത്രം",
+                yoga: "യോഗം",
+                karana: "കരണം",
+                weekday: "ആഴ്ച / വാരം",
+                paksha: "പക്ഷം",
+                sunrise: "സൂര്യോദയം",
+                sunset: "സൂര്യാസ്തമയം",
+                rahu_kalam: "രാഹുകാലം",
+                yamagandam: "യമഗണ്ഡം",
+                rahu_note: "രാഹുകാലവും യമഗണ്ഡവും ശുഭകാര്യങ്ങൾക്ക് വർജ്ജ്യമായ സമയങ്ങളാണ്",
+                computing: "കണക്കുകൂട്ടുന്നു…",
+                error: "ഈ തീയതിയിലെ പഞ്ചാംഗം ലഭ്യമാക്കാൻ സാധിച്ചില്ല.",
+                retry: "വീണ്ടും ശ്രമിക്കുക",
+                shukla_paksha: "ശുക്ലപക്ഷം",
+                krishna_paksha: "കൃഷ്ണപക്ഷം"
+            },
+            notices: {
+                banner_badge: "ക്ഷേത്ര അറിയിപ്പ്",
+                view_all: "എല്ലാ അറിയിപ്പുകളും കാണുക",
+                modal_title: "ക്ഷേത്ര അറിയിപ്പുകളും വാർത്തകളും",
+                short_label: "അറിയിപ്പുകൾ",
+                helpline_note: "വിശേഷാൽ പൂജകൾക്കും വഴിപാടുകൾക്കുമായി ക്ഷേത്ര ഓഫീസുമായി ബന്ധപ്പെടുക"
+            },
+            pwa: {
+                title: "ക്ഷേത്ര ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്യുക",
+                desc: "ദിവസേനയുള്ള പഞ്ചാംഗത്തിനും പൂജാ സമയങ്ങൾക്കും ഹോം സ്ക്രീനിലേക്ക് ചേർക്കുക.",
+                install_btn: "ഇൻസ്റ്റാൾ ചെയ്യുക"
             },
             footer: {
                 description: "തുറയിൽകുന്ന് സമൂഹത്തിന്റെ ആത്മീയ പൈതൃകത്തിന്റെയും പുരാതന മൂല്യങ്ങളുടെയും പുണ്യകേന്ദ്രം. ദിവ്യമായ കൃപയും ശാന്തിയും അനുഭവിക്കുക.",

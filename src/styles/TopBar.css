@@ -1,14 +1,19 @@
+/* =============================================
+   TOP BAR — MODERN AUTHENTIC TEAKWOOD RIBBON
+   ============================================= */
+
 .top-bar {
     position: relative;
-    z-index: 1001;
-    background-color: #ffffff;
-    color: #666;
-    height: 40px;
+    z-index: 1002;
+    background: #0C0A09;
+    color: rgba(255, 255, 255, 0.90);
+    height: 42px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 0.75rem;
-    font-weight: 600;
+    border-bottom: 1px solid rgba(217, 119, 6, 0.25);
+    font-size: 0.77rem;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.3px;
 }
 
 .top-bar-container {
@@ -18,69 +23,157 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 2rem;
+    padding: 0 2.5rem;
+}
+
+.top-bar-left, .top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* ── LIVE STATUS BADGE ── */
+.top-bar-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.top-bar-badge--open {
+    background: rgba(16, 185, 129, 0.14);
+    border: 1px solid rgba(16, 185, 129, 0.40);
+}
+
+.top-bar-badge--closed {
+    background: rgba(239, 68, 68, 0.14);
+    border: 1px solid rgba(239, 68, 68, 0.40);
+}
+
+.live-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+.live-status-dot.dot--open {
+    background: #10B981;
+    box-shadow: 0 0 8px #10B981;
+    animation: livePulseOpen 2s infinite ease-in-out;
+}
+
+.live-status-dot.dot--closed {
+    background: #EF4444;
+    box-shadow: 0 0 8px #EF4444;
+    animation: livePulseClosed 2s infinite ease-in-out;
+}
+
+@keyframes livePulseOpen {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(1.3); }
+}
+
+@keyframes livePulseClosed {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(1.3); }
+}
+
+.live-status-text {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.live-status-text.text--open {
+    color: #34D399;
+}
+
+.live-status-text.text--closed {
+    color: #F87171;
 }
 
 .top-bar-item {
     display: flex;
     align-items: center;
     gap: 6px;
-    transition: color 0.3s ease;
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-.top-bar-item:hover {
-    color: var(--color-primary);
+.top-bar-item:hover { color: #FCD34D; }
+
+.gold-icon { color: #F59E0B; }
+
+/* ── CENTER SACRED TICKER ── */
+.top-bar-center {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #FCD34D;
+    font-size: 0.74rem;
+    font-weight: 600;
+    background: rgba(217, 119, 6, 0.10);
+    padding: 3px 14px;
+    border-radius: 30px;
+    border: 1px solid rgba(217, 119, 6, 0.20);
 }
 
-.top-bar-item .icon {
-    color: var(--color-primary);
-}
+.sacred-sparkle { color: #F59E0B; animation: floatSoft 4s infinite ease-in-out; }
+.ticker-text { letter-spacing: 0.4px; }
 
+/* ── RIGHT PHONE & LANGUAGE TOGGLE ── */
 .top-bar-divider {
-    margin: 0 12px;
-    opacity: 0.2;
+    width: 1px;
+    height: 16px;
+    background: rgba(217, 119, 6, 0.35);
 }
 
-.top-bar-right {
+.top-lang-toggle {
     display: flex;
     align-items: center;
+    gap: 6px;
 }
 
-.language-switcher {
+.globe-icon { color: #F59E0B; }
+
+.lang-pill-container {
     display: flex;
-    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px;
+    border-radius: 20px;
+    border: 1px solid rgba(217, 119, 6, 0.25);
 }
 
-.lang-btn {
+.lang-toggle-btn {
     background: none;
     border: none;
-    color: inherit;
-    font: inherit;
-    cursor: pointer;
-    padding: 0 4px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    opacity: 0.6;
-}
-
-.lang-btn:hover {
-    color: var(--color-primary);
-    opacity: 1;
-}
-
-.lang-btn.active {
-    color: var(--color-primary);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.72rem;
     font-weight: 700;
-    opacity: 1;
+    font-family: 'Outfit', sans-serif;
+    padding: 2px 10px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.lang-divider {
-    font-size: 0.7rem;
-    opacity: 0.3;
+.lang-toggle-btn:hover { color: #FFFFFF; }
+
+.lang-toggle-btn.active {
+    background: linear-gradient(135deg, #FCD34D, #F59E0B);
+    color: #0C0A09;
+    font-weight: 800;
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.45);
+}
+
+@media (max-width: 992px) {
+    .top-bar-center { display: none; }
 }
 
 @media (max-width: 768px) {
-    .top-bar {
-        display: none;
-    }
+    .top-bar { display: none; }
 }
