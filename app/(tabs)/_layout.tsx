@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
-import { Home, Flame, BookOpen, Landmark, Globe } from 'lucide-react-native';
+import { Home, Flame, Bell, Landmark, Globe } from 'lucide-react-native';
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useLanguage } from '@/context/LanguageContext';
@@ -70,10 +70,10 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="prayers"
+        name="notices"
         options={{
-          title: isMalayalam ? 'പ്രാർത്ഥനകൾ' : 'Prayers',
-          tabBarIcon: ({ color }) => <BookOpen size={21} color={color} />,
+          title: isMalayalam ? 'അറിയിപ്പുകൾ' : 'Notices',
+          tabBarIcon: ({ color }) => <Bell size={21} color={color} />,
         }}
       />
       <Tabs.Screen
