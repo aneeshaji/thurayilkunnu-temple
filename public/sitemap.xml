@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://thurayilkunnutemple.technobyteinnovations.in/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thurayilkunnutemple.technobyteinnovations.in/?lng=en"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://thurayilkunnutemple.technobyteinnovations.in/?lng=ml"/>
+  </url>
+
+  <url>
+    <loc>https://thurayilkunnutemple.technobyteinnovations.in/about</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thurayilkunnutemple.technobyteinnovations.in/about?lng=en"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://thurayilkunnutemple.technobyteinnovations.in/about?lng=ml"/>
+  </url>
+
+  <url>
+    <loc>https://thurayilkunnutemple.technobyteinnovations.in/about#timetable</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://thurayilkunnutemple.technobyteinnovations.in/about#administration</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://thurayilkunnutemple.technobyteinnovations.in/deities</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thurayilkunnutemple.technobyteinnovations.in/deities?lng=en"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://thurayilkunnutemple.technobyteinnovations.in/deities?lng=ml"/>
+  </url>
+
+  <url>
+    <loc>https://thurayilkunnutemple.technobyteinnovations.in/festivals</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thurayilkunnutemple.technobyteinnovations.in/festivals?lng=en"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://thurayilkunnutemple.technobyteinnovations.in/festivals?lng=ml"/>
+  </url>
+
+  <url>
+    <loc>https://thurayilkunnutemple.technobyteinnovations.in/offerings</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thurayilkunnutemple.technobyteinnovations.in/offerings?lng=en"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://thurayilkunnutemple.technobyteinnovations.in/offerings?lng=ml"/>
+  </url>
+
+  <url>
+    <loc>https://thurayilkunnutemple.technobyteinnovations.in/donations</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thurayilkunnutemple.technobyteinnovations.in/donations?lng=en"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://thurayilkunnutemple.technobyteinnovations.in/donations?lng=ml"/>
+  </url>
+
+  <url>
+    <loc>https://thurayilkunnutemple.technobyteinnovations.in/gallery</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thurayilkunnutemple.technobyteinnovations.in/gallery?lng=en"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://thurayilkunnutemple.technobyteinnovations.in/gallery?lng=ml"/>
+  </url>
+
+  <url>
+    <loc>https://thurayilkunnutemple.technobyteinnovations.in/contact</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thurayilkunnutemple.technobyteinnovations.in/contact?lng=en"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://thurayilkunnutemple.technobyteinnovations.in/contact?lng=ml"/>
+  </url>
+
+</urlset>

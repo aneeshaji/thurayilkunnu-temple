@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://thurayilkunnutemple.technobyteinnovations.in/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10

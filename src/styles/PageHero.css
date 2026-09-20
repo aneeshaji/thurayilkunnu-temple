@@ -1,0 +1,321 @@
+/* =============================================
+   PAGE HERO — SHARED CINEMATIC INNER BANNER
+   Thurayilkunnu Temple  ·  All Inner Pages
+   ============================================= */
+
+/* ── Base Hero Shell ── */
+.page-hero {
+    position: relative;
+    min-height: var(--hero-inner-min-height, clamp(480px, 62vh, 660px));
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    color: #FFFFFF;
+    padding-top: var(--hero-inner-padding-top, 186px);
+    padding-bottom: clamp(3.5rem, 6vw, 5rem);
+    overflow: hidden;
+    isolation: isolate;
+    background-size: cover;
+    background-position: center 25%;
+    background-repeat: no-repeat;
+}
+
+/* Slow Ken-Burns zoom on load */
+@keyframes heroZoom {
+    0%   { transform: scale(1.06); }
+    100% { transform: scale(1.00); }
+}
+
+.page-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: inherit;
+    background-size: cover;
+    background-position: inherit;
+    background-repeat: no-repeat;
+    animation: heroZoom 9s ease-out forwards;
+    z-index: -3;
+}
+
+/* ── Multi-layer Cinematic Overlay ── */
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+        /* Deep charcoal sweep from left — preserves right side of image */
+        linear-gradient(108deg,
+            rgba(12, 10, 9, 0.96)  0%,
+            rgba(12, 10, 9, 0.82) 36%,
+            rgba(12, 10, 9, 0.48) 60%,
+            rgba(12, 10, 9, 0.18) 80%,
+            rgba(12, 10, 9, 0.42) 100%
+        ),
+        /* Bottom vignette — grounds the text */
+        linear-gradient(to top,
+            rgba(12, 10, 9, 0.92) 0%,
+            rgba(12, 10, 9, 0.55) 20%,
+            transparent 40%
+        ),
+        /* Top vignette — softens navbar edge */
+        linear-gradient(to bottom,
+            rgba(12, 10, 9, 0.55) 0%,
+            transparent 20%
+        );
+}
+
+/* Gold light leak accent (top-left) */
+.page-hero-overlay::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -8%;
+    width: 55%;
+    height: 160%;
+    background: radial-gradient(
+        ellipse at 28% 38%,
+        rgba(217, 119, 6, 0.16) 0%,
+        rgba(252, 211, 77, 0.07) 35%,
+        transparent 68%
+    );
+    pointer-events: none;
+}
+
+/* Fine film-grain texture */
+.page-hero-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-size: 180px;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* ── Floating Gold Orbs (decorative atmosphere) ── */
+.hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+}
+.hero-orb-1 {
+    width: clamp(260px, 36vw, 520px);
+    height: clamp(260px, 36vw, 520px);
+    right: -5vw;
+    top: -12%;
+    background: radial-gradient(ellipse,
+        rgba(217, 119, 6, 0.11) 0%,
+        rgba(180, 83, 9, 0.06) 45%,
+        transparent 72%
+    );
+    animation: orbFloat 11s ease-in-out infinite alternate;
+}
+.hero-orb-2 {
+    width: clamp(140px, 20vw, 300px);
+    height: clamp(140px, 20vw, 300px);
+    right: 24vw;
+    bottom: -6%;
+    background: radial-gradient(ellipse,
+        rgba(252, 211, 77, 0.08) 0%,
+        transparent 65%
+    );
+    animation: orbFloat 15s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes orbFloat {
+    0%   { transform: translateY(0px) scale(1); }
+    100% { transform: translateY(-22px) scale(1.05); }
+}
+
+/* ── Content Stack ── */
+.page-hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.page-hero-content {
+    max-width: 860px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* ── Breadcrumb Trail ── */
+.hero-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.42rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: rgba(252, 211, 77, 0.60);
+    margin-bottom: 1rem;
+}
+.hero-breadcrumb .bc-home {
+    opacity: 0.75;
+    transition: opacity 0.2s;
+}
+.hero-breadcrumb .bc-home:hover { opacity: 1; }
+.hero-breadcrumb .bc-sep {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.30);
+}
+.hero-breadcrumb .bc-current {
+    color: rgba(255, 255, 255, 0.50);
+    font-weight: 500;
+}
+
+/* ── Badge Pill ── */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.42rem;
+    padding: 0.42rem 1.15rem;
+    background: rgba(217, 119, 6, 0.16);
+    border: 1px solid rgba(252, 211, 77, 0.40);
+    border-radius: 100px;
+    color: #FCD34D;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-bottom: 1.1rem;
+    backdrop-filter: blur(18px) saturate(1.8);
+    -webkit-backdrop-filter: blur(18px) saturate(1.8);
+    font-family: 'Outfit', sans-serif;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.38),
+                inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    width: fit-content;
+}
+.hero-badge svg {
+    opacity: 0.88;
+    flex-shrink: 0;
+}
+
+/* ── Page Title ── */
+.hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: #FFFFFF;
+    margin: 0;
+    text-shadow: 0 6px 36px rgba(12, 10, 9, 0.92), 0 2px 8px rgba(12, 10, 9, 0.7);
+    letter-spacing: -0.015em;
+}
+
+html.lang-ml .hero-title {
+    font-family: 'Noto Sans Malayalam', 'Cinzel', serif;
+    font-size: clamp(2rem, 4.2vw, 3.2rem);
+    line-height: 1.28;
+    letter-spacing: 0;
+}
+
+/* ── Gold Accent Divider ── */
+.hero-accent-line {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin: 1.1rem 0 1.2rem;
+}
+.hero-accent-line .line-bar {
+    height: 3px;
+    width: 52px;
+    background: linear-gradient(90deg, #FCD34D 0%, #D97706 100%);
+    border-radius: 3px;
+    box-shadow: 0 0 12px rgba(252, 211, 77, 0.60);
+}
+.hero-accent-line .line-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #FCD34D;
+    box-shadow: 0 0 10px rgba(252, 211, 77, 0.85);
+    flex-shrink: 0;
+}
+.hero-accent-line .line-thin {
+    height: 1px;
+    width: 24px;
+    background: rgba(252, 211, 77, 0.28);
+    border-radius: 2px;
+}
+
+/* ── Subtitle ── */
+.hero-subtitle {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1rem, 1.4vw, 1.12rem);
+    color: rgba(255, 255, 255, 0.80);
+    max-width: 660px;
+    line-height: 1.78;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+    margin: 0;
+}
+
+html.lang-ml .hero-subtitle {
+    font-family: 'Noto Sans Malayalam', 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.9;
+    font-size: clamp(0.93rem, 1.3vw, 1.06rem);
+}
+
+/* ── Bottom Wave Divider ── */
+.page-hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+.page-hero-wave svg {
+    display: block;
+    width: 100%;
+    height: clamp(36px, 4.5vw, 64px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .page-hero-overlay {
+        background:
+            linear-gradient(to bottom,
+                rgba(12, 10, 9, 0.65) 0%,
+                rgba(12, 10, 9, 0.55) 100%
+            ),
+            linear-gradient(to top,
+                rgba(12, 10, 9, 0.92) 0%,
+                rgba(12, 10, 9, 0.55) 24%,
+                transparent 44%
+            );
+    }
+    .hero-orb-1, .hero-orb-2 { display: none; }
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        align-items: flex-end;
+        min-height: clamp(380px, 60vh, 500px);
+        padding-top: 80px;
+        padding-bottom: 3.5rem;
+    }
+    .hero-title { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+    .hero-subtitle { font-size: 0.95rem; max-width: 100%; line-height: 1.65; }
+    .hero-badge { font-size: 0.7rem; }
+    .page-hero-content { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .page-hero {
+        min-height: clamp(340px, 55vh, 440px);
+        padding-top: 76px;
+        padding-bottom: 2.5rem;
+    }
+    .hero-title { font-size: clamp(1.6rem, 8vw, 2.2rem); }
+    .hero-subtitle { font-size: 0.9rem; }
+    .hero-breadcrumb { display: none; }
+    .hero-badge { padding: 0.35rem 0.9rem; }
+}

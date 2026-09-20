@@ -1,0 +1,949 @@
+/* =============================================
+   ABOUT PAGE — AUTHENTIC TEAKWOOD & NILAVILAKKU BRASS
+   ============================================= */
+
+.about-page {
+    background: #FAFAF9;
+    color: #1C1917;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ── CONTENT SECTIONS ── */
+.section-padding { padding: clamp(4.5rem, 6vw, 7rem) 0; }
+.alt-bg           { background-color: #FAF8F5; }
+
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.content-grid.reverse { grid-template-columns: 0.9fr 1.1fr; }
+.content-grid.reverse .text-side { order: 2; }
+.content-grid.reverse .image-side { order: 1; }
+
+/* TEXT ASSETS */
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #D97706;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.heading-secondary {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: #1C1917;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+}
+
+.description-text {
+    line-height: 1.85;
+    font-size: 1.05rem;
+    color: #44403C;
+    margin-bottom: 1.25rem;
+}
+
+.about-quick-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.8rem;
+}
+
+.quick-stat-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFFFFF;
+    border: 1px solid rgba(28, 25, 23, 0.12);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    color: #1C1917;
+    box-shadow: 0 4px 14px rgba(28, 25, 23, 0.05);
+    transition: all 0.3s ease;
+}
+
+.quick-stat-pill:hover {
+    border-color: #D97706;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(217, 119, 6, 0.15);
+}
+
+.stat-pill-icon { color: #D97706; }
+
+.quote-box {
+    margin-top: 2.5rem;
+    padding: 2rem 2.5rem;
+    border-left: 3px solid #F59E0B;
+    background: rgba(217, 119, 6, 0.08);
+    border-radius: 0 16px 16px 0;
+    box-shadow: inset 0 0 0 1px rgba(217, 119, 6, 0.14);
+    position: relative;
+    transition: all 0.35s ease;
+}
+
+.quote-box::before {
+    content: '"';
+    position: absolute;
+    top: -10px; left: 15px;
+    font-family: 'Cinzel', serif;
+    font-size: 5rem;
+    color: #F59E0B;
+    opacity: 0.25;
+    line-height: 1;
+}
+
+.quote-box p {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #1C1917;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #44403C;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.feature-list li svg { color: #F59E0B; flex-shrink: 0; }
+
+/* IMAGE ASSETS */
+.about-image-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 28px 65px rgba(28, 25, 23, 0.16);
+    z-index: 2;
+    border: 1px solid rgba(217, 119, 6, 0.25);
+    background: #1C1917;
+}
+
+.about-image-wrapper img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-image-wrapper:hover img { transform: scale(1.06); }
+
+.floating-stat {
+    position: absolute;
+    bottom: -1rem; right: 2rem;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(217, 119, 6, 0.35);
+    color: #1C1917;
+    padding: 1.5rem 2.5rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 16px 44px rgba(28, 25, 23, 0.18);
+    z-index: 10;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #1C1917;
+    margin-bottom: 0.2rem;
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, #FCD34D, #F59E0B, #B45309);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #78716C;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+}
+
+.corner-decor {
+    position: absolute;
+    top: -25px; right: -25px;
+    width: 120px; height: 120px;
+    border: 3px solid rgba(217, 119, 6, 0.30);
+    z-index: 0;
+    border-radius: 30px;
+    opacity: 0.6;
+    transition: transform 0.6s ease;
+    animation: floatSoft 6s ease-in-out infinite;
+}
+
+.image-side:hover .corner-decor { transform: rotate(12deg) scale(1.08); }
+
+.overlay-card {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    padding: 2.5rem;
+    background: linear-gradient(0deg, rgba(12, 10, 9, 0.92) 0%, transparent 100%);
+    color: #FFFFFF;
+}
+
+.overlay-card svg { color: #FCD34D; margin-bottom: 0.5rem; }
+.overlay-card p   { font-size: 0.95rem; margin: 0; opacity: 0.9; }
+
+/* ── CTA BOX ── */
+.about-cta { padding: 4rem 0 8rem; }
+
+.cta-box {
+    background: linear-gradient(145deg, #292524 0%, #1C1917 100%);
+    padding: 5rem 2rem;
+    border-radius: 28px;
+    text-align: center;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(28, 25, 23, 0.35);
+    border: 1px solid rgba(217, 119, 6, 0.30);
+}
+
+.cta-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FCD34D 40%, #F59E0B 60%, transparent);
+}
+
+.cta-box h3 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: #FFFFFF;
+    margin-bottom: 1.25rem;
+    font-weight: 800;
+}
+
+.cta-box p {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 0 auto 3rem;
+    line-height: 1.65;
+}
+
+.btn-solid {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 60%, #B45309 100%);
+    color: #0C0A09;
+    padding: 1.1rem 2.8rem;
+    border-radius: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 26px rgba(217, 119, 6, 0.40);
+    font-family: 'Outfit', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-solid::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -100%;
+    width: 50%; height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: rotate(25deg);
+    transition: all 0.75s ease;
+}
+
+.btn-solid:hover::after { left: 150%; }
+
+.btn-solid:hover {
+    background: linear-gradient(135deg, #FEF3C7 0%, #FCD34D 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 14px 36px rgba(217, 119, 6, 0.55);
+}
+
+/* =============================================
+   POOJA TIMETABLE STYLES
+   ============================================= */
+.timetable-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 2rem;
+}
+
+.timetable-session-card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+.session-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1.5px solid #F3F4F6;
+}
+
+.session-card-header.morning { color: #D97706; }
+.session-card-header.evening { color: #DC2626; }
+
+.session-card-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1C1917;
+    margin: 0;
+}
+
+.timeline-events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.timeline-event-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 14px;
+    background: #FAFAF9;
+    border-radius: 12px;
+    border-left: 3px solid #D97706;
+    transition: all 0.2s;
+}
+
+.timeline-event-item:hover {
+    background: #FFFBEB;
+    transform: translateX(4px);
+}
+
+.event-time-badge {
+    padding: 4px 10px;
+    background: #FEF3C7;
+    color: #B45309;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 0.8rem;
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.event-time-badge.evening-time {
+    background: #FEE2E2;
+    color: #B91C1C;
+}
+
+.event-details {
+    flex-grow: 1;
+}
+
+.event-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1C1917;
+    margin: 0 0 3px;
+}
+
+.event-desc {
+    font-size: 0.84rem;
+    color: #57534E;
+    margin: 0;
+    line-height: 1.45;
+}
+
+.special-days-strip {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 28px;
+    background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+    border: 1px solid #FCD34D;
+    border-radius: 18px;
+    box-shadow: 0 4px 20px rgba(217, 119, 6, 0.12);
+}
+
+.special-days-icon {
+    width: 48px;
+    height: 48px;
+    background: #D97706;
+    color: #FFFFFF;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.special-days-info {
+    flex-grow: 1;
+}
+
+.special-days-info h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #92400E;
+    margin: 0 0 4px;
+}
+
+.special-days-info p {
+    font-size: 0.88rem;
+    color: #78350F;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.special-days-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    background: #92400E;
+    color: #FFFFFF;
+    font-size: 0.84rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.special-days-link:hover {
+    background: #78350F;
+    transform: translateY(-2px);
+}
+
+/* =============================================
+   DRESS CODE & CONDUCT STYLES
+   ============================================= */
+.dress-code-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.dress-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 28px 24px;
+    border: 1.5px solid #F3F4F6;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.dress-card:hover {
+    border-color: #F59E0B;
+    box-shadow: 0 10px 30px rgba(217, 119, 6, 0.12);
+}
+
+.dress-card-badge {
+    align-self: flex-start;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.dress-card-badge.gents {
+    background: #EFF6FF;
+    color: #1D4ED8;
+}
+
+.dress-card-badge.ladies {
+    background: #FDF2F8;
+    color: #BE185D;
+}
+
+.dress-card-badge.decorum-badge {
+    background: #ECFDF5;
+    color: #047857;
+}
+
+.dress-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1C1917;
+    margin: 0 0 16px;
+}
+
+.dress-rules-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dress-rules-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #44403C;
+}
+
+.rule-check { color: #10B981; flex-shrink: 0; margin-top: 3px; }
+.rule-warn { color: #DC2626; flex-shrink: 0; margin-top: 3px; }
+
+.dress-rules-list li.warning-rule {
+    color: #B91C1C;
+    background: #FEF2F2;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+.decorum-rules-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.decorum-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.decorum-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #ECFDF5;
+    color: #059669;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.decorum-item strong {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #1C1917;
+    margin-bottom: 2px;
+}
+
+.decorum-item p {
+    font-size: 0.82rem;
+    color: #6B7280;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* =============================================
+   ADMINISTRATION & OFFICE BEARERS STYLES
+   ============================================= */
+.admin-subgroup-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #D97706;
+    margin-bottom: 1.5rem;
+}
+
+.admin-subgroup-title h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1C1917;
+    margin: 0;
+}
+
+.spiritual-heads-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.spiritual-head-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(217, 119, 6, 0.2);
+    position: relative;
+}
+
+.spiritual-head-card.royal {
+    background: linear-gradient(135deg, #FFFBEB 0%, #FFFFFF 100%);
+    border: 1.5px solid #FCD34D;
+}
+
+.spiritual-card-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #FEF3C7;
+    color: #B45309;
+    border-radius: 6px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.spiritual-card-badge.gold {
+    background: #D97706;
+    color: #FFFFFF;
+}
+
+.spiritual-role {
+    font-size: 0.85rem;
+    color: #78716C;
+    font-weight: 600;
+    margin: 0 0 4px;
+}
+
+.spiritual-name {
+    font-size: 1.22rem;
+    font-weight: 800;
+    color: #1C1917;
+    margin: 0 0 10px;
+}
+
+.spiritual-desc {
+    font-size: 0.88rem;
+    color: #57534E;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.executive-board-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+    margin-bottom: 2.5rem;
+}
+
+.exec-member-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 20px 16px;
+    text-align: center;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.member-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #FEF3C7;
+    color: #B45309;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.member-role {
+    font-size: 0.78rem;
+    color: #D97706;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.member-name {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #1C1917;
+    margin: 0 0 4px;
+}
+
+.member-term {
+    font-size: 0.76rem;
+    color: #9CA3AF;
+}
+
+.trust-legal-card {
+    background: #FFFFFF;
+    border-radius: 18px;
+    padding: 24px 28px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.trust-legal-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.trust-icon { color: #D97706; flex-shrink: 0; margin-top: 2px; }
+
+.trust-legal-head h4 {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #1C1917;
+    margin: 0 0 4px;
+}
+
+.trust-legal-head p {
+    font-size: 0.88rem;
+    color: #57534E;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.trust-legal-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.office-hours-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.84rem;
+    color: #4B5563;
+    font-weight: 600;
+}
+
+.office-call-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: #F3F4F6;
+    color: #1C1917;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.office-call-btn:hover {
+    background: #E5E7EB;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 992px) {
+    .content-grid, .content-grid.reverse { grid-template-columns: 1fr; gap: 2.5rem; }
+    .timetable-cards-grid, .spiritual-heads-grid { grid-template-columns: 1fr; }
+    .special-days-strip { flex-direction: column; text-align: center; }
+    .trust-legal-foot { flex-direction: column; align-items: flex-start; }
+    .about-image-wrapper img { height: 420px; }
+    .floating-stat { right: 1rem; padding: 1rem 1.5rem; }
+}
+
+@media (max-width: 768px) {
+    .section-padding { padding: 3.5rem 0; }
+    .heading-secondary { font-size: clamp(1.6rem, 5vw, 2.2rem); }
+    .about-image-wrapper img { height: 300px; }
+    .floating-stat { display: none; }
+    .corner-decor { display: none; }
+    .quote-box { padding: 1.25rem 1.5rem; margin-top: 1.5rem; }
+    .quote-box p { font-size: 1rem; }
+    .about-quick-stats { gap: 0.6rem; }
+    .quick-stat-pill { font-size: 0.78rem; padding: 7px 12px; }
+    .cta-box { padding: 2.5rem 1.25rem; }
+    .cta-box h3 { font-size: clamp(1.5rem, 5vw, 2.2rem); }
+    .cta-box p { font-size: 0.97rem; margin-bottom: 2rem; }
+    .btn-solid { padding: 0.85rem 2rem; font-size: 0.85rem; }
+    .special-days-strip { gap: 12px; padding: 18px; }
+    .special-days-link { width: 100%; justify-content: center; }
+    .pilgrimage-grid { grid-template-columns: 1fr; gap: 16px; }
+    .executive-board-grid { grid-template-columns: repeat(2, 1fr); }
+    .timetable-session-card { padding: 1.4rem; }
+    .trust-legal-card { padding: 1.25rem; }
+}
+
+@media (max-width: 480px) {
+    .section-padding { padding: 2.8rem 0; }
+    .content-grid { gap: 2rem; }
+    .heading-secondary { font-size: clamp(1.4rem, 6vw, 1.9rem); }
+    .description-text { font-size: 0.97rem; }
+    .about-image-wrapper img { height: 240px; }
+    .executive-board-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .exec-member-card { padding: 14px 10px; }
+    .member-name { font-size: 0.88rem; }
+    .pilgrimage-shrine-name { font-size: 1.05rem; }
+    .timeline-event-item { flex-direction: column; gap: 6px; }
+    .event-time-badge { align-self: flex-start; }
+    .timetable-cards-grid { gap: 16px; }
+    .spiritual-heads-grid { gap: 14px; }
+    .about-cta { padding: 2rem 0 4rem; }
+}
+
+/* ===================================================
+   PILGRIMAGE CIRCUIT STYLES
+   =================================================== */
+
+.pilgrimage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 1rem;
+}
+
+.pilgrimage-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 20px;
+    padding: 1.8rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pilgrimage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #F59E0B, #D97706);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pilgrimage-card:hover::before {
+    opacity: 1;
+}
+
+.pilgrimage-card:hover {
+    border-color: rgba(217, 119, 6, 0.4);
+    box-shadow: 0 12px 30px rgba(217, 119, 6, 0.12);
+    transform: translateY(-6px);
+}
+
+.pilgrimage-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.pilgrimage-dist-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #FEF3C7;
+    color: #92400E;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 9999px;
+}
+
+.pilgrimage-dist-badge svg {
+    color: #D97706;
+}
+
+.pilgrimage-deity-badge {
+    background: #F3F4F6;
+    color: #4B5563;
+    font-size: 0.76rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.pilgrimage-shrine-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1C1917;
+    margin: 0 0 10px;
+    line-height: 1.35;
+}
+
+.lang-ml .pilgrimage-shrine-name {
+    font-family: 'Manjari', 'Noto Sans Malayalam', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.pilgrimage-shrine-desc {
+    font-size: 0.88rem;
+    color: #57534E;
+    line-height: 1.55;
+    margin: 0 0 1.5rem;
+    flex-grow: 1;
+}
+
+.pilgrimage-route-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #FAFAFA;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    color: #92400E;
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-top: auto;
+}
+
+.pilgrimage-route-btn:hover {
+    background: #FEF3C7;
+    border-color: #D97706;
+    color: #78350F;
+}
+
+

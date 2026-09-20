@@ -1,0 +1,21 @@
+/* App.css replaced to clean up default Vite styling which was ruining layout */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left; /* FIX: Restores default text alignment */
+  max-width: none;  /* FIX: Allows the banner to be truly full width */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}

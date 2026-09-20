@@ -1,0 +1,1113 @@
+/* =============================================
+   SANCTUARY HOME — AUTHENTIC TEAKWOOD & NILAVILAKKU BRASS
+   ============================================= */
+
+.sanctuary-home-page {
+    background-color: #FAFAF9;
+    color: #1C1917;
+    overflow-x: hidden;
+}
+
+/* ── FESTIVAL COUNTDOWN BAND ── */
+.festival-countdown-band {
+    background: linear-gradient(135deg, #7C2D12 0%, #B45309 40%, #D97706 70%, #92400E 100%);
+    padding: 0.85rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.festival-countdown-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.countdown-band-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.countdown-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+.countdown-bell {
+    display: inline-flex;
+    color: #FCD34D;
+    flex-shrink: 0;
+}
+
+.countdown-festival-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+}
+
+.countdown-tag {
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #FCD34D;
+    font-family: 'Outfit', sans-serif;
+}
+
+.countdown-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.countdown-timer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(252, 211, 77, 0.3);
+    border-radius: 8px;
+    padding: 4px 10px;
+    min-width: 48px;
+}
+
+.countdown-val {
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: #FCD34D;
+    font-family: ui-monospace, SFMono-Regular, 'Cascadia Code', monospace;
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Outfit', sans-serif;
+    margin-top: 2px;
+}
+
+.countdown-sep {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #FCD34D;
+    opacity: 0.7;
+    margin-bottom: 12px;
+}
+
+.countdown-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 18px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+    color: #FFFFFF;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    text-decoration: none;
+    transition: all 0.25s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.countdown-cta-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateX(3px);
+}
+
+@media (max-width: 640px) {
+    .countdown-name { font-size: 0.82rem; }
+    .countdown-val { font-size: 1.1rem; }
+    .countdown-unit { min-width: 38px; padding: 3px 7px; }
+    .countdown-cta-btn { display: none; }
+}
+
+
+
+.sanctuary-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 2.5rem;
+}
+
+.sanctuary-section {
+    padding: 7rem 0;
+    position: relative;
+}
+
+/* SECTION HEADERS */
+.sanctuary-section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.sanctuary-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.79rem;
+    font-weight: 700;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #D97706;
+    margin-bottom: 0.8rem;
+}
+
+.eyebrow-line {
+    width: 24px;
+    height: 1px;
+    background: #F59E0B;
+    opacity: 0.65;
+}
+
+.sanctuary-title {
+    font-family: var(--font-heading, 'Cinzel', serif);
+    font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+    font-weight: 800;
+    color: #1C1917;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+}
+
+.sanctuary-title .gold-word {
+    background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 50%, #B45309 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sanctuary-desc {
+    font-size: 1.05rem;
+    color: #44403C;
+    max-width: 580px;
+    margin-top: 0.75rem;
+    line-height: 1.72;
+}
+
+.sanctuary-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #292524;
+    font-weight: 700;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: all 0.28s ease;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(41, 37, 36, 0.30);
+    white-space: nowrap;
+}
+
+.sanctuary-link-btn:hover {
+    color: #D97706;
+    border-color: #D97706;
+    transform: translateX(4px);
+}
+
+/* Subtle gold section dividers */
+.sanctuary-section:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(217, 119, 6, 0.4), transparent);
+}
+
+/* ===========================
+   1. HERITAGE / WELCOME
+   =========================== */
+.welcome-heritage {
+    background:
+        radial-gradient(ellipse at 0% 50%, rgba(245, 245, 244, 0.85) 0%, transparent 55%),
+        #FAFAF9;
+}
+
+.heritage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.heritage-heading {
+    font-family: var(--font-heading, 'Cinzel', serif);
+    font-size: clamp(2rem, 3.5vw, 2.85rem);
+    font-weight: 800;
+    color: #1C1917;
+    line-height: 1.22;
+    margin-bottom: 1.4rem;
+}
+
+.heritage-lead {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: #D97706;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+}
+
+.heritage-body {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    color: #44403C;
+    margin-bottom: 1.8rem;
+}
+
+.heritage-features-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.2rem;
+}
+
+.heritage-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(28, 25, 23, 0.06);
+    border: 1px solid rgba(28, 25, 23, 0.14);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1C1917;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    transition: background 0.25s ease;
+}
+
+.heritage-chip:hover {
+    background: rgba(28, 25, 23, 0.12);
+}
+
+.gold-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #292524 0%, #1C1917 100%);
+    color: #FFFFFF;
+    font-weight: 800;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    font-size: 0.88rem;
+    padding: 0.9rem 2.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 24px rgba(28, 25, 23, 0.25);
+    border: 1px solid rgba(217, 119, 6, 0.40);
+}
+
+.gold-pill-btn:hover {
+    box-shadow: 0 12px 34px rgba(28, 25, 23, 0.38);
+    background: linear-gradient(135deg, #44403C 0%, #292524 100%);
+    transform: translateY(-2px);
+}
+
+.arch-photo-frame {
+    position: relative;
+    border-radius: 120px 120px 24px 24px;
+    overflow: hidden;
+    border: 2px solid rgba(217, 119, 6, 0.35);
+    box-shadow: 0 28px 65px rgba(28, 25, 23, 0.16), 0 0 0 1px rgba(28, 25, 23, 0.06);
+    transition: all 0.4s ease;
+}
+
+.arch-photo-frame:hover {
+    border-color: rgba(217, 119, 6, 0.65);
+    box-shadow: 0 36px 75px rgba(28, 25, 23, 0.22);
+}
+
+.arch-photo-frame img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.arch-photo-frame:hover img { transform: scale(1.06); }
+
+.arch-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(217, 119, 6, 0.40);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    color: #1C1917;
+}
+
+.heritage-pull-quote {
+    margin-top: 1.5rem;
+    font-style: italic;
+    font-family: var(--font-heading, 'Cinzel', serif);
+    font-size: 1rem;
+    color: #44403C;
+    border-left: 3px solid #D97706;
+    padding-left: 1rem;
+    line-height: 1.6;
+}
+
+/* ===========================
+   2. STATS BAND
+   =========================== */
+.sanctuary-stats-band {
+    background: #1C1917;
+    border-top: 1px solid rgba(217, 119, 6, 0.25);
+    border-bottom: 1px solid rgba(217, 119, 6, 0.25);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.sanctuary-stats-band::before {
+    content: 'ॐ';
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14rem;
+    font-family: 'Cinzel', serif;
+    color: rgba(217, 119, 6, 0.08);
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-card {
+    padding: 1.25rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(217, 119, 6, 0.20);
+    transition: all 0.35s ease;
+}
+
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(217, 119, 6, 0.45);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+}
+
+.stat-number {
+    display: block;
+    font-family: var(--font-heading, 'Cinzel', serif);
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #FEF3C7 0%, #FCD34D 50%, #F59E0B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.83rem;
+    font-weight: 700;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    color: rgba(255, 255, 255, 0.80);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* ===========================
+   3. OFFERINGS CARDS
+   =========================== */
+.offering-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+    .offering-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.offering-glass-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(28, 25, 23, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 8px 28px rgba(28, 25, 23, 0.05);
+    transition: all 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+}
+
+.offering-glass-card:hover {
+    border-color: rgba(28, 25, 23, 0.20);
+    box-shadow: 0 20px 50px rgba(28, 25, 23, 0.10);
+    transform: translateY(-6px);
+}
+
+.offering-image-holder {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.offering-image-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.offering-glass-card:hover .offering-image-holder img {
+    transform: scale(1.08);
+}
+
+.offering-type-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #1C1917;
+    color: #FCD34D;
+    font-size: 0.7rem;
+    font-weight: 800;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 4px 16px rgba(28, 25, 23, 0.35);
+    white-space: nowrap;
+    border: 1px solid rgba(252, 211, 77, 0.3);
+}
+
+.offering-info {
+    padding: 1.4rem 1.25rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.offering-info h3 {
+    font-family: var(--font-heading, 'Cinzel', serif);
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: #1C1917;
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+}
+
+.offering-info p {
+    font-size: 0.86rem;
+    line-height: 1.6;
+    color: #44403C;
+    margin-bottom: 1.4rem;
+    flex-grow: 1;
+}
+
+.offering-card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #D97706;
+    font-weight: 800;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    font-size: 0.84rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    margin-top: auto;
+}
+
+.offering-card-btn:hover {
+    color: #B45309;
+    gap: 10px;
+}
+
+/* ===========================
+   4. FESTIVALS
+   =========================== */
+/* 5 cards → 3 on row 1, 2 centered on row 2 */
+.festivals-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.75rem;
+}
+
+/* First 3 items span 2 columns each → 3 per row */
+.festival-card-item:nth-child(1),
+.festival-card-item:nth-child(2),
+.festival-card-item:nth-child(3) {
+    grid-column: span 2;
+}
+/* Last 2 items: center them by starting at col 2 and 4 */
+.festival-card-item:nth-child(4) { grid-column: 2 / 4; }
+.festival-card-item:nth-child(5) { grid-column: 4 / 6; }
+
+.festival-card-item {
+    background: #FFFFFF;
+    border: 1px solid rgba(28, 25, 23, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(28, 25, 23, 0.05);
+    transition: all 0.38s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.festival-card-item:hover {
+    border-color: rgba(28, 25, 23, 0.20);
+    box-shadow: 0 20px 50px rgba(28, 25, 23, 0.10);
+    transform: translateY(-5px);
+}
+
+.festival-image-holder {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.festival-image-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.festival-card-item:hover .festival-image-holder img { transform: scale(1.08); }
+
+.festival-date-badge {
+    position: absolute;
+    top: 12px; right: 12px;
+    background: #1C1917;
+    color: #FFFFFF;
+    font-size: 0.7rem;
+    font-weight: 800;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 4px 16px rgba(28, 25, 23, 0.35);
+    white-space: nowrap;
+}
+
+.festival-info {
+    padding: 1.25rem 1.15rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.festival-info h3 {
+    font-family: var(--font-heading, 'Cinzel', serif);
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #1C1917;
+    margin-bottom: 0.45rem;
+    line-height: 1.35;
+}
+
+.festival-info p {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: #44403C;
+    margin: 0;
+}
+
+/* ===========================
+   5. DEITIES
+   =========================== */
+/* 5 cards → 3 on row 1, 2 centered on row 2 */
+.deities-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.75rem;
+}
+
+/* First 3 items span 2 columns each → 3 per row */
+.deity-card-item:nth-child(1),
+.deity-card-item:nth-child(2),
+.deity-card-item:nth-child(3) {
+    grid-column: span 2;
+}
+/* Last 2 items: center them by starting at col 2 and 4 */
+.deity-card-item:nth-child(4) { grid-column: 2 / 4; }
+.deity-card-item:nth-child(5) { grid-column: 4 / 6; }
+
+.deity-card-item {
+    background: #FFFFFF;
+    border: 1px solid rgba(28, 25, 23, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(28, 25, 23, 0.05);
+    transition: all 0.38s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.deity-card-item.featured {
+    border-color: rgba(217, 119, 6, 0.40);
+    box-shadow: 0 10px 32px rgba(28, 25, 23, 0.08), 0 0 0 1px rgba(217, 119, 6, 0.15);
+}
+
+.deity-card-item:hover {
+    border-color: rgba(28, 25, 23, 0.22);
+    box-shadow: 0 24px 55px rgba(28, 25, 23, 0.12);
+    transform: translateY(-5px);
+}
+
+.deity-image-holder {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.deity-image-holder img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.7s ease;
+}
+
+.deity-card-item:hover .deity-image-holder img { transform: scale(1.08); }
+
+.deity-badge {
+    position: absolute;
+    top: 12px; left: 12px;
+    background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
+    color: #0C0A09;
+    font-size: 0.7rem;
+    font-weight: 800;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    padding: 4px 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 14px rgba(217, 119, 6, 0.38);
+    white-space: nowrap;
+}
+
+.deity-info {
+    padding: 1.25rem 1.15rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.deity-info h3 {
+    font-family: var(--font-heading, 'Cinzel', serif);
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #1C1917;
+    margin-bottom: 0.45rem;
+    line-height: 1.35;
+}
+
+.deity-info p {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: #44403C;
+    margin: 0;
+}
+
+/* ===========================
+   6. SACRED MANTRA BAND
+   =========================== */
+.sacred-mantra-band {
+    background: #F5F5F4;
+    border-top: 1px solid rgba(217, 119, 6, 0.20);
+    border-bottom: 1px solid rgba(217, 119, 6, 0.20);
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sacred-mantra-band::before {
+    content: 'ॐ';
+    position: absolute;
+    font-size: 20rem;
+    font-family: var(--font-heading, 'Cinzel', serif);
+    color: rgba(28, 25, 23, 0.04);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+}
+
+.mantra-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.mantra-emblem {
+    font-size: 2.4rem;
+    color: #D97706;
+    margin-bottom: 1rem;
+    display: inline-block;
+    filter: drop-shadow(0 2px 8px rgba(217, 119, 6, 0.35));
+    animation: mantraGlow 3.5s ease-in-out infinite;
+}
+
+@keyframes mantraGlow {
+    0%, 100% { filter: drop-shadow(0 2px 8px rgba(217, 119, 6, 0.30)); }
+    50%       { filter: drop-shadow(0 4px 20px rgba(217, 119, 6, 0.60)); }
+}
+
+.mantra-heading {
+    font-family: var(--font-heading, 'Cinzel', serif);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    font-style: italic;
+    color: #1C1917;
+    line-height: 1.38;
+    margin-bottom: 1rem;
+}
+
+.mantra-credit {
+    font-size: 0.9rem;
+    color: #D97706;
+    font-weight: 700;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    letter-spacing: 0.5px;
+}
+
+/* ===========================
+   7. TESTIMONIALS
+   =========================== */
+.testimonials-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.75rem;
+}
+
+.testimonial-glass-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(28, 25, 23, 0.08);
+    border-radius: 20px;
+    padding: 2.2rem 1.8rem;
+    box-shadow: 0 8px 28px rgba(28, 25, 23, 0.05);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    transition: all 0.38s ease;
+}
+
+.testimonial-glass-card:hover {
+    border-color: rgba(28, 25, 23, 0.20);
+    box-shadow: 0 20px 50px rgba(28, 25, 23, 0.10);
+    transform: translateY(-4px);
+}
+
+.quote-mark {
+    color: #D97706;
+    opacity: 0.85;
+    margin-bottom: 0.9rem;
+}
+
+.testimonial-glass-card blockquote {
+    font-size: 0.93rem;
+    line-height: 1.72;
+    color: #44403C;
+    margin: 0 0 1.8rem 0;
+    flex-grow: 1;
+    font-style: italic;
+}
+
+.author-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #F5F5F4;
+    color: #1C1917;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(28, 25, 23, 0.14);
+}
+
+.author-info strong {
+    display: block;
+    font-size: 0.9rem;
+    color: #1C1917;
+}
+
+.author-info span {
+    font-size: 0.78rem;
+    color: #78716C;
+}
+
+/* ===========================
+   8. TIMINGS & CONTACT
+   =========================== */
+.timings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+
+.timing-info-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(28, 25, 23, 0.10);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 32px rgba(28, 25, 23, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.38s ease;
+}
+
+.timing-info-card:hover {
+    border-color: rgba(28, 25, 23, 0.22);
+    box-shadow: 0 24px 56px rgba(28, 25, 23, 0.12);
+    transform: translateY(-4px);
+}
+
+.card-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.77rem;
+    font-weight: 800;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    color: #D97706;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 0.9rem;
+}
+
+.timing-info-card h2 {
+    font-family: var(--font-heading, 'Cinzel', serif);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1C1917;
+    margin-bottom: 1.5rem;
+}
+
+.schedule-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(28, 25, 23, 0.08);
+}
+
+.period-label {
+    font-size: 0.93rem;
+    font-weight: 600;
+    color: #1C1917;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.morning-dot::before, .evening-dot::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.morning-dot::before { background: #10B981; box-shadow: 0 0 5px rgba(16, 185, 129, 0.4); }
+.evening-dot::before { background: #F59E0B; box-shadow: 0 0 5px rgba(245, 158, 11, 0.5); }
+
+.period-hours {
+    font-size: 0.93rem;
+    font-weight: 700;
+    color: #1C1917;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+}
+
+.phone-number-btn {
+    font-size: 1.4rem;
+    font-weight: 800;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    color: #1C1917;
+    text-decoration: none;
+    margin: 1rem 0 1.8rem 0;
+    display: inline-block;
+    transition: color 0.25s ease;
+}
+
+.phone-number-btn:hover { color: #D97706; }
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+/* ── Tablet (≤992px) ── */
+@media (max-width: 992px) {
+    .heritage-grid,
+    .timings-grid        { grid-template-columns: 1fr; gap: 2.5rem; }
+    .stats-grid          { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .sanctuary-section   { padding: 5.5rem 0; }
+    .arch-photo-frame img { height: 420px; }
+    .sanctuary-section-head { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .heritage-pull-quote { display: none; }
+}
+
+/* ── Mobile (≤768px) ── */
+@media (max-width: 768px) {
+    .sanctuary-container { padding: 0 1.1rem; }
+    .sanctuary-section   { padding: 3.5rem 0; }
+
+    /* Section headers */
+    .sanctuary-title     { font-size: clamp(1.75rem, 5.5vw, 2.6rem); }
+    .sanctuary-desc      { font-size: 0.97rem; }
+    .sanctuary-section-head { flex-direction: column; align-items: flex-start; gap: 0.75rem; margin-bottom: 2.5rem; }
+
+    /* Heritage */
+    .heritage-grid       { gap: 2rem; }
+    .heritage-heading    { font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
+    .arch-photo-frame    { border-radius: 80px 80px 20px 20px; }
+    .arch-photo-frame img { height: 320px; }
+    .heritage-pull-quote { display: none; }
+    .heritage-features-row { gap: 0.5rem; }
+    .heritage-chip       { font-size: 0.78rem; padding: 5px 11px; }
+
+    /* Stats band */
+    .stats-grid          { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .sanctuary-stats-band { padding: 3rem 0; }
+
+    /* Offerings — 2 col on tablet */
+    .offering-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    /* Festivals / Deities — 2 col on tablet */
+    .festivals-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .deities-cards-grid   { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    /* Reset nth-child column spans for tablet 2-col */
+    .festival-card-item:nth-child(n) { grid-column: span 1; }
+    .deity-card-item:nth-child(n)    { grid-column: span 1; }
+
+    /* Offering image height */
+    .offering-image-holder { height: 180px; }
+
+    /* Mantra band */
+    .sacred-mantra-band  { padding: 3.5rem 1.4rem; }
+    .mantra-heading      { font-size: clamp(1.35rem, 4vw, 1.9rem); }
+
+    /* Testimonials */
+    .testimonials-cards-grid { grid-template-columns: 1fr; }
+
+    /* Timings */
+    .timings-grid        { gap: 1.5rem; }
+    .timing-info-card    { padding: 1.6rem; }
+    .schedule-item       { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+    .timing-info-card h2 { font-size: 1.5rem; }
+}
+
+/* ── Small Mobile (≤540px) — single column everything ── */
+@media (max-width: 540px) {
+    .sanctuary-container { padding: 0 1rem; }
+    .sanctuary-section   { padding: 3.2rem 0; }
+
+    .sanctuary-title     { font-size: clamp(1.45rem, 6vw, 2rem); }
+    .sanctuary-section-head { margin-bottom: 2rem; }
+    .stats-grid          { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+    .stat-card           { padding: 1rem; }
+    .stat-number         { font-size: clamp(1.8rem, 5.5vw, 2.5rem); }
+
+    .arch-photo-frame    { border-radius: 60px 60px 16px 16px; }
+    .arch-photo-frame img { height: 300px; }
+
+    .heritage-features-row { gap: 0.5rem; }
+    .heritage-chip       { font-size: 0.75rem; padding: 5px 11px; }
+
+    /* Force single column for offering / festival / deity cards */
+    .offering-cards-grid  { grid-template-columns: 1fr; gap: 1rem; }
+    .festivals-cards-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .deities-cards-grid   { grid-template-columns: 1fr; gap: 1rem; }
+    .festival-card-item:nth-child(n) { grid-column: span 1; }
+    .deity-card-item:nth-child(n)    { grid-column: span 1; }
+
+    .offering-image-holder  { height: 200px; }
+    .deity-image-holder     { height: 200px; }
+    .festival-image-holder  { height: 190px; }
+
+    .timing-info-card h2 { font-size: 1.5rem; }
+    .phone-number-btn    { font-size: 1.2rem; }
+}
+
+/* ── Extra Small (≤390px) ── */
+@media (max-width: 390px) {
+    .sanctuary-container { padding: 0 0.85rem; }
+    .stats-grid          { gap: 0.7rem; }
+    .gold-pill-btn,
+    .sanctuary-link-btn  { font-size: 0.82rem; }
+    .offering-image-holder  { height: 180px; }
+    .deity-image-holder     { height: 175px; }
+    .festival-image-holder  { height: 165px; }
+}

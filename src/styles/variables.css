@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  /* ── Core Palette — Authentic Teakwood & Nilavilakku Brass ── */
+  --color-primary:         #1C1917;   /* Deep Charred Teak / Temple Granite */
+  --color-primary-deep:    #0C0A09;   /* Midnight Teakwood */
+  --color-primary-mid:     #292524;   /* Rich Polished Teakwood */
+  --color-primary-light:   #44403C;   /* Warm Teak Slate */
+
+  /* Nilavilakku Brass & Sacred Gold */
+  --color-gold:            #D97706;   /* Rich Kerala Brass Gold */
+  --color-gold-light:      #F59E0B;   /* Radiant Lamp Flame Gold */
+  --color-gold-shimmer:    #FCD34D;   /* Sunlit Brass Shimmer */
+  --color-gold-pale:       #FEF3C7;   /* Soft Warm Glow */
+  --color-gold-dark:       #B45309;   /* Antique Deep Bronze */
+  --color-saffron:         #EA580C;   /* Sacred Saffron Ember */
+
+  /* Surfaces & Clean Backgrounds */
+  --color-bg-main:         #FAFAF9;   /* Crisp Pearl Sandalwood White */
+  --color-bg-alt:          #F5F5F4;   /* Warm Stone Alt Surface */
+  --color-bg-card:         #FFFFFF;   /* Crisp Pure White Card */
+  --color-surface-dark:    #1C1917;   /* Deep Teakwood Contrast Surface */
+
+  /* Typography Colors */
+  --color-text-main:       #1C1917;   /* Sharp Deep Teak-Black */
+  --color-text-mid:        #44403C;   /* Rich Readable Stone Body */
+  --color-text-muted:      #78716C;   /* Warm Slate Muted */
+  --color-text-white:      #FFFFFF;   /* Pure White for Dark Surfaces */
+
+  /* Borders & Glass */
+  --color-border:          rgba(28, 25, 23, 0.10);
+  --color-border-gold:     rgba(217, 119, 6, 0.35);
+  --color-border-light:    #E7E5E4;
+
+  /* Typography */
+  --font-heading:          'Cinzel', serif;
+  --font-body:             'Plus Jakarta Sans', sans-serif;
+  --font-eyebrow:          'Outfit', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Shadows */
+  --shadow-sm:             0 4px 16px rgba(28, 25, 23, 0.06);
+  --shadow-md:             0 14px 40px rgba(28, 25, 23, 0.10);
+  --shadow-lg:             0 28px 65px rgba(28, 25, 23, 0.16);
+  --shadow-gold:           0 0 25px rgba(217, 119, 6, 0.40);
+  --shadow-gold-lg:        0 12px 36px rgba(217, 119, 6, 0.30), 0 0 20px rgba(252, 211, 77, 0.20);
+
+  /* Transitions */
+  --transition-fast:       0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal:     0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow:       0.65s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Navbar & Hero Dimensions */
+  --navbar-height:         88px;
+  --navbar-scrolled:       68px;
+  --hero-inner-min-height: clamp(540px, 66vh, 680px);
+  --hero-inner-padding-top: calc(var(--navbar-height, 88px) + 42px + var(--notice-banner-height, 36px) + 2rem);
+  --hero-inner-padding-bottom: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+/* ── Global Malayalam Typography ── */
+html.lang-ml,
+html.lang-ml body {
+  font-family: 'Noto Sans Malayalam', var(--font-body);
+}
+
+html.lang-ml h1,
+html.lang-ml h2,
+html.lang-ml h3,
+html.lang-ml h4,
+html.lang-ml h5,
+html.lang-ml h6,
+html.lang-ml .hero-title {
+  font-family: 'Noto Sans Malayalam', var(--font-heading);
+}
+
+/* ── Reset & Global ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-body);
+}
+
+img { display: block; max-width: 100%; }
+
+/* ── Utility Classes & Global Effects ── */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.highlight-gold {
+  background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 50%, #B45309 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shineGradient 6s linear infinite;
+}
+
+.text-gold { color: var(--color-gold); }
+.text-teak { color: var(--color-primary); }
+
+/* ── Rich Global Keyframe Animations ── */
+@keyframes shineGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes pulseGoldGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(217, 119, 6, 0.25), 0 0 30px rgba(252, 211, 77, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(217, 119, 6, 0.45), 0 0 50px rgba(252, 211, 77, 0.30);
+  }
+}
+
+@keyframes emberFloat {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-40px) translateX(15px) scale(1.15);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-80px) translateX(-10px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes rippleLight {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+@keyframes sweepShine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* Card Shine Hover Utility */
+.shine-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-hover::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  transition: none;
+}
+
+.shine-hover:hover::after {
+  animation: sweepShine 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: var(--color-bg-alt); }
+::-webkit-scrollbar-thumb { background: var(--color-primary-mid); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

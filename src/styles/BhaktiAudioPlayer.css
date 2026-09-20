@@ -1,0 +1,255 @@
+/* ===================================================
+   BHAKTI AMBIENT AUDIO PLAYER STYLES
+   =================================================== */
+
+.bhakti-player-container {
+    position: fixed;
+    bottom: 24px;
+    right: 84px;
+    left: auto;
+    z-index: 990;
+    font-family: inherit;
+    user-select: none;
+}
+
+.bhakti-player-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(22, 15, 10, 0.94);
+    border: 1.5px solid rgba(217, 119, 6, 0.45);
+    border-radius: 9999px;
+    padding: 8px 12px 8px 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(217, 119, 6, 0.15);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bhakti-player-container:hover .bhakti-player-pill {
+    border-color: rgba(245, 158, 11, 0.7);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(217, 119, 6, 0.25);
+    transform: translateY(-2px);
+}
+
+.bhakti-player-container.playing .bhakti-player-pill {
+    border-color: #F59E0B;
+    background: linear-gradient(135deg, rgba(30, 20, 12, 0.96) 0%, rgba(20, 13, 8, 0.98) 100%);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 30px rgba(217, 119, 6, 0.3);
+}
+
+/* Equalizer Bars */
+.equalizer-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 16px;
+    width: 14px;
+}
+
+.eq-bar {
+    width: 3px;
+    background: #D97706;
+    border-radius: 3px;
+    transition: height 0.2s ease;
+    height: 4px;
+}
+
+.eq-bar.bar-1 { height: 6px; }
+.eq-bar.bar-2 { height: 12px; }
+.eq-bar.bar-3 { height: 8px; }
+
+.eq-bar.animate.bar-1 {
+    animation: eqPulse1 1.2s infinite ease-in-out;
+}
+
+.eq-bar.animate.bar-2 {
+    animation: eqPulse2 0.9s infinite ease-in-out;
+}
+
+.eq-bar.animate.bar-3 {
+    animation: eqPulse3 1.4s infinite ease-in-out;
+}
+
+@keyframes eqPulse1 {
+    0%, 100% { height: 4px; background: #D97706; }
+    50% { height: 16px; background: #FBBF24; }
+}
+
+@keyframes eqPulse2 {
+    0%, 100% { height: 14px; background: #F59E0B; }
+    50% { height: 6px; background: #D97706; }
+}
+
+@keyframes eqPulse3 {
+    0%, 100% { height: 6px; background: #D97706; }
+    50% { height: 13px; background: #FDE68A; }
+}
+
+/* Title & Tag */
+.bhakti-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.bhakti-mini-tag {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #F59E0B;
+    line-height: 1;
+}
+
+.sparkle-gold {
+    color: #FBBF24;
+}
+
+.bhakti-label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #FEF3C7;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.lang-ml .bhakti-label {
+    font-family: 'Manjari', 'Noto Sans Malayalam', sans-serif;
+    font-size: 0.85rem;
+}
+
+/* Action Buttons */
+.bhakti-ctrl-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.bhakti-ctrl-btn.play-btn {
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    color: #0F0A06;
+}
+
+.bhakti-ctrl-btn.play-btn:hover {
+    background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+    transform: scale(1.08);
+}
+
+.bhakti-ctrl-btn.mute-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(254, 243, 199, 0.8);
+}
+
+.bhakti-ctrl-btn.mute-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+    color: #FFFBEB;
+}
+
+.bhakti-ctrl-btn.dismiss-btn {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(254, 243, 199, 0.6);
+    width: 24px;
+    height: 24px;
+    margin-left: 2px;
+}
+
+.bhakti-ctrl-btn.dismiss-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #FFF;
+}
+
+/* Minimized Floating Bell Button */
+.bhakti-min-container {
+    position: fixed;
+    bottom: 24px;
+    right: 84px;
+    left: auto;
+    z-index: 990;
+}
+
+.bhakti-min-bell-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(22, 15, 10, 0.94);
+    border: 1.5px solid rgba(217, 119, 6, 0.5);
+    color: #FCD34D;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 15px rgba(217, 119, 6, 0.2);
+    transition: all 0.25s ease;
+    backdrop-filter: blur(12px);
+    position: relative;
+}
+
+.bhakti-min-bell-btn:hover {
+    transform: scale(1.08);
+    border-color: #F59E0B;
+    background: linear-gradient(135deg, #2D1B0D 0%, #170E07 100%);
+    color: #FFF;
+}
+
+.bhakti-min-bell-btn.playing {
+    border-color: #F59E0B;
+    animation: gentleBellGlow 2.5s infinite ease-in-out;
+}
+
+.bell-active-ring {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10B981;
+    box-shadow: 0 0 6px #10B981;
+}
+
+@keyframes gentleBellGlow {
+    0%, 100% { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 10px rgba(217, 119, 6, 0.2); }
+    50% { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 25px rgba(245, 158, 11, 0.45); }
+}
+
+/* Responsive adjustment */
+@media (max-width: 640px) {
+    .bhakti-player-container,
+    .bhakti-min-container {
+        bottom: 74px;
+        right: 14px;
+        left: auto;
+    }
+
+    .bhakti-player-pill {
+        padding: 6px 10px 6px 12px;
+        gap: 8px;
+    }
+
+    .bhakti-label {
+        font-size: 0.76rem;
+    }
+
+    .bhakti-mini-tag {
+        font-size: 0.62rem;
+    }
+
+    .bhakti-ctrl-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .bhakti-ctrl-btn.dismiss-btn {
+        width: 22px;
+        height: 22px;
+    }
+}

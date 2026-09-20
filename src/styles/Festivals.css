@@ -1,0 +1,261 @@
+/* =============================================
+   FESTIVALS PAGE — AUTHENTIC TEAKWOOD & NILAVILAKKU BRASS
+   ============================================= */
+
+.festivals-page {
+    background: #FAFAF9;
+    color: #1C1917;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ── FESTIVALS GRID ── */
+.festivals-container {
+    background: #FAF8F5;
+    position: relative;
+}
+.section-padding { padding: clamp(4.5rem, 6vw, 7rem) 0; }
+
+.festivals-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.festival-card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 32px rgba(28, 25, 23, 0.05);
+    border: 1px solid rgba(28, 25, 23, 0.09);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.festival-card:hover {
+    box-shadow: 0 24px 60px rgba(28, 25, 23, 0.12), 0 0 0 1px rgba(217, 119, 6, 0.35);
+    border-color: rgba(217, 119, 6, 0.45);
+    transform: translateY(-6px);
+}
+
+
+.card-image-wrap {
+    position: relative;
+    height: 270px;
+    overflow: hidden;
+    background: #1C1917;
+}
+
+.card-image-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.festival-card:hover .card-image-wrap img { transform: scale(1.08); }
+
+.date-overlay {
+    position: absolute;
+    top: 1.25rem; left: 1.25rem;
+    background: #1C1917;
+    color: #FFFFFF;
+    padding: 0.55rem 1.2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.40);
+    z-index: 2;
+    font-family: 'Outfit', sans-serif;
+    border: 1px solid rgba(252, 211, 77, 0.30);
+}
+
+.festival-card-tag {
+    position: absolute;
+    bottom: 1.25rem; left: 1.25rem;
+    background: rgba(12, 10, 9, 0.80);
+    color: #FCD34D;
+    font-size: 0.74rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Outfit', sans-serif;
+    padding: 4px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    z-index: 2;
+}
+
+.card-content {
+    padding: 2.5rem;
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-icon {
+    position: absolute;
+    top: -28px; right: 2.5rem;
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, #FCD34D, #F59E0B);
+    color: #0C0A09;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 22px rgba(217, 119, 6, 0.40);
+    transition: transform 0.4s;
+    border: 3px solid #FFFFFF;
+}
+
+.festival-card:hover .card-icon { transform: scale(1.12) rotate(15deg); }
+
+.card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    color: #1C1917;
+    font-weight: 700;
+}
+
+.card-description {
+    color: #44403C;
+    line-height: 1.72;
+    margin-bottom: 1.5rem;
+    font-size: 0.98rem;
+}
+
+.festival-highlights {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 1.8rem;
+}
+
+.highlight-pill {
+    background: #F5F5F4;
+    color: #1C1917;
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(28, 25, 23, 0.08);
+}
+
+.card-footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(28, 25, 23, 0.08);
+}
+
+.learn-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #D97706;
+    font-weight: 700;
+    font-size: 0.86rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.25s ease;
+    font-family: 'Outfit', sans-serif;
+    text-decoration: none;
+}
+
+.learn-more:hover { gap: 10px; color: #1C1917; }
+
+.card-glow {
+    position: absolute;
+    bottom: -100px; right: -100px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(217, 119, 6, 0.08), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* ── INFO STRIP ── */
+.festival-info-strip {
+    background: #FFFFFF;
+    padding: 4.5rem 0;
+    border-top: 1px solid rgba(28, 25, 23, 0.08);
+    border-bottom: 1px solid rgba(28, 25, 23, 0.08);
+}
+
+.strip-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-block {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.strip-icon-circle {
+    width: 60px; height: 60px;
+    background: rgba(217, 119, 6, 0.12);
+    border: 1px solid rgba(217, 119, 6, 0.30);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #D97706;
+    flex-shrink: 0;
+}
+
+.info-block h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.45rem;
+    margin-bottom: 0.4rem;
+    color: #1C1917;
+    font-weight: 700;
+}
+
+.info-block p { color: #44403C; font-size: 0.96rem; }
+
+.strip-btn {
+    background: linear-gradient(135deg, #292524 0%, #1C1917 100%);
+    color: #FFFFFF;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 22px rgba(28, 25, 23, 0.25);
+    font-family: 'Outfit', sans-serif;
+    border: 1px solid rgba(217, 119, 6, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.strip-btn:hover {
+    background: linear-gradient(135deg, #44403C 0%, #292524 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(28, 25, 23, 0.38);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+    .festivals-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .strip-inner    { flex-direction: column; gap: 2.5rem; text-align: center; }
+    .info-block     { flex-direction: column; }
+}
+
+@media (max-width: 600px) {
+    .section-padding { padding: 4rem 0; }
+    .hero-title      { font-size: 2.5rem; }
+    .card-content    { padding: 2rem 1.5rem; }
+}
