@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
@@ -25,12 +25,18 @@ import {
     AlertTriangle,
     Compass,
     Navigation,
-    ExternalLink
+    ExternalLink,
+    Home,
+    Eye,
+    X,
+    FileText,
+    MessageCircle
 } from 'lucide-react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
+import { committeeData } from '../data/committeeData';
 import '../styles/About.css';
 
 /* ---- ANIMATION VARIANTS ---- */
@@ -131,6 +137,7 @@ const NEARBY_SHRINES = [
 const About = () => {
     const { t, i18n } = useTranslation();
     const isML = i18n.language === 'ml';
+    const [isPosterModalOpen, setIsPosterModalOpen] = useState(false);
 
     return (
         <div className="about-page">
@@ -493,58 +500,206 @@ const About = () => {
                         </motion.div>
                     </div>
 
-                    {/* Devaswom Trust Executive Committee */}
-                    <div className="admin-subgroup-title" style={{ marginTop: '3.5rem' }}>
-                        <Building size={18} />
-                        <h3>{t('administration.board_title')}</h3>
+                    {/* Temple Administrative Committee (ക്ഷേത്രഭരണ സമിതി) */}
+                    <div className="admin-committee-section" style={{ marginTop: '4rem' }}>
+                        <div className="admin-section-header">
+                            <div>
+                                <div className="admin-subgroup-title" style={{ marginBottom: '0.35rem' }}>
+                                    <Building size={19} />
+                                    <h3>{isML ? 'ക്ഷേത്രഭരണ സമിതി' : 'Temple Administrative Committee'}</h3>
+                                </div>
+                                <p className="admin-section-sub">
+                                    {isML 
+                                        ? 'തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്ര ഭരണസമിതി ഭാരവാഹികളും അംഗങ്ങളും'
+                                        : 'Governing council and committee members of Thurayilkunnu Sree Subramanya Swami Temple'}
+                                </p>
+                            </div>
+                            <button 
+                                type="button" 
+                                className="notice-circular-btn"
+                                onClick={() => setIsPosterModalOpen(true)}
+                            >
+                                <FileText size={15} />
+                                <span>{isML ? 'ഔദ്യോഗിക അറിയിപ്പ് കാണുക' : 'View Official Notice'}</span>
+                            </button>
+                        </div>
+
+                        {/* Executive Leadership Grid (3 Leaders) */}
+                        <div className="modern-leadership-grid">
+                            {committeeData.officeBearers.map((bearer) => (
+                                <motion.div
+                                    key={bearer.id}
+                                    className="modern-leader-card"
+                                    variants={fadeInUp}
+                                    whileHover={{ y: -4 }}
+                                >
+                                    <span className="leader-role-tag">
+                                        {isML ? bearer.designationMl : bearer.designationEn}
+                                    </span>
+
+                                    <div className="leader-avatar-wrapper">
+                                        <img
+                                            src={bearer.image}
+                                            alt={isML ? bearer.nameMl : bearer.nameEn}
+                                            className="leader-avatar-img"
+                                            loading="lazy"
+                                            onError={(e) => {
+                                                e.target.style.display = 'none';
+                                                if (e.target.nextSibling) {
+                                                    e.target.nextSibling.style.display = 'flex';
+                                                }
+                                            }}
+                                        />
+                                        <div className="leader-avatar-fallback" style={{ display: 'none' }}>
+                                            <UserCheck size={32} />
+                                        </div>
+                                    </div>
+
+                                    <h4 className="leader-name">
+                                        {isML ? bearer.nameMl : bearer.nameEn}
+                                    </h4>
+                                    
+                                    <div className="leader-residence">
+                                        <Home size={13} />
+                                        <span>{isML ? bearer.houseMl : bearer.houseEn}</span>
+                                    </div>
+
+                                    <div className="leader-contact-row">
+                                        <a 
+                                            href={`tel:+91${bearer.phone}`} 
+                                            className="leader-call-btn" 
+                                            title={`Call ${isML ? bearer.nameMl : bearer.nameEn}`}
+                                        >
+                                            <Phone size={13} />
+                                            <span>{bearer.phone.replace(/(\d{5})(\d{5})/, '$1 $2')}</span>
+                                        </a>
+                                        <a 
+                                            href={`https://wa.me/91${bearer.phone}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="leader-wa-btn"
+                                            title="WhatsApp"
+                                            aria-label="WhatsApp"
+                                        >
+                                            <MessageCircle size={14} />
+                                        </a>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        {/* Committee Members Subsection */}
+                        <div className="admin-subgroup-title" style={{ marginTop: '3.5rem', marginBottom: '1.5rem' }}>
+                            <Users size={20} />
+                            <h3>{isML ? 'കമ്മിറ്റി അംഗങ്ങൾ' : 'Committee Members'}</h3>
+                        </div>
+
+                        {/* Committee Members Grid (9 Members - 3x3 Symmetrical) */}
+                        <div className="modern-members-grid">
+                            {committeeData.members.map((member) => (
+                                <motion.div
+                                    key={member.id}
+                                    className="modern-member-card"
+                                    variants={fadeInUp}
+                                    whileHover={{ y: -4 }}
+                                >
+                                    <div className="member-avatar-wrapper">
+                                        <img
+                                            src={member.image}
+                                            alt={isML ? member.nameMl : member.nameEn}
+                                            className="member-avatar-img"
+                                            loading="lazy"
+                                            onError={(e) => {
+                                                e.target.style.display = 'none';
+                                                if (e.target.nextSibling) {
+                                                    e.target.nextSibling.style.display = 'flex';
+                                                }
+                                            }}
+                                        />
+                                        <div className="member-avatar-fallback" style={{ display: 'none' }}>
+                                            <UserCheck size={26} />
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="member-details">
+                                        <h4 className="member-name">{isML ? member.nameMl : member.nameEn}</h4>
+                                        <div className="member-residence">
+                                            <Home size={13} />
+                                            <span>{isML ? member.houseMl : member.houseEn}</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="member-contact-row">
+                                        <a 
+                                            href={`tel:+91${member.phone}`} 
+                                            className="member-call-btn" 
+                                            title={`Call ${isML ? member.nameMl : member.nameEn}`}
+                                        >
+                                            <Phone size={12} />
+                                            <span>{member.phone.replace(/(\d{5})(\d{5})/, '$1 $2')}</span>
+                                        </a>
+                                        <a 
+                                            href={`https://wa.me/91${member.phone}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="member-wa-btn"
+                                            title="WhatsApp"
+                                            aria-label="WhatsApp"
+                                        >
+                                            <MessageCircle size={13} />
+                                        </a>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
 
-                    <div className="executive-board-grid">
-                        <motion.div className="exec-member-card" variants={fadeInUp} whileHover={{ y: -4 }}>
-                            <div className="member-avatar">
-                                <UserCheck size={22} />
+                    {/* Notice Lightbox Modal */}
+                    {isPosterModalOpen && (
+                        <div className="poster-modal-overlay" onClick={() => setIsPosterModalOpen(false)}>
+                            <div className="poster-modal-dialog" onClick={(e) => e.stopPropagation()}>
+                                <div className="poster-modal-header">
+                                    <div>
+                                        <h3 className="poster-modal-title">{t('administration.notice_modal_title')}</h3>
+                                        <p className="poster-modal-sub">{t('administration.notice_modal_sub')}</p>
+                                    </div>
+                                    <button 
+                                        type="button" 
+                                        className="poster-modal-close"
+                                        onClick={() => setIsPosterModalOpen(false)}
+                                        aria-label="Close"
+                                    >
+                                        <X size={20} />
+                                    </button>
+                                </div>
+                                <div className="poster-modal-body">
+                                    <img 
+                                        src={committeeData.posterImage} 
+                                        alt="Official Temple Administrative Committee Announcement" 
+                                        className="poster-modal-img" 
+                                    />
+                                </div>
+                                <div className="poster-modal-footer">
+                                    <a 
+                                        href={committeeData.posterImage} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className="poster-download-btn"
+                                    >
+                                        <ExternalLink size={15} />
+                                        <span>{isML ? 'പൂർണ്ണ രൂപത്തിൽ തുറക്കുക' : 'Open Full Image'}</span>
+                                    </a>
+                                    <button 
+                                        type="button" 
+                                        className="poster-close-action"
+                                        onClick={() => setIsPosterModalOpen(false)}
+                                    >
+                                        {t('administration.close_notice')}
+                                    </button>
+                                </div>
                             </div>
-                            <span className="member-role">{t('administration.president_role')}</span>
-                            <h4 className="member-name">{t('administration.president_name')}</h4>
-                            <span className="member-term">{isML ? 'ദേവസ്വം ബോർഡ്' : 'Devaswom Board'}</span>
-                        </motion.div>
-
-                        <motion.div className="exec-member-card" variants={fadeInUp} whileHover={{ y: -4 }}>
-                            <div className="member-avatar">
-                                <UserCheck size={22} />
-                            </div>
-                            <span className="member-role">{t('administration.secretary_role')}</span>
-                            <h4 className="member-name">{t('administration.secretary_name')}</h4>
-                            <span className="member-term">{isML ? 'ഭരണവിഭാഗം' : 'Administration'}</span>
-                        </motion.div>
-
-                        <motion.div className="exec-member-card" variants={fadeInUp} whileHover={{ y: -4 }}>
-                            <div className="member-avatar">
-                                <UserCheck size={22} />
-                            </div>
-                            <span className="member-role">{t('administration.treasurer_role')}</span>
-                            <h4 className="member-name">{t('administration.treasurer_name')}</h4>
-                            <span className="member-term">{isML ? 'ധനകാര്യ വിഭാഗം' : 'Finance & Accounts'}</span>
-                        </motion.div>
-
-                        <motion.div className="exec-member-card" variants={fadeInUp} whileHover={{ y: -4 }}>
-                            <div className="member-avatar">
-                                <UserCheck size={22} />
-                            </div>
-                            <span className="member-role">{t('administration.vp_role')}</span>
-                            <h4 className="member-name">{t('administration.vp_name')}</h4>
-                            <span className="member-term">{isML ? 'എക്സിക്യൂട്ടീവ്' : 'Executive'}</span>
-                        </motion.div>
-
-                        <motion.div className="exec-member-card" variants={fadeInUp} whileHover={{ y: -4 }}>
-                            <div className="member-avatar">
-                                <UserCheck size={22} />
-                            </div>
-                            <span className="member-role">{t('administration.joint_sec_role')}</span>
-                            <h4 className="member-name">{t('administration.joint_sec_name')}</h4>
-                            <span className="member-term">{isML ? 'എക്സിക്യൂട്ടീവ്' : 'Executive'}</span>
-                        </motion.div>
-                    </div>
+                        </div>
+                    )}
 
                     {/* Trust Registration & Office Hours Info Strip */}
                     <motion.div className="trust-legal-card" variants={fadeInUp}>
