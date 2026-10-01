@@ -177,7 +177,6 @@ const Banner = () => {
                                 <span className="status-sub">{darshanStatus.sub}</span>
                             </div>
                         </div>
-                        <span className="est-tag">{isML ? 'സ്ഥാപിതം 1952' : 'Est. 1952'}</span>
                     </div>
 
                     <div className="glass-card-body">

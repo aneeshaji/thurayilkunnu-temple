@@ -48,13 +48,14 @@ const Navbar = () => {
   useEffect(() => { setIsOpen(false); }, [location.pathname, location.hash]);
 
   const navLinks = [
-    { path: '/',          label: t('navbar.home') },
-    { path: '/about',     label: t('navbar.about') },
-    { path: '/festivals', label: t('navbar.festivals') },
-    { path: '/offerings', label: t('navbar.offerings') },
-    { path: '/deities',   label: t('navbar.deities') },
-    { path: '/gallery',   label: t('navbar.gallery') },
-    { path: '/contact',   label: t('navbar.contact') },
+    { path: '/',           label: t('navbar.home') },
+    { path: '/about',      label: t('navbar.about') },
+    { path: '/festivals',  label: t('navbar.festivals') },
+    { path: '/offerings',  label: t('navbar.offerings') },
+    { path: '/donations',  label: isML ? 'സംഭാവന' : 'Donate' },
+    { path: '/deities',    label: t('navbar.deities') },
+    { path: '/gallery',    label: t('navbar.gallery') },
+    { path: '/contact',    label: t('navbar.contact') },
   ];
 
   return (

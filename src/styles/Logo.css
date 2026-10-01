@@ -1,5 +1,5 @@
 /* =============================================
-   TEMPLE LOGO — REGAL TEAKWOOD & BRASS
+   TEMPLE BRAND LOGO — MODERN SACRED ARCHITECTURAL IDENTITY
    ============================================= */
 
 .temple-brand-logo {
@@ -10,25 +10,26 @@
     user-select: none;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    min-width: 0;
 }
 
 /* ── Sacred Vel Emblem Badge ── */
 .logo-emblem-badge {
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%, rgba(252, 211, 77, 0.3) 0%, rgba(217, 119, 6, 0.15) 50%, rgba(12, 10, 9, 0.95) 90%);
-    border: 1.5px solid rgba(252, 211, 77, 0.7);
+    background: radial-gradient(circle at 35% 35%, rgba(252, 211, 77, 0.28) 0%, rgba(217, 119, 6, 0.15) 55%, rgba(12, 10, 9, 0.95) 90%);
+    border: 1.5px solid rgba(252, 211, 77, 0.65);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 14px rgba(217, 119, 6, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 12px rgba(217, 119, 6, 0.25);
     flex-shrink: 0;
     transition: all 0.3s ease;
 }
 
 .logo-emblem-img {
-    height: 32px;
+    height: 30px;
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 2px 6px rgba(217, 119, 6, 0.6));
@@ -37,135 +38,136 @@
 
 .temple-brand-logo:hover .logo-emblem-badge {
     border-color: #FCD34D;
-    box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
+    box-shadow: 0 0 22px rgba(245, 158, 11, 0.6), 0 0 8px #FCD34D;
     transform: rotate(4deg) scale(1.04);
 }
 
-/* ── Text Layout ── */
+/* ── Typography Block ── */
 .logo-text-block {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 2px;
+    justify-content: center;
+    gap: 3px;
+    min-width: 0;
 }
 
-.logo-title-row {
-    display: flex;
-    align-items: baseline;
-    gap: 6px;
-    line-height: 1.1;
-}
-
-.logo-title-main {
+/* ── Primary Brand Name ── */
+.logo-brand-primary {
     font-family: 'Cinzel', serif;
     font-weight: 800;
-    font-size: 1.22rem;
-    letter-spacing: 0.05em;
-    background: linear-gradient(135deg, #FFFFFF 0%, #FEF3C7 50%, #FCD34D 100%);
+    font-size: 1.25rem;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    background: linear-gradient(135deg, #FFFFFF 15%, #FEF3C7 50%, #FCD34D 90%, #F59E0B 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     white-space: nowrap;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+    transition: all 0.3s ease;
 }
 
-.logo-title-sree {
-    font-family: 'Cinzel', serif;
-    font-weight: 700;
-    font-size: 0.82rem;
-    letter-spacing: 0.12em;
-    color: #FCD34D;
-    text-transform: uppercase;
-}
-
-.logo-subtitle {
+/* ── Secondary Descriptor ── */
+.logo-brand-descriptor {
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
-    font-size: 0.68rem;
-    letter-spacing: 0.22em;
-    color: #F59E0B;
+    font-size: 0.60rem;
+    letter-spacing: 0.18em;
+    color: #FBBF24;
     text-transform: uppercase;
     line-height: 1.15;
     white-space: nowrap;
+    opacity: 0.95;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
 }
 
-.logo-chant-tag {
-    font-family: 'Outfit', sans-serif;
+/* ── Malayalam Specific Adjustments ── */
+.temple-brand-logo.lang-ml .logo-brand-primary {
+    font-family: 'Manjari', 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+}
+
+.temple-brand-logo.lang-ml .logo-brand-descriptor {
+    font-family: 'Manjari', 'Outfit', sans-serif;
     font-weight: 700;
-    font-size: 0.58rem;
-    letter-spacing: 0.22em;
-    color: #FCD34D;
-    text-transform: uppercase;
-    line-height: 1;
-    white-space: nowrap;
-    opacity: 0.85;
-    margin-top: 1px;
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    text-transform: none;
 }
 
 /* ── Scrolled State in Sticky Navbar ── */
+.temple-brand-logo.scrolled {
+    gap: 10px;
+}
+
 .temple-brand-logo.scrolled .logo-emblem-badge {
     width: 38px;
     height: 38px;
 }
 
 .temple-brand-logo.scrolled .logo-emblem-img {
-    height: 26px;
+    height: 25px;
 }
 
-.temple-brand-logo.scrolled .logo-title-main {
-    font-size: 1.08rem;
+.temple-brand-logo.scrolled .logo-brand-primary {
+    font-size: 1.10rem;
+    letter-spacing: 0.05em;
 }
 
-.temple-brand-logo.scrolled .logo-title-sree {
-    font-size: 0.74rem;
+.temple-brand-logo.scrolled .logo-brand-descriptor {
+    font-size: 0.54rem;
+    letter-spacing: 0.15em;
 }
 
-.temple-brand-logo.scrolled .logo-subtitle {
-    font-size: 0.62rem;
+.temple-brand-logo.scrolled.lang-ml .logo-brand-primary {
+    font-size: 1.02rem;
 }
 
-.temple-brand-logo.scrolled .logo-chant-tag {
-    display: none;
+.temple-brand-logo.scrolled.lang-ml .logo-brand-descriptor {
+    font-size: 0.56rem;
 }
 
-/* ── Mobile Optimization (≤768px) — Clean, standard, and never messy ── */
-@media (max-width: 768px) {
+/* ── Responsive Tablet & Mobile (≤1180px) ── */
+@media (max-width: 1180px) {
     .temple-brand-logo {
         gap: 9px;
     }
 
     .logo-emblem-badge {
-        width: 38px;
-        height: 38px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        width: 36px;
+        height: 36px;
     }
 
     .logo-emblem-img {
-        height: 26px;
+        height: 24px;
     }
 
-    .logo-title-main {
-        font-size: 1.02rem;
-        letter-spacing: 0.03em;
+    .logo-brand-primary {
+        font-size: 0.96rem;
+        letter-spacing: 0.035em;
     }
 
-    .logo-title-sree {
-        font-size: 0.72rem;
-        letter-spacing: 0.08em;
+    .logo-brand-descriptor {
+        font-size: 0.50rem;
+        letter-spacing: 0.09em;
+        display: block !important;
     }
 
-    .logo-subtitle {
-        font-size: 0.58rem;
-        letter-spacing: 0.14em;
+    .temple-brand-logo.lang-ml .logo-brand-primary {
+        font-size: 0.92rem;
     }
 
-    /* Hide the 3rd micro-chant line on mobile to prevent overcrowding against hamburger menu */
-    .logo-chant-tag {
-        display: none;
+    .temple-brand-logo.lang-ml .logo-brand-descriptor {
+        font-size: 0.52rem;
+        letter-spacing: 0.02em;
     }
 }
 
-/* ── Small Mobile (≤420px) ── */
-@media (max-width: 420px) {
+/* ── Small Mobile (≤400px) ── */
+@media (max-width: 400px) {
     .temple-brand-logo {
         gap: 8px;
     }
@@ -176,19 +178,50 @@
     }
 
     .logo-emblem-img {
-        height: 23px;
+        height: 22px;
     }
 
-    .logo-title-main {
-        font-size: 0.94rem;
+    .logo-brand-primary {
+        font-size: 0.88rem;
+        letter-spacing: 0.025em;
     }
 
-    .logo-title-sree {
-        font-size: 0.68rem;
+    .logo-brand-descriptor {
+        font-size: 0.46rem;
+        letter-spacing: 0.07em;
     }
 
-    .logo-subtitle {
-        font-size: 0.54rem;
-        letter-spacing: 0.10em;
+    .temple-brand-logo.lang-ml .logo-brand-primary {
+        font-size: 0.85rem;
+    }
+
+    .temple-brand-logo.lang-ml .logo-brand-descriptor {
+        font-size: 0.48rem;
+    }
+}
+
+/* ── Tiny Mobile (≤340px) ── */
+@media (max-width: 340px) {
+    .temple-brand-logo {
+        gap: 6px;
+    }
+
+    .logo-emblem-badge {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo-emblem-img {
+        height: 20px;
+    }
+
+    .logo-brand-primary {
+        font-size: 0.80rem;
+        letter-spacing: 0.02em;
+    }
+
+    .logo-brand-descriptor {
+        font-size: 0.42rem;
+        letter-spacing: 0.05em;
     }
 }

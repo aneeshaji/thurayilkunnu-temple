@@ -8,6 +8,7 @@ import {
     Star,
     Sparkles,
     ChevronRight,
+    ChevronLeft,
     CheckCircle2,
     ShieldCheck,
     Sun,
@@ -139,6 +140,50 @@ const About = () => {
     const isML = i18n.language === 'ml';
     const [isPosterModalOpen, setIsPosterModalOpen] = useState(false);
     const [isMelshanthiModalOpen, setIsMelshanthiModalOpen] = useState(false);
+    const [activeHistoryImg, setActiveHistoryImg] = useState(0);
+
+    const historyImages = [
+        {
+            src: '/images/gallery/temple_night_dwajam.jpg',
+            captionEn: 'The Sacred Kodimaram (Flagstaff) Illuminated at Night',
+            captionMl: 'ദീപം തെളിഞ്ഞ രാവിലെ ക്ഷേത്ര സന്നിധിയും പ്രകാശമാനമായ കൊടിമരവും'
+        },
+        {
+            src: '/images/gallery/chuttuvilakku_night.jpg',
+            captionEn: 'Chuttuvilakku – Temple Lamps Glowing in the Evening Prayer',
+            captionMl: 'ദേവ സന്നിധിയിൽ ദീപ്‌തിമാനമായ ചുറ്റുവിളക്കുകൾ'
+        },
+        {
+            src: '/images/gallery/pongala_deepasthambham.jpg',
+            captionEn: 'Devotees Offering Pongala Ritual at Deepasthambham',
+            captionMl: 'ദീപസ്തംഭത്തിന് മുന്നിലെ ഭക്തിസാന്ദ്രമായ പൊങ്കാല സമർപ്പണം'
+        },
+        {
+            src: '/images/gallery/thurayilkunnu_pongala_wide.jpg',
+            captionEn: 'Sahasra Pongala Mahotsavam – A Sea of Devotion',
+            captionMl: 'സഹസ്ര പൊങ്കാല മഹോത്സവ കാഴ്ച്ചകൾ – ഭക്തജനസമുദ്രം'
+        },
+        {
+            src: '/images/gallery/festival_gathering_1.jpg',
+            captionEn: 'Annual Festival Devotee Gathering & Divine Procession',
+            captionMl: 'ഉത്സവദിനങ്ങളിലെ ഭക്തജന സംഗമം'
+        },
+        {
+            src: '/images/gallery/temple_festive_decor.jpg',
+            captionEn: 'Temple Adorned with Festive Decorations for Skanda Shashti',
+            captionMl: 'സ്കന്ദഷഷ്ഠി ആഘോഷ ദിനത്തിൽ ഒരുങ്ങിനിൽക്കുന്ന ക്ഷേത്ര സന്നിധി'
+        }
+    ];
+
+    const nextHistoryImg = (e) => {
+        e.stopPropagation();
+        setActiveHistoryImg((prev) => (prev + 1) % historyImages.length);
+    };
+
+    const prevHistoryImg = (e) => {
+        e.stopPropagation();
+        setActiveHistoryImg((prev) => (prev - 1 + historyImages.length) % historyImages.length);
+    };
 
     return (
         <div className="about-page">
@@ -171,26 +216,49 @@ const About = () => {
                             <h2 className="heading-secondary">{t('about.history_heading')}</h2>
                             <p className="description-text">{t('about.history_p1')}</p>
                             <p className="description-text">{t('about.history_p2')}</p>
-                            
-                            <div className="about-quick-stats">
-                                <div className="quick-stat-pill">
-                                    <ShieldCheck size={18} className="stat-pill-icon" />
-                                    <span>{isML ? '1952-ൽ പ്രതിഷ്ഠിതം' : 'Consecrated in 1952'}</span>
-                                </div>
-                                <div className="quick-stat-pill">
-                                    <Sun size={18} className="stat-pill-icon" />
-                                    <span>{isML ? 'കേരളീയ താന്ത്രിക വിധികൾ' : 'Tantric Kerala Traditions'}</span>
-                                </div>
-                            </div>
                         </motion.div>
 
                         <motion.div className="image-side" variants={slideRight}>
-                            <motion.div
-                                className="about-image-wrapper shine-hover"
-                                whileHover={{ scale: 1.02 }}
-                                transition={{ duration: 0.4 }}
-                            >
-                                <img src="/images/gallery/temple_exterior.jpg" alt="Temple History" />
+                            <div className="about-photo-slider">
+                                <div className="about-photo-slider__track">
+                                    {historyImages.map((img, idx) => (
+                                        <motion.div
+                                            key={idx}
+                                            className={`about-photo-slide ${idx === activeHistoryImg ? 'active' : ''}`}
+                                            animate={{ opacity: idx === activeHistoryImg ? 1 : 0 }}
+                                            transition={{ duration: 0.5, ease: 'easeInOut' }}
+                                        >
+                                            <img
+                                                src={img.src}
+                                                alt={img.captionEn}
+                                                loading={idx === 0 ? 'eager' : 'lazy'}
+                                            />
+                                        </motion.div>
+                                    ))}
+                                </div>
+                                {/* Caption */}
+                                <div className="about-photo-caption">
+                                    <span>{isML ? historyImages[activeHistoryImg].captionMl : historyImages[activeHistoryImg].captionEn}</span>
+                                </div>
+                                {/* Nav Arrows */}
+                                <button className="about-photo-arrow prev" onClick={prevHistoryImg} aria-label="Previous image">
+                                    <ChevronLeft size={20} />
+                                </button>
+                                <button className="about-photo-arrow next" onClick={nextHistoryImg} aria-label="Next image">
+                                    <ChevronRight size={20} />
+                                </button>
+                                {/* Dots */}
+                                <div className="about-photo-dots">
+                                    {historyImages.map((_, idx) => (
+                                        <button
+                                            key={idx}
+                                            className={`about-photo-dot ${idx === activeHistoryImg ? 'active' : ''}`}
+                                            onClick={(e) => { e.stopPropagation(); setActiveHistoryImg(idx); }}
+                                            aria-label={`Go to image ${idx + 1}`}
+                                        />
+                                    ))}
+                                </div>
+                                {/* 70+ floating stat */}
                                 <motion.div
                                     className="floating-stat"
                                     animate={{ y: [0, -10, 0] }}
@@ -199,7 +267,7 @@ const About = () => {
                                     <span className="stat-value">70+</span>
                                     <span className="stat-label">{isML ? 'വർഷത്തെ മഹത്വം' : 'Years of Glory'}</span>
                                 </motion.div>
-                            </motion.div>
+                            </div>
                             <div className="corner-decor" />
                         </motion.div>
                     </div>
@@ -807,25 +875,7 @@ const About = () => {
                         </div>
                     )}
 
-                    {/* Trust Registration & Office Hours Info Strip */}
-                    <motion.div className="trust-legal-card" variants={fadeInUp}>
-                        <div className="trust-legal-head">
-                            <ShieldCheck size={24} className="trust-icon" />
-                            <div>
-                                <h4>{t('administration.trust_reg_title')}</h4>
-                                <p>{t('administration.trust_reg_desc')}</p>
-                            </div>
-                        </div>
-                        <div className="trust-legal-foot">
-                            <div className="office-hours-tag">
-                                <Clock size={16} />
-                                <span>{t('administration.office_hours')}</span>
-                            </div>
-                            <a href="tel:+917994342205" className="office-call-btn">
-                                <Phone size={15} /> Call Office
-                            </a>
-                        </div>
-                    </motion.div>
+
                 </div>
             </motion.section>
 
