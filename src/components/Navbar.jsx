@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe, ChevronRight, Heart } from 'lucide-react';
@@ -101,8 +101,8 @@ const Navbar = () => {
             onClick={() => i18n.changeLanguage(currentLang === 'en' ? 'ml' : 'en')}
             aria-label={currentLang === 'en' ? 'Switch to Malayalam' : 'Switch to English'}
           >
-            <Globe size={13} className="mobile-lang-globe" />
-            <span>{currentLang === 'en' ? 'മലയാളം' : 'ENG'}</span>
+            <Globe size={12} className="mobile-lang-globe" />
+            <span>{currentLang === 'en' ? 'ML' : 'EN'}</span>
           </button>
           <button
             type="button"
