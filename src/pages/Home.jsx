@@ -276,16 +276,16 @@ const Home = () => {
             desc: isML 
                 ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ പ്രധാന വാർഷിക തിരുമഹോത്സവവും തുറയിൽക്കുന്ന് പൊങ്കാലയും.' 
                 : 'Grand 10-day annual temple festival and auspicious Thurayilkunnu Pongala.', 
-            image: '/images/festivals/uthrattathi.jpg' 
+            image: '/images/festivals/thurayilkunnu_pongala_wide.jpg' 
         },
-        { name: t('festivals_page.list.skanda_purana_yajnam.name'), date: t('festivals_page.list.skanda_purana_yajnam.date'), desc: t('festivals_page.list.skanda_purana_yajnam.desc'), image: '/images/festivals/skanda_sashti.jpg' },
-        { name: t('festivals_page.list.thaipusam.name'), date: t('festivals_page.list.thaipusam.date'), desc: t('festivals_page.list.thaipusam.desc'), image: '/images/festivals/thaipusam.jpg' },
-        { name: t('festivals_page.list.skanda.name'), date: t('festivals_page.list.skanda.date'), desc: t('festivals_page.list.skanda.desc'), image: '/images/festivals/skanda_sashti.jpg' },
+        { name: t('festivals_page.list.skanda_purana_yajnam.name'), date: t('festivals_page.list.skanda_purana_yajnam.date'), desc: t('festivals_page.list.skanda_purana_yajnam.desc'), image: '/images/gallery/festival_devotees_1.jpg' },
+        { name: t('festivals_page.list.thaipusam.name'), date: t('festivals_page.list.thaipusam.date'), desc: t('festivals_page.list.thaipusam.desc'), image: '/images/gallery/deity_procession_1.jpg' },
+        { name: t('festivals_page.list.skanda.name'), date: t('festivals_page.list.skanda.date'), desc: t('festivals_page.list.skanda.desc'), image: '/images/gallery/festival_gathering_1.jpg' },
         { name: t('festivals_page.list.thrikarthika.name'), date: t('festivals_page.list.thrikarthika.date'), desc: t('festivals_page.list.thrikarthika.desc'), image: '/images/festivals/thrikarthika.jpg' }
     ];
 
     const deities = [
-        { name: t('deities.list.subramanya.name'), desc: t('deities.list.subramanya.desc'), image: '/images/deities/subramanya.jpg', featured: true, badge: isML ? 'പ്രധാന പ്രതിഷ്ഠ' : 'Presiding Deity' },
+        { name: t('deities.list.subramanya.name'), desc: t('deities.list.subramanya.desc'), image: '/images/deities/subramanya_vigraham.jpg', featured: true, badge: isML ? 'പ്രധാന പ്രതിഷ്ഠ' : 'Presiding Deity' },
         { name: t('deities.list.ganapathy.name'), desc: t('deities.list.ganapathy.desc'), image: '/images/deities/ganapathy.jpg', featured: false },
         { name: t('deities.list.bhagavathy.name'), desc: t('deities.list.bhagavathy.desc'), image: '/images/deities/bhagavathy.jpg', featured: false },
         { name: t('deities.list.sivan.name'), desc: t('deities.list.sivan.desc'), image: '/images/deities/sivan.jpg', featured: false },

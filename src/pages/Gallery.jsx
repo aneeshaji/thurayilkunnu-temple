@@ -47,7 +47,16 @@ const Gallery = () => {
         { id: 11, url: '/images/gallery/nagaraja_shrine.jpg', title: 'Nagaraja Sarpa Kavu — Sacred Serpent Shrine', titleMl: 'നാഗരാജാവ് സർപ്പക്കാവ് സന്നിധി', category: 'Deity' },
         { id: 12, url: '/images/gallery/peacock_diya_decor.jpg', title: 'Chuttuvilakku & Deeparadhana', titleMl: 'ചുറ്റുവിളക്കും ദീപാരാധനയും', category: 'Rituals' },
         { id: 13, url: '/images/festivals/thaipusam.jpg', title: 'Grand Thaipusam Mahotsavam', titleMl: 'മഹാ തൈപ്പൂയ മഹോത്സവം', category: 'Festivals' },
-        { id: 14, url: '/images/festivals/skanda_sashti.jpg', title: 'Skanda Sashti Celebrations', titleMl: 'സ്കന്ദ ഷഷ്ഠി വ്രതാഘോഷം', category: 'Festivals' }
+        { id: 14, url: '/images/festivals/skanda_sashti.jpg', title: 'Skanda Sashti Celebrations', titleMl: 'സ്കന്ദ ഷഷ്ഠി വ്രതാഘോഷം', category: 'Festivals' },
+        { id: 15, url: '/images/gallery/pooja_ritual_1.jpg', title: 'Sacred Pooja Ritual — Colourful Pookalam', titleMl: 'ദിവ്യ പൂജാ ചടങ്ങ് — വർണ്ണ പൂക്കളം', category: 'Rituals' },
+        { id: 16, url: '/images/gallery/festival_devotees_1.jpg', title: 'Devotees at Festival Ceremony', titleMl: 'ഉത്സവ ചടങ്ങിൽ ഭക്തരും ആരാധകരും', category: 'Festivals' },
+        { id: 17, url: '/images/gallery/deity_procession_1.jpg', title: 'Deity Procession with Sacred Incense', titleMl: 'ദേവ ഘോഷയാത്രയും ധൂപാർച്ചനയും', category: 'Festivals' },
+        { id: 18, url: '/images/gallery/festival_gathering_1.jpg', title: 'Grand Festival — Devotees in Prayer', titleMl: 'മഹോത്സവ ഭക്ത സംഗമം — ഭജനവും ആരാധനയും', category: 'Festivals' },
+        { id: 19, url: '/images/gallery/subramanya_vigraham.jpg', title: 'Presiding Sanctum Deity — Lord Murugan with Vel & Peacock', titleMl: 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമി തിരുവിഗ്രഹം — വേലും ദിവ്യമയിലും', category: 'Deity' },
+        { id: 20, url: '/images/gallery/temple_night_dwajam.jpg', title: 'Thurayilkunnu Temple Illuminated at Night — Sacred Dwajasthambham', titleMl: 'തുറയിൽക്കുന്ന് ക്ഷേത്രദർശനം — ദീപപ്രഭയിൽ കൊടിമരവും നടപ്പന്തലും', category: 'Architecture' },
+        { id: 21, url: '/images/gallery/thurayilkunnu_pongala_wide.jpg', title: 'Thurayilkunnu Mahotsavam — Sacred Pongala Offering', titleMl: 'തുറയിൽക്കുന്ന് മഹോത്സവം — പുണ്യ പൊങ്കാല നിവേദ്യം', category: 'Festivals' },
+        { id: 22, url: '/images/gallery/pongala_deepasthambham.jpg', title: 'Devotees Offering Pongala near Deepasthambham', titleMl: 'ദീപസ്തംഭ സന്നിധിയിൽ ഭക്തജനങ്ങളുടെ പൊങ്കാലയർപ്പണം', category: 'Festivals' },
+        { id: 23, url: '/images/gallery/pongala_pookalam_ritual.jpg', title: 'Auspicious Floral Kolam & Festival Offerings', titleMl: 'മഹോത്സവ പൂക്കളവും പൂജാദ്രവ്യങ്ങളും', category: 'Rituals' },
     ];
 
     const filterCategories = ['All', 'Shrine', 'Deity', 'Festivals', 'Rituals', 'Architecture'];

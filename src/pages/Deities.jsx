@@ -35,7 +35,7 @@ const Deities = () => {
             name: t('deities.list.subramanya.name'),
             subtitle: isML ? 'വേൽമുരുകൻ · ദേവസേനാപതി' : 'The Lord of Vel & Supreme Commander',
             description: t('deities.list.subramanya.desc'),
-            image: '/images/deities/subramanya.jpg',
+            image: '/images/deities/subramanya_vigraham.jpg',
             main: true,
             badge: isML ? 'പ്രധാന പ്രതിഷ്ഠ' : 'Presiding Sanctum Deity',
             mantra: 'Om Saravanabhavaya Namaha ॐ',

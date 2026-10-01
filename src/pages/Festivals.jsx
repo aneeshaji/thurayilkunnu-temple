@@ -39,7 +39,7 @@ const Festivals = () => {
             description: isML
                 ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ 10 ദിവസം നീണ്ടുനിൽക്കുന്ന ഉത്രട്ടാതി തിരുമഹോത്സവം. തൃക്കൊടിയേറ്റ്, തങ്കഅങ്കി-തങ്കവേൽ രഥഘോഷയാത്രകൾ, കഥകളി, കാവടി അഭിഷേകം, തുറയിൽക്കുന്ന് പൊങ്കാല, പള്ളിവേട്ട, പഞ്ചവാദ്യം, ഗംഭീര പകൽക്കാഴ്ച, തിരുആറാട്ട് എന്നിവയോടെ ഭക്തിസാന്ദ്രമായി കൊണ്ടാടുന്നു.'
                 : 'The 10-day grand annual Uthrattathi festival celebrated with Kodiyettu, Thanka Anki & Thanka Vel Ratha Ghoshayathra, Kathakali, Kavadi Abhishekam, Thurayilkunnu Pongala, Pallivetta, Panchavadyam, Pakalkkazhcha, and Arattu.',
-            image: '/images/festivals/uthrattathi.jpg',
+            image: '/images/festivals/thurayilkunnu_pongala_wide.jpg',
             icon: <Bell size={24} />,
             highlights: isML 
                 ? ['തൃക്കൊടിയേറ്റ്', 'തങ്കഅങ്കി രഥഘോഷയാത്ര', 'തുറയിൽക്കുന്ന് പൊങ്കാല', 'മേജർസെറ്റ് കഥകളി', 'സ്കന്ദകാവടി അഭിഷേകം', 'തിരുആറാട്ട്'] 
@@ -51,7 +51,7 @@ const Festivals = () => {
             date: t('festivals_page.list.skanda_purana_yajnam.date'),
             tag: isML ? 'പുണ്യ പുരാണ പാരായണവും യജ്ഞവും' : 'Sacred Fire Ritual & Purana Parayanam',
             description: t('festivals_page.list.skanda_purana_yajnam.desc'),
-            image: '/images/festivals/skanda_sashti.jpg',
+            image: '/images/gallery/festival_devotees_1.jpg',
             icon: <Flame size={24} />,
             highlights: isML ? ['സ്കന്ദപുരാണ പാരായണം', 'പുണ്യ ഹോമം', 'ഭക്തജന അനുഗ്രഹം'] : ['Skanda Purana Parayanam', 'Sacred Homam', 'Devotee Blessings']
         },
@@ -61,7 +61,7 @@ const Festivals = () => {
             date: t('festivals_page.list.thaipusam.date'),
             tag: isML ? 'മഹാ കാവടിയാട്ട മഹോത്സവം' : 'Grand Annual Festival',
             description: t('festivals_page.list.thaipusam.desc'),
-            image: '/images/festivals/thaipusam.jpg',
+            image: '/images/gallery/deity_procession_1.jpg',
             icon: <Star size={24} />,
             highlights: isML ? ['കാവടി ഘോഷയാത്ര', 'പാലഭിഷേകം', 'മഹാ അന്നദാനം'] : ['Kavadi Procession', 'Palabhishekam', 'Grand Annadanam']
         },
@@ -71,7 +71,7 @@ const Festivals = () => {
             date: t('festivals_page.list.skanda.date'),
             tag: isML ? 'ശൂരസംഹാരവും വ്രതാനുഷ്ഠാനങ്ങളും' : '6 Sacred Days of Soorasamharam',
             description: t('festivals_page.list.skanda.desc'),
-            image: '/images/festivals/skanda_sashti.jpg',
+            image: '/images/gallery/festival_gathering_1.jpg',
             icon: <Sparkles size={24} />,
             highlights: isML ? ['ശൂരസംഹാരം', 'സുബ്രഹ്മണ്യ പൂജ', 'ഷഷ്ഠി വ്രതം'] : ['Soorasamharam Ritual', 'Special Subramanya Pooja', 'Fasting & Vows']
         },
