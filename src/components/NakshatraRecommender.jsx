@@ -8,7 +8,7 @@ import '../styles/NakshatraRecommender.css';
 
 const NakshatraRecommender = ({ onSelectOffering }) => {
   const { i18n } = useTranslation();
-  const isML = i18n.language === 'ml';
+  const isML = i18n.language?.startsWith('ml');
 
   // Default to Karthika (Lord Murugan's sacred star)
   const [selectedStarId, setSelectedStarId] = useState('karthika');
@@ -57,7 +57,7 @@ const NakshatraRecommender = ({ onSelectOffering }) => {
             >
               {NAKSHATRAS.map((star) => (
                 <option key={star.id} value={star.id}>
-                  {star.ml} — {star.en}
+                  {isML ? `${star.ml} — ${star.en}` : `${star.en} — ${star.ml}`}
                 </option>
               ))}
             </select>
@@ -98,7 +98,7 @@ const NakshatraRecommender = ({ onSelectOffering }) => {
               {/* Left: Star Badge & Deity */}
               <div className="result-deity-pane">
                 <div className="star-symbol-circle">
-                  <span className="star-char">{selectedStar.ml.charAt(0)}</span>
+                  <span className="star-char">{isML ? selectedStar.ml.charAt(0) : selectedStar.en.charAt(0)}</span>
                 </div>
                 <div className="star-title-group">
                   <span className="star-tag">{isML ? 'ജന്മനക്ഷത്രം' : 'Birth Star'}</span>

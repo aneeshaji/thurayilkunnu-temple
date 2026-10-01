@@ -6,7 +6,7 @@
     background: #FAFAF9;
     color: #1C1917;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 /* ── CONTENT SECTIONS ── */
@@ -596,55 +596,207 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 860px) {
+    .spiritual-heads-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 
 .spiritual-head-card {
     background: #FFFFFF;
-    border-radius: 20px;
-    padding: 28px 24px;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(217, 119, 6, 0.2);
+    border-radius: 22px;
+    padding: 24px 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1.5px solid rgba(217, 119, 6, 0.22);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
 }
 
-.spiritual-head-card.royal {
-    background: linear-gradient(135deg, #FFFBEB 0%, #FFFFFF 100%);
+.spiritual-head-card:hover {
+    box-shadow: 0 16px 36px rgba(217, 119, 6, 0.14);
+    border-color: #F59E0B;
+}
+
+.spiritual-head-card.melsanthi-card {
+    background: linear-gradient(145deg, #FFFFFF 0%, #FFFDF8 60%, #FEF3C7 100%);
     border: 1.5px solid #FCD34D;
 }
 
+.spiritual-head-card.tantri-card {
+    background: linear-gradient(145deg, #FFFFFF 0%, #FFFBEB 60%, #FEF9C3 100%);
+    border: 1.5px solid #FCD34D;
+}
+
+.spiritual-card-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
 .spiritual-card-badge {
-    display: inline-block;
-    padding: 4px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
     background: #FEF3C7;
     color: #B45309;
-    border-radius: 6px;
-    font-size: 0.74rem;
-    font-weight: 700;
+    border: 1px solid rgba(217, 119, 6, 0.30);
+    border-radius: 30px;
+    font-size: 0.76rem;
+    font-weight: 800;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    letter-spacing: 0.5px;
 }
 
 .spiritual-card-badge.gold {
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    color: #FFFFFF;
+    border-color: #B45309;
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.30);
+}
+
+.spiritual-view-photo-btn {
+    background: rgba(217, 119, 6, 0.08);
+    border: 1px solid rgba(217, 119, 6, 0.30);
+    color: #B45309;
+    font-size: 0.74rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s ease;
+}
+
+.spiritual-view-photo-btn:hover {
     background: #D97706;
     color: #FFFFFF;
+    border-color: #D97706;
+}
+
+.spiritual-content-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+@media (max-width: 520px) {
+    .spiritual-content-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.spiritual-avatar-box {
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.spiritual-avatar-img {
+    width: 105px;
+    height: 130px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 16px;
+    border: 2.5px solid #FCD34D;
+    box-shadow: 0 8px 20px rgba(217, 119, 6, 0.22);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+}
+
+.spiritual-avatar-box:hover .spiritual-avatar-img {
+    transform: scale(1.03);
+    box-shadow: 0 12px 28px rgba(217, 119, 6, 0.38);
+    border-color: #F59E0B;
+}
+
+.spiritual-zoom-pill {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0C0A09;
+    color: #FCD34D;
+    border: 1px solid #FCD34D;
+    border-radius: 20px;
+    padding: 2px 8px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    transition: all 0.2s ease;
+}
+
+.spiritual-emblem-box {
+    width: 105px;
+    height: 130px;
+    border-radius: 16px;
+    background: radial-gradient(circle at 35% 35%, rgba(254, 243, 199, 0.95) 0%, rgba(253, 230, 138, 0.45) 60%, rgba(255, 255, 255, 0.85) 100%);
+    border: 2.5px solid #FCD34D;
+    box-shadow: 0 8px 20px rgba(217, 119, 6, 0.20);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex-shrink: 0;
+    color: #B45309;
+}
+
+.spiritual-emblem-symbol {
+    font-size: 2.6rem;
+    line-height: 1;
+    font-family: 'Cinzel', serif;
+    filter: drop-shadow(0 2px 4px rgba(217, 119, 6, 0.4));
+}
+
+.spiritual-emblem-tag {
+    font-size: 0.60rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #92400E;
+}
+
+.spiritual-info {
+    flex: 1;
 }
 
 .spiritual-role {
-    font-size: 0.85rem;
-    color: #78716C;
-    font-weight: 600;
+    font-size: 0.80rem;
+    color: #92400E;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     margin: 0 0 4px;
 }
 
 .spiritual-name {
-    font-size: 1.22rem;
+    font-size: 1.25rem;
     font-weight: 800;
     color: #1C1917;
-    margin: 0 0 10px;
+    margin: 0 0 8px;
+    font-family: 'Cinzel', 'Noto Sans Malayalam', 'Manjari', serif;
+    line-height: 1.25;
 }
 
 .spiritual-desc {
-    font-size: 0.88rem;
+    font-size: 0.86rem;
     color: #57534E;
     line-height: 1.55;
     margin: 0;

@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import NoticeBanner from './components/NoticeBanner';
 import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
@@ -52,7 +52,7 @@ function App() {
           <Route path="/deities" element={<Deities />} />
           <Route path="/festivals" element={<Festivals />} />
           <Route path="/offerings" element={<Offerings />} />
-          <Route path="/donations" element={<Donations />} />
+          <Route path="/donations" element={<Navigate to="/offerings" replace />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

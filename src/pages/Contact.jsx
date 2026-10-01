@@ -163,7 +163,7 @@ _Sent via Thurayilkunnu Temple Website_`;
                                     <div className="card-icon-box"><MapPin size={24} /></div>
                                     <div className="card-details">
                                         <h3>{t('contact_page.address_title')}</h3>
-                                        <p>Thurayilkunnu, Maru: South, Karunagappally, Kollam, Kerala - 690573</p>
+                                        <p>{isML ? 'തുറയിൽകുന്ന്, കരുനാഗപ്പള്ളി, കൊല്ലം - 690573' : 'Thurayilkunnu, Karunagappally, Kollam, Kerala - 690573'}</p>
                                         <span className="card-sub-highlight">{isML ? 'കരുനാഗപ്പള്ളി ടൗണിന് സമീപം' : 'Near Karunagappally Town'}</span>
                                     </div>
                                 </motion.div>

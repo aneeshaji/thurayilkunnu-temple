@@ -6,7 +6,7 @@
     background: #FAFAF9;
     color: #1C1917;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 /* ── FILTER TABS ── */
@@ -873,4 +873,263 @@
         box-shadow: none;
     }
 }
+
+/* =============================================
+   FESTIVAL POOJAS SPOTLIGHT BAR
+   ============================================= */
+.festival-poojas-spotlight-bar {
+    background: linear-gradient(135deg, #1C1917 0%, #292524 50%, #451A03 100%);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25), 0 0 20px rgba(245, 158, 11, 0.12);
+    border-radius: 20px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.75rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.festival-poojas-spotlight-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #F59E0B, #EF4444, #F59E0B);
+}
+
+.spotlight-bar-info {
+    flex: 1;
+}
+
+.spotlight-bar-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(245, 158, 11, 0.18);
+    border: 1px solid rgba(245, 158, 11, 0.5);
+    color: #FCD34D;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.spotlight-bar-info h3 {
+    color: #FFFFFF;
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin: 0 0 0.4rem;
+    font-family: 'Cinzel', 'Noto Sans Malayalam', serif;
+}
+
+.spotlight-bar-info p {
+    color: rgba(254, 243, 199, 0.85);
+    font-size: 0.88rem;
+    margin: 0;
+    line-height: 1.55;
+}
+
+.spotlight-bar-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+}
+
+.spotlight-bar-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.75rem 1.35rem;
+    border-radius: 50px;
+    font-size: 0.86rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: none;
+    font-family: 'Outfit', 'Noto Sans Malayalam', sans-serif;
+    white-space: nowrap;
+}
+
+.spotlight-bar-btn.primary {
+    background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
+    color: #1C1917;
+    box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+}
+
+.spotlight-bar-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(245, 158, 11, 0.55);
+}
+
+.spotlight-bar-btn.outline {
+    background: rgba(255, 255, 255, 0.08);
+    color: #FDE68A;
+    border: 1px solid rgba(245, 158, 11, 0.45);
+}
+
+.spotlight-bar-btn.outline:hover {
+    background: rgba(245, 158, 11, 0.2);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    border-color: #FCD34D;
+}
+
+@media (max-width: 900px) {
+    .festival-poojas-spotlight-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+    }
+    .spotlight-bar-actions {
+        width: 100%;
+    }
+    .spotlight-bar-btn {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+/* Lightbox Modal & Buttons */
+.poster-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.poster-modal-dialog {
+    background: #FFFFFF;
+    border-radius: 24px;
+    width: 100%;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.poster-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 18px 24px;
+    border-bottom: 1px solid #E5E7EB;
+    background: #FAFAFA;
+}
+
+.poster-modal-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #1C1917;
+    margin: 0 0 3px;
+    font-family: 'Cinzel', 'Noto Sans Malayalam', serif;
+}
+
+.poster-modal-sub {
+    font-size: 0.82rem;
+    color: #78716C;
+    margin: 0;
+}
+
+.poster-modal-close {
+    background: #F3F4F6;
+    border: none;
+    color: #4B5563;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+.poster-modal-close:hover {
+    background: #EF4444;
+    color: #FFFFFF;
+}
+
+.poster-modal-body {
+    padding: 16px;
+    overflow-y: auto;
+    background: #0C0A09;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.poster-modal-img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.poster-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 14px 24px;
+    border-top: 1px solid #E5E7EB;
+    background: #FAFAFA;
+}
+
+.poster-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 18px;
+    border-radius: 50px;
+    background: #F59E0B;
+    color: #1C1917;
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.poster-download-btn:hover {
+    background: #D97706;
+    color: #FFFFFF;
+}
+
+.poster-close-action {
+    padding: 9px 20px;
+    border-radius: 50px;
+    background: #E5E7EB;
+    color: #374151;
+    font-size: 0.84rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.poster-close-action:hover {
+    background: #D1D5DB;
+}
+
 

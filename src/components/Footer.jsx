@@ -95,7 +95,6 @@ const Footer = () => {
                         <li><Link to="/about#timetable"><ChevronRight size={14} className="link-arrow" /> {isML ? 'നിത്യ പൂജാക്രമം' : 'Daily Timetable'}</Link></li>
                         <li><Link to="/about#administration"><ChevronRight size={14} className="link-arrow" /> {isML ? 'ക്ഷേത്ര ഭരണസമിതി' : 'Temple Administration'}</Link></li>
                         <li><Link to="/offerings"><ChevronRight size={14} className="link-arrow" /> {t('navbar.offerings')}</Link></li>
-                        <li><Link to="/donations"><ChevronRight size={14} className="link-arrow" /> {t('navbar.donations')}</Link></li>
                         <li><Link to="/contact"><ChevronRight size={14} className="link-arrow" /> {t('navbar.contact')}</Link></li>
                     </ul>
                 </div>
@@ -106,8 +105,7 @@ const Footer = () => {
                     <ul className="footer-nav-list">
                         <li><Link to="/offerings"><ChevronRight size={14} className="link-arrow" /> {isML ? 'ഗണപതി ഹോമം' : 'Ganapathy Homam'}</Link></li>
                         <li><Link to="/offerings"><ChevronRight size={14} className="link-arrow" /> {isML ? 'സുബ്രഹ്മണ്യ പുഷ്പാഞ്ജലി' : 'Subramanya Pushpanjali'}</Link></li>
-                        <li><Link to="/donations"><ChevronRight size={14} className="link-arrow" /> {isML ? 'അന്നദാനം സമർപ്പണം' : 'Annadanam Samarpanam'}</Link></li>
-                        <li><Link to="/donations"><ChevronRight size={14} className="link-arrow" /> {isML ? 'ഇ-കാണിക്ക സമർപ്പണം' : 'E-Hundi Donation'}</Link></li>
+                        <li><Link to="/offerings"><ChevronRight size={14} className="link-arrow" /> {isML ? 'അന്നദാനം സമർപ്പണം' : 'Annadanam Samarpanam'}</Link></li>
                         <li><Link to="/offerings"><ChevronRight size={14} className="link-arrow" /> {isML ? 'പാലഭിഷേകവും ഭസ്മവും' : 'Palabhishekam & Bhasmam'}</Link></li>
                         <li><Link to="/festivals"><ChevronRight size={14} className="link-arrow" /> {isML ? 'തൈപ്പൂയ മഹോത്സവം' : 'Thaipusam Mahotsavam'}</Link></li>
                     </ul>

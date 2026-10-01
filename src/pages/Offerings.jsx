@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Sparkles, Heart, CreditCard, Clock, Info, ChevronRight, Tag, Flame, CheckCircle, CheckCircle2, X, MessageCircle, Calendar, User, Star, AlertCircle, Printer } from 'lucide-react';
+import { Sparkles, Heart, CreditCard, Clock, Info, ChevronRight, Tag, Flame, CheckCircle, CheckCircle2, X, MessageCircle, Calendar, User, Star, AlertCircle, Printer, ExternalLink } from 'lucide-react';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import SEO from '../components/SEO';
@@ -28,7 +28,8 @@ const inViewProps = (margin = '-60px') => ({
 
 const Offerings = () => {
     const { t, i18n } = useTranslation();
-    const isML = i18n.language === 'ml';
+    const currentLang = i18n.language?.startsWith('ml') ? 'ml' : 'en';
+    const isML = currentLang === 'ml';
     const [activeFilter, setActiveFilter] = useState('all');
     const [selectedOffering, setSelectedOffering] = useState(null);
     const [bookingReceipt, setBookingReceipt] = useState(null);
@@ -43,18 +44,188 @@ const Offerings = () => {
     const [formError, setFormError] = useState('');
 
     const offeringsData = [
-        { id: 1, category: 'daily', name: t('offerings_page.list.pushpanjali.name'), price: '₹20', description: t('offerings_page.list.pushpanjali.desc'), icon: <Heart size={20} />, image: '/images/offerings/archana_pushpanjali.jpg', benefit: 'Daily peace, health, and family prosperity', benefitMl: 'മനസ്സമാധാനം, ആരോഗ്യം, കുടുംബ ഐശ്വര്യം' },
-        { id: 2, category: 'special', name: t('offerings_page.list.muttarukkal.name'), price: '₹30', description: t('offerings_page.list.muttarukkal.desc'), icon: <Sparkles size={20} />, image: '/images/offerings/ganapathy_homam.jpg', benefit: 'Removal of astrological obstacles and evil eye', benefitMl: 'ദൃഷ്ടിദോഷ നിവാരണം, ഗ്രഹപ്പിഴ തടസ്സങ്ങൾ നീങ്ങൽ' },
-        { id: 3, category: 'prasadam', name: t('offerings_page.list.payasam.name'), price: '₹150', description: t('offerings_page.list.payasam.desc'), icon: <Tag size={20} />, image: '/images/offerings/archana_pushpanjali.jpg', benefit: 'Sacred sweet nectar offered for thanksgiving', benefitMl: 'കാര്യസിദ്ധി, ആഗ്രഹസാഫല്യം, മംഗളാനുഭവങ്ങൾ' },
-        { id: 4, category: 'homam', name: t('offerings_page.list.homam.name'), price: '₹350', description: t('offerings_page.list.homam.desc'), icon: <Flame size={20} />, image: '/images/offerings/ganapathy_homam.jpg', benefit: 'Auspicious fire ritual invoking Lord Ganesha', benefitMl: 'വിഘ്നനിവാരണം, സർവ്വകാര്യ വിജയം, ഗൃഹൈശ്വര്യം' },
-        { id: 5, category: 'special', name: t('offerings_page.list.shatrusamhara.name'), price: '₹50', description: t('offerings_page.list.shatrusamhara.desc'), icon: <Heart size={20} />, image: '/images/offerings/palabhishekam.jpg', benefit: 'Protection against negative forces and fear', benefitMl: 'ശത്രുദോഷ ശമനം, ഭയനിവാരണം, ദുരിതമുക്തി' },
-        { id: 6, category: 'special', name: t('offerings_page.list.thulabharam.name'), price: 'Variable', priceMl: 'നിശ്ചയിച്ച നിരക്കിൽ', description: t('offerings_page.list.thulabharam.desc'), icon: <CreditCard size={20} />, image: '/images/offerings/thulabharam.jpg', benefit: 'Sacred weight offering in fulfilment of vows', benefitMl: 'നേർച്ച പൂർത്തീകരണം, ആയുരാരോഗ്യ സൗഖ്യം' },
-        { id: 7, category: 'prasadam', name: t('offerings_page.list.panchamrutham.name'), price: '₹100', description: t('offerings_page.list.panchamrutham.desc'), icon: <Tag size={20} />, image: '/images/offerings/palabhishekam.jpg', benefit: 'Divine 5-ingredient fruit offering for good health', benefitMl: 'ഉദരരോഗ ശമനം, ശാരീരിക സൗഖ്യം, ആയുർവർദ്ധന' },
-        { id: 8, category: 'abhishekam', name: t('offerings_page.list.bhasmabhishekam.name'), price: '₹50', description: t('offerings_page.list.bhasmabhishekam.desc'), icon: <Sparkles size={20} />, image: '/images/offerings/palabhishekam.jpg', benefit: 'Sacred ash shower on the sanctum idol', benefitMl: 'പാപമോചനം, ആത്മീയ ശുദ്ധി, ഭക്തിവർദ്ധന' },
-        { id: 9, category: 'abhishekam', name: t('offerings_page.list.palabhishekam.name'), price: '₹50', description: t('offerings_page.list.palabhishekam.desc'), icon: <Sparkles size={20} />, image: '/images/offerings/palabhishekam.jpg', benefit: 'Pure milk bath cleansing the soul and mind', benefitMl: 'മാനസിക ശാന്തി, സർവ്വദോഷ ശമനം, ഐശ്വര്യം' },
-        { id: 10, category: 'special', name: t('offerings_page.list.chuttuvilakku.name'), price: '₹500', description: t('offerings_page.list.chuttuvilakku.desc'), icon: <Sparkles size={20} />, image: '/images/offerings/archana_pushpanjali.jpg', benefit: 'Lighting up hundreds of oil lamps around the temple', benefitMl: 'കുടുംബ ഐശ്വര്യം, അന്ധകാര നിവാരണം, പ്രകാശമയ ജീവിതം' },
-        { id: 11, category: 'daily', name: t('offerings_page.list.vidyarambham.name'), price: '₹200', description: t('offerings_page.list.vidyarambham.desc'), icon: <Heart size={20} />, image: '/images/offerings/archana_pushpanjali.jpg', benefit: 'Blessings for children education and intellect', benefitMl: 'വിദ്യാഭിവൃദ്ധി, ബുദ്ധിശക്തി, ഏകാഗ്രത' },
-        { id: 12, category: 'special', name: t('offerings_page.list.annadanam.name'), price: '₹1000+', description: t('offerings_page.list.annadanam.desc'), icon: <Heart size={20} />, image: '/images/offerings/ganapathy_homam.jpg', benefit: 'Feeding hundreds of devotees — highest charity', benefitMl: 'മഹാപുണ്യം, അന്നദാതാവിന് സർവ്വസമൃദ്ധി' }
+        // ── REGULAR TEMPLE OFFERINGS ──
+        { 
+            id: 1, 
+            category: 'daily', 
+            nameEn: 'Pushpanjali', 
+            nameMl: 'പുഷ്പാഞ്ജലി', 
+            name: isML ? 'പുഷ്പാഞ്ജലി' : 'Pushpanjali', 
+            price: '₹20', 
+            descEn: 'Offering of flowers and mantras for mental peace.', 
+            descMl: 'മനോശാന്തിക്കായി പൂക്കളും മന്ത്രങ്ങളും സമർപ്പിക്കുന്നു.',
+            description: isML ? 'മനോശാന്തിക്കായി പൂക്കളും മന്ത്രങ്ങളും സമർപ്പിക്കുന്നു.' : 'Offering of flowers and mantras for mental peace.', 
+            icon: <Heart size={20} />, 
+            image: '/images/offerings/archana_pushpanjali.jpg', 
+            benefit: 'Daily peace, health, and family prosperity', 
+            benefitMl: 'മനസ്സമാധാനം, ആരോഗ്യം, കുടുംബ ഐശ്വര്യം' 
+        },
+        { 
+            id: 2, 
+            category: 'special', 
+            nameEn: 'Muttarukkal', 
+            nameMl: 'മുട്ടറുക്കൽ', 
+            name: isML ? 'മുട്ടറുക്കൽ' : 'Muttarukkal', 
+            price: '₹30', 
+            descEn: 'Offering of coconuts to remove obstacles and negative eye.', 
+            descMl: 'തടസ്സങ്ങൾ നീങ്ങാൻ നാളികേരം ഉടയ്ക്കുന്നു.',
+            description: isML ? 'തടസ്സങ്ങൾ നീങ്ങാൻ നാളികേരം ഉടയ്ക്കുന്നു.' : 'Offering of coconuts to remove obstacles and negative eye.', 
+            icon: <Sparkles size={20} />, 
+            image: '/images/offerings/ganapathy_homam.jpg', 
+            benefit: 'Removal of astrological obstacles and evil eye', 
+            benefitMl: 'ദൃഷ്ടിദോഷ നിവാരണം, ഗ്രഹപ്പിഴ തടസ്സങ്ങൾ നീങ്ങൽ' 
+        },
+        { 
+            id: 3, 
+            category: 'prasadam', 
+            nameEn: 'Payasam Nivedyam', 
+            nameMl: 'പായസം നിവേദ്യം', 
+            name: isML ? 'പായസം നിവേദ്യം' : 'Payasam Nivedyam', 
+            price: '₹150', 
+            descEn: 'Sacred sweet nectar offering for prosperity and fulfilment of wishes.', 
+            descMl: 'ഐശ്വര്യത്തിനായി പായസം വഴിപാട് സമർപ്പണം.',
+            description: isML ? 'ഐശ്വര്യത്തിനായി പായസം വഴിപാട് സമർപ്പണം.' : 'Sacred sweet nectar offering for prosperity and fulfilment of wishes.', 
+            icon: <Tag size={20} />, 
+            image: '/images/offerings/archana_pushpanjali.jpg', 
+            benefit: 'Sacred sweet nectar offered for thanksgiving', 
+            benefitMl: 'കാര്യസിദ്ധി, ആഗ്രഹസാഫല്യം, മംഗളാനുഭവങ്ങൾ' 
+        },
+        { 
+            id: 4, 
+            category: 'homam', 
+            nameEn: 'Ganapathy Homam', 
+            nameMl: 'ഗണപതി ഹോമം', 
+            name: isML ? 'ഗണപതി ഹോമം' : 'Ganapathy Homam', 
+            price: '₹350', 
+            descEn: 'Auspicious fire ritual invoking Lord Ganesha for hurdles and new beginnings.', 
+            descMl: 'തടസ്സങ്ങൾ നീങ്ങാനും പുതിയ സംരംഭങ്ങൾ തുടങ്ങാനും നടത്തുന്ന അനുഷ്ഠാനം.',
+            description: isML ? 'തടസ്സങ്ങൾ നീങ്ങാനും പുതിയ സംരംഭങ്ങൾ തുടങ്ങാനും നടത്തുന്ന അനുഷ്ഠാനം.' : 'Auspicious fire ritual invoking Lord Ganesha for hurdles and new beginnings.', 
+            icon: <Flame size={20} />, 
+            image: '/images/offerings/ganapathy_homam.jpg', 
+            benefit: 'Auspicious fire ritual invoking Lord Ganesha', 
+            benefitMl: 'വിഘ്നനിവാരണം, സർവ്വകാര്യ വിജയം, ഗൃഹൈശ്വര്യം' 
+        },
+        { 
+            id: 5, 
+            category: 'special', 
+            nameEn: 'Shatrusamhara Pushpanjali', 
+            nameMl: 'ശത്രുസംഹാര പുഷ്പാഞ്ജലി', 
+            name: isML ? 'ശത്രുസംഹാര പുഷ്പാഞ്ജലി' : 'Shatrusamhara Pushpanjali', 
+            price: '₹50', 
+            descEn: 'Powerful archana for divine protection against negativity and distress.', 
+            descMl: 'ശത്രുദോഷത്തിൽ നിന്നും നെഗറ്റീവ് ഊർജ്ജത്തിൽ നിന്നും സംരക്ഷണത്തിന്.',
+            description: isML ? 'ശത്രുദോഷത്തിൽ നിന്നും നെഗറ്റീവ് ഊർജ്ജത്തിൽ നിന്നും സംരക്ഷണത്തിന്.' : 'Powerful archana for divine protection against negativity and distress.', 
+            icon: <Heart size={20} />, 
+            image: '/images/offerings/palabhishekam.jpg', 
+            benefit: 'Protection against negative forces and fear', 
+            benefitMl: 'ശത്രുദോഷ ശമനം, ഭയനിവാരണം, ദുരിതമുക്തി' 
+        },
+        { 
+            id: 6, 
+            category: 'special', 
+            nameEn: 'Thulabharam', 
+            nameMl: 'തുലാഭാരം', 
+            name: isML ? 'തുലാഭാരം' : 'Thulabharam', 
+            price: 'Variable', 
+            priceMl: 'നിശ്ചയിച്ച നിരക്കിൽ', 
+            descEn: "Offering one's weight in jaggery, banana, sugar or coconut in fulfilment of vows.", 
+            descMl: 'ശർക്കര, കദളിപ്പഴം തുടങ്ങിയ വസ്തുക്കൾ തൂക്കി നൽകുന്ന പുണ്യ നേർച്ച.',
+            description: isML ? 'ശർക്കര, കദളിപ്പഴം തുടങ്ങിയ വസ്തുക്കൾ തൂക്കി നൽകുന്ന പുണ്യ നേർച്ച.' : "Offering one's weight in jaggery, banana, sugar or coconut in fulfilment of vows.", 
+            icon: <CreditCard size={20} />, 
+            image: '/images/offerings/thulabharam.jpg', 
+            benefit: 'Sacred weight offering in fulfilment of vows', 
+            benefitMl: 'നേർച്ച പൂർത്തീകരണം, ആയുരാരോഗ്യ സൗഖ്യം' 
+        },
+        { 
+            id: 7, 
+            category: 'prasadam', 
+            nameEn: 'Panchamrutham', 
+            nameMl: 'പഞ്ചാമൃതം', 
+            name: isML ? 'പഞ്ചാമൃതം' : 'Panchamrutham', 
+            price: '₹100', 
+            descEn: 'Divine five-ingredient sacred fruit nectar pleasing to Lord Subramanya.', 
+            descMl: 'അഞ്ച് മധുരവസ്തുക്കൾ ചേർത്തുള്ള വിശിഷ്ട നിവേദ്യം.',
+            description: isML ? 'അഞ്ച് മധുരവസ്തുക്കൾ ചേർത്തുള്ള വിശിഷ്ട നിവേദ്യം.' : 'Divine five-ingredient sacred fruit nectar pleasing to Lord Subramanya.', 
+            icon: <Tag size={20} />, 
+            image: '/images/offerings/palabhishekam.jpg', 
+            benefit: 'Divine 5-ingredient fruit offering for good health', 
+            benefitMl: 'ഉദരരോഗ ശമനം, ശാരീരിക സൗഖ്യം, ആയുർവർദ്ധന' 
+        },
+        { 
+            id: 8, 
+            category: 'abhishekam', 
+            nameEn: 'Bhasmabhishekam', 
+            nameMl: 'ഭസ്മാഭിഷേകം', 
+            name: isML ? 'ഭസ്മാഭിഷേകം' : 'Bhasmabhishekam', 
+            price: '₹50', 
+            descEn: 'Sacred ash anointing for spiritual purity, health, and serenity.', 
+            descMl: 'ആരോഗ്യത്തിനും ആത്മീയ ശുദ്ധിക്കും വേണ്ടിയുള്ള ഭസ്മാഭിഷേകം.',
+            description: isML ? 'ആരോഗ്യത്തിനും ആത്മീയ ശുദ്ധിക്കും വേണ്ടിയുള്ള ഭസ്മാഭിഷേകം.' : 'Sacred ash anointing for spiritual purity, health, and serenity.', 
+            icon: <Sparkles size={20} />, 
+            image: '/images/offerings/palabhishekam.jpg', 
+            benefit: 'Sacred ash shower on the sanctum idol', 
+            benefitMl: 'പാപമോചനം, ആത്മീയ ശുദ്ധി, ഭക്തിവർദ്ധന' 
+        },
+        { 
+            id: 9, 
+            category: 'abhishekam', 
+            nameEn: 'Palabhishekam', 
+            nameMl: 'പാലഭിഷേകം', 
+            name: isML ? 'പാലഭിഷേകം' : 'Palabhishekam', 
+            price: '₹50', 
+            descEn: 'Fresh cow milk bath ritual bringing cooling grace and soul purification.', 
+            descMl: 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമിക്ക് അതീവ പ്രീതികരമായ പവിത്ര പാലഭിഷേകം.',
+            description: isML ? 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമിക്ക് അതീവ പ്രീതികരമായ പവിത്ര പാലഭിഷേകം.' : 'Fresh cow milk bath ritual bringing cooling grace and soul purification.', 
+            icon: <Sparkles size={20} />, 
+            image: '/images/offerings/palabhishekam.jpg', 
+            benefit: 'Pure milk bath cleansing the soul and mind', 
+            benefitMl: 'മാനസിക ശാന്തി, സർവ്വദോഷ ശമനം, ഐശ്വര്യം' 
+        },
+        { 
+            id: 10, 
+            category: 'special', 
+            nameEn: 'Chuttu Vilakku', 
+            nameMl: 'ചുറ്റുവിളക്ക്', 
+            name: isML ? 'ചുറ്റുവിളക്ക്' : 'Chuttu Vilakku', 
+            price: '₹500', 
+            descEn: 'Lighting hundreds of oil lamps around the temple shrine for radiant prosperity.', 
+            descMl: 'ക്ഷേത്രത്തിനു ചുറ്റുമുള്ള ദീപങ്ങൾ തെളിയിച്ച് നടത്തുന്ന മംഗളകരമായ വഴിപാട്.',
+            description: isML ? 'ക്ഷേത്രത്തിനു ചുറ്റുമുള്ള ദീപങ്ങൾ തെളിയിച്ച് നടത്തുന്ന മംഗളകരമായ വഴിപാട്.' : 'Lighting hundreds of oil lamps around the temple shrine for radiant prosperity.', 
+            icon: <Sparkles size={20} />, 
+            image: '/images/offerings/archana_pushpanjali.jpg', 
+            benefit: 'Lighting up hundreds of oil lamps around the temple', 
+            benefitMl: 'കുടുംബ ഐശ്വര്യം, അന്ധകാര നിവാരണം, പ്രകാശമയ ജീവിതം' 
+        },
+        { 
+            id: 11, 
+            category: 'daily', 
+            nameEn: 'Vidyarambham', 
+            nameMl: 'വിദ്യാരംഭം', 
+            name: isML ? 'വിദ്യാരംഭം' : 'Vidyarambham', 
+            price: '₹200', 
+            descEn: 'Sacred initiation of children into the world of learning, wisdom, and arts.', 
+            descMl: 'കുട്ടികളെ അക്ഷരം എഴുത്തിക്കുന്ന പുണ്യകർമ്മം, ബുദ്ധിക്കും ഏകാഗ്രതയ്ക്കും.',
+            description: isML ? 'കുട്ടികളെ അക്ഷരം എഴുത്തിക്കുന്ന പുണ്യകർമ്മം, ബുദ്ധിക്കും ഏകാഗ്രതയ്ക്കും.' : 'Sacred initiation of children into the world of learning, wisdom, and arts.', 
+            icon: <Heart size={20} />, 
+            image: '/images/offerings/archana_pushpanjali.jpg', 
+            benefit: 'Blessings for children education and intellect', 
+            benefitMl: 'വിദ്യാഭിവൃദ്ധി, ബുദ്ധിശക്തി, ഏകാഗ്രത' 
+        },
+        { 
+            id: 12, 
+            category: 'special', 
+            nameEn: 'Annadanam', 
+            nameMl: 'അന്നദാനം', 
+            name: isML ? 'അന്നദാനം' : 'Annadanam', 
+            price: '₹1000+', 
+            descEn: 'Sacred food offering to all devotees — the supreme merit and charity.', 
+            descMl: 'ഭക്തർക്കായി നൽകുന്ന ഏറ്റവും പുണ്യമായ അന്നദാന സമർപ്പണം.',
+            description: isML ? 'ഭക്തർക്കായി നൽകുന്ന ഏറ്റവും പുണ്യമായ അന്നദാന സമർപ്പണം.' : 'Sacred food offering to all devotees — the supreme merit and charity.', 
+            icon: <Heart size={20} />, 
+            image: '/images/offerings/ganapathy_homam.jpg', 
+            benefit: 'Feeding hundreds of devotees — highest charity', 
+            benefitMl: 'മഹാപുണ്യം, അന്നദാതാവിന് സർവ്വസമൃദ്ധി' 
+        }
     ];
 
     const categories = [
@@ -62,7 +233,8 @@ const Offerings = () => {
         { key: 'daily', label: 'Daily Poojas', labelMl: 'നിത്യ പൂജകൾ' },
         { key: 'abhishekam', label: 'Abhishekam', labelMl: 'അഭിഷേകങ്ങൾ' },
         { key: 'homam', label: 'Homam & Fire', labelMl: 'ഹോമങ്ങൾ' },
-        { key: 'special', label: 'Special Vows', labelMl: 'പ്രത്യേക നേർച്ചകൾ' }
+        { key: 'special', label: 'Special Vows', labelMl: 'പ്രത്യേക നേർച്ചകൾ' },
+        { key: 'prasadam', label: 'Prasadam', labelMl: 'പ്രസാദം' }
     ];
 
     const filteredOfferings = activeFilter === 'all'
@@ -124,10 +296,15 @@ const Offerings = () => {
         const prasadamText = prasadamMode === 'postal' ? t('vazhipadu_booking.mode_postal') : t('vazhipadu_booking.mode_counter');
 
         const tokenNum = `TK-2026-${Math.floor(1000 + Math.random() * 9000)}`;
+        const resolvedOfferingName = isML 
+            ? (selectedOffering.nameMl || selectedOffering.name) 
+            : (selectedOffering.nameEn || selectedOffering.name);
+        const resolvedPrice = isML && selectedOffering.priceMl ? selectedOffering.priceMl : selectedOffering.price;
+
         setBookingReceipt({
             token: tokenNum,
-            offeringName: selectedOffering.name,
-            offeringPrice: selectedOffering.price,
+            offeringName: resolvedOfferingName,
+            offeringPrice: resolvedPrice,
             devoteeName: devoteeName.trim(),
             starText,
             poojaDate,
@@ -138,14 +315,12 @@ const Offerings = () => {
             timestamp: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })
         });
 
-        const effectivePrice = (isML && selectedOffering.priceMl) ? selectedOffering.priceMl : selectedOffering.price;
-
         const message = isML ? `സ്വാമി ശരണം 🙏
 തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിൽ താഴെ പറയുന്ന വഴിപാട് ബുക്ക് ചെയ്യാൻ ആഗ്രഹിക്കുന്നു:
 
 • *ടോക്കൺ നമ്പർ:* #${tokenNum}
-• *വഴിപാട്:* ${selectedOffering.name}
-• *തുക:* ${effectivePrice}
+• *വഴിപാട്:* ${resolvedOfferingName}
+• *തുക:* ${resolvedPrice}
 • *ഭക്തന്റെ പേര്:* ${devoteeName.trim()}
 • *ജന്മനക്ഷത്രം:* ${starText}
 • *പൂജാ തീയതി:* ${poojaDate}
@@ -158,8 +333,8 @@ const Offerings = () => {
 I would like to book the following Vazhipadu at Thurayilkunnu Sree Subramanya Swami Temple:
 
 • *Token Reference:* #${tokenNum}
-• *Offering:* ${selectedOffering.name}
-• *Price:* ${selectedOffering.price}
+• *Offering:* ${resolvedOfferingName}
+• *Price:* ${resolvedPrice}
 • *Devotee Name:* ${devoteeName.trim()}
 • *Janma Nakshatram:* ${starText}
 • *Pooja Date:* ${poojaDate}
@@ -247,8 +422,8 @@ Please confirm my booking. Thank you!`;
                                         <span className="price-tag">{isML && offering.priceMl ? offering.priceMl : offering.price}</span>
                                     </div>
                                     <div className="card-body">
-                                        <h3 className="offering-name">{offering.name}</h3>
-                                        <p className="offering-desc">{offering.description}</p>
+                                        <h3 className="offering-name">{isML ? (offering.nameMl || offering.name) : (offering.nameEn || offering.name)}</h3>
+                                        <p className="offering-desc">{isML ? (offering.descMl || offering.description) : (offering.descEn || offering.description)}</p>
                                     </div>
                                     <div className="card-action">
                                         <span>{isML ? 'വിവരങ്ങളും ബുക്കിംഗും' : 'Ritual & Booking Details'} <ChevronRight size={16} /></span>
@@ -382,8 +557,8 @@ Please confirm my booking. Thank you!`;
                                         </div>
                                         <div>
                                             <span className="modal-tag">{t('vazhipadu_booking.modal_title')}</span>
-                                            <h2>{selectedOffering.name}</h2>
-                                            <span className="modal-price">{selectedOffering.price}</span>
+                                            <h2>{isML ? (selectedOffering.nameMl || selectedOffering.name) : (selectedOffering.nameEn || selectedOffering.name)}</h2>
+                                            <span className="modal-price">{isML && selectedOffering.priceMl ? selectedOffering.priceMl : selectedOffering.price}</span>
                                         </div>
                                     </div>
 

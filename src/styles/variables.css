@@ -87,14 +87,26 @@ html.lang-ml .hero-title {
   padding: 0;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  overflow-x: clip;
+  /* Allow instant, natural mouse wheel scrolling without jitter or input delay */
+  scroll-behavior: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Smooth scroll only for hash/anchor link focus navigation, not mouse wheel */
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+}
 
 body {
   font-family: var(--font-body);
   background-color: var(--color-bg-main);
   color: var(--color-text-main);
   line-height: 1.65;
-  overflow-x: hidden;
+  overflow-x: clip;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {

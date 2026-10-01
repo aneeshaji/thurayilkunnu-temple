@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Heart, BookOpen, Award, Clock, MapPin, ChevronRight, Phone, Quote, Calendar, ArrowRight, ShieldCheck, Sun, Bell } from 'lucide-react';
+import { Sparkles, Heart, BookOpen, Award, Clock, MapPin, ChevronRight, Phone, Quote, Calendar, ArrowRight, ShieldCheck, Sun, Bell, Flame } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
@@ -225,32 +225,40 @@ const SectionHead = ({ eyebrow, title, desc, to, isML }) => (
 
 const Home = () => {
     const { t, i18n } = useTranslation();
-    const isML = i18n.language === 'ml';
+    const isML = i18n.language?.startsWith('ml');
 
     const offerings = [
         { 
             image: '/images/offerings/ganapathy_homam.jpg', 
             badge: isML ? 'നിത്യ ഹോമം' : 'Daily Homam',
             title: t('home.offerings.ganapathy_homam'), 
-            desc: t('home.offerings.ganapathy_homam_desc') 
+            desc: t('home.offerings.ganapathy_homam_desc'),
+            price: '₹350',
+            deity: isML ? 'ഗണപതി ഭഗവാൻ' : 'Lord Ganapathy'
         },
         { 
             image: '/images/offerings/archana_pushpanjali.jpg', 
             badge: isML ? 'നിത്യ അർച്ചന' : 'Daily Archana',
-            title: t('home.offerings.vazhipadu'), 
-            desc: t('home.offerings.vazhipadu_desc') 
+            title: t('home.offerings.pushpanjali'), 
+            desc: t('home.offerings.pushpanjali_desc'),
+            price: '₹20',
+            deity: isML ? 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമി' : 'Lord Murugan'
         },
         { 
             image: '/images/offerings/thulabharam.jpg', 
-            badge: isML ? 'വ്രത സമർപ്പണം' : 'Sacred Vow',
+            badge: isML ? 'വിശേഷാൽ നേർച്ച' : 'Sacred Vow',
             title: t('home.offerings.thulabharam'), 
-            desc: t('home.offerings.thulabharam_desc') 
+            desc: t('home.offerings.thulabharam_desc'),
+            price: isML ? 'നേർച്ച നിരക്ക്' : 'By Weight',
+            deity: isML ? 'ക്ഷേത്ര സന്നിധി' : 'Temple Sanctum'
         },
         { 
             image: '/images/offerings/palabhishekam.jpg', 
-            badge: isML ? 'വിശേഷാൽ അഭിഷേകം' : 'Special Bath',
-            title: t('home.offerings.special_poojas'), 
-            desc: t('home.offerings.special_poojas_desc') 
+            badge: isML ? 'വിശേഷാൽ അഭിഷേകം' : 'Holy Abhishekam',
+            title: t('home.offerings.palabhishekam'), 
+            desc: t('home.offerings.palabhishekam_desc'),
+            price: '₹150',
+            deity: isML ? 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമി' : 'Lord Murugan'
         }
     ];
 
@@ -262,7 +270,14 @@ const Home = () => {
     ];
 
     const festivals = [
-        { name: t('festivals_page.list.uthrattathi.name'), date: t('festivals_page.list.uthrattathi.date'), desc: t('festivals_page.list.uthrattathi.desc'), image: '/images/festivals/uthrattathi.jpg' },
+        { 
+            name: isML ? 'ഉത്രട്ടാതി തിരുമഹോത്സവം' : 'Annual Uthrattathi Mahotsavam', 
+            date: isML ? 'കുംഭം (ഫെബ്രുവരി - മാർച്ച്)' : 'Kumbham (February – March)', 
+            desc: isML 
+                ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ പ്രധാന വാർഷിക തിരുമഹോത്സവവും തുറയിൽക്കുന്ന് പൊങ്കാലയും.' 
+                : 'Grand 10-day annual temple festival and auspicious Thurayilkunnu Pongala.', 
+            image: '/images/festivals/uthrattathi.jpg' 
+        },
         { name: t('festivals_page.list.skanda_purana_yajnam.name'), date: t('festivals_page.list.skanda_purana_yajnam.date'), desc: t('festivals_page.list.skanda_purana_yajnam.desc'), image: '/images/festivals/skanda_sashti.jpg' },
         { name: t('festivals_page.list.thaipusam.name'), date: t('festivals_page.list.thaipusam.date'), desc: t('festivals_page.list.thaipusam.desc'), image: '/images/festivals/thaipusam.jpg' },
         { name: t('festivals_page.list.skanda.name'), date: t('festivals_page.list.skanda.date'), desc: t('festivals_page.list.skanda.desc'), image: '/images/festivals/skanda_sashti.jpg' },
@@ -359,20 +374,33 @@ const Home = () => {
                             >
                                 <div className="offering-image-holder">
                                     <img src={o.image} alt={o.title} loading="lazy" />
+                                    <div className="offering-image-gradient" />
                                     {o.badge && (
                                         <span className="offering-type-badge">
                                             <Sparkles size={11} />
                                             {o.badge}
                                         </span>
                                     )}
+                                    {o.price && (
+                                        <span className="offering-price-pill">
+                                            {o.price}
+                                        </span>
+                                    )}
                                 </div>
                                 <div className="offering-info">
-                                    <h3>{o.title}</h3>
-                                    <p>{o.desc}</p>
-                                    <Link to="/offerings" className="offering-card-btn">
-                                        <span>{t('home.offerings.card_link')}</span>
-                                        <ChevronRight size={15} />
-                                    </Link>
+                                    {o.deity && (
+                                        <span className="offering-deity-tag">
+                                            ✦ {o.deity}
+                                        </span>
+                                    )}
+                                    <h3 className="offering-title">{o.title}</h3>
+                                    <p className="offering-desc">{o.desc}</p>
+                                    <div className="offering-action-row">
+                                        <Link to="/offerings" className="offering-card-btn">
+                                            <span>{t('home.offerings.card_link')}</span>
+                                            <ChevronRight size={15} />
+                                        </Link>
+                                    </div>
                                 </div>
                             </motion.article>
                         ))}

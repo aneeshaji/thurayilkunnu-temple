@@ -47,15 +47,20 @@ const resources = {
                     title: "Temple Offerings",
                     desc: "Participate in the divine rituals of the temple.",
                     view_all: "View All Offerings",
-                    card_link: "Learn More",
+                    card_link: "Book Offering",
+                    book_offering: "Book Offering",
                     ganapathy_homam: "Ganapathy Homam",
                     ganapathy_homam_desc: "Sacred fire ritual invoking divine blessings of Lord Ganapathy for prosperity and obstacle removal.",
-                    vazhipadu: "Vazhipadu",
-                    vazhipadu_desc: "Devotional offerings made to the deity as an act of gratitude and surrender to the divine.",
+                    pushpanjali: "Archana / Pushpanjali",
+                    pushpanjali_desc: "Sacred floral archana invoking divine grace for mental peace, health and family prosperity.",
+                    vazhipadu: "Archana / Pushpanjali",
+                    vazhipadu_desc: "Sacred floral archana invoking divine grace for mental peace, health and family prosperity.",
                     thulabharam: "Thulabharam",
-                    thulabharam_desc: "A ritual of weighing a devotee against offerings dedicated entirely to the deity.",
-                    special_poojas: "Special Poojas",
-                    special_poojas_desc: "Elaborate pujas conducted on auspicious days and festivals for special divine grace."
+                    thulabharam_desc: "Sacred offering of one's weight in jaggery, banana or coconut in fulfilment of vows.",
+                    palabhishekam: "Palabhishekam",
+                    palabhishekam_desc: "Holy milk oblation to Lord Murugan for blessings, spiritual purity and inner peace.",
+                    special_poojas: "Palabhishekam",
+                    special_poojas_desc: "Holy milk oblation to Lord Murugan for blessings, spiritual purity and inner peace."
                 },
                 closing: {
                     card_badge: "Get In Touch",
@@ -178,9 +183,9 @@ const resources = {
                 intro: "The temple comes alive during festivals, drawing thousands of devotees to witness the grandeur and receive blessings.",
                 list: {
                     uthrattathi: {
-                        name: "Uthrattathi Mahotsavam",
-                        date: "Chingam (August / September)",
-                        desc: "The grand annual Uthrattathi festival celebrated with special tantric rituals, grand poojas, Panchavadyam, and radiant deeparadhana."
+                        name: "Uthrattathi Mahotsavam 2026",
+                        date: "February 11 to 20, 2026 (1201 Makaram 28 – Kumbham 8)",
+                        desc: "The 10-day grand annual Uthrattathi festival celebrated with Kodiyettu, Thanka Anki & Thanka Vel Ratha Ghoshayathra, Kathakali, Kavadi Abhishekam, Thurayilkunnu Pongala (Feb 19), Pallivetta, Panchavadyam, Pakalkkazhcha, and Arattu."
                     },
                     skanda_purana_yajnam: {
                         name: "Skanda Purana Yajnam",
@@ -390,12 +395,12 @@ const resources = {
                 title: "Temple Administration & Committee",
                 subtitle: "Dedicated spiritual custodians, office bearers, and committee members guiding the temple affairs",
                 spiritual_title: "Spiritual Custodians (തന്ത്രി & മേൽശാന്തി)",
-                tantri_role: "Thantri (Chief High Priest / Ritual Custodian)",
-                tantri_name: "Brahmasree Kandararu Maheswararu Thantrikal (Family Tradition)",
-                tantri_desc: "Supreme ritual authority governing the Vedic & Tantric rites, Prathishta rituals, and festival flag-hoisting.",
-                melsanthi_role: "Melsanthi (Head Priest)",
-                melsanthi_name: "Sreedharan Namboothiri",
-                melsanthi_desc: "Chief sanctum priest conducting daily Nirmalyam, Abhishekam, Ucha Pooja, and Deeparadhana rituals.",
+                tantri_role: "Temple Thantri (Chief High Priest / Ritual Custodian)",
+                tantri_name: "Brahmasree V.P. Unnikrishnan",
+                tantri_desc: "Supreme ritual authority governing Vedic & Tantric rites, Mahotsavam Kodiyettu, Prathishta rituals, and festival flag-hoisting.",
+                melsanthi_role: "Temple Melshanthi (Head Priest)",
+                melsanthi_name: "Sri Anil Gokulam Shanthi",
+                melsanthi_desc: "Chief sanctum priest conducting daily Nirmalyam, Abhishekam, Ucha Pooja, and Deeparadhana rituals at the holy sanctum.",
                 committee_title: "Temple Administrative Committee",
                 committee_title_ml: "ക്ഷേത്രഭരണ സമിതി",
                 committee_subtitle: "The elected administrative body governing temple rituals, festivals, community service, and development.",
@@ -443,7 +448,7 @@ const resources = {
                     support: "Devotee Support"
                 },
                 reach_us: "Reach Us",
-                address: "Thurayilkunnu, Maru: South, Karunagappally, Kollam, Kerala - 690573",
+                address: "Thurayilkunnu, Karunagappally, Kollam, Kerala - 690573",
                 all_rights: "All rights reserved.",
                 developed_by: "Developed and maintained by TechnoByteInnovations"
             }
@@ -492,15 +497,20 @@ const resources = {
                     title: "ക്ഷേത്ര വഴിപാടുകൾ",
                     desc: "ക്ഷേത്രത്തിലെ ദിവ്യമായ അനുഷ്ഠാനങ്ങളിൽ പങ്കുചേരുക.",
                     view_all: "എല്ലാ വഴിപാടുകളും കാണുക",
-                    card_link: "കൂടുതലറിയാൻ",
+                    card_link: "വഴിപാട് സമർപ്പിക്കുക",
+                    book_offering: "വഴിപാട് സമർപ്പിക്കുക",
                     ganapathy_homam: "ഗണപതി ഹോമം",
                     ganapathy_homam_desc: "ഐശ്വര്യത്തിനും തടസ്സനിവാരണത്തിനും ഭഗവാൻ ഗണപതിയുടെ ദിവ്യ അനുഗ്രഹം തേടിക്കൊണ്ടുള്ള പുണ്യ ഹോമം.",
-                    vazhipadu: "വഴിപാട്",
-                    vazhipadu_desc: "ദൈവത്തിനു കൃതജ്ഞതയും ഭക്തിയും അർപ്പിക്കാൻ ഭക്തർ നടത്തുന്ന ദേവ നിവേദ്യങ്ങൾ.",
+                    pushpanjali: "അർച്ചന / പുഷ്പാഞ്ജലി",
+                    pushpanjali_desc: "മനോശാന്തിക്കും കുടുംബൈശ്വര്യത്തിനുമായി സമർപ്പിക്കുന്ന പുണ്യ പുഷ്പാർച്ചന.",
+                    vazhipadu: "അർച്ചന / പുഷ്പാഞ്ജലി",
+                    vazhipadu_desc: "മനോശാന്തിക്കും കുടുംബൈശ്വര്യത്തിനുമായി സമർപ്പിക്കുന്ന പുണ്യ പുഷ്പാർച്ചന.",
                     thulabharam: "തുലാഭാരം",
-                    thulabharam_desc: "ഭക്തന്റെ ഭാരം കണക്കാക്കി ദേവന് സമർപ്പിക്കുന്ന അനുഷ്ഠാനം.",
-                    special_poojas: "പ്രത്യേക പൂജകൾ",
-                    special_poojas_desc: "ശുഭദിനങ്ങളിലും ഉത്സവങ്ങളിലും പ്രത്യേക ദൈവകൃപയ്ക്കായി നടത്തുന്ന വിശദമായ പൂജകൾ."
+                    thulabharam_desc: "ശർക്കര, കദളിപ്പഴം തുടങ്ങിയ വസ്തുക്കൾ തൂക്കി നൽകുന്ന പുണ്യ നേർച്ച.",
+                    palabhishekam: "പാലഭിഷേകം",
+                    palabhishekam_desc: "സുബ്രഹ്മണ്യസ്വാമിക്ക് ഭക്തിസാന്ദ്രമായി സമർപ്പിക്കുന്ന പവിത്രമായ പാലഭിഷേകം.",
+                    special_poojas: "പാലഭിഷേകം",
+                    special_poojas_desc: "സുബ്രഹ്മണ്യസ്വാമിക്ക് ഭക്തിസാന്ദ്രമായി സമർപ്പിക്കുന്ന പവിത്രമായ പാലഭിഷേകം."
                 },
                 closing: {
                     card_badge: "ബന്ധപ്പെടുക",
@@ -623,9 +633,9 @@ const resources = {
                 intro: "ഉത്സവകാലങ്ങളിൽ ക്ഷേത്രം അതിമനോഹരമായി മാറുന്നു. ആയിരക്കണക്കിന് ഭക്തർ ഈ വിശേഷങ്ങൾക്ക് സാക്ഷിയാകാനും അനുഗ്രഹം തേടാനും എത്തുന്നു.",
                 list: {
                     uthrattathi: {
-                        name: "ഉത്രട്ടാതി മഹോത്സവം",
-                        date: "ചിങ്ങം (ആഗസ്റ്റ് / സെപ്റ്റംബർ)",
-                        desc: "ക്ഷേത്രത്തിലെ അതീവ പ്രാധാന്യമുള്ള വാർഷിക ഉത്രട്ടാതി മഹോത്സവം. തന്ത്രിമുഖ്യരുടെ കാർമ്മികത്വത്തിൽ പ്രത്യേക പൂജകൾ, പഞ്ചവാദ്യം, മേളപ്പെരുക്കം, ദീപാരാധന എന്നിവയോടെ ഭക്തിസാന്ദ്രമായി കൊണ്ടാടുന്നു."
+                        name: "ഉത്രട്ടാതി മഹോത്സവം 2026",
+                        date: "2026 ഫെബ്രുവരി 11 മുതൽ 20 വരെ (1201 മകരം 28 - കുംഭം 8)",
+                        desc: "തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ 10 ദിവസം നീണ്ടുനിൽക്കുന്ന ഉത്രട്ടാതി മഹോത്സവം. തൃക്കൊടിയേറ്റ്, തങ്കഅങ്കി-തങ്കവേൽ രഥഘോഷയാത്രകൾ, കഥകളി, കാവടി അഭിഷേകം, തുറയിൽക്കുന്ന് പൊങ്കാല (ഫെബ്രുവരി 19), പള്ളിവേട്ട, പഞ്ചവാദ്യം, ഗംഭീര പകൽക്കാഴ്ച, തിരുആറാട്ട് എന്നിവയോടെ ഭക്തിസാന്ദ്രമായി കൊണ്ടാടുന്നു."
                     },
                     skanda_purana_yajnam: {
                         name: "സ്കന്ദ പുരാണ യജ്ഞം",
@@ -835,12 +845,12 @@ const resources = {
                 title: "ക്ഷേത്ര ഭരണസമിതി",
                 subtitle: "ക്ഷേത്രത്തിന്റെ ആചാരാനുഷ്ഠാനങ്ങളും ഭരണനിർവ്വഹണവും വികസന പ്രവർത്തനങ്ങളും ഏകോപിപ്പിക്കുന്ന സമിതി അംഗങ്ങൾ",
                 spiritual_title: "താന്ത്രിക & ആചാര്യ സ്ഥാനങ്ങൾ",
-                tantri_role: "തന്ത്രി (മുഖ്യ താന്ത്രികാചാര്യൻ)",
-                tantri_name: "ബ്രഹ്മശ്രീ കണ്ഠരര് മഹേശ്വരര് താന്ത്രികൾ (കുടുംബ പാരമ്പര്യം)",
-                tantri_desc: "ക്ഷേത്രത്തിലെ വൈദിക-താന്ത്രിക പൂജാവിധികളും പ്രതിഷ്ഠാ ദിനാചരണങ്ങളും നിയന്ത്രിക്കുന്ന പരമോന്നത ആചാര്യൻ.",
-                melsanthi_role: "മേൽശാന്തി (മുഖ്യ പൂജാരി)",
-                melsanthi_name: "ശ്രീധരൻ നമ്പൂതിരി",
-                melsanthi_desc: "നിത്യേനയുള്ള നിർമ്മാല്യം, അഭിഷേകങ്ങൾ, ഉച്ചപൂജ, സന്ധ്യാ ദീപാരാധന എന്നിവ നിർവ്വഹിക്കുന്ന മുഖ്യ പൂജാരി.",
+                tantri_role: "ക്ഷേത്രം തന്ത്രി",
+                tantri_name: "ബ്രഹ്മശ്രീ വി.പി. ഉണ്ണികൃഷ്ണൻ",
+                tantri_desc: "ക്ഷേത്രത്തിലെ വൈദിക-താന്ത്രിക പൂജാവിധികളും പ്രതിഷ്ഠാ ദിനാചരണങ്ങളും കൊടിയേറ്റ് ഉൾപ്പെടെയുള്ള ഉത്സവ ചടങ്ങുകളും നിയന്ത്രിക്കുന്ന പരമോന്നത ആചാര്യൻ.",
+                melsanthi_role: "ക്ഷേത്രം മേൽശാന്തി",
+                melsanthi_name: "ശ്രീ അനിൽ ഗോകുലം ശാന്തി",
+                melsanthi_desc: "നിത്യേനയുള്ള നിർമ്മാല്യം, അഭിഷേകങ്ങൾ, ഉച്ചപൂജ, സന്ധ്യാ ദീപാരാധന, പ്രത്യേക അർച്ചനകൾ എന്നിവ ശ്രീകോവിലിൽ ഭക്തിപൂർവ്വം നിർവ്വഹിക്കുന്ന മുഖ്യ ശാന്തി.",
                 committee_title: "ക്ഷേത്രഭരണ സമിതി",
                 committee_title_ml: "ക്ഷേത്രഭരണ സമിതി",
                 committee_subtitle: "ക്ഷേത്രത്തിന്റെ നിത്യനിദാനങ്ങളും ഉത്സവാദികളും വികസന കാര്യങ്ങളും കാര്യക്ഷമമായി നയിക്കുന്ന ഭരണസമിതി.",
@@ -888,7 +898,7 @@ const resources = {
                     support: "ഭക്തർക്കുള്ള സഹായം"
                 },
                 reach_us: "ബന്ധപ്പെടുക",
-                address: "തുറയിൽകുന്ന്, മരു: സൗത്ത്, കരുനാഗപ്പള്ളി, കൊല്ലം, കേരളം - 690573",
+                address: "തുറയിൽകുന്ന്, കരുനാഗപ്പള്ളി, കൊല്ലം, കേരളം - 690573",
                 all_rights: "എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.",
                 developed_by: "TechnoByteInnovations വികസിപ്പിക്കുകയും പരിപാലിക്കുകയും ചെയ്യുന്നു"
             }

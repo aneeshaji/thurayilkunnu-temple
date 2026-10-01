@@ -489,13 +489,49 @@
 
 /* ── Mobile Optimization ── */
 @media (max-width: 640px) {
-    .notice-banner-container {
-        padding: 6px 1rem;
-        gap: 8px;
+    .notice-banner-strip {
+        width: 100%;
+        max-width: 100vw;
+        overflow: hidden;
     }
 
-    .ticker-date-chip {
-        display: none;
+    .notice-banner-container {
+        padding: 5px 10px;
+        gap: 8px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .notice-banner-badge {
+        padding: 2px 7px;
+        font-size: 0.68rem;
+        gap: 4px;
+        flex-shrink: 0;
+    }
+
+    .notice-banner-ticker {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .ticker-headline {
+        font-size: 0.76rem;
+    }
+
+    .ticker-date-chip,
+    .notice-view-all-btn {
+        display: none !important;
+    }
+
+    .notice-banner-actions {
+        gap: 4px;
+        flex-shrink: 0;
+    }
+
+    .notice-dismiss-btn {
+        padding: 2px;
     }
 
     .notice-modal-card {

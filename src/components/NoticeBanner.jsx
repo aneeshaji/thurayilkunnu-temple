@@ -8,24 +8,6 @@ import '../styles/NoticeBoard.css';
 
 const TEMPLE_NOTICES = [
     {
-        id: 'skanda-sashti-2026',
-        tag_en: 'Upcoming Festival',
-        tag_ml: 'വിശേഷാൽ ഉത്സവം',
-        tagType: 'gold',
-        urgent: true,
-        date_en: 'Nov 2026',
-        date_ml: 'നവംബർ 2026',
-        title_en: 'Skanda Sashti Mahotsavam & Special Palabhishekam',
-        title_ml: 'സ്കന്ദ ഷഷ്ഠി മഹോത്സവവും വിശേഷാൽ അഭിഷേകങ്ങളും',
-        desc_en: 'Devotees observe 6-day fasting for Lord Subramanya. Special Kavadi processions, Palabhishekam & Annadanam bookings are now open at the temple office.',
-        desc_ml: 'ഭഗവാൻ സുബ്രഹ്മണ്യന്റെ തിരുമുമ്പിൽ 6 ദിവസത്തെ വ്രതാനുഷ്ഠാനങ്ങളും വിശേഷാൽ കാവടിയാട്ടവും നടക്കുന്നു. പാലഭിഷേകം, അന്നദാനം എന്നിവ ബുക്കിംഗ് ആരംഭിച്ചു.',
-        timings_en: 'Morning Nirmalyam 05:00 AM & Deeparadhana 06:45 PM',
-        timings_ml: 'നിർമ്മാല്യ ദർശനം രാവിലെ 05:00 & ദീപാരാധന വൈകിട്ട് 06:45',
-        actionLink: '/offerings',
-        actionText_en: 'Book Pooja Online',
-        actionText_ml: 'പൂജ ബുക്ക് ചെയ്യുക'
-    },
-    {
         id: 'pradosham-shiva',
         tag_en: 'Monthly Pooja',
         tag_ml: 'മാസപൂജ',

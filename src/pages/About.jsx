@@ -36,7 +36,7 @@ import {
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
-import { committeeData } from '../data/committeeData';
+import { committeeData, melshanthiData, tantriData } from '../data/committeeData';
 import '../styles/About.css';
 
 /* ---- ANIMATION VARIANTS ---- */
@@ -138,6 +138,7 @@ const About = () => {
     const { t, i18n } = useTranslation();
     const isML = i18n.language === 'ml';
     const [isPosterModalOpen, setIsPosterModalOpen] = useState(false);
+    const [isMelshanthiModalOpen, setIsMelshanthiModalOpen] = useState(false);
 
     return (
         <div className="about-page">
@@ -485,18 +486,71 @@ const About = () => {
                     </div>
 
                     <div className="spiritual-heads-grid">
-                        <motion.div className="spiritual-head-card royal" variants={fadeInUp} whileHover={{ y: -5 }}>
-                            <div className="spiritual-card-badge">{isML ? 'തന്ത്രി' : 'Tantric Head'}</div>
-                            <h4 className="spiritual-role">{t('administration.tantri_role')}</h4>
-                            <h3 className="spiritual-name">{t('administration.tantri_name')}</h3>
-                            <p className="spiritual-desc">{t('administration.tantri_desc')}</p>
+                        {/* Tantri Card */}
+                        <motion.div className="spiritual-head-card tantri-card" variants={fadeInUp} whileHover={{ y: -5 }}>
+                            <div className="spiritual-card-topbar">
+                                <div className="spiritual-card-badge">
+                                    <Sparkles size={13} />
+                                    <span>{isML ? 'തന്ത്രി' : 'Tantric Head'}</span>
+                                </div>
+                            </div>
+                            <div className="spiritual-content-flex">
+                                <div className="spiritual-avatar-box">
+                                    <img
+                                        src="/images/committee/tantri.jpg"
+                                        alt={isML ? 'ബ്രഹ്മശ്രീ വി.പി. ഉണ്ണികൃഷ്ണൻ — ക്ഷേത്രം തന്ത്രി' : 'Brahmasree V.P. Unnikrishnan — Temple Thantri'}
+                                        className="spiritual-avatar-img"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div className="spiritual-info">
+                                    <h4 className="spiritual-role">{t('administration.tantri_role')}</h4>
+                                    <h3 className="spiritual-name">{t('administration.tantri_name')}</h3>
+                                    <p className="spiritual-desc">{t('administration.tantri_desc')}</p>
+                                </div>
+                            </div>
                         </motion.div>
 
-                        <motion.div className="spiritual-head-card" variants={fadeInUp} whileHover={{ y: -5 }}>
-                            <div className="spiritual-card-badge gold">{isML ? 'മേൽശാന്തി' : 'Chief Sanctum Priest'}</div>
-                            <h4 className="spiritual-role">{t('administration.melsanthi_role')}</h4>
-                            <h3 className="spiritual-name">{t('administration.melsanthi_name')}</h3>
-                            <p className="spiritual-desc">{t('administration.melsanthi_desc')}</p>
+                        {/* Melshanthi Card — Sri Anil Gokulam Shanthi */}
+                        <motion.div className="spiritual-head-card melsanthi-card" variants={fadeInUp} whileHover={{ y: -5 }}>
+                            <div className="spiritual-card-topbar">
+                                <div className="spiritual-card-badge gold">
+                                    <Sparkles size={13} />
+                                    <span>{isML ? 'ക്ഷേത്രം മേൽശാന്തി' : 'Temple Melshanthi'}</span>
+                                </div>
+                                <button
+                                    type="button"
+                                    className="spiritual-view-photo-btn"
+                                    onClick={() => setIsMelshanthiModalOpen(true)}
+                                    title={isML ? 'പൂർണ്ണ ചിത്രം കാണുക' : 'View Full Portrait'}
+                                >
+                                    <Eye size={13} />
+                                    <span>{isML ? 'ഫോട്ടോ' : 'Photo'}</span>
+                                </button>
+                            </div>
+                            <div className="spiritual-content-flex">
+                                <div 
+                                    className="spiritual-avatar-box" 
+                                    onClick={() => setIsMelshanthiModalOpen(true)}
+                                    title={isML ? 'വലുതായി കാണാൻ ക്ലിക്ക് ചെയ്യുക' : 'Click to view full photo'}
+                                >
+                                    <img
+                                        src="/images/committee/melshanthi.jpg"
+                                        alt={isML ? 'ശ്രീ അനിൽ ഗോകുലം ശാന്തി — ക്ഷേത്രം മേൽശാന്തി' : 'Sri Anil Gokulam Shanthi — Temple Melshanthi'}
+                                        className="spiritual-avatar-img"
+                                        loading="lazy"
+                                    />
+                                    <span className="spiritual-zoom-pill">
+                                        <Eye size={11} />
+                                        <span>{isML ? 'വലുതാക്കുക' : 'Zoom'}</span>
+                                    </span>
+                                </div>
+                                <div className="spiritual-info">
+                                    <h4 className="spiritual-role">{t('administration.melsanthi_role')}</h4>
+                                    <h3 className="spiritual-name">{t('administration.melsanthi_name')}</h3>
+                                    <p className="spiritual-desc">{t('administration.melsanthi_desc')}</p>
+                                </div>
+                            </div>
                         </motion.div>
                     </div>
 
@@ -701,6 +755,58 @@ const About = () => {
                         </div>
                     )}
 
+                    {/* Melshanthi Full Portrait Lightbox Modal */}
+                    {isMelshanthiModalOpen && (
+                        <div className="poster-modal-overlay" onClick={() => setIsMelshanthiModalOpen(false)}>
+                            <div className="poster-modal-dialog" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '620px' }}>
+                                <div className="poster-modal-header">
+                                    <div>
+                                        <h3 className="poster-modal-title">
+                                            {isML ? 'ശ്രീ അനിൽ ഗോകുലം ശാന്തി' : 'Sri Anil Gokulam Shanthi'}
+                                        </h3>
+                                        <p className="poster-modal-sub">
+                                            {isML ? 'തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം മേൽശാന്തി' : 'Temple Melshanthi (Head Priest), Thurayilkunnu Temple'}
+                                        </p>
+                                    </div>
+                                    <button 
+                                        type="button" 
+                                        className="poster-modal-close"
+                                        onClick={() => setIsMelshanthiModalOpen(false)}
+                                        aria-label="Close"
+                                    >
+                                        <X size={20} />
+                                    </button>
+                                </div>
+                                <div className="poster-modal-body" style={{ textAlign: 'center', background: '#0C0A09', padding: '1.25rem' }}>
+                                    <img 
+                                        src="/images/committee/melshanthi_full.jpg" 
+                                        alt={isML ? 'ക്ഷേത്രം മേൽശാന്തി ശ്രീ അനിൽ ഗോകുലം ശാന്തി' : 'Temple Melshanthi Sri Anil Gokulam Shanthi'} 
+                                        className="poster-modal-img" 
+                                        style={{ maxHeight: '72vh', width: 'auto', objectFit: 'contain', borderRadius: '12px', boxShadow: '0 8px 30px rgba(0,0,0,0.6)' }}
+                                    />
+                                </div>
+                                <div className="poster-modal-footer">
+                                    <a 
+                                        href="/images/committee/melshanthi_full.jpg" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className="poster-download-btn"
+                                    >
+                                        <ExternalLink size={15} />
+                                        <span>{isML ? 'പൂർണ്ണ രൂപത്തിൽ തുറക്കുക' : 'Open Full Image'}</span>
+                                    </a>
+                                    <button 
+                                        type="button" 
+                                        className="poster-close-action"
+                                        onClick={() => setIsMelshanthiModalOpen(false)}
+                                    >
+                                        {isML ? 'അടയ്ക്കുക' : 'Close'}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
                     {/* Trust Registration & Office Hours Info Strip */}
                     <motion.div className="trust-legal-card" variants={fadeInUp}>
                         <div className="trust-legal-head">
@@ -790,11 +896,11 @@ const About = () => {
                         <p>{t('about.cta_desc')}</p>
                         <div className="cta-buttons" style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
                             <Link
-                                to="/donations"
+                                to="/offerings"
                                 className="btn-solid"
                                 style={{ background: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)', color: '#FFFFFF' }}
                             >
-                                <Heart size={18} /> {t('navbar.donations')}
+                                <Flame size={18} /> {t('navbar.online_pooja')}
                             </Link>
                             <Link
                                 to="/contact"

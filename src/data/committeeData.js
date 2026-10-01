@@ -1,7 +1,30 @@
 /**
- * Official Temple Administrative Committee Data (ക്ഷേത്രഭരണ സമിതി)
- * Extracted from the official administration announcement.
+ * Official Temple Administrative Committee & Spiritual Custodians Data
+ * Extracted from official temple notices & administration circulars.
  */
+
+export const tantriData = {
+    id: 'unnikrishnan',
+    designationEn: 'Temple Thantri (Chief High Priest / Ritual Custodian)',
+    designationMl: 'ക്ഷേത്രം തന്ത്രി',
+    nameEn: 'Brahmasree V.P. Unnikrishnan',
+    nameMl: 'ബ്രഹ്മശ്രീ വി.പി. ഉണ്ണികൃഷ്ണൻ',
+    image: '/images/committee/tantri.jpg',
+    descriptionEn: 'Supreme ritual authority governing Vedic & Tantric rites, Mahotsavam Kodiyettu, Prathishta rituals, and festival flag-hoisting.',
+    descriptionMl: 'ക്ഷേത്രത്തിലെ വൈദിക-താന്ത്രിക പൂജാവിധികളും പ്രതിഷ്ഠാ ദിനാചരണങ്ങളും കൊടിയേറ്റ് ഉൾപ്പെടെയുള്ള ഉത്സവ ചടങ്ങുകളും നിയന്ത്രിക്കുന്ന പരമോന്നത ആചാര്യൻ.'
+};
+
+export const melshanthiData = {
+    id: 'anil-gokulam',
+    designationEn: 'Temple Melshanthi (Head Priest)',
+    designationMl: 'ക്ഷേത്രം മേൽശാന്തി',
+    nameEn: 'Sri Anil Gokulam Shanthi',
+    nameMl: 'ശ്രീ അനിൽ ഗോകുലം ശാന്തി',
+    image: '/images/committee/melshanthi.jpg',
+    imageFull: '/images/committee/melshanthi_full.jpg',
+    descriptionEn: 'Chief sanctum priest conducting daily Nirmalyam, Abhishekam, Ucha Pooja, Deeparadhana, and special archana rituals at the holy sanctum of Lord Subramanya.',
+    descriptionMl: 'നിത്യേനയുള്ള നിർമ്മാല്യം, അഭിഷേകങ്ങൾ, ഉച്ചപൂജ, സന്ധ്യാ ദീപാരാധന, പ്രത്യേക അർച്ചനകൾ എന്നിവ ശ്രീകോവിലിൽ ഭക്തിപൂർവ്വം നിർവ്വഹിക്കുന്ന മുഖ്യ ശാന്തി.'
+};
 
 export const committeeData = {
     officeBearers: [

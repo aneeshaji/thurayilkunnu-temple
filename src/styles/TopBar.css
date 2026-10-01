@@ -1,19 +1,19 @@
-/* =============================================
-   TOP BAR — MODERN AUTHENTIC TEAKWOOD RIBBON
-   ============================================= */
+/* ========================================================
+   TOP BAR — LUXURY AUTHENTIC TEMPLE RIBBON
+   ======================================================== */
 
 .top-bar {
     position: relative;
     z-index: 1002;
-    background: #0C0A09;
+    background: #0D0B0A;
     color: rgba(255, 255, 255, 0.90);
-    height: 42px;
+    height: 40px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid rgba(217, 119, 6, 0.25);
-    font-size: 0.77rem;
-    font-family: 'Outfit', sans-serif;
-    letter-spacing: 0.3px;
+    border-bottom: 1px solid rgba(217, 119, 6, 0.24);
+    font-size: 0.76rem;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: 0.2px;
 }
 
 .top-bar-container {
@@ -23,39 +23,71 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 2.5rem;
+    padding: 0 clamp(1rem, 2vw, 2.2rem);
+    height: 100%;
 }
 
-.top-bar-left, .top-bar-right {
+.top-bar-left,
+.top-bar-right {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.85rem;
+    flex-shrink: 0;
 }
 
-/* ── LIVE STATUS BADGE ── */
+/* ── LIVE DARSHAN STATUS PILL (Guaranteed Single-Line & Non-Overflowing) ── */
 .top-bar-badge {
+    height: 24px;
+    line-height: 22px;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 3px 10px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
+    padding: 0 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
+.top-bar-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+/* Live Open State */
 .top-bar-badge--open {
-    background: rgba(16, 185, 129, 0.14);
+    background: rgba(16, 185, 129, 0.12);
     border: 1px solid rgba(16, 185, 129, 0.40);
+    color: #6EE7B7;
 }
 
+.top-bar-badge--open:hover {
+    background: rgba(16, 185, 129, 0.20);
+    border-color: #34D399;
+}
+
+/* Live Closed State */
 .top-bar-badge--closed {
-    background: rgba(239, 68, 68, 0.14);
+    background: rgba(239, 68, 68, 0.12);
     border: 1px solid rgba(239, 68, 68, 0.40);
+    color: #FCA5A5;
+}
+
+.top-bar-badge--closed:hover {
+    background: rgba(239, 68, 68, 0.20);
+    border-color: #F87171;
 }
 
 .live-status-dot {
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
+    min-width: 6px;
+    min-height: 6px;
     border-radius: 50%;
+    flex-shrink: 0;
 }
 
 .live-status-dot.dot--open {
@@ -67,45 +99,99 @@
 .live-status-dot.dot--closed {
     background: #EF4444;
     box-shadow: 0 0 8px #EF4444;
-    animation: livePulseClosed 2s infinite ease-in-out;
+    animation: livePulseClosed 2.2s infinite ease-in-out;
 }
 
 @keyframes livePulseOpen {
     0%, 100% { opacity: 1; transform: scale(1); }
-    50%       { opacity: 0.4; transform: scale(1.3); }
+    50%       { opacity: 0.45; transform: scale(1.35); }
 }
 
 @keyframes livePulseClosed {
-    0%, 100% { opacity: 1; transform: scale(1); }
+    0%, 100% { opacity: 0.95; transform: scale(1); }
     50%       { opacity: 0.4; transform: scale(1.3); }
 }
 
 .live-status-text {
-    font-size: 0.7rem;
+    font-size: 0.70rem;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+    display: inline-block;
+    line-height: 1;
 }
 
-.live-status-text.text--open {
-    color: #34D399;
+/* Vertical Subtle Dividers */
+.top-bar-vdivider {
+    width: 1px;
+    height: 14px;
+    background: rgba(217, 119, 6, 0.28);
+    flex-shrink: 0;
 }
 
-.live-status-text.text--closed {
-    color: #F87171;
-}
-
+/* ── LOCATION ITEM ── */
 .top-bar-item {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: rgba(255, 255, 255, 0.78);
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
+    font-size: 0.76rem;
+    font-weight: 500;
+    white-space: nowrap;
     transition: color 0.2s ease;
 }
 
-.top-bar-item:hover { color: #FCD34D; }
+.top-bar-item:hover {
+    color: #FCD34D;
+}
 
+.location-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-flex;
+    align-items: center;
+}
+
+.location-text {
+    white-space: nowrap;
+}
+
+.gold-icon {
+    color: #F59E0B;
+    flex-shrink: 0;
+}
+
+/* ── CENTER SACRED POOJA TIMINGS ── */
+.top-bar-center {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(217, 119, 6, 0.25);
+    padding: 3px 14px;
+    border-radius: 999px;
+    color: #FDE68A;
+    font-size: 0.72rem;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.3px;
+}
+
+.ticker-clock-icon {
+    color: #F59E0B;
+    flex-shrink: 0;
+}
+
+.ticker-text {
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+/* ── RIGHT HELPLINE & LANGUAGE TOGGLE ── */
 .top-phone-group {
     display: flex;
     align-items: center;
@@ -114,117 +200,160 @@
     flex-shrink: 0;
 }
 
-.top-phone-sep {
-    color: rgba(217, 119, 6, 0.45);
-    font-size: 0.76rem;
-}
-
-.gold-icon { color: #F59E0B; }
-
-/* ── CENTER SACRED TICKER ── */
-.top-bar-center {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #FCD34D;
-    font-size: 0.74rem;
+.phone-item {
     font-weight: 600;
-    background: rgba(217, 119, 6, 0.10);
-    padding: 3px 14px;
-    border-radius: 30px;
-    border: 1px solid rgba(217, 119, 6, 0.20);
+    letter-spacing: 0.4px;
 }
 
-.sacred-sparkle { color: #F59E0B; animation: floatSoft 4s infinite ease-in-out; }
-.ticker-text { letter-spacing: 0.4px; }
-
-/* ── RIGHT PHONE & LANGUAGE TOGGLE ── */
-.top-bar-divider {
-    width: 1px;
-    height: 16px;
-    background: rgba(217, 119, 6, 0.35);
+.top-phone-sep {
+    color: rgba(217, 119, 6, 0.40);
+    font-size: 0.75rem;
 }
 
 .top-lang-toggle {
     display: flex;
     align-items: center;
     gap: 6px;
+    flex-shrink: 0;
 }
 
-.globe-icon { color: #F59E0B; }
+.globe-icon {
+    color: #F59E0B;
+    flex-shrink: 0;
+}
 
 .lang-pill-container {
     display: flex;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.50);
     padding: 2px;
-    border-radius: 20px;
-    border: 1px solid rgba(217, 119, 6, 0.25);
+    border-radius: 999px;
+    border: 1px solid rgba(217, 119, 6, 0.32);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .lang-toggle-btn {
     background: none;
     border: none;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.70);
     font-size: 0.72rem;
     font-weight: 700;
-    font-family: 'Outfit', sans-serif;
-    padding: 2px 10px;
-    border-radius: 14px;
+    font-family: 'Outfit', 'Noto Sans Malayalam', sans-serif;
+    padding: 3px 10px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    line-height: 1;
+    white-space: nowrap;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.lang-toggle-btn:hover { color: #FFFFFF; }
+.lang-toggle-btn:hover {
+    color: #FFFFFF;
+}
 
 .lang-toggle-btn.active {
-    background: linear-gradient(135deg, #FCD34D, #F59E0B);
+    background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
     color: #0C0A09;
     font-weight: 800;
-    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.45);
+    box-shadow: 0 2px 7px rgba(217, 119, 6, 0.45);
 }
 
+/* ── MALAYALAM TYPOGRAPHY POLISH ── */
 .top-bar.lang-ml {
     font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif;
 }
 
 .lang-ml .live-status-text {
     letter-spacing: 0;
-    font-size: 0.80rem;
+    font-size: 0.76rem;
     font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif;
     font-weight: 700;
 }
 
 .lang-ml .location-item span {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif;
     font-weight: 600;
 }
 
 .lang-ml .ticker-text {
     letter-spacing: 0;
-    font-size: 0.82rem;
+    font-size: 0.77rem;
     font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif;
     font-weight: 600;
 }
 
 .lang-ml .lang-toggle-btn {
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     font-family: 'Noto Sans Malayalam', 'Manjari', sans-serif;
 }
 
-@media (max-width: 1300px) {
-    .top-bar-container {
-        padding: 0 1.25rem;
+/* ── RESPONSIVE MEDIA QUERIES ── */
+@media (max-width: 1320px) {
+    .top-bar-center {
+        display: none;
     }
+}
+
+@media (max-width: 1200px) {
     .hide-sm {
         display: none;
     }
 }
 
+/* Tablet & Mobile: Clean luxury status ribbon */
 @media (max-width: 1180px) {
-    .top-bar-center { display: none; }
+    .top-bar {
+        height: 34px;
+    }
+    .top-bar-center,
+    .top-bar-vdivider,
+    .location-item,
+    .top-lang-toggle,
+    .top-phone-sep,
+    .second-phone {
+        display: none !important;
+    }
+    .top-bar-container {
+        padding: 0 14px;
+        justify-content: space-between;
+    }
+    .top-bar-badge {
+        height: 22px;
+        line-height: 20px;
+        padding: 0 8px;
+    }
+    .live-status-text {
+        font-size: 0.68rem;
+    }
+    .phone-item {
+        font-size: 0.72rem;
+    }
 }
 
-@media (max-width: 768px) {
-    .top-bar { display: none; }
+/* Small mobile devices (<= 480px) */
+@media (max-width: 480px) {
+    .top-bar {
+        height: 32px;
+    }
+    .top-bar-container {
+        padding: 0 10px;
+    }
+    .top-bar-badge {
+        height: 20px;
+        line-height: 18px;
+        padding: 0 7px;
+        gap: 5px;
+    }
+    .live-status-dot {
+        width: 5px;
+        height: 5px;
+        min-width: 5px;
+        min-height: 5px;
+    }
+    .live-status-text {
+        font-size: 0.64rem;
+    }
+    .phone-item {
+        font-size: 0.70rem;
+    }
 }
