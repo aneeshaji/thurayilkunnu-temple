@@ -44,7 +44,7 @@ const Footer = () => {
                     </div>
                     <div className="blessing-right">
                         <span className="temple-trust-tag">
-                            <ShieldCheck size={14} /> {isML ? 'രജിസ്റ്റർ ചെയ്ത ക്ഷേത്ര ട്രസ്റ്റ് (സ്ഥാപിതം 1952)' : 'Registered Temple Trust Est. 1952'}
+                            <ShieldCheck size={14} /> {isML ? 'രജിസ്റ്റർ ചെയ്ത ക്ഷേത്ര ട്രസ്റ്റ്' : 'Registered Temple Trust'}
                         </span>
                     </div>
                 </div>

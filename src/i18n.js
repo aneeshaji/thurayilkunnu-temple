@@ -110,7 +110,7 @@ const resources = {
             about: {
                 title: "About the Temple",
                 hero_badge: "Our Heritage",
-                hero_subtitle: "A sacred hillock sanctuary established in 1952, consecrated in strict accordance with authentic Kerala tantric traditions.",
+                hero_subtitle: "A sacred hillock sanctuary consecrated in strict accordance with authentic Kerala tantric traditions.",
                 history_title: "History & Significance",
                 history_heading: "Legacy of Thurayilkunnu",
                 history_p1: "The Thurayilkunnu Sree Subramanya Swami Temple is an ancient seat of divinity, believed to have been established centuries ago. It stands as a testament to the rich cultural and spiritual heritage of Kerala. The temple architecture follows the traditional Kerala style, with intricate wood carvings and a copper-plated roof that glows in the sunlight.",
@@ -414,7 +414,7 @@ const resources = {
                 house_label: "Residence",
                 phone_label: "Phone",
                 trust_reg_title: "Trust Legal Registration",
-                trust_reg_desc: "Thurayilkunnu Sree Subramanya Swami Temple Trust is a registered public charitable and religious trust under the Travancore-Cochin Literary, Scientific and Charitable Societies Registration Act (Est. 1952).",
+                trust_reg_desc: "Thurayilkunnu Sree Subramanya Swami Temple Trust is a registered public charitable and religious trust under the Travancore-Cochin Literary, Scientific and Charitable Societies Registration Act.",
                 office_hours: "Office Timings: 08:00 AM – 12:30 PM & 04:30 PM – 07:30 PM Daily | Office: +91 90727 22205"
             },
             vazhipadu_booking: {
@@ -560,7 +560,7 @@ const resources = {
             about: {
                 title: "ക്ഷേത്രത്തെക്കുറിച്ച്",
                 hero_badge: "ഞങ്ങളുടെ പൈതൃകം",
-                hero_subtitle: "1952-ൽ സ്ഥാപിതമായ, കേരളീയ താന്ത്രിക വിധിപ്രകാരം പ്രതിഷ്ഠിതമായ പുണ്യക്ഷേത്രം.",
+                hero_subtitle: "കേരളീയ താന്ത്രിക വിധിപ്രകാരം പ്രതിഷ്ഠിതമായ പുണ്യക്ഷേത്രം.",
                 history_title: "ചരിത്രവും പ്രാധാന്യവും",
                 history_heading: "തുറയിൽകുന്നിന്റെ പൈതൃകം",
                 history_p1: "തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം നൂറ്റാണ്ടുകൾക്ക് മുമ്പ് സ്ഥാപിതമായതെന്ന് വിശ്വസിക്കപ്പെടുന്ന പുരാതനമായ ഒരു പുണ്യസങ്കേതമാണ്. കേരളത്തിന്റെ സമ്പന്നമായ സാംസ്കാരികവും ആത്മീയവുമായ പൈതൃകത്തിന്റെ തെളിവായി ഇത് നിലകൊള്ളുന്നു. പരമ്പരാഗതമായ കേരളീയ വാസ്തുവിദ്യ പിന്തുടരുന്ന ഈ ക്ഷേത്രം മനോഹരമായ കൊത്തുപണികൾ കൊണ്ടും പ്രത്യേക പ്രകാശത്തിൽ തിളങ്ങുന്ന താമ്രപത്രങ്ങൾ പാകിയ മേൽക്കൂരകൊണ്ടും ശ്രദ്ധേയമാണ്.",
@@ -864,7 +864,7 @@ const resources = {
                 house_label: "തറവാട് / ഭവനം",
                 phone_label: "ഫോൺ",
                 trust_reg_title: "നിയമപരമായ രജിസ്ട്രേഷൻ",
-                trust_reg_desc: "തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ടെമ്പിൾ ട്രസ്റ്റ് തിരുവിതാംകൂർ-കൊച്ചി ചാരിറ്റബിൾ സൊസൈറ്റീസ് ആക്ട് പ്രകാരം രജിസ്റ്റർ ചെയ്ത പബ്ലിക് ചാരിറ്റബിൾ ട്രസ്റ്റാണ് (സ്ഥാപിതം 1952).",
+                trust_reg_desc: "തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ടെമ്പിൾ ട്രസ്റ്റ് തിരുവിതാംകൂർ-കൊച്ചി ചാരിറ്റബിൾ സൊസൈറ്റീസ് ആക്ട് പ്രകാരം രജിസ്റ്റർ ചെയ്ത പബ്ലിക് ചാരിറ്റബിൾ ട്രസ്റ്റാണ്.",
                 office_hours: "ഓഫീസ് സമയം: ദിവസവും രാവിലെ 08:00 – 12:30 & വൈകിട്ട് 04:30 – 07:30 | ഓഫീസ്: +91 90727 22205"
             },
             vazhipadu_booking: {

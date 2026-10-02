@@ -194,7 +194,7 @@ const About = () => {
             {/* ---- LUXURY INNER PAGE HERO ---- */}
             <PageHero
                 title={t('about.title')}
-                subtitle={t('about.hero_subtitle') || "A sacred hillock sanctuary established in 1952, consecrated in strict accordance with authentic Kerala tantric traditions."}
+                subtitle={t('about.hero_subtitle') || "A sacred hillock sanctuary consecrated in strict accordance with authentic Kerala tantric traditions."}
                 badge={t('about.hero_badge')}
                 bgImage="/images/banners/banner_about.jpg"
                 currentPage={t('about.title')}

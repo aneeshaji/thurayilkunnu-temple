@@ -84,18 +84,20 @@
 
 /* ── Malayalam Specific Adjustments ── */
 .temple-brand-logo.lang-ml .logo-brand-primary {
-    font-family: 'Manjari', 'Outfit', sans-serif;
-    font-weight: 800;
+    font-family: 'Manjari', 'Noto Sans Malayalam', sans-serif;
+    font-weight: 700;
     font-size: 1.15rem;
-    letter-spacing: 0.02em;
+    letter-spacing: normal;
+    line-height: 1.6;
 }
 
 .temple-brand-logo.lang-ml .logo-brand-descriptor {
-    font-family: 'Manjari', 'Outfit', sans-serif;
+    font-family: 'Manjari', 'Noto Sans Malayalam', sans-serif;
     font-weight: 700;
     font-size: 0.62rem;
-    letter-spacing: 0.04em;
+    letter-spacing: normal;
     text-transform: none;
+    line-height: 1.6;
 }
 
 /* ── Scrolled State in Sticky Navbar ── */

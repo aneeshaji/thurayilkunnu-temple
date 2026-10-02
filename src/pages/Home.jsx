@@ -263,10 +263,9 @@ const Home = () => {
     ];
 
     const stats = [
-        { num: 70, suffix: '+', label: t('home.stats.heritage') },
-        { num: 500, suffix: '+', label: t('home.stats.devotees') },
-        { num: 12, suffix: '+', label: t('home.stats.festivals') },
-        { num: 1952, suffix: '', label: t('home.stats.established') }
+        { num: 50, suffix: '+', label: t('home.stats.heritage') },
+        { num: 100, suffix: '+', label: t('home.stats.devotees') },
+        { num: 10, suffix: '+', label: t('home.stats.festivals') }
     ];
 
     const festivals = [

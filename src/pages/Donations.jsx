@@ -162,7 +162,7 @@ Please verify and dispatch official receipt / temple prasadam. Thank you!`;
             </p>
             <div className="trust-cert-tag">
               <ShieldCheck size={16} />
-              <span>{isML ? 'രജിസ്റ്റർ ചെയ്ത മത-ധർമ്മസ്ഥാപനം (സ്ഥാപിതം 1952)' : 'Registered Religious & Charitable Trust (Est. 1952)'}</span>
+              <span>{isML ? 'രജിസ്റ്റർ ചെയ്ത മത-ധർമ്മസ്ഥാപനം' : 'Registered Religious & Charitable Trust'}</span>
             </div>
           </div>
         </div>
