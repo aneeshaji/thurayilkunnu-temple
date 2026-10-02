@@ -96,6 +96,7 @@ _Sent via Thurayilkunnu Temple Website_`;
             <SEO 
                 title={t('contact_page.title')} 
                 description="Get in touch with Thurayilkunnu Sree Subramanya Swami Temple. Find our address, phone number, and location map." 
+                url="/contact"
             />
 
             {/* ---- LUXURY INNER PAGE HERO ---- */}
@@ -104,7 +105,7 @@ _Sent via Thurayilkunnu Temple Website_`;
                 subtitle={t('contact_page.hero_subtitle')}
                 badge={t('contact_page.hero_badge')}
                 bgImage="/images/banners/banner_contact.jpg"
-                currentPage={t('contact_page.title')}
+                currentPage={t('navbar.contact')}
             />
 
             {/* ---- CONTACT GRID ---- */}

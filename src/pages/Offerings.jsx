@@ -337,6 +337,7 @@ Please confirm my booking. Thank you!`;
             <SEO 
                 title={t('offerings_page.title')} 
                 description={isML ? 'തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ നിത്യപൂജകളും വിശേഷാൽ വഴിപാടുകളും ഓൺലൈനായി ബുക്ക് ചെയ്യാം.' : 'Book poojas, vazhipadu, and special offerings at Thurayilkunnu Sree Subramanya Swami Temple.'}
+                url="/offerings"
             />
             {/* ---- LUXURY INNER PAGE HERO ---- */}
             <PageHero
@@ -344,7 +345,7 @@ Please confirm my booking. Thank you!`;
                 subtitle={t('offerings_page.intro')}
                 badge={isML ? 'വിശുദ്ധ വഴിപാടുകൾ' : 'Sacred Offerings'}
                 bgImage="/images/banners/banner_offerings.jpg"
-                currentPage={t('offerings_page.title')}
+                currentPage={t('navbar.offerings')}
             />
 
             {/* ---- NAKSHATRA (STAR) VAZHIPADU RECOMMENDER ---- */}

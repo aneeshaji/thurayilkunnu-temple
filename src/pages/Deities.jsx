@@ -94,13 +94,19 @@ const Deities = () => {
 
     return (
         <div className={`deities-page ${isML ? 'lang-ml' : ''}`}>
+            <SEO
+                title={t('deities.page_title')}
+                description={t('deities.page_intro')}
+                url="/deities"
+                image="/images/deities/subramanya.jpg"
+            />
             {/* ---- LUXURY INNER PAGE HERO ---- */}
             <PageHero
                 title={t('deities.page_title')}
                 subtitle={t('deities.page_intro')}
                 badge={isML ? 'പുണ്യ സന്നിധികൾ' : 'Sacred Sanctum Presences'}
                 bgImage="/images/banners/banner_deities.jpg"
-                currentPage={t('deities.page_title')}
+                currentPage={t('navbar.deities')}
             />
 
             {/* ---- DEITIES GRID SECTION ---- */}

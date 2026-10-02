@@ -113,13 +113,19 @@ const Gallery = () => {
 
     return (
         <div className="gallery-page">
+            <SEO
+                title={t('gallery.hero_title')}
+                description={t('gallery.hero_subtitle')}
+                url="/gallery"
+                image="/images/gallery/temple_night_dwajam.jpg"
+            />
             {/* ---- LUXURY INNER PAGE HERO ---- */}
             <PageHero
                 title={t('gallery.hero_title')}
                 subtitle={t('gallery.hero_subtitle')}
                 badge={t('gallery.hero_badge')}
                 bgImage="/images/banners/banner_gallery_v4.jpg"
-                currentPage={t('gallery.hero_title')}
+                currentPage={t('navbar.gallery')}
             />
 
 

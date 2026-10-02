@@ -115,7 +115,8 @@ const resources = {
                 history_heading: "Legacy of Thurayilkunnu",
                 history_p1: "The Thurayilkunnu Sree Subramanya Swami Temple is an ancient seat of divinity, believed to have been established centuries ago. It stands as a testament to the rich cultural and spiritual heritage of Kerala. The temple architecture follows the traditional Kerala style, with intricate wood carvings and a copper-plated roof that glows in the sunlight.",
                 history_p2: "Devotees believe that the idol of Lord Subramanya here is self-manifested (Swayambhu), radiating immense power and grace. The serene atmosphere of the temple complex provides a perfect setting for meditation and prayer.",
-                history_p3: "Sree Subrahmanya Swami Temple, Thurayilkunnu, is a Hindu temple dedicated to Lord Subrahmanya, located at Alumkadavu P.O., Karunagappally, Kerala. The temple conducts regular worship, special poojas, traditional religious observances and festival programmes. The temple is managed by Sree Narayana Dharma Paripalana (SNDP) Yogam, Branch No. 192, Thurayilkunnu. Devotees and visitors are welcome to participate in the temple's spiritual and religious activities.",
+                history_p3: "Sree Subrahmanya Swami Temple, Thurayilkunnu, is a Hindu temple dedicated to Lord Subrahmanya, located at Alumkadavu P.O., Karunagappally, Kerala. The temple conducts regular worship, special poojas, traditional religious observances and festival programmes. The temple is associated with Sree Narayana Dharma Paripalana Yogam, Branch No. 192, Thurayilkunnu. Devotees and visitors are welcome to participate in the temple's spiritual and religious activities.",
+                seo_description: "Sree Subrahmanya Swami Temple, Thurayilkunnu, is a Hindu temple dedicated to Lord Subrahmanya, located at Alumkadavu P.O., Karunagappally, Kerala. The temple conducts regular worship, special poojas, traditional religious observances and festival programmes. The temple is associated with Sree Narayana Dharma Paripalana Yogam, Branch No. 192, Thurayilkunnu. Devotees and visitors are welcome to participate in the temple's spiritual and religious activities.",
                 legend_title: "Spiritual Significance",
                 legend_heading: "A Hillock of Faith and Peace",
                 legend_quote: "A place of worship, prayer and inner peace.",
@@ -291,23 +292,23 @@ const resources = {
                 causes: {
                     annadanam: {
                         name: "Annadanam Samarpanam",
-                        desc: "Provide sacred meals (prasada oottu) to pilgrims and devotees visiting the sanctum.",
-                        amount: "₹1,001 / ₹2,501 / Custom"
+                        desc: "Contribute towards providing sacred meals (prasada oottu) to pilgrims and devotees visiting the temple.",
+                        amount: "Any amount / Custom"
                     },
                     renovation: {
-                        name: "Temple Renovation & Sreekovil Fund",
-                        desc: "Preservation of traditional architecture, sanctum copper roof, and temple courtyard beautification.",
-                        amount: "₹2,000 / ₹5,000 / Custom"
+                        name: "Temple Renovation & Maintenance Fund",
+                        desc: "Support the upkeep, maintenance and preservation of the temple and its premises.",
+                        amount: "Any amount / Custom"
                     },
                     nithya_pooja: {
-                        name: "Nithya Pooja & Pushpanjali Nidhi",
-                        desc: "Ensure daily eternal morning and evening deeparadhana, flower garlands, and archana offerings.",
-                        amount: "₹501 / ₹1,001 / Custom"
+                        name: "Nithya Pooja Fund",
+                        desc: "Support the daily worship, poojas and traditional observances of the temple.",
+                        amount: "Any amount / Custom"
                     },
                     chuttuvilakku: {
-                        name: "Chuttuvilakku & Oil Lamp Seva",
-                        desc: "Illuminating hundreds of sacred brass deepams around the temple walls during festive dusks.",
-                        amount: "₹500 / ₹1,500 / Custom"
+                        name: "Deepam & Oil Lamp Seva",
+                        desc: "Contribute towards the lighting of sacred lamps and daily deepam offerings at the temple.",
+                        amount: "Any amount / Custom"
                     }
                 },
                 bank_card: {
@@ -565,7 +566,8 @@ const resources = {
                 history_heading: "തുറയിൽകുന്നിന്റെ പൈതൃകം",
                 history_p1: "തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം നൂറ്റാണ്ടുകൾക്ക് മുമ്പ് സ്ഥാപിതമായതെന്ന് വിശ്വസിക്കപ്പെടുന്ന പുരാതനമായ ഒരു പുണ്യസങ്കേതമാണ്. കേരളത്തിന്റെ സമ്പന്നമായ സാംസ്കാരികവും ആത്മീയവുമായ പൈതൃകത്തിന്റെ തെളിവായി ഇത് നിലകൊള്ളുന്നു. പരമ്പരാഗതമായ കേരളീയ വാസ്തുവിദ്യ പിന്തുടരുന്ന ഈ ക്ഷേത്രം മനോഹരമായ കൊത്തുപണികൾ കൊണ്ടും പ്രത്യേക പ്രകാശത്തിൽ തിളങ്ങുന്ന താമ്രപത്രങ്ങൾ പാകിയ മേൽക്കൂരകൊണ്ടും ശ്രദ്ധേയമാണ്.",
                 history_p2: "ഇവിടെയുള്ള ഭഗവാൻ സുബ്രഹ്മണ്യന്റെ വിഗ്രഹം സ്വയംഭൂവാണെന്ന് ഭക്തർ വിശ്വസിക്കുന്നു. സമാധാനപൂർണ്ണമായ ക്ഷേത്രാന്തരീക്ഷം ധ്യാനത്തിനും പ്രാർത്ഥനയ്ക്കും ഉചിതമായ ഒരിടമാണ്.",
-                history_p3: "അലുംകടവ് പി.ഒ., കരുനാഗപ്പള്ളി, കേരളത്തിലുള്ള ശ്രീ സുബ്രഹ്മണ്യ സ്വാമി ക്ഷേത്രം, തുറയിൽക്കുന്ന്, ഭഗവാൻ സുബ്രഹ്മണ്യന് സമർപ്പിതമായ ഒരു ഹൈന്ദവ ക്ഷേത്രമാണ്. ക്ഷേത്രത്തിൽ നിത്യപൂജകളും വിശേഷ പൂജകളും പരമ്പരാഗത ആചാരാനുഷ്ഠാനങ്ങളും ഉത്സവ പരിപാടികളും നടത്തിവരുന്നു. ഈ ക്ഷേത്രം ശ്രീ നാരായണ ധർമ്മ പരിപാലന (എസ്.എൻ.ഡി.പി.) യോഗം ശാഖ നമ്പർ 192, തുറയിൽക്കുന്നിന്റെ നിയന്ത്രണത്തിലാണ് പ്രവർത്തിക്കുന്നത്. ക്ഷേത്രത്തിന്റെ ആത്മീയ-മതപരമായ പ്രവർത്തനങ്ങളിൽ പങ്കാളികളാകാൻ ഭക്തരെയും സന്ദർശകരെയും സാദരം ക്ഷണിക്കുന്നു.",
+                history_p3: "അലുംകടവ് പി.ഒ., കരുനാഗപ്പള്ളി, കേരളത്തിലുള്ള ശ്രീ സുബ്രഹ്മണ്യ സ്വാമി ക്ഷേത്രം, തുറയിൽക്കുന്ന്, ഭഗവാൻ സുബ്രഹ്മണ്യന് സമർപ്പിതമായ ഒരു ഹൈന്ദവ ക്ഷേത്രമാണ്. ക്ഷേത്രത്തിൽ നിത്യപൂജകളും വിശേഷ പൂജകളും പരമ്പരാഗത ആചാരാനുഷ്ഠാനങ്ങളും ഉത്സവ പരിപാടികളും നടത്തിവരുന്നു. ഈ ക്ഷേത്രം ശ്രീ നാരായണ ധർമ്മ പരിപാലന യോഗം, ശാഖ നമ്പർ 192, തുറയിൽക്കുന്നുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു. ക്ഷേത്രത്തിന്റെ ആത്മീയ-മതപരമായ പ്രവർത്തനങ്ങളിൽ പങ്കാളികളാകാൻ ഭക്തരെയും സന്ദർശകരെയും സാദരം ക്ഷണിക്കുന്നു.",
+                seo_description: "അലുംകടവ് പി.ഒ., കരുനാഗപ്പള്ളി, കേരളത്തിലുള്ള ശ്രീ സുബ്രഹ്മണ്യ സ്വാമി ക്ഷേത്രം, തുറയിൽക്കുന്ന്, ഭഗവാൻ സുബ്രഹ്മണ്യന് സമർപ്പിതമായ ഒരു ഹൈന്ദവ ക്ഷേത്രമാണ്. ക്ഷേത്രത്തിൽ നിത്യപൂജകളും വിശേഷ പൂജകളും പരമ്പരാഗത ആചാരാനുഷ്ഠാനങ്ങളും ഉത്സവ പരിപാടികളും നടത്തിവരുന്നു. ഈ ക്ഷേത്രം ശ്രീ നാരായണ ധർമ്മ പരിപാലന യോഗം, ശാഖ നമ്പർ 192, തുറയിൽക്കുന്നുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു.",
                 legend_title: "ആത്മീയ പ്രാധാന്യം",
                 legend_heading: "വിശ്വാസത്തിന്റെയും സമാധാനത്തിന്റെയും കുന്ന്",
                 legend_quote: "ആരാധനയ്ക്കും പ്രാർത്ഥനയ്ക്കും മാനസിക സമാധാനത്തിനും അനുയോജ്യമായ ഒരു പുണ്യസ്ഥലം.",
@@ -741,23 +743,23 @@ const resources = {
                 causes: {
                     annadanam: {
                         name: "അന്നദാനം സമർപ്പണം",
-                        desc: "ക്ഷേത്രത്തിൽ എത്തുന്ന ഭക്തർക്ക് നിത്യേനയും വിശേഷ ദിവസങ്ങളിലും പ്രസാദമൂട്ട് നൽകുന്നതിലേക്ക്.",
-                        amount: "₹1,001 / ₹2,501 / ഇഷ്ടമുള്ള തുക"
+                        desc: "ക്ഷേത്രത്തിൽ എത്തുന്ന ഭക്തർക്കും തീർത്ഥാടകർക്കും പ്രസാദമൂട്ട് നൽകുന്നതിന് സഹകരിക്കുക.",
+                        amount: "ഇഷ്ടമുള്ള തുക"
                     },
                     renovation: {
-                        name: "ക്ഷേത്ര നവീകരണ & വികസന ഫണ്ട്",
-                        desc: "പരമ്പരാഗത ശ്രീകോവിൽ സംരക്ഷണം, ചെമ്പ് തകിടുകൾ, ചുറ്റമ്പല നവീകരണം എന്നിവയ്ക്കായി.",
-                        amount: "₹2,000 / ₹5,000 / ഇഷ്ടമുള്ള തുക"
+                        name: "ക്ഷേത്ര നവീകരണ & സംരക്ഷണ ഫണ്ട്",
+                        desc: "ക്ഷേത്രവും അതിന്റെ അന്തരീക്ഷവും നിലനിർത്തുന്നതിനും സംരക്ഷിക്കുന്നതിനുമുള്ള നിർമ്മാണ പ്രവർത്തനങ്ങൾക്ക് പിന്തുണ നൽകുക.",
+                        amount: "ഇഷ്ടമുള്ള തുക"
                     },
                     nithya_pooja: {
-                        name: "നിത്യപൂജ & പുഷ്പാഞ്ജലി നിധി",
-                        desc: "നിത്യേനയുള്ള രാവിലത്തെയും വൈകുന്നേരത്തെയും ദീപാരാധന, പൂമാലകൾ, അർച്ചനകൾ എന്നിവ സുഗമമായി നടത്തുന്നതിന്.",
-                        amount: "₹501 / ₹1,001 / ഇഷ്ടമുള്ള തുക"
+                        name: "നിത്യപൂജ ഫണ്ട്",
+                        desc: "ക്ഷേത്രത്തിലെ നിത്യപൂജകളെയും ആചാരാനുഷ്ഠാനങ്ങളെയും പിന്തുണയ്ക്കുക.",
+                        amount: "ഇഷ്ടമുള്ള തുക"
                     },
                     chuttuvilakku: {
-                        name: "ചുറ്റുവിളക്ക് സമർപ്പണം",
-                        desc: "വിശേഷാൽ ദിവസങ്ങളിൽ ക്ഷേത്രമതിലകത്തെ നൂറുകണക്കിന് ഓട്ടുവിളക്കുകൾ തെളിയിക്കുന്ന വിശേഷാൽ സേവനം.",
-                        amount: "₹500 / ₹1,500 / ഇഷ്ടമുള്ള തുക"
+                        name: "ദീപം & വിളക്ക് സേവ",
+                        desc: "ക്ഷേത്രത്തിലെ പുണ്യ ദീപങ്ങളും നിത്യ ദീപസമർപ്പണവും തെളിയിക്കുന്നതിന് സഹകരിക്കുക.",
+                        amount: "ഇഷ്ടമുള്ള തുക"
                     }
                 },
                 bank_card: {

@@ -301,7 +301,10 @@ html.lang-ml .hero-subtitle {
         min-height: clamp(380px, 60vh, 500px);
         padding-top: 80px;
         padding-bottom: 3.5rem;
+        /* Banner art sits on the right — keep it in view on tall mobile crops */
+        background-position: 72% center;
     }
+    .page-hero-bg { background-position: 72% center; }
     .hero-title { font-size: clamp(1.8rem, 7vw, 2.8rem); }
     .hero-subtitle { font-size: 0.95rem; max-width: 100%; line-height: 1.65; }
     .hero-badge { font-size: 0.7rem; }

@@ -60,6 +60,7 @@ const SEO = ({ title, description, keywords, image, url, schema }) => {
         <Helmet>
             <html lang={i18n.language} />
             <title>{finalTitle}</title>
+            <link rel="canonical" href={currentUrl} />
             <meta name="description" content={finalDescription} />
             <meta name="keywords" content={finalKeywords} />
 
@@ -72,14 +73,17 @@ const SEO = ({ title, description, keywords, image, url, schema }) => {
             <meta property="og:image:secure_url" content={finalImage} />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
+            <meta property="og:image:alt" content={siteName} />
             <meta property="og:site_name" content={siteName} />
+            <meta property="og:locale" content={i18n.language?.startsWith('ml') ? 'ml_IN' : 'en_IN'} />
+            <meta property="og:locale:alternate" content={i18n.language?.startsWith('ml') ? 'en_IN' : 'ml_IN'} />
 
             {/* Twitter */}
-            <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:url" content={currentUrl} />
-            <meta property="twitter:title" content={finalTitle} />
-            <meta property="twitter:description" content={finalDescription} />
-            <meta property="twitter:image" content={finalImage} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:url" content={currentUrl} />
+            <meta name="twitter:title" content={finalTitle} />
+            <meta name="twitter:description" content={finalDescription} />
+            <meta name="twitter:image" content={finalImage} />
 
             {/* Structured Data */}
             <script type="application/ld+json">

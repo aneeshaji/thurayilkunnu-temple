@@ -37,7 +37,7 @@ import {
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
-import { committeeData, melshanthiData, tantriData } from '../data/committeeData';
+import { committeeData } from '../data/committeeData';
 import '../styles/About.css';
 
 /* ---- ANIMATION VARIANTS ---- */
@@ -225,7 +225,8 @@ const About = () => {
         <div className="about-page">
             <SEO 
                 title={t('about.title')} 
-                description={t('about.hero_badge')}
+                description={t('about.seo_description')}
+                url="/about"
             />
             {/* ---- LUXURY INNER PAGE HERO ---- */}
             <PageHero
@@ -233,7 +234,7 @@ const About = () => {
                 subtitle={t('about.hero_subtitle') || "A sacred hillock sanctuary consecrated in strict accordance with authentic Kerala tantric traditions."}
                 badge={t('about.hero_badge')}
                 bgImage="/images/banners/banner_about.jpg"
-                currentPage={t('about.title')}
+                currentPage={t('navbar.about')}
             />
 
             {/* ---- HISTORY SECTION ---- */}

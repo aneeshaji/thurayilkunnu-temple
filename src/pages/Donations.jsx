@@ -141,6 +141,7 @@ Please verify and dispatch official receipt / temple prasadam. Thank you!`;
       <SEO
         title={t('donations_page.title')}
         description={t('donations_page.subtitle')}
+        url="/donations"
       />
 
       {/* ---- LUXURY INNER PAGE HERO ---- */}
@@ -149,7 +150,7 @@ Please verify and dispatch official receipt / temple prasadam. Thank you!`;
         subtitle={t('donations_page.subtitle')}
         badge={t('donations_page.hero_badge')}
         bgImage="/images/banners/banner_donations.jpg"
-        currentPage={t('donations_page.title')}
+        currentPage={t('navbar.donations')}
       />
 
 
@@ -383,7 +384,8 @@ Please verify and dispatch official receipt / temple prasadam. Thank you!`;
         </div>
       </section>
 
-      {/* ---- RECEIPT CONFIRMATION FORM ---- */}
+      {/* ---- RECEIPT CONFIRMATION FORM (hidden for now) ---- */}
+      {SHOW_RECEIPT_FORM && (
       <section className="receipt-section section-padding">
         <div className="container">
           <motion.div
@@ -518,8 +520,12 @@ Please verify and dispatch official receipt / temple prasadam. Thank you!`;
           </motion.div>
         </div>
       </section>
+      )}
     </div>
   );
 };
+
+// Re-enable the Donation Acknowledgement & Receipt form when ready
+const SHOW_RECEIPT_FORM = false;
 
 export default Donations;

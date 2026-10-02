@@ -8,7 +8,7 @@ import { getDarshanStatus } from '../utils/darshanStatus';
 import '../styles/Banner.css';
 
 const Banner = () => {
-    const { t, i18n } = useTranslation();
+    const { i18n } = useTranslation();
     const isML = i18n.language === 'ml';
 
     const slides = [

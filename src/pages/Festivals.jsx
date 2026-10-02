@@ -97,23 +97,12 @@ const Festivals = () => {
         }
     ];
 
-    const mahotsavamHighlights = [
-        { icon: '🚩', ml: 'തൃക്കൊടിയേറ്റ്', en: 'Thrikkodiyettu (Sacred Flag Hoisting)' },
-        { icon: '✨', ml: 'തങ്കഅങ്കി രഥഘോഷയാത്ര', en: 'Thanka Anki Chariot Procession' },
-        { icon: '🎭', ml: 'മേജർസെറ്റ് കഥകളി', en: 'Major-Set Kathakali Performance' },
-        { icon: '🔱', ml: 'തങ്കവേൽ രഥഘോഷയാത്ര', en: 'Thanka Vel Chariot Procession' },
-        { icon: '🦚', ml: 'കാവടി അഭിഷേകം', en: 'Kavadi Abhishekam' },
-        { icon: '🍛', ml: 'കൺണിസദ്യ, കലാപരിപാടികൾ', en: 'Kannisadya & Cultural Programs' },
-        { icon: '🥁', ml: 'സേവ, പള്ളിവേട്ട, പഞ്ചവാദ്യം', en: 'Seva, Pallivetta & Panchavadyam' },
-        { icon: '🐘', ml: 'ഗംഭീര പകൽക്കാഴ്ച', en: 'Grand Daytime Pageantry (Pakalkkazhcha)' },
-        { icon: '🌊', ml: 'തിരുആറാട്ട്, തൃക്കൊടിയിറക്ക്', en: 'Holy Thiru Aarattu & Flag Lowering' }
-    ];
-
     return (
         <div className={`festivals-page ${isML ? 'lang-ml' : ''}`}>
             <SEO 
                 title={t('festivals_page.title')} 
                 description="Experience the vibrant and spiritual festivals at Thurayilkunnu Sree Subramanya Swami Temple."
+                url="/festivals"
             />
             {/* ---- LUXURY INNER PAGE HERO ---- */}
             <PageHero
@@ -121,7 +110,7 @@ const Festivals = () => {
                 subtitle={t('festivals_page.intro')}
                 badge="Divine Celebrations"
                 bgImage="/images/banners/banner_festivals.jpg"
-                currentPage={t('festivals_page.title')}
+                currentPage={t('navbar.festivals')}
             />
 
             {/* ---- TEMPLE SPIRITUAL AUTHORITIES ---- */}

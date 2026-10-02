@@ -45,7 +45,7 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
-  useEffect(() => { setIsOpen(false); }, [location.pathname, location.hash]);
+  // Menu closing on navigation is handled by closeMenu on each drawer link
 
   const navLinks = [
     { path: '/',           label: t('navbar.home') },
