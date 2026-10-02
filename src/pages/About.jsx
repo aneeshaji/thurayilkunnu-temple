@@ -110,18 +110,6 @@ const NEARBY_SHRINES = [
         mapUrl: 'https://maps.google.com/?q=Sasthamkotta+Sree+Dharma+Sastha+Temple'
     },
     {
-        id: 'panmana',
-        nameEn: 'Panmana Ashram & Chattampi Swamikal Samadhi',
-        nameMl: 'പന്മന ആശ്രമം & ചട്ടമ്പിസ്വാമികൾ സമാധി',
-        distanceEn: '12 km South (20 mins)',
-        distanceMl: '12 കി.മീ തെക്ക് (20 മിനിറ്റ്)',
-        deityEn: 'Bhattarakasramam & Shiva Sanctum',
-        deityMl: 'ഭട്ടാരകാശ്രമം & ശിവസന്നിധി',
-        descEn: 'The sacred mahasamadhi sthalam of great philosopher and reformer Sri Vidyadhiraja Chattampi Swamikal, offering deep meditative serenity.',
-        descMl: 'മഹാതപസ്വിയും സാമൂഹ്യപരിഷ്കർത്താവുമായ ശ്രീ വിദ്യാധിരാജ ചട്ടമ്പിസ്വാമികളുടെ സമാധി മണ്ഡപം. ശാന്തസുന്ദരമായ അന്തരീക്ഷം.',
-        mapUrl: 'https://maps.google.com/?q=Panmana+Ashram'
-    },
-    {
         id: 'pullanthara',
         nameEn: 'Pullanthara Sree Mahaganapathy Temple',
         nameMl: 'പുള്ളന്തറ ശ്രീ മഹാഗണപതി ക്ഷേത്രം',
@@ -132,6 +120,54 @@ const NEARBY_SHRINES = [
         descEn: 'A revered Ganapathy temple within the Thurayilkunnu precinct at Maru South, Ayanivelikulangara. Devotees traditionally seek Ganapathy blessings here before proceeding for Subramanya Swami darshan.',
         descMl: 'തുറയിൽക്കുന്ന് മരു സൗത്ത്, അയനിവേലിക്കുളങ്ങര ഗ്രാമത്തിൽ സ്ഥിതിചെയ്യുന്ന ഗണപതി ക്ഷേത്രം. സുബ്രഹ്മണ്യ സ്വാമി ദർശനത്തിന് മുൻപ് ഭക്തർ ഗണപതി ആശീർവാദം തേടി ഇവിടെ എത്തുന്നു.',
         mapUrl: 'https://share.google/Ey1UbVoY73DBsI2d2'
+    },
+    {
+        id: 'kattilmekkathil',
+        nameEn: 'Kattil Mekkathil Devi Temple',
+        nameMl: 'കട്ടിൽ മെക്കത്തിൽ ദേവീ ക്ഷേത്രം',
+        distanceEn: 'Nearby · Karunagappally',
+        distanceMl: 'സമീപം · കരുനാഗപ്പള്ളി',
+        deityEn: 'Goddess Devi (Bhagavathi)',
+        deityMl: 'ശ്രീ ദേവീ ഭഗവതി',
+        descEn: 'A well-known Devi temple in the Karunagappally region where devotees seek the blessings of the Divine Mother.',
+        descMl: 'കരുനാഗപ്പള്ളി പ്രദേശത്തുള്ള പ്രസിദ്ധമായ ദേവീക്ഷേത്രം. ഭഗവതീ അനുഗ്രഹം തേടി ഭക്തർ എത്തിച്ചേരുന്നു.',
+        mapUrl: 'https://www.google.com/maps/search/?api=1&query=Kattil+Mekkathil+Devi+Temple'
+    },
+    {
+        id: 'padanayarkulangara',
+        nameEn: 'Padanayarkulangara Mahadevar Temple',
+        nameMl: 'പടനായർകുളങ്ങര മഹാദേവർ ക്ഷേത്രം',
+        distanceEn: 'Nearby · Karunagappally',
+        distanceMl: 'സമീപം · കരുനാഗപ്പള്ളി',
+        deityEn: 'Lord Shiva (Mahadeva)',
+        deityMl: 'ശ്രീ മഹാദേവൻ',
+        descEn: 'An ancient Shiva temple at Padanayarkulangara, revered by devotees of the surrounding region.',
+        descMl: 'പടനായർകുളങ്ങരയിലുള്ള പുരാതനമായ ശിവക്ഷേത്രം. സമീപ പ്രദേശങ്ങളിലെ ഭക്തർക്ക് ഇഷ്ടപ്പെട്ട ആരാധനാകേന്ദ്രം.',
+        mapUrl: 'https://www.google.com/maps/search/?api=1&query=Padanayarkulangara+Mahadevar+Temple'
+    },
+    {
+        id: 'cheriazheekal',
+        nameEn: 'Cheriazheekal Kashi Vishwanadha & Devi Temples',
+        nameMl: 'ചെറിയഴീക്കൽ കാശീ വിശ്വനാഥ & ദേവീ ക്ഷേത്രങ്ങൾ',
+        distanceEn: 'Nearby · Karunagappally',
+        distanceMl: 'സമീപം · കരുനാഗപ്പള്ളി',
+        deityEn: 'Lord Shiva (Kashi Vishwanadha) & Devi',
+        deityMl: 'ശ്രീ കാശീ വിശ്വനാഥൻ & ദേവി',
+        descEn: 'Twin shrines dedicated to Lord Shiva and Devi, known for their traditional Kerala temple architecture and serene atmosphere.',
+        descMl: 'ശിവനും ദേവിയും പ്രതിഷ്ഠകളായ ക്ഷേത്രങ്ങൾ. പരമ്പരാഗത കേരളീയ ശൈലിയിലുള്ള നിർമ്മാണവും ശാന്തമായ അന്തരീക്ഷവും പ്രസിദ്ധം.',
+        mapUrl: 'https://www.google.com/maps/search/?api=1&query=Cheriazheekal+Kashi+Vishwanadha+Temple'
+    },
+    {
+        id: 'mookkumpuzha',
+        nameEn: 'Sree Mookkumpuzha Temple',
+        nameMl: 'ശ്രീ മൂക്കുമ്പുഴ ക്ഷേത്രം',
+        distanceEn: 'Nearby · Karunagappally',
+        distanceMl: 'സമീപം · കരുനാഗപ്പള്ളി',
+        deityEn: 'Local Village Deity',
+        deityMl: 'ഗ്രാമദേവത',
+        descEn: 'A local shrine in the Karunagappally area, an important centre of worship for the surrounding community.',
+        descMl: 'കരുനാഗപ്പള്ളി പ്രദേശത്തുള്ള ഒരു പ്രാദേശിക ക്ഷേത്രം. സമീപ ഗ്രാമങ്ങളിലെ ഭക്തരുടെ പ്രധാന ആരാധനാകേന്ദ്രം.',
+        mapUrl: 'https://www.google.com/maps/search/?api=1&query=Sree+Mookkumpuzha+Temple'
     }
 ];
 
@@ -164,7 +200,7 @@ const About = () => {
             captionMl: 'സഹസ്ര പൊങ്കാല മഹോത്സവ കാഴ്ച്ചകൾ – ഭക്തജനസമുദ്രം'
         },
         {
-            src: '/images/gallery/festival_gathering_1.jpg',
+            src: '/images/gallery/kavadi_procession.jpg',
             captionEn: 'Annual Festival Devotee Gathering & Divine Procession',
             captionMl: 'ഉത്സവദിനങ്ങളിലെ ഭക്തജന സംഗമം'
         },
@@ -216,6 +252,7 @@ const About = () => {
                             <h2 className="heading-secondary">{t('about.history_heading')}</h2>
                             <p className="description-text">{t('about.history_p1')}</p>
                             <p className="description-text">{t('about.history_p2')}</p>
+                            <p className="description-text">{t('about.history_p3')}</p>
                         </motion.div>
 
                         <motion.div className="image-side" variants={slideRight}>
@@ -348,7 +385,7 @@ const About = () => {
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ duration: 0.4 }}
                             >
-                                <img src="/images/gallery/chuttuvilakku_night.jpg" alt="Architecture Details" />
+                                <img src="/images/gallery/pooja_ritual_1.jpg" alt="Temple Architecture" />
                                 <div className="overlay-card">
                                     <MapPin size={24} />
                                     <p>{t('about.arch_location')}</p>

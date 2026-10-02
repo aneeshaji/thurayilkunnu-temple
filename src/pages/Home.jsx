@@ -48,7 +48,7 @@ const UPCOMING_FESTIVALS = [
     { 
         name: 'Skanda Purana Yajnam', 
         nameMl: 'സ്കന്ദ പുരാണ യജ്ഞം', 
-        date: new Date('2026-10-10'), 
+        date: new Date('2026-12-28'), 
         tag: 'Sacred Yajnam',
         tagMl: 'വിശേഷാൽ പുണ്യ യജ്ഞം'
     },
@@ -279,12 +279,12 @@ const Home = () => {
         },
         { name: t('festivals_page.list.skanda_purana_yajnam.name'), date: t('festivals_page.list.skanda_purana_yajnam.date'), desc: t('festivals_page.list.skanda_purana_yajnam.desc'), image: '/images/gallery/festival_devotees_1.jpg' },
         { name: t('festivals_page.list.thaipusam.name'), date: t('festivals_page.list.thaipusam.date'), desc: t('festivals_page.list.thaipusam.desc'), image: '/images/gallery/deity_procession_1.jpg' },
-        { name: t('festivals_page.list.skanda.name'), date: t('festivals_page.list.skanda.date'), desc: t('festivals_page.list.skanda.desc'), image: '/images/gallery/festival_gathering_1.jpg' },
+        { name: t('festivals_page.list.skanda.name'), date: t('festivals_page.list.skanda.date'), desc: t('festivals_page.list.skanda.desc'), image: '/images/gallery/pooja_ritual_1.jpg' },
         { name: t('festivals_page.list.thrikarthika.name'), date: t('festivals_page.list.thrikarthika.date'), desc: t('festivals_page.list.thrikarthika.desc'), image: '/images/festivals/thrikarthika.jpg' }
     ];
 
     const deities = [
-        { name: t('deities.list.subramanya.name'), desc: t('deities.list.subramanya.desc'), image: '/images/deities/subramanya_vigraham.jpg', featured: true, badge: isML ? 'പ്രധാന പ്രതിഷ്ഠ' : 'Presiding Deity' },
+        { name: t('deities.list.subramanya.name'), desc: t('deities.list.subramanya.desc'), image: '/images/deities/subramanya.jpg', featured: true, badge: isML ? 'പ്രധാന പ്രതിഷ്ഠ' : 'Presiding Deity' },
         { name: t('deities.list.ganapathy.name'), desc: t('deities.list.ganapathy.desc'), image: '/images/deities/ganapathy.jpg', featured: false },
         { name: t('deities.list.bhagavathy.name'), desc: t('deities.list.bhagavathy.desc'), image: '/images/deities/bhagavathy.jpg', featured: false },
         { name: t('deities.list.sivan.name'), desc: t('deities.list.sivan.desc'), image: '/images/deities/sivan.jpg', featured: false },

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Sparkles, Send, Clock, Heart, ShieldCheck, ChevronRight } from 'lucide-react';
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Sparkles, Send, Clock, Heart, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
@@ -40,11 +40,6 @@ const Footer = () => {
                             {isML 
                                 ? '"സർവ്വത്ര സുഖിനോ ഭവന്തു — ലോകത്തിന് മുഴുവൻ ശാന്തിയും ഐശ്വര്യവും ഭവിക്കട്ടെ"'
                                 : '"സർവ്വത്ര സുഖിനോ ഭവന്തു — May Divine Blessings & Peace Encompass All"'}
-                        </span>
-                    </div>
-                    <div className="blessing-right">
-                        <span className="temple-trust-tag">
-                            <ShieldCheck size={14} /> {isML ? 'രജിസ്റ്റർ ചെയ്ത ക്ഷേത്ര ട്രസ്റ്റ്' : 'Registered Temple Trust'}
                         </span>
                     </div>
                 </div>

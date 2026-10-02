@@ -60,23 +60,8 @@ const Offerings = () => {
             benefit: 'Daily peace, health, and family prosperity', 
             benefitMl: 'മനസ്സമാധാനം, ആരോഗ്യം, കുടുംബ ഐശ്വര്യം' 
         },
-        { 
-            id: 2, 
-            category: 'special', 
-            nameEn: 'Muttarukkal', 
-            nameMl: 'മുട്ടറുക്കൽ', 
-            name: isML ? 'മുട്ടറുക്കൽ' : 'Muttarukkal', 
-            price: '₹30', 
-            descEn: 'Offering of coconuts to remove obstacles and negative eye.', 
-            descMl: 'തടസ്സങ്ങൾ നീങ്ങാൻ നാളികേരം ഉടയ്ക്കുന്നു.',
-            description: isML ? 'തടസ്സങ്ങൾ നീങ്ങാൻ നാളികേരം ഉടയ്ക്കുന്നു.' : 'Offering of coconuts to remove obstacles and negative eye.', 
-            icon: <Sparkles size={20} />, 
-            image: '/images/offerings/ganapathy_homam.jpg', 
-            benefit: 'Removal of astrological obstacles and evil eye', 
-            benefitMl: 'ദൃഷ്ടിദോഷ നിവാരണം, ഗ്രഹപ്പിഴ തടസ്സങ്ങൾ നീങ്ങൽ' 
-        },
-        { 
-            id: 3, 
+        {
+            id: 3,
             category: 'prasadam', 
             nameEn: 'Payasam Nivedyam', 
             nameMl: 'പായസം നിവേദ്യം', 

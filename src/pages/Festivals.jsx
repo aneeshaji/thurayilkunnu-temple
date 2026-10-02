@@ -71,7 +71,7 @@ const Festivals = () => {
             date: t('festivals_page.list.skanda.date'),
             tag: isML ? 'ശൂരസംഹാരവും വ്രതാനുഷ്ഠാനങ്ങളും' : '6 Sacred Days of Soorasamharam',
             description: t('festivals_page.list.skanda.desc'),
-            image: '/images/gallery/festival_gathering_1.jpg',
+            image: '/images/gallery/pooja_ritual_1.jpg',
             icon: <Sparkles size={24} />,
             highlights: isML ? ['ശൂരസംഹാരം', 'സുബ്രഹ്മണ്യ പൂജ', 'ഷഷ്ഠി വ്രതം'] : ['Soorasamharam Ritual', 'Special Subramanya Pooja', 'Fasting & Vows']
         },

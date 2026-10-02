@@ -6,7 +6,9 @@
 .sanctuary-hero {
     position: relative;
     width: 100%;
-    height: 100vh;
+    /* notice banner + top bar sit above in flow; leave room so the
+       festival countdown band (~70px) stays visible on page load */
+    height: calc(100vh - var(--notice-banner-height, 36px) - 116px);
     min-height: 680px;
     display: flex;
     flex-direction: column;
@@ -644,7 +646,7 @@
 }
 
 @media (max-width: 768px) {
-    .sanctuary-hero  { height: auto; min-height: 100svh; }
+    .sanctuary-hero  { height: auto; min-height: calc(100svh - var(--notice-banner-height, 36px) - 110px); }
     .hero-overlay {
         background: linear-gradient(180deg,
             rgba(5, 4, 3, 0.88) 0%,

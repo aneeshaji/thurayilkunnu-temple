@@ -146,7 +146,7 @@ const Banner = () => {
                     <div className="hero-cta-group">
                         <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.98 }}>
                             <Link to="/offerings" className="hero-btn-primary">
-                                <span>{isML ? 'ഓൺലൈൻ പൂജ ബുക്കിംഗ്' : 'Book Online Pooja'}</span>
+                                <span>{isML ? 'പൂജ ബുക്ക് ചെയ്യുക' : 'Book Pooja'}</span>
                                 <ArrowRight size={17} />
                             </Link>
                         </motion.div>

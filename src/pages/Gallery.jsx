@@ -118,7 +118,7 @@ const Gallery = () => {
                 title={t('gallery.hero_title')}
                 subtitle={t('gallery.hero_subtitle')}
                 badge={t('gallery.hero_badge')}
-                bgImage="/images/banners/banner_gallery.jpg"
+                bgImage="/images/banners/banner_gallery_v4.jpg"
                 currentPage={t('gallery.hero_title')}
             />
 

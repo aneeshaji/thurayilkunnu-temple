@@ -8,40 +8,20 @@ import '../styles/NoticeBoard.css';
 
 const TEMPLE_NOTICES = [
     {
-        id: 'pradosham-shiva',
-        tag_en: 'Monthly Pooja',
-        tag_ml: 'മാസപൂജ',
+        id: 'general-welcome',
+        tag_en: 'Temple Notice',
+        tag_ml: 'ക്ഷേത്ര അറിയിപ്പ്',
         tagType: 'amber',
         urgent: false,
-        date_en: 'Every Trayodashi',
-        date_ml: 'എല്ലാ ത്രയോദശിയും',
-        title_en: 'Pradosha Sandhya Pooja & Mrityunjaya Homam',
-        title_ml: 'പ്രദോഷ സന്ധ്യാപൂജയും മൃത്യുഞ്ജയ ഹോമവും',
-        desc_en: 'Special evening Abhishekam and Mrityunjaya Archana conducted at the Lord Shiva (Mahadeva) shrine during Pradosha Sandhya.',
-        desc_ml: 'പ്രദോഷ സന്ധ്യയിൽ ശ്രീ മഹാദേവന്റെ സന്നിധിയിൽ വിശേഷാൽ അഭിഷേകവും മൃത്യുഞ്ജയ അർച്ചനയും ദീപാരാധനയും നടക്കുന്നു.',
-        timings_en: 'Evening 05:30 PM – 07:30 PM',
-        timings_ml: 'വൈകിട്ട് 05:30 മുതൽ 07:30 വരെ',
-        actionLink: '/offerings',
-        actionText_en: 'View Shiva Offerings',
-        actionText_ml: 'ശിവ വഴിപാടുകൾ കാണുക'
-    },
-    {
-        id: 'chuttuvilakku-samarpanam',
-        tag_en: 'Temple Renovation',
-        tag_ml: 'ക്ഷേത്ര വികസനം',
-        tagType: 'teal',
-        urgent: false,
-        date_en: 'Ongoing Drive',
-        date_ml: 'നിലവിൽ തുടരുന്നു',
-        title_en: 'Brass Chuttuvilakku & Sanctum Samarpanam',
-        title_ml: 'പിച്ചള ചുറ്റുവിളക്ക് സമർപ്പണവും ക്ഷേത്ര നവീകരണവും',
-        desc_en: 'Devotees wishing to sponsor traditional brass lamps (Chuttuvilakku) or contribute to sanctum preservation may contact the Devaswom office.',
-        desc_ml: 'ക്ഷേത്രത്തിൽ ചുറ്റുവിളക്ക് സമർപ്പിക്കാനും ക്ഷേത്ര നവീകരണ ഫണ്ടിലേക്ക് സംഭാവന നൽകാനും ആഗ്രഹിക്കുന്ന ഭക്തർ ദേവസ്വം ഓഫീസുമായി ബന്ധപ്പെടുക.',
-        timings_en: 'Office Hours: 08:00 AM – 06:00 PM',
-        timings_ml: 'ഓഫീസ് സമയം: രാവിലെ 08:00 മുതൽ വൈകിട്ട് 06:00 വരെ',
-        actionLink: '/contact',
-        actionText_en: 'Contact Temple Office',
-        actionText_ml: 'ഓഫീസുമായി ബന്ധപ്പെടുക'
+        date_en: 'Daily',
+        date_ml: 'നിത്യം',
+        title_en: 'Welcome to Thurayilkunnu Sree Subramanya Swami Temple',
+        title_ml: 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലേക്ക് സ്വാഗതം',
+        desc_en: 'All devotees and visitors are cordially welcome to take part in the daily poojas and spiritual activities of the temple.',
+        desc_ml: 'ക്ഷേത്രത്തിലെ നിത്യ പൂജകളിലും ആത്മീയ പരിപാടികളിലും പങ്കാളികളാകാൻ എല്ലാ ഭക്തരെയും സന്ദർശകരെയും സാദരം ക്ഷണിക്കുന്നു.',
+        actionLink: '/about',
+        actionText_en: 'Know More',
+        actionText_ml: 'കൂടുതൽ അറിയുക'
     }
 ];
 

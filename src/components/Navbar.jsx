@@ -86,6 +86,15 @@ const Navbar = () => {
             })}
           </ul>
           <div className="nav-cta">
+            <button
+              type="button"
+              className="nav-lang-toggle-btn"
+              onClick={() => i18n.changeLanguage(currentLang === 'en' ? 'ml' : 'en')}
+              aria-label={currentLang === 'en' ? 'Switch to Malayalam' : 'Switch to English'}
+            >
+              <Globe size={12} />
+              <span>{currentLang === 'en' ? 'മലയാളം' : 'English'}</span>
+            </button>
             <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.98 }}>
               <Link to="/offerings" className="cta-button shine-hover">
                 <Heart size={15} className="cta-heart-icon" />
