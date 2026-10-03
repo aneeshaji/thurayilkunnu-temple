@@ -231,34 +231,50 @@ const Home = () => {
         { 
             image: '/images/offerings/ganapathy_homam.jpg', 
             badge: isML ? 'നിത്യ ഹോമം' : 'Daily Homam',
-            title: t('home.offerings.ganapathy_homam'), 
-            desc: t('home.offerings.ganapathy_homam_desc'),
-            price: '₹350',
-            deity: isML ? 'ഗണപതി ഭഗവാൻ' : 'Lord Ganapathy'
+            title: isML ? 'ഗണപതി ഹോമം' : 'Ganapathy Homam',
+            desc: isML 
+                ? 'ഐശ്വര്യത്തിനും തടസ്സനിവാരണത്തിനും ഭഗവാൻ ഗണപതിയുടെ ദിവ്യ അനുഗ്രഹം തേടി നടത്തുന്ന പുണ്യ ഹോമം.'
+                : 'Sacred fire ritual invoking divine blessings of Lord Ganapathy for prosperity and removal of obstacles.',
+            price: '₹250',
+            deity: isML ? 'ഗണപതി ഭഗവാൻ' : 'Lord Ganapathy',
+            accent: '#D97706',
+            num: '01'
         },
         { 
             image: '/images/offerings/archana_pushpanjali.jpg', 
             badge: isML ? 'നിത്യ അർച്ചന' : 'Daily Archana',
-            title: t('home.offerings.pushpanjali'), 
-            desc: t('home.offerings.pushpanjali_desc'),
-            price: '₹20',
-            deity: isML ? 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമി' : 'Lord Murugan'
-        },
-        { 
-            image: '/images/offerings/thulabharam.jpg', 
-            badge: isML ? 'വിശേഷാൽ നേർച്ച' : 'Sacred Vow',
-            title: t('home.offerings.thulabharam'), 
-            desc: t('home.offerings.thulabharam_desc'),
-            price: isML ? 'നേർച്ച നിരക്ക്' : 'By Weight',
-            deity: isML ? 'ക്ഷേത്ര സന്നിധി' : 'Temple Sanctum'
+            title: isML ? 'അർച്ചന / പുഷ്പാഞ്ജലി' : 'Archana / Pushpanjali',
+            desc: isML 
+                ? 'ആത്മശാന്തിക്കും കുടുംബ സമൃദ്ധിക്കും ദൈവിക കൃപ തേടി നടത്തുന്ന പുഷ്പ അർച്ചന.'
+                : 'Sacred floral archana invoking divine grace for mental peace, health and family prosperity.',
+            price: '₹15',
+            deity: isML ? 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമി' : 'Lord Murugan',
+            accent: '#B45309',
+            num: '02'
         },
         { 
             image: '/images/offerings/palabhishekam.jpg', 
-            badge: isML ? 'വിശേഷാൽ അഭിഷേകം' : 'Holy Abhishekam',
-            title: t('home.offerings.palabhishekam'), 
-            desc: t('home.offerings.palabhishekam_desc'),
-            price: '₹150',
-            deity: isML ? 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമി' : 'Lord Murugan'
+            badge: isML ? 'പ്രത്യേക അഭിഷേകം' : 'Holy Abhishekam',
+            title: isML ? 'പാലഭിഷേകം' : 'Palabhishekam',
+            desc: isML 
+                ? 'ശ്രീ സുബ്രഹ്മണ്യ സ്വാമിക്ക് പവിത്ര ക്ഷീരാഭിഷേകം. ആദ്ധ്യാത്മിക ശുദ്ധിക്കും ആന്തരിക ശാന്തിക്കും ഉത്തമം.'
+                : 'Holy milk oblation to Lord Murugan for divine blessings, spiritual purity and inner peace.',
+            price: '₹125',
+            deity: isML ? 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമി' : 'Lord Murugan',
+            accent: '#92400E',
+            num: '03'
+        },
+        { 
+            image: '/images/gallery/kavadi_procession.jpg', 
+            badge: isML ? 'വിശേഷ പൂജ' : 'Special Pooja',
+            title: isML ? 'സ്കന്ദ കാവടി പൂജ' : 'Skanda Kavadi Pooja',
+            desc: isML 
+                ? 'ഭക്തർ ഭാരം വഹിച്ച് നടത്തുന്ന ദൈവ സേവ. ഭഗവാൻ സുബ്രഹ്മണ്യന്റെ അനുഗ്രഹം ലഭിക്കാൻ ഇത് ഉത്തമം.'
+                : 'A sacred act of devotion where devotees carry the kavadi to seek the grace and blessings of Lord Skanda.',
+            price: '₹40',
+            deity: isML ? 'ശ്രീ സ്കന്ദൻ' : 'Lord Skanda',
+            accent: '#78350F',
+            num: '04'
         }
     ];
 
@@ -352,54 +368,52 @@ const Home = () => {
             </motion.section>
 
             {/* ---- OFFERINGS & VAZHIPADU ---- */}
-            <motion.section className="sanctuary-section offerings-section" {...inViewProps()} variants={stagger}>
+            <motion.section className="sanctuary-section vazhipadu-section" {...inViewProps()} variants={stagger}>
                 <div className="sanctuary-container">
                     <SectionHead
-                        eyebrow={t('home.offerings.section_label')}
-                        title={t('home.offerings.title')}
-                        desc={t('home.offerings.desc')}
+                        eyebrow={isML ? 'ക്ഷേത്ര വഴിപാടുകൾ' : 'Sacred Offerings'}
+                        title={isML ? 'തിരഞ്ഞെടുത്ത വഴിപാടുകൾ' : 'Featured Vazhipadus'}
+                        desc={isML ? 'ശ്രദ്ധേയമായ ക്ഷേത്ര വഴിപാടുകൾ – ഭക്തർക്ക് ദൈവ കൃപ ലഭിക്കുവാൻ.' : 'Participate in the sacred rituals of Thurayilkunnu Temple and seek divine blessings.'}
                         to="/offerings"
                         isML={isML}
                     />
 
-                    <div className="offering-cards-grid">
+                    <div className="vazhipadu-panoramic-grid">
                         {offerings.map((o, i) => (
                             <motion.article
-                                className="offering-glass-card"
+                                className="vazhipadu-immersive-card"
                                 key={i}
                                 variants={fadeInUp}
-                                whileHover={{ y: -8 }}
-                                transition={{ duration: 0.35 }}
+                                whileHover={{ scale: 1.025, zIndex: 2 }}
+                                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                                style={{ '--card-accent': o.accent }}
                             >
-                                <div className="offering-image-holder">
+                                {/* Full bleed image */}
+                                <div className="vzp-image-layer">
                                     <img src={o.image} alt={o.title} loading="lazy" />
-                                    <div className="offering-image-gradient" />
-                                    {o.badge && (
-                                        <span className="offering-type-badge">
-                                            <Sparkles size={11} />
-                                            {o.badge}
-                                        </span>
-                                    )}
-                                    {o.price && (
-                                        <span className="offering-price-pill">
-                                            {o.price}
-                                        </span>
-                                    )}
+                                    <div className="vzp-overlay-gradient" />
+                                    <div className="vzp-shimmer-strip" />
                                 </div>
-                                <div className="offering-info">
-                                    {o.deity && (
-                                        <span className="offering-deity-tag">
-                                            ✦ {o.deity}
-                                        </span>
-                                    )}
-                                    <h3 className="offering-title">{o.title}</h3>
-                                    <p className="offering-desc">{o.desc}</p>
-                                    <div className="offering-action-row">
-                                        <Link to="/offerings" className="offering-card-btn">
-                                            <span>{t('home.offerings.card_link')}</span>
-                                            <ChevronRight size={15} />
-                                        </Link>
-                                    </div>
+
+                                {/* Top badges row */}
+                                <div className="vzp-top-row">
+                                    <span className="vzp-num-badge">{o.num}</span>
+                                    <span className="vzp-price-tag">{o.price}</span>
+                                </div>
+
+                                {/* Bottom content panel */}
+                                <div className="vzp-content-panel">
+                                    <span className="vzp-ritual-type">
+                                        <Flame size={11} />
+                                        {o.badge}
+                                    </span>
+                                    <span className="vzp-deity-label">✦ {o.deity}</span>
+                                    <h3 className="vzp-title">{o.title}</h3>
+                                    <p className="vzp-desc">{o.desc}</p>
+                                    <Link to="/offerings" className="vzp-book-btn">
+                                        <span>{isML ? 'വഴിപാട് ബുക്ക് ചെയ്യൂ' : 'Book Offering'}</span>
+                                        <ChevronRight size={14} />
+                                    </Link>
                                 </div>
                             </motion.article>
                         ))}
