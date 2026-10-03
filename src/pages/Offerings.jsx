@@ -1292,17 +1292,15 @@ Please confirm my booking. Thank you!`;
                         animate="show"
                         key={activeFilter}
                     >
-                        {/* category → image map */}
                         <AnimatePresence>
                             {filteredOfferings.map((offering) => {
-                                const catImages = {
-                                    daily:      '/images/offerings/archana_pushpanjali.jpg',
-                                    abhishekam: '/images/offerings/palabhishekam.jpg',
-                                    homam:      '/images/offerings/ganapathy_homam.jpg',
-                                    special:    '/images/offerings/thulabharam.jpg',
-                                    prasadam:   '/images/offerings/archana_pushpanjali.jpg',
+                                const catAccents = {
+                                    daily:      { bg: '#FEF3C7', border: '#F59E0B', text: '#92400E', iconBg: 'linear-gradient(135deg, #F59E0B, #D97706)' },
+                                    abhishekam: { bg: '#EDE9FE', border: '#8B5CF6', text: '#5B21B6', iconBg: 'linear-gradient(135deg, #8B5CF6, #6D28D9)' },
+                                    homam:      { bg: '#FEE2E2', border: '#EF4444', text: '#991B1B', iconBg: 'linear-gradient(135deg, #EF4444, #DC2626)' },
+                                    special:    { bg: '#D1FAE5', border: '#10B981', text: '#065F46', iconBg: 'linear-gradient(135deg, #10B981, #059669)' },
+                                    prasadam:   { bg: '#FFE4E6', border: '#F43F5E', text: '#9F1239', iconBg: 'linear-gradient(135deg, #F43F5E, #E11D48)' },
                                 };
-                                const cardImg = catImages[offering.category] || '/images/offerings/archana_pushpanjali.jpg';
                                 const catBadges = {
                                     daily:      isML ? 'നിത്യ വഴിപാട്'   : 'Daily Offering',
                                     abhishekam: isML ? 'അഭിഷേകം'         : 'Abhishekam',
@@ -1310,36 +1308,41 @@ Please confirm my booking. Thank you!`;
                                     special:    isML ? 'വിശേഷ നേർച്ച'    : 'Special Vow',
                                     prasadam:   isML ? 'പ്രസാദം'          : 'Prasadam',
                                 };
+                                const accent = catAccents[offering.category] || catAccents.daily;
                                 return (
                                 <motion.article
                                     key={offering.id}
-                                    className="offering-glass-card"
+                                    className="offering-list-card"
                                     variants={cardVariant}
                                     layout
-                                    whileHover={{ y: -8 }}
-                                    transition={{ duration: 0.35 }}
+                                    whileHover={{ y: -4, boxShadow: `0 16px 40px -8px ${accent.border}30` }}
+                                    transition={{ duration: 0.3 }}
                                     onClick={() => handleOpenOffering(offering)}
-                                    style={{ cursor: 'pointer' }}
+                                    style={{ cursor: 'pointer', '--cat-accent': accent.border, '--cat-bg': accent.bg, '--cat-text': accent.text }}
                                 >
-                                    <div className="offering-image-holder">
-                                        <img src={cardImg} alt={isML ? (offering.nameMl || offering.name) : (offering.nameEn || offering.name)} loading="lazy" />
-                                        <div className="offering-image-gradient" />
-                                        <span className="offering-type-badge">
-                                            <Sparkles size={11} />
-                                            {catBadges[offering.category]}
-                                        </span>
-                                        <span className="offering-price-pill">
-                                            {isML && offering.priceMl ? offering.priceMl : offering.price}
-                                        </span>
+                                    {/* Icon circle */}
+                                    <div className="olc-icon-circle" style={{ background: accent.iconBg }}>
+                                        {React.cloneElement(offering.icon, { size: 22, color: '#fff' })}
                                     </div>
-                                    <div className="offering-info">
-                                        <span className="offering-deity-tag">✦ {isML ? (offering.nameMl || offering.name) : (offering.nameEn || offering.name)}</span>
-                                        <h3 className="offering-title">{isML ? (offering.nameMl || offering.name) : (offering.nameEn || offering.name)}</h3>
-                                        <p className="offering-desc">{isML ? (offering.descMl || offering.description) : (offering.descEn || offering.description)}</p>
-                                        <div className="offering-action-row">
-                                            <button className="offering-card-btn" onClick={(e) => { e.stopPropagation(); handleOpenOffering(offering); }}>
-                                                <span>{isML ? 'ബുക്ക് ചെയ്യൂ' : 'Book Offering'}</span>
-                                                <ChevronRight size={15} />
+
+                                    {/* Content */}
+                                    <div className="olc-content">
+                                        <div className="olc-top-row">
+                                            <span className="olc-cat-chip" style={{ background: accent.bg, color: accent.text, borderColor: accent.border }}>
+                                                {catBadges[offering.category]}
+                                            </span>
+                                            <span className="olc-price">{isML && offering.priceMl ? offering.priceMl : offering.price}</span>
+                                        </div>
+                                        <h3 className="olc-name">{isML ? (offering.nameMl || offering.name) : (offering.nameEn || offering.name)}</h3>
+                                        <p className="olc-desc">{isML ? (offering.descMl || offering.description) : (offering.descEn || offering.description)}</p>
+                                        <div className="olc-bottom-row">
+                                            <span className="olc-benefit-chip">
+                                                <Star size={11} />
+                                                {isML ? (offering.benefitMl || offering.benefit) : offering.benefit}
+                                            </span>
+                                            <button className="olc-book-btn" onClick={(e) => { e.stopPropagation(); handleOpenOffering(offering); }}>
+                                                <span>{isML ? 'ബുക്ക്' : 'Book'}</span>
+                                                <ChevronRight size={13} />
                                             </button>
                                         </div>
                                     </div>
