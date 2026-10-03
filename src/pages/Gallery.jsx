@@ -4,6 +4,7 @@ import { Image as ImageIcon, Maximize2, X, ChevronLeft, ChevronRight, Sparkles }
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import PageHero from '../components/PageHero';
+import SEO from '../components/SEO';
 import '../styles/Gallery.css';
 
 /* ---- ANIMATION VARIANTS ---- */
