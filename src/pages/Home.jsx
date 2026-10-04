@@ -533,7 +533,7 @@ const Home = () => {
                         <p>{t('home.closing.office_desc')}</p>
                         <a href="tel:+917994342205" className="phone-number-btn">+91 79943 42205</a>
                         <Link to="/contact" className="gold-pill-btn">
-                            <span>{t('home.closing.visit_donate')}</span>
+                            <span>{t('navbar.contact')}</span>
                             <ArrowRight size={17} />
                         </Link>
                     </motion.div>

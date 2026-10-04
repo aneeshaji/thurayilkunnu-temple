@@ -13,7 +13,6 @@ const Festivals = lazy(() => import('./pages/Festivals'));
 const Offerings = lazy(() => import('./pages/Offerings'));
 const Gallery = lazy(() => import('./pages/Gallery'));
 const Contact = lazy(() => import('./pages/Contact'));
-const Donations = lazy(() => import('./pages/Donations'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -54,7 +53,7 @@ function App() {
           <Route path="/deities" element={<Deities />} />
           <Route path="/festivals" element={<Festivals />} />
           <Route path="/offerings" element={<Offerings />} />
-          <Route path="/donations" element={<Donations />} />
+
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

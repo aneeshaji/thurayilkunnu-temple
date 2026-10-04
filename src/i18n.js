@@ -15,8 +15,7 @@ const resources = {
                 contact: "Contact",
                 gallery: "Gallery",
                 vazhipadu: "Vazhipadus",
-                online_pooja: "Book Pooja",
-                donations: "Donations"
+                online_pooja: "Book Pooja"
             },
             home: {
                 welcome_subtitle: "Since Generations",
@@ -67,8 +66,7 @@ const resources = {
                     questions: "Have Questions?",
                     office_desc: "Our temple office is open to assist you with any inquiries.",
                     mission_title: "Our Mission",
-                    mission_desc: "Preserving our rich spiritual heritage and fostering a space of universal peace and devotion for all who seek divine solace.",
-                    visit_donate: "Visit or Donate"
+                    mission_desc: "Preserving our rich spiritual heritage and fostering a space of universal peace and devotion for all who seek divine solace."
                 },
                 banner: {
                     slide1: {
@@ -282,75 +280,6 @@ const resources = {
                 desc: "Add to home screen for daily Panchangam, pooja timings & instant notices.",
                 install_btn: "Install App"
             },
-            donations_page: {
-                hero_badge: "Sacred Contribution",
-                title: "Donations",
-                subtitle: "Support our temple sacred rituals, Annadanam feeding, and sanctum development",
-                intro: "Generosity and selfless contribution (Dana) in the sanctum of Lord Subramanya bring peace, well-being, and divine grace upon your family. Devotees may contribute towards sacred causes through Direct Bank Transfer or UPI QR Code.",
-                causes_title: "Sacred Causes & Sevas",
-                causes_subtitle: "Choose a dedicated cause for your divine contribution",
-                causes: {
-                    annadanam: {
-                        name: "Annadanam Samarpanam",
-                        desc: "Contribute towards providing sacred meals (prasada oottu) to pilgrims and devotees visiting the temple.",
-                        amount: "Any amount / Custom"
-                    },
-                    renovation: {
-                        name: "Temple Renovation & Maintenance Fund",
-                        desc: "Support the upkeep, maintenance and preservation of the temple and its premises.",
-                        amount: "Any amount / Custom"
-                    },
-                    nithya_pooja: {
-                        name: "Nithya Pooja Fund",
-                        desc: "Support the daily worship, poojas and traditional observances of the temple.",
-                        amount: "Any amount / Custom"
-                    },
-                    chuttuvilakku: {
-                        name: "Deepam & Oil Lamp Seva",
-                        desc: "Contribute towards the lighting of sacred lamps and daily deepam offerings at the temple.",
-                        amount: "Any amount / Custom"
-                    }
-                },
-                bank_card: {
-                    title: "Official Bank Transfer (NEFT / RTGS / IMPS)",
-                    subtitle: "Direct contribution to Temple Trust Account",
-                    acc_name: "Account Name",
-                    acc_name_val: "Thurayilkunnu Sree Subramanya Swami Temple Trust",
-                    acc_no: "Account Number",
-                    acc_no_val: "67012345678",
-                    bank_name: "Bank Name",
-                    bank_name_val: "State Bank of India (SBI)",
-                    branch: "Branch",
-                    branch_val: "Karunagappally Branch",
-                    ifsc: "IFSC Code",
-                    ifsc_val: "SBIN0070054",
-                    acc_type: "Account Type",
-                    acc_type_val: "Current Account",
-                    copy: "Copy",
-                    copied: "Copied!"
-                },
-                upi_card: {
-                    title: "Instant UPI / QR Code Payment",
-                    subtitle: "Scan with Google Pay, PhonePe, Paytm, BHIM or any UPI App",
-                    upi_id_label: "Temple Official UPI ID",
-                    upi_id_val: "thurayilkunnutemple@sbi",
-                    note: "Instant and 100% secure direct devotee offering to the sacred trust."
-                },
-                receipt_form: {
-                    title: "Donation Acknowledgement & Receipt",
-                    subtitle: "Submitted details help us send you official receipt & temple prasadam",
-                    name: "Full Name",
-                    phone: "Phone / WhatsApp Number",
-                    email: "Email Address (Optional)",
-                    cause: "Select Cause",
-                    amount: "Amount Donated (₹)",
-                    utr: "UPI / Bank Transaction UTR / Ref Number",
-                    address: "Postal Address (For Prasadam)",
-                    submit: "Submit & Confirm via WhatsApp",
-                    success: "Thank you! Your donation details have been recorded. Opening WhatsApp for receipt verification...",
-                    footer_note: "Thurayilkunnu Sree Subramanya Swami Temple is a registered religious trust. All contributions are utilized transparently for sanctum sevas."
-                }
-            },
             pooja_schedule: {
                 badge: "Sanctum Timings",
                 title: "Daily Pooja Timetable",
@@ -466,8 +395,7 @@ const resources = {
                 contact: "ബന്ധപ്പെടുക",
                 gallery: "ഗാലറി",
                 vazhipadu: "വഴിപാടുകൾ",
-                online_pooja: "പൂജ ബുക്ക് ചെയ്യുക",
-                donations: "സംഭാവന"
+                online_pooja: "പൂജ ബുക്ക് ചെയ്യുക"
             },
             home: {
                 welcome_subtitle: "തലമുറകളായി",
@@ -518,8 +446,7 @@ const resources = {
                     questions: "എന്തെങ്കിലും സംശയമുണ്ടോ?",
                     office_desc: "എന്ത് സംശയങ്ങൾക്കും ഞങ്ങളുടെ ക്ഷേത്ര ഓഫീസ് നിങ്ങളെ സഹായിക്കാൻ സന്നദ്ധമാണ്.",
                     mission_title: "ലക്ഷ്യം",
-                    mission_desc: "ഞങ്ങളുടെ സമ്പന്നമായ ആത്മീയ പൈതൃകം സംരക്ഷിക്കുകയും സമാധാനവും ഭക്തിയും ആഗ്രഹിക്കുന്ന എല്ലാവർക്കും ഒരിടം നൽകുകയും ചെയ്യുക.",
-                    visit_donate: "സന്ദർശിക്കുക അല്ലെങ്കിൽ സംഭാവന നൽകുക"
+                    mission_desc: "ഞങ്ങളുടെ സമ്പന്നമായ ആത്മീയ പൈതൃകം സംരക്ഷിക്കുകയും സമാധാനവും ഭക്തിയും ആഗ്രഹിക്കുന്ന എല്ലാവർക്കും ഒരിടം നൽകുകയും ചെയ്യുക."
                 },
                 banner: {
                     slide1: {
@@ -732,75 +659,6 @@ const resources = {
                 title: "ക്ഷേത്ര ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്യുക",
                 desc: "ദിവസേനയുള്ള പഞ്ചാംഗത്തിനും പൂജാ സമയങ്ങൾക്കും ഹോം സ്ക്രീനിലേക്ക് ചേർക്കുക.",
                 install_btn: "ഇൻസ്റ്റാൾ ചെയ്യുക"
-            },
-            donations_page: {
-                hero_badge: "പുണ്യ സമർപ്പണം",
-                title: "കണിക്കയും സംഭാവനയും",
-                subtitle: "ക്ഷേത്ര നിത്യപൂജകൾ, അന്നദാനം, പുനരുദ്ധാരണ പ്രവർത്തനങ്ങൾ എന്നിവയിലേക്ക് കൈകോർക്കുക",
-                intro: "ഭഗവാൻ സുബ്രഹ്മണ്യന്റെ സന്നിധിയിൽ സമർപ്പിക്കുന്ന ഓരോ സമർപ്പണവും കുടുംബത്തിന് ഐശ്വര്യവും ആയുരാരോഗ്യവും പ്രധാനം ചെയ്യുന്നു. ഭക്തർക്ക് ബാങ്ക് അക്കൗണ്ട് വഴിയോ യുപിഐ ക്യുആർ കോഡ് വഴിയോ നേരിട്ട് സമർപ്പിക്കാവുന്നതാണ്.",
-                causes_title: "വിശേഷാൽ സമർപ്പണങ്ങൾ",
-                causes_subtitle: "താങ്കളുടെ പുണ്യ സംഭാവനയ്ക്കായി ഒരു സേവ തിരഞ്ഞെടുക്കുക",
-                causes: {
-                    annadanam: {
-                        name: "അന്നദാനം സമർപ്പണം",
-                        desc: "ക്ഷേത്രത്തിൽ എത്തുന്ന ഭക്തർക്കും തീർത്ഥാടകർക്കും പ്രസാദമൂട്ട് നൽകുന്നതിന് സഹകരിക്കുക.",
-                        amount: "ഇഷ്ടമുള്ള തുക"
-                    },
-                    renovation: {
-                        name: "ക്ഷേത്ര നവീകരണ & സംരക്ഷണ ഫണ്ട്",
-                        desc: "ക്ഷേത്രവും അതിന്റെ അന്തരീക്ഷവും നിലനിർത്തുന്നതിനും സംരക്ഷിക്കുന്നതിനുമുള്ള നിർമ്മാണ പ്രവർത്തനങ്ങൾക്ക് പിന്തുണ നൽകുക.",
-                        amount: "ഇഷ്ടമുള്ള തുക"
-                    },
-                    nithya_pooja: {
-                        name: "നിത്യപൂജ ഫണ്ട്",
-                        desc: "ക്ഷേത്രത്തിലെ നിത്യപൂജകളെയും ആചാരാനുഷ്ഠാനങ്ങളെയും പിന്തുണയ്ക്കുക.",
-                        amount: "ഇഷ്ടമുള്ള തുക"
-                    },
-                    chuttuvilakku: {
-                        name: "ദീപം & വിളക്ക് സേവ",
-                        desc: "ക്ഷേത്രത്തിലെ പുണ്യ ദീപങ്ങളും നിത്യ ദീപസമർപ്പണവും തെളിയിക്കുന്നതിന് സഹകരിക്കുക.",
-                        amount: "ഇഷ്ടമുള്ള തുക"
-                    }
-                },
-                bank_card: {
-                    title: "ഔദ്യോഗിക ബാങ്ക് ട്രാൻസ്ഫർ (NEFT / RTGS / IMPS)",
-                    subtitle: "ക്ഷേത്ര ട്രസ്റ്റ് അക്കൗണ്ടിലേക്ക് നേരിട്ട് അയക്കാം",
-                    acc_name: "അക്കൗണ്ട് ഉടമ",
-                    acc_name_val: "തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ടെമ്പിൾ ട്രസ്റ്റ്",
-                    acc_no: "അക്കൗണ്ട് നമ്പർ",
-                    acc_no_val: "67012345678",
-                    bank_name: "ബാങ്ക്",
-                    bank_name_val: "സ്റ്റേറ്റ് ബാങ്ക് ഓഫ് ഇന്ത്യ (SBI)",
-                    branch: "ബ്രാഞ്ച്",
-                    branch_val: "കരുനാഗപ്പള്ളി ബ്രാഞ്ച്",
-                    ifsc: "IFSC കോഡ്",
-                    ifsc_val: "SBIN0070054",
-                    acc_type: "അക്കൗണ്ട് തരം",
-                    acc_type_val: "കറന്റ് അക്കൗണ്ട്",
-                    copy: "പകർത്തുക",
-                    copied: "പകർത്തി!"
-                },
-                upi_card: {
-                    title: "തത്സമയ UPI / QR കോഡ് പേയ്‌മെന്റ്",
-                    subtitle: "Google Pay, PhonePe, Paytm, BHIM എന്നിവ ഉപയോഗിച്ച് സ്കാൻ ചെയ്യുക",
-                    upi_id_label: "ക്ഷേത്രത്തിന്റെ ഔദ്യോഗിക UPI ID",
-                    upi_id_val: "thurayilkunnutemple@sbi",
-                    note: "സുരക്ഷിതമായി ക്ഷേത്ര ട്രസ്റ്റിലേക്ക് നേരിട്ട് എത്തുന്നതാണ്."
-                },
-                receipt_form: {
-                    title: "രസീത് ലഭിക്കുന്നതിനുള്ള വിവരങ്ങൾ",
-                    subtitle: "താങ്കൾ നൽകിയ സംഭാവനയുടെ ഔദ്യോഗിക രസീതും പ്രസാദവും അയച്ചുതരുന്നതിനായി നൽകുക",
-                    name: "പൂർണ്ണ നാമം",
-                    phone: "ഫോൺ / വാട്സാപ്പ് നമ്പർ",
-                    email: "ഇമെയിൽ (ഐച്ഛികം)",
-                    cause: "ഫണ്ട് തിരഞ്ഞെടുക്കുക",
-                    amount: "സമർപ്പിച്ച തുക (₹)",
-                    utr: "ബാങ്ക് / UPI ട്രാൻസാക്ഷൻ നമ്പർ (UTR / Ref)",
-                    address: "തപാൽ മേൽവിലാസം (പ്രസാദം അയക്കാൻ)",
-                    submit: "സമർപ്പിച്ചു രസീത് വാട്സാപ്പിൽ ആവശ്യപ്പെടുക",
-                    success: "നന്ദി! വിവരങ്ങൾ രേഖപ്പെടുത്തി. രസീത് സ്ഥിരീകരണത്തിനായി വാട്സാപ്പ് തുറക്കുന്നു...",
-                    footer_note: "തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം ഒരു രജിസ്റ്റേഡ് മത-ധർമ്മസ്ഥാപനമാണ്. എല്ലാ സംഭാവനകളും ക്ഷേത്രകാര്യങ്ങൾക്ക് സുതാര്യമായി ഉപയോഗിക്കുന്നു."
-                }
             },
             pooja_schedule: {
                 badge: "പൂജാ ക്രമം",

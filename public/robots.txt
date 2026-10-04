@@ -1,8 +1,5 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://thurayilkunnutemple.technobyteinnovations.in/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 10
+Sitemap: https://thurayilkunnutemple.com/sitemap.xml

@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import Logo from './Logo.jsx';
+import { sendContactEmail } from '../utils/contactForm';
+import { CONTACT_EMAIL, PHONE_PRIMARY, PHONE_SECONDARY } from '../constants/site';
 import '../styles/Footer.css';
 
 const Footer = () => {
@@ -12,21 +14,36 @@ const Footer = () => {
     const isML = i18n.language === 'ml';
     const [subscriberEmail, setSubscriberEmail] = useState('');
     const [isSubscribed, setIsSubscribed] = useState(false);
+    const [subscribeError, setSubscribeError] = useState('');
+    const [isSubscribing, setIsSubscribing] = useState(false);
 
-    const handleSubscribe = (e) => {
+    const handleSubscribe = async (e) => {
         e.preventDefault();
-        if (subscriberEmail) {
-            setIsSubscribed(true);
-            const phoneNumber = '+917994342205';
-            const waMessage = isML 
-                ? `🙏 സ്വാമി ശരണം!\n\nതുറയിൽകുന്ന് ക്ഷേത്ര വാർത്താപത്രികയിലേക്ക് ഒരു ഭക്തൻ സബ്‌സ്‌ക്രൈബ് ചെയ്തിരിക്കുന്നു:\n\n📧 ഇമെയിൽ: ${subscriberEmail}\n\nവിശേഷ ദിവസങ്ങളും അറിയിപ്പുകളും ലഭ്യമാക്കാൻ ദയവായി ചേർക്കുക. നന്ദി!`
-                : `🙏 Swami Saranam!\n\nA devotee has subscribed to the Thurayilkunnu Temple newsletter:\n\n📧 Email: ${subscriberEmail}\n\nPlease add them to the devotee mailing list for festival announcements and auspicious thithi alerts. Thank you!`;
-            setTimeout(() => {
-                window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(waMessage)}`, '_blank');
-                setIsSubscribed(false);
-                setSubscriberEmail('');
-            }, 1200);
+        if (!subscriberEmail) return;
+
+        setSubscribeError('');
+        setIsSubscribing(true);
+
+        const result = await sendContactEmail({
+            name: subscriberEmail,
+            email: subscriberEmail,
+            phone: '',
+            subject: 'Newsletter Subscription',
+            message: isML
+                ? `തുറയിൽകുന്ന് ക്ഷേത്ര വാർത്താപത്രികയിലേക്ക് സബ്‌സ്‌ക്രൈബ് ചെയ്യാൻ ആഗ്രഹിച്ചു:\n\nഇമെയിൽ: ${subscriberEmail}\n\nവിശേഷ ദിവസങ്ങളും അറിയിപ്പുകളും ലഭ്യമാക്കാൻ ദയവായി ചേർക്കുക.`
+                : `Please add this devotee to the Thurayilkunnu Temple mailing list for festival announcements and auspicious thithi alerts.\n\nEmail: ${subscriberEmail}`
+        });
+
+        setIsSubscribing(false);
+
+        if (!result.ok) {
+            setSubscribeError(result.error);
+            return;
         }
+
+        setIsSubscribed(true);
+        setSubscriberEmail('');
+        setTimeout(() => setIsSubscribed(false), 5000);
     };
 
     return (
@@ -122,21 +139,29 @@ const Footer = () => {
                             transition={{ duration: 0.4 }}
                         >
                             <Sparkles size={16} />
-                            <span>{isML ? 'വാട്‌സ്ആപ്പ് തുറക്കുന്നു — ഭഗവാൻ മുരുകന്റെ അനുഗ്രഹം ഉണ്ടാകട്ടെ! 🙏' : 'Opening WhatsApp — May Lord Murugan bless you! 🙏'}</span>
+                            <span>{isML ? 'സബ്‌സ്‌ക്രൈബ് ചെയ്തിരിക്കുന്നു — ഭഗവാൻ മുരുകന്റെ അനുഗ്രഹം ഉണ്ടാകട്ടെ! 🙏' : 'Subscribed — may Lord Murugan bless you! 🙏'}</span>
                         </motion.div>
                     ) : (
-                        <form className="footer-newsletter-form" onSubmit={handleSubscribe}>
-                            <input
-                                type="email"
-                                placeholder={isML ? 'ഇമെയിൽ വിലാസം നൽകുക...' : 'Enter email address...'}
-                                value={subscriberEmail}
-                                onChange={(e) => setSubscriberEmail(e.target.value)}
-                                required
-                            />
-                            <button type="submit" aria-label={isML ? 'സബ്‌സ്‌ക്രൈബ്' : 'Subscribe'} className="subscribe-btn">
-                                <Send size={15} />
-                            </button>
-                        </form>
+                        <>
+                            <form className="footer-newsletter-form" onSubmit={handleSubscribe}>
+                                <input
+                                    type="email"
+                                    placeholder={isML ? 'ഇമെയിൽ വിലാസം നൽകുക...' : 'Enter email address...'}
+                                    value={subscriberEmail}
+                                    onChange={(e) => setSubscriberEmail(e.target.value)}
+                                    required
+                                />
+                                <button
+                                    type="submit"
+                                    aria-label={isML ? 'സബ്‌സ്‌ക്രൈബ്' : 'Subscribe'}
+                                    className="subscribe-btn"
+                                    disabled={isSubscribing}
+                                >
+                                    <Send size={15} />
+                                </button>
+                            </form>
+                            {subscribeError && <p className="newsletter-error" role="alert">{subscribeError}</p>}
+                        </>
                     )}
 
                     <div className="footer-contact-details">
@@ -147,12 +172,12 @@ const Footer = () => {
                         <p className="contact-line">
                             <Phone size={15} className="contact-icon" />
                             <span>
-                                <a href="tel:+917994342205">+91 79943 42205</a>, <a href="tel:+919072722205">+91 90727 22205</a>
+                                <a href={`tel:${PHONE_PRIMARY}`}>+91 79943 42205</a>, <a href={`tel:${PHONE_SECONDARY}`}>+91 90727 22205</a>
                             </span>
                         </p>
                         <p className="contact-line">
                             <Mail size={15} className="contact-icon" />
-                            <a href="mailto:info@subramanyatemple.org">info@subramanyatemple.org</a>
+                            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
                         </p>
                     </div>
                 </div>
@@ -173,7 +198,7 @@ const Footer = () => {
                     </div>
                     <div className="powered-by-wrapper">
                         <span>{isML ? 'സാങ്കേതിക സഹായം: ' : 'Sponsored & Powered by: '}</span>
-                        <a href="https://technobyteinnovations.com" target="_blank" rel="noopener noreferrer" className="powered-by-link">
+                        <a href="https://technobyteinnovations.in/" target="_blank" rel="noopener noreferrer" className="powered-by-link">
                             TechnobyteInnovations
                         </a>
                     </div>

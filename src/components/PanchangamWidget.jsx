@@ -4,10 +4,11 @@ import { useTranslation } from 'react-i18next';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Moon, Star, Clock, ChevronLeft, ChevronRight, MapPin, Calendar, Loader, RotateCcw } from 'lucide-react';
+import { TEMPLE_GEO } from '../constants/site';
 import '../styles/PanchangamWidget.css';
 
 /* ─── Temple coordinates: Karunagappally, Kerala ─── */
-const LOCATION = { latitude: 9.0281, longitude: 76.5365, elevation: 5 };
+const LOCATION = { latitude: Number(TEMPLE_GEO.latitude), longitude: Number(TEMPLE_GEO.longitude), elevation: 5 };
 const TIMEZONE = 330; // IST = UTC+5:30
 
 /* ─── Malayalam & English Translation Mappings ─── */

@@ -30,8 +30,8 @@ This website is operated by Thurayilkunnu Sree Subramanya Swami Temple Devaswom,
             contentEn: `This website is intended solely for:
 
 • Providing information about the temple, its deities, festivals, and timings.
-• Facilitating vazhipadu (offering) inquiries and WhatsApp-based booking requests.
-• Accepting donation information and coordinating contributions.
+• Facilitating vazhipadu (offering) inquiries, email contact requests, and WhatsApp-based booking requests.
+• Facilitating offering-related coordination as needed.
 • Sharing temple announcements, events, and devotee newsletters.
 
 You agree not to use this website for any unlawful purpose or in any way that could harm the temple's reputation or disrupt its religious mission.`,
@@ -84,7 +84,7 @@ You agree not to use this website for any unlawful purpose or in any way that co
             contentEn: `• The content on this website is provided for informational and devotional purposes only.
 • Festival dates, pooja timings, and event schedules are subject to change without notice. Please contact the temple directly to confirm.
 • We are not liable for any direct, indirect, or consequential damages arising from the use of this website.
-• External links to third-party sites (WhatsApp, Google Maps, etc.) are provided for convenience; we do not endorse or take responsibility for their content.
+• External links to third-party sites (WhatsApp, Google Maps, Web3Forms, etc.) are provided for convenience; we do not endorse or take responsibility for their content.
 
 **Governing Law:** These terms are governed by the laws of Kerala, India. Any disputes shall be subject to the jurisdiction of courts in Kollam District, Kerala.`,
             contentMl: `• ഈ വെബ്‌സൈറ്റിലെ ഉള്ളടക്കം വിവര ആവശ്യങ്ങൾക്ക് മാത്രം.
@@ -150,7 +150,7 @@ You agree not to use this website for any unlawful purpose or in any way that co
                         <p>
                             {isML
                                 ? 'ദയവായി ഈ നിബന്ധനകൾ ശ്രദ്ധാപൂർവ്വം വായിക്കുക. ഈ വെബ്‌സൈറ്റ് ഉപയോഗിക്കുന്നതിലൂടെ, ഈ നിബന്ധനകൾ നിങ്ങൾ അംഗീകരിക്കുന്നു.'
-                                : 'Please read these Terms carefully. By using this website to browse temple information, book vazhipadus, or make donations, you agree to these terms.'}
+                                : 'Please read these Terms carefully. By using this website to browse temple information, book vazhipadus, or make offerings, you agree to these terms.'}
                         </p>
                     </div>
 
@@ -191,7 +191,7 @@ You agree not to use this website for any unlawful purpose or in any way that co
                             {isML
                                 ? 'ഈ നിബന്ധനകളിൽ ചോദ്യങ്ങൾ ഉണ്ടെങ്കിൽ ഞങ്ങളെ ബന്ധപ്പെടുക: '
                                 : 'For questions about these Terms, contact us at: '}
-                            <a href="mailto:info@subramanyatemple.org">info@subramanyatemple.org</a>
+                            <a href="mailto:info@thurayilkunnutemple.com">info@thurayilkunnutemple.com</a>
                         </p>
                         <Link to="/privacy-policy" className="legal-cross-link">
                             {isML ? 'സ്വകാര്യതാ നയം വായിക്കുക →' : 'Read our Privacy Policy →'}

@@ -1,60 +1,29 @@
-import React from 'react';
+﻿import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { SITE_URL, buildTempleSchema } from '../constants/site';
 
 const SEO = ({ title, description, keywords, image, url, schema }) => {
     const { i18n } = useTranslation();
-    
+
     const siteName = "Thurayilkunnu Sree Subramanya Swami Temple";
     const defaultDescription = "Ancient seat of divinity in Karunagappally, Kerala. Home to Lord Subramanya, offering spiritual grace, traditional poojas, and grand festivals.";
-    const BASE_DOMAIN = "https://thurayilkunnutemple.technobyteinnovations.in";
-    const defaultImage = `${BASE_DOMAIN}/og-image.jpg`;
+    const defaultImage = `${SITE_URL}/og-image.jpg`;
     const defaultKeywords = "Thurayilkunnu Temple, Subramanya Swami, Karunagappally, Kerala Temple, Murugan, Thaipusam, Hindu Temple";
 
     const finalTitle = title ? `${title} | ${siteName}` : siteName;
     const finalDescription = description || defaultDescription;
-    const finalImage = image ? (image.startsWith('http') ? image : `${BASE_DOMAIN}${image}`) : defaultImage;
+    const finalImage = image ? (image.startsWith('http') ? image : `${SITE_URL}${image}`) : defaultImage;
     const finalKeywords = keywords || defaultKeywords;
-    const currentUrl = url ? `${BASE_DOMAIN}${url}` : BASE_DOMAIN;
+    const currentUrl = url ? `${SITE_URL}${url}` : SITE_URL;
 
-    // Default Organization / HinduTemple Schema
-    const baseSchema = {
-        "@context": "https://schema.org",
-        "@type": "HinduTemple",
-        "name": siteName,
-        "image": defaultImage,
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Thurayilkunnu, Maru: South",
-            "addressLocality": "Karunagappally",
-            "addressRegion": "Kerala",
-            "postalCode": "690573",
-            "addressCountry": "IN"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "9.0281",
-            "longitude": "76.5365"
-        },
-        "url": BASE_DOMAIN,
-        "telephone": "+917994342205",
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                "opens": "05:00",
-                "closes": "10:30"
-            },
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                "opens": "17:30",
-                "closes": "20:00"
-            }
-        ]
-    };
+    const isML = Boolean(i18n.language?.startsWith('ml'));
 
-    const finalSchema = schema || baseSchema;
+    const finalSchema = schema || buildTempleSchema({
+        image: defaultImage,
+        description: defaultDescription,
+        alternateName: isML ? 'തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം' : undefined
+    });
 
     return (
         <Helmet>
@@ -71,12 +40,13 @@ const SEO = ({ title, description, keywords, image, url, schema }) => {
             <meta property="og:description" content={finalDescription} />
             <meta property="og:image" content={finalImage} />
             <meta property="og:image:secure_url" content={finalImage} />
+            <meta property="og:image:type" content="image/jpeg" />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
             <meta property="og:image:alt" content={siteName} />
             <meta property="og:site_name" content={siteName} />
-            <meta property="og:locale" content={i18n.language?.startsWith('ml') ? 'ml_IN' : 'en_IN'} />
-            <meta property="og:locale:alternate" content={i18n.language?.startsWith('ml') ? 'en_IN' : 'ml_IN'} />
+            <meta property="og:locale" content={isML ? 'ml_IN' : 'en_IN'} />
+            <meta property="og:locale:alternate" content={isML ? 'en_IN' : 'ml_IN'} />
 
             {/* Twitter */}
             <meta name="twitter:card" content="summary_large_image" />
@@ -84,11 +54,10 @@ const SEO = ({ title, description, keywords, image, url, schema }) => {
             <meta name="twitter:title" content={finalTitle} />
             <meta name="twitter:description" content={finalDescription} />
             <meta name="twitter:image" content={finalImage} />
+            <meta name="twitter:image:alt" content={siteName} />
 
             {/* Structured Data */}
-            <script type="application/ld+json">
-                {JSON.stringify(finalSchema)}
-            </script>
+            <script type="application/ld+json">{JSON.stringify(finalSchema)}</script>
         </Helmet>
     );
 };

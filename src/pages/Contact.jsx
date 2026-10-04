@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
     MapPin, Phone, Mail, Clock, Send, Sparkles, MessageSquare,
-    CheckCircle, Navigation, MessageCircle, HelpCircle, Shield, Compass
+    CheckCircle, Navigation, AlertCircle, Compass
 } from 'lucide-react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
+import { sendContactEmail } from '../utils/contactForm';
+import { CONTACT_EMAIL, PHONE_PRIMARY, PHONE_SECONDARY } from '../constants/site';
 import '../styles/Contact.css';
 
 /* ---- ANIMATION VARIANTS ---- */
@@ -42,8 +44,10 @@ const Contact = () => {
     const isML = i18n.language === 'ml';
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [formError, setFormError] = useState('');
     const [formData, setFormData] = useState({
         name: '',
+        email: '',
         phone: '',
         subject: 'General Inquiry',
         message: ''
@@ -67,28 +71,20 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setFormError('');
         setIsSubmitting(true);
 
-        const phoneNumber = '+917994342205';
-        const waMessage = `🙏 *Message from Temple Devotee*
-
-• *Name:* ${formData.name}
-• *Phone:* ${formData.phone || 'Not provided'}
-• *Inquiry:* ${formData.subject || 'General Inquiry'}
-
-*Message:*
-${formData.message}
-
-_Sent via Thurayilkunnu Temple Website_`;
-
-        setIsSubmitted(true);
+        const result = await sendContactEmail(formData);
         setIsSubmitting(false);
 
-        setTimeout(() => {
-            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(waMessage)}`, '_blank');
-            setFormData({ name: '', phone: '', subject: 'General Inquiry', message: '' });
-            setTimeout(() => setIsSubmitted(false), 5000);
-        }, 800);
+        if (!result.ok) {
+            setFormError(result.error);
+            return;
+        }
+
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', subject: 'General Inquiry', message: '' });
+        setTimeout(() => setIsSubmitted(false), 6000);
     };
 
     return (
@@ -111,34 +107,6 @@ _Sent via Thurayilkunnu Temple Website_`;
             {/* ---- CONTACT GRID ---- */}
             <section className="contact-container section-padding">
                 <div className="container">
-                    {/* Quick WhatsApp Assistance Banner */}
-                    <motion.div
-                        className="contact-wa-banner"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <div className="wa-banner-content">
-                            <div className="wa-icon-bubble">
-                                <MessageCircle size={28} />
-                            </div>
-                            <div className="wa-banner-text">
-                                <h3>{isML ? 'തത്സമയ വിവരങ്ങൾ അറിയണോ?' : 'Need Instant Temple Information?'}</h3>
-                                <p>{isML ? 'പൂജാ സമയങ്ങളും ദർശന വിവരങ്ങളും അറിയാൻ ക്ഷേത്ര ദേവസ്വം ഓഫീസുമായി വാട്സാപ്പിൽ ബന്ധപ്പെടുക.' : 'Connect directly with the Temple Devaswom office on WhatsApp for pooja schedules & darshan details.'}</p>
-                            </div>
-                        </div>
-                        <a
-                            href="https://wa.me/917994342205?text=Namaste%20Swami%2C%20I%20would%20like%20to%20know%20more%20about%20temple%20darshan%20and%20poojas."
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="wa-banner-btn"
-                        >
-                            <span>{isML ? 'വാട്സാപ്പിൽ ബന്ധപ്പെടുക' : 'Chat on WhatsApp'}</span>
-                            <Send size={16} />
-                        </a>
-                    </motion.div>
-
                     <motion.div
                         className="contact-main-grid"
                         {...inViewProps()}
@@ -178,9 +146,9 @@ _Sent via Thurayilkunnu Temple Website_`;
                                     <div className="card-details">
                                         <h3>{t('contact_page.phone_title')}</h3>
                                         <div className="contact-phone-links">
-                                            <a href="tel:+917994342205" className="phone-contact-link">+91 79943 42205</a>
+                                            <a href={`tel:${PHONE_PRIMARY}`} className="phone-contact-link">+91 79943 42205</a>
                                             <span className="phone-sep-slash">/</span>
-                                            <a href="tel:+919072722205" className="phone-contact-link">+91 90727 22205</a>
+                                            <a href={`tel:${PHONE_SECONDARY}`} className="phone-contact-link">+91 90727 22205</a>
                                         </div>
                                         <p className="sub-text">{t('contact_page.phone_available')}</p>
                                     </div>
@@ -194,7 +162,7 @@ _Sent via Thurayilkunnu Temple Website_`;
                                     <div className="card-icon-box"><Mail size={24} /></div>
                                     <div className="card-details">
                                         <h3>{t('contact_page.email_title')}</h3>
-                                        <p className="email-text">info@subramanyatemple.com</p>
+                                        <a href={`mailto:${CONTACT_EMAIL}`} className="email-text">{CONTACT_EMAIL}</a>
                                         <p className="sub-text">{isML ? 'ദേവസ്വം ട്രസ്റ്റ് ഔദ്യോഗിക ആവശ്യങ്ങൾക്ക്' : 'For official trust correspondence'}</p>
                                     </div>
                                 </motion.div>
@@ -258,7 +226,7 @@ _Sent via Thurayilkunnu Temple Website_`;
                                     >
                                         <CheckCircle size={44} className="success-icon" />
                                         <h4>{isML ? 'സന്ദേശം വിജയകരമായി അയച്ചു!' : 'Message Sent Successfully!'}</h4>
-                                        <p>{isML ? 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമിയുടെ അനുഗ്രഹം ഉണ്ടാകട്ടെ. ക്ഷേത്ര ഓഫീസിൽ നിന്ന് ഉടൻ ബന്ധപ്പെടുന്നതാണ്.' : 'May Lord Subramanya Swamy bless you. The temple office will respond promptly.'}</p>
+                                        <p>{isML ? 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമിയുടെ അനുഗ്രഹം ഉണ്ടാകട്ടെ. ക്ഷേത്ര ഓഫീസിൽ നിന്ന് ഉടൻ ബന്ധപ്പെടുന്നതാണ്.' : `Your enquiry has reached ${CONTACT_EMAIL}. The temple office will respond promptly.`}</p>
                                     </motion.div>
                                 ) : (
                                     <form className="modern-form" onSubmit={handleSubmit}>
@@ -278,7 +246,20 @@ _Sent via Thurayilkunnu Temple Website_`;
 
                                         <div className="form-row">
                                             <div className="input-group">
-                                                <label>{isML ? 'ഫോൺ / വാട്സാപ്പ് നമ്പർ' : 'Phone / WhatsApp Number'}</label>
+                                                <label>{isML ? 'ഇമെയിൽ' : 'Email Address'}</label>
+                                                <input
+                                                    type="email"
+                                                    name="email"
+                                                    placeholder="devotee@email.com"
+                                                    value={formData.email}
+                                                    onChange={handleChange}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="form-row">
+                                            <div className="input-group">
+                                                <label>{isML ? 'ഫോൺ നമ്പർ' : 'Phone Number'}</label>
                                                 <input
                                                     type="tel"
                                                     name="phone"
@@ -303,6 +284,13 @@ _Sent via Thurayilkunnu Temple Website_`;
                                             </div>
                                         </div>
 
+                                        {formError && (
+                                            <div className="form-error-banner" role="alert">
+                                                <AlertCircle size={18} />
+                                                <span>{isML ? 'സന്ദേശം അയക്കാൻ കഴിഞ്ഞില്ല. ക്ഷേത്ര ഓഫീസിലേക്ക് വിളിക്കുക.' : formError}</span>
+                                            </div>
+                                        )}
+
                                         <motion.button
                                             type="submit"
                                             className="form-submit-btn"
@@ -311,7 +299,7 @@ _Sent via Thurayilkunnu Temple Website_`;
                                             whileTap={{ scale: 0.98 }}
                                         >
                                             <Send size={18} />
-                                            <span>{isSubmitting ? (isML ? 'വാട്സാപ്പ് തുറക്കുന്നു...' : 'Opening WhatsApp...') : (isML ? 'വാട്സാപ്പിലൂടെ സന്ദേശം അയക്കുക' : 'Send Message via WhatsApp')}</span>
+                                            <span>{isSubmitting ? (isML ? 'അയയ്ക്കുന്നു...' : 'Sending...') : (isML ? 'സന്ദേശം അയയ്ക്കുക' : 'Send Message')}</span>
                                         </motion.button>
                                     </form>
                                 )}

@@ -52,7 +52,7 @@ const Navbar = () => {
     { path: '/about',      label: t('navbar.about') },
     { path: '/festivals',  label: t('navbar.festivals') },
     { path: '/offerings',  label: t('navbar.offerings') },
-    { path: '/donations',  label: t('navbar.donations') },
+
     { path: '/deities',    label: t('navbar.deities') },
     { path: '/gallery',    label: t('navbar.gallery') },
     { path: '/contact',    label: t('navbar.contact') },

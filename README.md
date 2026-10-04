@@ -9,7 +9,7 @@
 
 The official web portal and devotee progressive web application (PWA) for **Thurayilkunnu Sree Subramanya Swami Temple**, an ancient sanctuary of Lord Subramanya (Murugan) situated on the sacred hillock of Thurayilkunnu, Karunagappally, Kollam District, Kerala.
 
-**Live Portal:** [thurayilkunnutemple.technobyteinnovations.in](https://thurayilkunnutemple.technobyteinnovations.in/)
+**Live Portal:** [thurayilkunnutemple.com](https://thurayilkunnutemple.com/)
 
 ---
 
@@ -21,7 +21,6 @@ The official web portal and devotee progressive web application (PWA) for **Thur
 - [Key Features of the Portal](#key-features-of-the-portal)
 - [Annual Festivals](#annual-festivals)
 - [Vazhipadu & Offerings](#vazhipadu--offerings)
-- [Donations & E-Hundi](#donations--e-hundi)
 - [Technology Stack](#technology-stack)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
@@ -73,10 +72,10 @@ The sanctum doors are opened twice daily according to traditional temple routine
 
 - **Bilingual Experience (English & മലയാളം):** Fully localized bilingual application with automatic browser language detection and seamless toggle.
 - **Live Darshan Indicator:** Real-time Indian Standard Time (IST) engine calculating whether the sanctum is presently open, with countdown to the next opening.
-- **Astronomical Daily Panchangam:** Kerala Panchangam calculator powered by `panchang-ts`, calibrated to Karunagappally's exact coordinates (`9.0281° N, 76.5365° E`), showing Tithi, Nakshatra, Yoga, Karana, Sunrise/Sunset, and Rahu Kalam.
+- **Astronomical Daily Panchangam:** Kerala Panchangam calculator powered by `panchang-ts`, calibrated to the temple's exact coordinates (`9.1258969° N, 76.5064915° E`), showing Tithi, Nakshatra, Yoga, Karana, Sunrise/Sunset, and Rahu Kalam.
 - **Nakshatra Pooja Recommender:** Devotees can select their Janma Nakshatra (birth star among 27 stars) to receive tailored vazhipadu recommendations and spiritual advice.
 - **Digital Vazhipadu Booking & Receipts:** Devotees can select offerings, enter their star and gotram, and generate printable digital booking receipts or book instantly via WhatsApp.
-- **E-Hundi & Seva Contribution:** Direct bank transfer and UPI QR integration for causes like *Annadanam Samarpanam*, *Temple Renovation Fund*, *Nithya Pooja Nidhi*, and *Chuttuvilakku Seva*.
+- **Seva Contributions:** Coordination for causes like *Annadanam Samarpanam*, *Temple Renovation Fund*, *Nithya Pooja Nidhi*, and *Chuttuvilakku Seva* through the temple office.
 - **Ambient Bhakti Soundscape:** Built-in, low-latency audio synthesizer built on the Web Audio API that generates sacred temple bell harmonics and meditative drones without external media assets.
 - **Upcoming Festival Countdown:** Dynamic countdown timer tracking the next major temple festival in real time.
 - **Progressive Web App (PWA):** Devotees can install the website directly to their home screen on Android, iOS, or desktop for quick access and offline caching.
@@ -111,18 +110,7 @@ Devotees can book sacred poojas and vazhipadus directly:
 - **Chuttuvilakku:** Lighting rows of brass deepams around the temple walls.
 - **Annadanam:** Sponsoring sacred feast for pilgrims visiting the temple.
 
----
-
-## Donations & E-Hundi
-
-Devotees wishing to contribute to temple maintenance and charity may use direct trust bank transfers or UPI:
-
-- **UPI ID:** `thurayilkunnutemple@sbi`
-- **Account Name:** Thurayilkunnu Sree Subramanya Swami Temple Trust
-- **Bank:** State Bank of India (SBI)
-- **Branch:** Karunagappally
-- **IFSC:** `SBIN0070054`
-- **Account Type:** Current Account
+Seva contributions are handled directly with the temple office. Use the [Contact page](#contact--location) to reach the office.
 
 ---
 
@@ -175,12 +163,14 @@ thurayilkunnu-temple/
 │   │   ├── Deities.jsx       # Sanctum and Upadevatha shrine profiles
 │   │   ├── Festivals.jsx     # Major annual celebrations & dates
 │   │   ├── Offerings.jsx     # Vazhipadu catalogue, calculator & booking
-│   │   ├── Donations.jsx     # E-Hundi, bank details & receipt requests
 │   │   ├── Gallery.jsx       # Filterable photo gallery with lightbox
 │   │   ├── Contact.jsx       # Address, maps, timings & enquiry form
 │   │   └── NotFound.jsx      # Custom 404 page
 │   ├── styles/               # Component and page stylesheets
+│   ├── constants/
+│   │   └── site.js           # Canonical domain, contact, address & Schema.org data
 │   ├── utils/
+│   │   ├── contactForm.js    # Web3Forms contact & newsletter delivery
 │   │   ├── darshanStatus.js  # Live IST temple door open/closed tracker
 │   │   └── nakshatras.js     # 27 Janma Nakshatra astrological metadata
 │   ├── App.jsx               # Application root layout & route definitions
@@ -254,7 +244,7 @@ npm run lint
 
 - **Address:** Thurayilkunnu Sree Subramanya Swami Temple, Thurayilkunnu, Maru: South, Alumkadavu P.O., Karunagappally, Kollam District, Kerala - 690573, India
 - **Phone:** [+91 79943 42205](tel:+917994342205) / [+91 90727 22205](tel:+919072722205)
-- **Email:** info@subramanyatemple.com
+- **Email:** info@thurayilkunnutemple.com
 - **Coordinates:** `9.1258969° N, 76.5064915° E`
 - **Google Maps:** [Location Link](https://maps.google.com/?q=9.1258969,76.5064915)
 

@@ -27,7 +27,7 @@ const PrivacyPolicy = () => {
 • **Email Address** — collected only if you subscribe to our devotee newsletter.
 • **Pooja Date Preference** — for scheduling ritual performance.
 
-We do NOT collect payment card details. All donations are processed directly via bank transfer or UPI.`,
+We do NOT collect payment card details. All payments for offerings are handled as per the instructions provided at the time of booking.`,
             contentMl: `ഞങ്ങളുടെ ഓൺലൈൻ വഴിപാട് ബുക്കിംഗ് അല്ലെങ്കിൽ വാർത്താ സബ്‌സ്‌ക്രിപ്ഷൻ സേവനങ്ങൾ ഉപയോഗിക്കുമ്പോൾ, ഞങ്ങൾ ഇനിപ്പറയുന്ന വിവരങ്ങൾ ശേഖരിക്കാം:
 
 • **ഭക്തൻ്റെ പേര്** — സങ്കൽപ്പ ആവശ്യങ്ങൾക്കായി സ്വമേധയാ നൽകുന്നത്.
@@ -60,15 +60,18 @@ We do NOT use your data for advertising, profiling, or commercial marketing of a
             icon: <Lock size={22} />,
             titleEn: 'Data Security & Retention',
             titleMl: 'ഡാറ്റ സുരക്ഷ & സൂക്ഷിപ്പ്',
-            contentEn: `• Booking requests are transmitted via WhatsApp and handled only by temple office staff.
-• No personal data is stored in any third-party database on our servers.
+            contentEn: `• Contact form submissions are delivered to our email address via Web3Forms, a third-party form delivery service, and are handled only by temple office staff.
+• Vazhipadu booking details are completed over WhatsApp and handled only by temple office staff.
+• Our servers do not store personal data; submissions are delivered straight to our email inbox.
 • Email newsletter data is handled through secure channels and never shared.
 • We retain contact information only as long as necessary for the stated purpose.
 • You may request deletion of your data at any time by contacting us directly.`,
-            contentMl: `• ബുക്കിംഗ് അഭ്യർത്ഥനകൾ വാട്‌സ്ആപ്പ് വഴി അയയ്‌ക്കുകയും ക്ഷേത്ര ഓഫീസ് ജീവനക്കാർ മാത്രം കൈകാര്യം ചെയ്യുകയും ചെയ്യുന്നു.
-• ഒരു മൂന്നാം കക്ഷി ഡേറ്റാബേസിലും വ്യക്തിഗത ഡേറ്റ സൂക്ഷിക്കുന്നില്ല.
+            contentMl: `• കോൺടാക്ട് ഫോം അഭ്യർത്ഥനകൾ Web3Forms എന്ന മൂന്നാം കക്ഷി ഫോം ഡെലിവറി സേവനത്തിലൂടെ ക്ഷേത്ര ഓഫീസ് ഇമെയിലിലേക്ക് അയയ്ക്കുന്നു; ഓഫീസ് ജീവനക്കാർ മാത്രം കൈകാര്യം ചെയ്യുന്നു.
+• ബുക്കിംഗ് അഭ്യർത്ഥനകൾ വാട്‌സ്ആപ്പ് വഴി അയയ്‌ക്കുകയും ക്ഷേത്ര ഓഫീസ് ജീവനക്കാർ മാത്രം കൈകാര്യം ചെയ്യുകയും ചെയ്യുന്നു.
+• ഞങ്ങളുടെ സെർവറുകളിൽ വ്യക്തിഗത ഡേറ്റ സൂക്ഷിക്കുന്നില്ല; അഭ്യർത്ഥനകൾ നേരിട്ട് ഇമെയിൽ ഇൻബോക്സിലേക്കാണ് എത്തുന്നത്.
 • ഇ-മെയിൽ ഡേറ്റ സുരക്ഷിതമായ ചാനലുകളിലൂടെ കൈകാര്യം ചെയ്യുകയും ഒരിക്കലും പങ്കിടുകയോ വിൽക്കുകയോ ചെയ്യില്ല.
-• ആവശ്യമായ കാലത്തേക്ക് മാത്രം ഡേറ്റ സൂക്ഷിക്കുന്നു.`,
+• ആവശ്യമായ കാലത്തേക്ക് മാത്രം ഡേറ്റ സൂക്ഷിക്കുന്നു.
+• നിങ്ങളുടെ ഡേറ്റ ഇല്ലാതാക്കാൻ എപ്പോൾ വേണമെങ്കിലും നമ്മുക്ക് നേരിട്ട് അറിയിക്കാം.`,
         },
         {
             icon: <Phone size={22} />,
@@ -76,15 +79,18 @@ We do NOT use your data for advertising, profiling, or commercial marketing of a
             titleMl: 'മൂന്നാം കക്ഷി സേവനങ്ങൾ',
             contentEn: `Our website may use the following third-party services:
 
-• **WhatsApp (Meta)** — Booking confirmations are sent via WhatsApp. Meta's privacy policy governs their data handling.
-• **Google Maps** — Temple location and nearby temples are displayed using Google Maps embeds.
+• **Web3Forms** — Contact form submissions are relayed to our email address. Web3Forms' privacy policy governs their data handling.
+• **WhatsApp (Meta)** — Vazhipadu booking details are exchanged via WhatsApp. Meta's privacy policy governs their data handling.
+• **Google Maps** — Temple location is displayed using a Google Maps embed.
 • **i18next** — Language translation library (no data collection).
 
 We are not responsible for the privacy practices of third-party services linked from our site.`,
             contentMl: `ഞങ്ങളുടെ വെബ്‌സൈറ്റ് ഇനിപ്പറയുന്ന മൂന്നാം കക്ഷി സേവനങ്ങൾ ഉപയോഗിക്കാം:
 
+• **Web3Forms** — കോൺടാക്ട് ഫോം അഭ്യർത്ഥനകൾ ക്ഷേത്ര ഇമെയിലിലേക്ക് അയയ്ക്കുന്നു. Web3Forms ന്റെ സ്വകാര്യതാ നയം ബാധകം.
 • **WhatsApp (Meta)** — ബുക്കിംഗ് സ്ഥിരീകരണങ്ങൾ വാട്‌സ്ആപ്പ് വഴി അയക്കുന്നു. Meta-യുടെ സ്വകാര്യതാ നയം ബാധകം.
-• **Google Maps** — ക്ഷേത്ര സ്ഥാനം Google Maps എംബെഡ് ഉപയോഗിച്ച് കാണിക്കുന്നു.`,
+• **Google Maps** — ക്ഷേത്ര സ്ഥാനം Google Maps എംബെഡ് ഉപയോഗിച്ച് കാണിക്കുന്നു.
+• **i18next** — ഭാഷാ വിവർത്തന ലൈബ്രറി (ഡേറ്റ ശേഖരണമില്ല).`,
         },
         {
             icon: <Mail size={22} />,
@@ -100,14 +106,17 @@ We are not responsible for the privacy practices of third-party services linked 
 To exercise any of these rights, contact us at:
 
 📞 +91 79943 42205 | +91 90727 22205
-📧 info@subramanyatemple.org`,
+📧 info@thurayilkunnutemple.com`,
             contentMl: `നിങ്ങൾക്ക് ഇനിപ്പറയുന്ന അവകാശങ്ങൾ ഉണ്ട്:
 
 • **ആക്‌സസ്** — ഞങ്ങൾ കൈവശം വയ്ക്കുന്ന ഡേറ്റ ആവശ്യപ്പെടാം.
 • **തിരുത്തൽ** — തെറ്റായ വിവരങ്ങൾ തിരുത്താൻ ആവശ്യപ്പെടാം.
 • **ഇല്ലാതാക്കൽ** — ഏത് സമയത്തും ഡേറ്റ ഇല്ലാതാക്കാൻ ആവശ്യപ്പെടാം.
+• **ഒഴിവാക്കൽ** — ഏത് സമയത്തും വാർത്താ സന്ദേശങ്ങളിൽ നിന്ന് സബ്‌സ്‌ക്രൈബ് ചെയ്യാം.
 
-ബന്ധപ്പെടൽ: 📞 +91 79943 42205 | 📧 info@subramanyatemple.org`,
+നിങ്ങളുടെ ഡേറ്റ് തുടർത്തും മുകളിൽ വിവരിച്ചിട്ടുള്ള ആശയങ്ങൾക്കായി മാത്രമാണ് ഉപയോഗിക്കുന്നത്. വിളംപാകാതികൾക്ക് ഡേറ്റ് വിറ്റുകമറിയുകയോ പങ്കിടുകയോ ചെയ്യുന്നില്ല.
+
+ബന്ധപ്പെടൽ: 📞 +91 79943 42205 | 📧 info@thurayilkunnutemple.com`,
         },
     ];
 
@@ -168,7 +177,7 @@ To exercise any of these rights, contact us at:
                         <p>
                             {isML
                                 ? 'ഭഗവാൻ സുബ്രഹ്മണ്യന്റെ ഭക്തരുടെ സ്വകാര്യതയും വിശ്വാസവും ഞങ്ങൾ ആദരിക്കുന്നു. ഈ സ്വകാര്യതാ നയം, ഈ വെബ്‌സൈറ്റ് ഉപയോഗിക്കുമ്പോൾ നിങ്ങളുടെ ഡേറ്റ ഞങ്ങൾ എങ്ങനെ കൈകാര്യം ചെയ്യുന്നു എന്ന് വ്യക്തമാക്കുന്നു.'
-                                : 'We respect the privacy and trust of all devotees of Lord Subramanya. This Privacy Policy explains how we handle your data when you use this website for vazhipadu bookings, donations, or information queries.'}
+                                : 'We respect the privacy and trust of all devotees of Lord Subramanya. This Privacy Policy explains how we handle your data when you use this website for vazhipadu bookings, offerings, or information queries.'}
                         </p>
                     </div>
 
@@ -210,8 +219,8 @@ To exercise any of these rights, contact us at:
                             {isML
                                 ? 'ഈ നയത്തിൽ മാറ്റങ്ങൾ വരുത്തിയാൽ ഈ പേജിൽ അറിയിക്കും. തുടർന്ന് ഈ വെബ്‌സൈറ്റ് ഉപയോഗിക്കുന്നത് പുതിയ നയം അംഗീകരിക്കുന്നതായി കണക്കാക്കും.'
                                 : 'We may update this policy periodically. Continued use of this website after changes constitutes acceptance of the revised policy. For questions, reach us at '}
-                            {!isML && <a href="mailto:info@subramanyatemple.org">info@subramanyatemple.org</a>}
-                            {isML && <a href="mailto:info@subramanyatemple.org"> info@subramanyatemple.org</a>}
+                            {!isML && <a href="mailto:info@thurayilkunnutemple.com">info@thurayilkunnutemple.com</a>}
+                            {isML && <a href="mailto:info@thurayilkunnutemple.com"> info@thurayilkunnutemple.com</a>}
                         </p>
                         <Link to="/terms-of-service" className="legal-cross-link">
                             {isML ? 'സേവന നിബന്ധനകൾ വായിക്കുക →' : 'Read our Terms of Service →'}
