@@ -4,7 +4,7 @@
 
 .not-found-page {
     min-height: 100vh;
-    padding: 160px 1.5rem 6rem;
+    padding: 180px 1.5rem 6rem;
     background: radial-gradient(circle at 50% 30%, #F5F5F4 0%, #FAFAF9 65%);
     display: flex;
     align-items: center;

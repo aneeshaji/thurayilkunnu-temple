@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, Sparkles, Send, Clock, Heart, ChevronRight } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone, MapPin, Sparkles, Send, Clock, Heart, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
@@ -73,9 +73,6 @@ const Footer = () => {
                             </a>
                             <a href="https://www.instagram.com/thurayilkunnutemple" className="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                                 <Instagram size={16} />
-                            </a>
-                            <a href="https://www.youtube.com/@thurayilkunnutemple" className="social-icon" aria-label="Youtube" target="_blank" rel="noopener noreferrer">
-                                <Youtube size={16} />
                             </a>
                         </div>
                     </div>

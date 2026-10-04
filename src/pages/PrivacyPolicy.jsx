@@ -121,20 +121,29 @@ To exercise any of these rights, contact us at:
 
             {/* Hero */}
             <div className="legal-hero">
-                <div className="legal-hero-overlay" />
+                <div className="legal-hero-watermark">🔒</div>
                 <div className="container legal-hero-inner">
                     <motion.div
+                        className="legal-hero-icon-wrap"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <Shield size={28} />
+                    </motion.div>
+                    <motion.div
+                        className="legal-hero-text"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7 }}
                     >
                         <div className="legal-breadcrumb">
                             <Link to="/">Home</Link>
-                            <ChevronRight size={14} />
+                            <ChevronRight size={13} />
                             <span>{isML ? 'സ്വകാര്യതാ നയം' : 'Privacy Policy'}</span>
                         </div>
                         <div className="legal-hero-badge">
-                            <Shield size={18} />
+                            <Shield size={14} />
                             <span>{isML ? 'ഡേറ്റ സംരക്ഷണം' : 'Data Protection'}</span>
                         </div>
                         <h1 className="legal-hero-title">

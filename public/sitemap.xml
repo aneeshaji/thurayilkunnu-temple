@@ -88,4 +88,18 @@
     <xhtml:link rel="alternate" hreflang="ml" href="https://thurayilkunnutemple.technobyteinnovations.in/contact?lng=ml"/>
   </url>
 
+  <url>
+    <loc>https://thurayilkunnutemple.technobyteinnovations.in/privacy-policy</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://thurayilkunnutemple.technobyteinnovations.in/terms-of-service</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
