@@ -196,6 +196,13 @@
   box-shadow: 0 6px 20px rgba(217, 119, 6, 0.45);
 }
 
+.social-icon--gmb:hover {
+  background: linear-gradient(135deg, #EA4335, #4285F4);
+  color: #FFFFFF;
+  border-color: #EA4335;
+  box-shadow: 0 6px 20px rgba(234, 67, 53, 0.45);
+}
+
 /* ── SECTION TITLES & LINKS ── */
 .section-title {
   color: #FCD34D;

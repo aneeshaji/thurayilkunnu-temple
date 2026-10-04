@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Mail, Phone, MapPin, Sparkles, Send, Clock, Heart, ChevronRight } from 'lucide-react';
+import { Facebook, Instagram, Mail, Phone, MapPin, Sparkles, Send, Clock, ChevronRight, MapPinned } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
@@ -67,12 +67,14 @@ const Footer = () => {
                     <div className="social-icons-wrapper">
                         <span className="social-label">{isML ? 'ഭക്തജന ചാനലുകൾ' : 'Devotee Channels'}</span>
                         <div className="social-icons">
-                            {/* Update these URLs with the temple's actual social media handles */}
                             <a href="https://www.facebook.com/thurayilkunnutemple" className="social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                                 <Facebook size={16} />
                             </a>
                             <a href="https://www.instagram.com/thurayilkunnutemple" className="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                                 <Instagram size={16} />
+                            </a>
+                            <a href="https://maps.app.goo.gl/nf1ogELnNM7MpmC46" className="social-icon social-icon--gmb" aria-label="Google Business Profile" target="_blank" rel="noopener noreferrer">
+                                <MapPinned size={16} />
                             </a>
                         </div>
                     </div>

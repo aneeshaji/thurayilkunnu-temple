@@ -167,6 +167,7 @@ const Banner = () => {
                     transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                     whileHover={{ y: -6 }}
                 >
+                    {/* Card Header */}
                     <div className="glass-card-header">
                         <div className="status-indicator">
                             <span className={`pulse-dot ${darshanStatus.open ? 'pulse-dot--open' : 'pulse-dot--closed'}`} />
@@ -176,6 +177,9 @@ const Banner = () => {
                                 </span>
                                 <span className="status-sub">{darshanStatus.sub}</span>
                             </div>
+                        </div>
+                        <div className="card-temple-badge">
+                            <Sparkles size={18} className="card-sparkle-icon" />
                         </div>
                     </div>
 
@@ -216,8 +220,10 @@ const Banner = () => {
                     </div>
 
                     <div className="glass-card-footer">
-                        <Link to="/contact" className="quick-directions-link">
-                            {isML ? 'റൂട്ട് മാപ്പും വിവരങ്ങളും കാണുക →' : 'View Directions & Location Map →'}
+                        <Link to="/contact" className="card-action-btn card-action-btn--dir">
+                            <MapPin size={13} />
+                            <span>{isML ? 'ദിശ കാണുക & ഭൂപടം' : 'View Directions & Map'}</span>
+                            <ArrowRight size={13} />
                         </Link>
                     </div>
                 </motion.div>

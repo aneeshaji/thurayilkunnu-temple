@@ -28,7 +28,6 @@ import {
     Navigation,
     ExternalLink,
     Home,
-    Eye,
     X,
     FileText,
     MessageCircle
@@ -175,7 +174,6 @@ const About = () => {
     const { t, i18n } = useTranslation();
     const isML = i18n.language === 'ml';
     const [isPosterModalOpen, setIsPosterModalOpen] = useState(false);
-    const [isMelshanthiModalOpen, setIsMelshanthiModalOpen] = useState(false);
     const [activeHistoryImg, setActiveHistoryImg] = useState(0);
 
     const historyImages = [
@@ -624,32 +622,15 @@ const About = () => {
                                     <Sparkles size={13} />
                                     <span>{isML ? 'ക്ഷേത്രം മേൽശാന്തി' : 'Temple Melshanthi'}</span>
                                 </div>
-                                <button
-                                    type="button"
-                                    className="spiritual-view-photo-btn"
-                                    onClick={() => setIsMelshanthiModalOpen(true)}
-                                    title={isML ? 'പൂർണ്ണ ചിത്രം കാണുക' : 'View Full Portrait'}
-                                >
-                                    <Eye size={13} />
-                                    <span>{isML ? 'ഫോട്ടോ' : 'Photo'}</span>
-                                </button>
                             </div>
                             <div className="spiritual-content-flex">
-                                <div 
-                                    className="spiritual-avatar-box" 
-                                    onClick={() => setIsMelshanthiModalOpen(true)}
-                                    title={isML ? 'വലുതായി കാണാൻ ക്ലിക്ക് ചെയ്യുക' : 'Click to view full photo'}
-                                >
+                                <div className="spiritual-avatar-box">
                                     <img
                                         src="/images/committee/melshanthi.jpg"
                                         alt={isML ? 'ശ്രീ അനിൽ ഗോകുലം ശാന്തി — ക്ഷേത്രം മേൽശാന്തി' : 'Sri Anil Gokulam Shanthi — Temple Melshanthi'}
                                         className="spiritual-avatar-img"
                                         loading="lazy"
                                     />
-                                    <span className="spiritual-zoom-pill">
-                                        <Eye size={11} />
-                                        <span>{isML ? 'വലുതാക്കുക' : 'Zoom'}</span>
-                                    </span>
                                 </div>
                                 <div className="spiritual-info">
                                     <h4 className="spiritual-role">{t('administration.melsanthi_role')}</h4>
@@ -861,57 +842,6 @@ const About = () => {
                         </div>
                     )}
 
-                    {/* Melshanthi Full Portrait Lightbox Modal */}
-                    {isMelshanthiModalOpen && (
-                        <div className="poster-modal-overlay" onClick={() => setIsMelshanthiModalOpen(false)}>
-                            <div className="poster-modal-dialog" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '620px' }}>
-                                <div className="poster-modal-header">
-                                    <div>
-                                        <h3 className="poster-modal-title">
-                                            {isML ? 'ശ്രീ അനിൽ ഗോകുലം ശാന്തി' : 'Sri Anil Gokulam Shanthi'}
-                                        </h3>
-                                        <p className="poster-modal-sub">
-                                            {isML ? 'തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം മേൽശാന്തി' : 'Temple Melshanthi (Head Priest), Thurayilkunnu Temple'}
-                                        </p>
-                                    </div>
-                                    <button 
-                                        type="button" 
-                                        className="poster-modal-close"
-                                        onClick={() => setIsMelshanthiModalOpen(false)}
-                                        aria-label="Close"
-                                    >
-                                        <X size={20} />
-                                    </button>
-                                </div>
-                                <div className="poster-modal-body" style={{ textAlign: 'center', background: '#0C0A09', padding: '1.25rem' }}>
-                                    <img 
-                                        src="/images/committee/melshanthi_full.jpg" 
-                                        alt={isML ? 'ക്ഷേത്രം മേൽശാന്തി ശ്രീ അനിൽ ഗോകുലം ശാന്തി' : 'Temple Melshanthi Sri Anil Gokulam Shanthi'} 
-                                        className="poster-modal-img" 
-                                        style={{ maxHeight: '72vh', width: 'auto', objectFit: 'contain', borderRadius: '12px', boxShadow: '0 8px 30px rgba(0,0,0,0.6)' }}
-                                    />
-                                </div>
-                                <div className="poster-modal-footer">
-                                    <a 
-                                        href="/images/committee/melshanthi_full.jpg" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer" 
-                                        className="poster-download-btn"
-                                    >
-                                        <ExternalLink size={15} />
-                                        <span>{isML ? 'പൂർണ്ണ രൂപത്തിൽ തുറക്കുക' : 'Open Full Image'}</span>
-                                    </a>
-                                    <button 
-                                        type="button" 
-                                        className="poster-close-action"
-                                        onClick={() => setIsMelshanthiModalOpen(false)}
-                                    >
-                                        {isML ? 'അടയ്ക്കുക' : 'Close'}
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    )}
 
 
                 </div>

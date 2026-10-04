@@ -365,6 +365,22 @@
     border-bottom: 1px solid rgba(28, 25, 23, 0.10);
 }
 
+.card-temple-badge {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(252, 211, 77, 0.18), rgba(245, 158, 11, 0.12));
+    border: 1px solid rgba(217, 119, 6, 0.30);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.card-sparkle-icon {
+    color: #F59E0B;
+}
+
 .status-indicator {
     display: flex;
     align-items: center;
@@ -468,25 +484,56 @@
 }
 
 .glass-card-footer {
-    padding-top: 0.4rem;
+    padding-top: 0.6rem;
     border-top: 1px solid rgba(28, 25, 23, 0.08);
+    display: flex;
+    gap: 0.6rem;
 }
 
-.quick-directions-link {
-    color: #1C1917;
-    font-size: 0.84rem;
-    font-weight: 700;
-    font-family: 'Outfit', sans-serif;
-    text-decoration: none;
-    transition: all 0.25s ease;
+.card-action-btn {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    text-decoration: none;
+    padding: 0.52rem 0.95rem;
+    border-radius: 50px;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+    flex: 1;
+    justify-content: center;
 }
 
-.quick-directions-link:hover {
-    color: #D97706;
-    transform: translateX(4px);
+.card-action-btn--gmb {
+    background: linear-gradient(135deg, #EA4335 0%, #4285F4 100%);
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 0 3px 12px rgba(234, 67, 53, 0.30);
+}
+
+.card-action-btn--gmb:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(234, 67, 53, 0.50);
+    filter: brightness(1.08);
+    color: #FFFFFF;
+}
+
+.card-action-btn--dir {
+    background: #1C1917;
+    color: #FCD34D;
+    border: 1px solid rgba(28, 25, 23, 0.15);
+    flex: unset;
+    width: 100%;
+    justify-content: center;
+}
+
+.card-action-btn--dir:hover {
+    background: #292524;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(28, 25, 23, 0.25);
+    color: #FCD34D;
 }
 
 /* ── Slider Navigation Bar ── */
