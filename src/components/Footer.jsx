@@ -167,6 +167,11 @@ const Footer = () => {
                             ? `പകർപ്പവകാശം © ${new Date().getFullYear()} - തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്ര ദേവസ്വം. സർവ്വ അവകാശങ്ങളും നിക്ഷിപ്തം.`
                             : `Copyright © ${new Date().getFullYear()} - Thurayilkunnu Sree Subramanya Swami Temple Devaswom. All Rights Reserved.`}
                     </p>
+                    <div className="footer-legal-links">
+                        <Link to="/privacy-policy">{isML ? 'സ്വകാര്യതാ നയം' : 'Privacy Policy'}</Link>
+                        <span className="legal-sep">·</span>
+                        <Link to="/terms-of-service">{isML ? 'സേവന നിബന്ധനകൾ' : 'Terms of Service'}</Link>
+                    </div>
                     <div className="powered-by-wrapper">
                         <span>{isML ? 'സാങ്കേതിക സഹായം: ' : 'Sponsored & Powered by: '}</span>
                         <a href="https://technobyteinnovations.com" target="_blank" rel="noopener noreferrer" className="powered-by-link">
