@@ -1,0 +1,77 @@
+name: Deploy Server
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'server/**'
+      - '.github/workflows/deploy-server.yml'
+
+  # Allow manual trigger from GitHub Actions tab
+  workflow_dispatch:
+
+jobs:
+  deploy-server:
+    name: Deploy Node.js Server
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Checkout ────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Install server production dependencies ──────────────────────────
+      - name: Install server dependencies (production only)
+        working-directory: ./server
+        run: npm ci --omit=dev
+
+      # ── 3. Deploy server/ → cPanel Node.js app directory via FTP ───────────
+      #
+      #  On cPanel, set up a Node.js App pointing at:
+      #    Application Root : thurayilkunnutemple.com-server
+      #    Application URL  : (leave as domain root or use a sub-domain)
+      #    Application Startup File: server.js
+      #
+      #  The FTP server-dir below must match the Application Root you chose.
+      # ──────────────────────────────────────────────────────────────────────
+      - name: Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server:   ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port:     ${{ secrets.FTP_PORT || 21 }}
+          protocol: ftps
+          local-dir:  ./server/
+          # This folder must match what you set as "Application Root" in cPanel
+          server-dir: /thurayilkunnutemple.com-server/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .env
+            .env.*
+
+      # ── 4. Restart the Node.js app via cPanel API ──────────────────────────
+      #
+      #  After files are uploaded, we call the cPanel UAPI to restart the app.
+      #  Requires: CPANEL_USERNAME, CPANEL_TOKEN (cPanel API Token), CPANEL_HOST.
+      #  In cPanel: go to Security → Manage API Tokens → Create.
+      # ──────────────────────────────────────────────────────────────────────
+      - name: Restart Node.js app via cPanel API
+        run: |
+          curl -s --fail \
+            -H "Authorization: cpanel ${{ secrets.CPANEL_USERNAME }}:${{ secrets.CPANEL_API_TOKEN }}" \
+            "https://${{ secrets.CPANEL_HOST }}:2083/execute/NodeJS/restart_app?app_name=thurayilkunnutemple.com-server" \
+            | tee /tmp/restart_response.json
+          # Fail the step if cPanel returned an error status
+          python3 -c "
+          import json, sys
+          with open('/tmp/restart_response.json') as f:
+              r = json.load(f)
+          if r.get('status') != 1:
+              print('cPanel restart failed:', r)
+              sys.exit(1)
+          print('Node.js app restarted successfully.')
+          "
