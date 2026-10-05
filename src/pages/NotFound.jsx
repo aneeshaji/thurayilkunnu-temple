@@ -16,6 +16,8 @@ const NotFound = () => {
             <SEO 
                 title={isML ? '404 - പേജ് കണ്ടെത്താനായില്ല' : '404 - Page Not Found'}
                 description={isML ? 'നിങ്ങൾ തിരയുന്ന പേജ് കണ്ടെത്താനായില്ല. തുറയിൽകുന്ന് ക്ഷേത്ര വെബ്സൈറ്റിലേക്ക് മടങ്ങുക.' : 'Page not found at Thurayilkunnu Temple website.'}
+            
+                noIndex
             />
             <div className="not-found-container">
                 <motion.div

@@ -1,4 +1,6 @@
 export const SITE_URL = 'https://thurayilkunnutemple.com';
+export const TEMPLE_NAME_EN = 'Thurayilkunnu Sree Subrahmanya Swami Temple';
+export const TEMPLE_NAME_ML = 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം';
 export const CONTACT_EMAIL = 'info@thurayilkunnutemple.com';
 export const PHONE_PRIMARY = '+917994342205';
 export const PHONE_SECONDARY = '+919072722205';
@@ -40,8 +42,8 @@ export const buildTempleSchema = ({ image, description, alternateName } = {}) =>
     '@context': 'https://schema.org',
     '@type': 'HinduTemple',
     '@id': `${SITE_URL}/#temple`,
-    name: 'Thurayilkunnu Sree Subrahmanya Swami Temple',
-    alternateName: alternateName || 'തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം',
+    name: TEMPLE_NAME_EN,
+    alternateName: alternateName || TEMPLE_NAME_ML,
     description: description || 'An ancient temple dedicated to Lord Subrahmanya (Murugan) at Karunagappally, Kerala, serving devotees for generations with traditional rituals and spiritual grace.',
     url: SITE_URL,
     image: image || `${SITE_URL}/og-image.jpg`,

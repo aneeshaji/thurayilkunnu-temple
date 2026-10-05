@@ -772,6 +772,11 @@ i18n
     .init({
         resources,
         fallbackLng: 'en',
+        supportedLngs: ['en', 'ml'],
+        detection: {
+            order: ['querystring', 'htmlTag'],
+            lookupQuerystring: 'lng'
+        },
         interpolation: {
             escapeValue: false
         }

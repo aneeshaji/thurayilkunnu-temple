@@ -309,7 +309,13 @@ const Home = () => {
 
     return (
         <div className={`sanctuary-home-page ${isML ? 'lang-ml' : ''}`}>
-            <SEO />
+            <SEO
+                title={isML ? 'തുരയിഭ്ക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യന്യന്യവാമി ക്ഷേത്രം' : 'Thurayilkunnu Sree Subrahmanya Swami Temple'}
+                description={isML
+                    ? 'തുരയിഭ്ക്കുന്ന് ക്ഷേത്രം ആബ്ബ ദറബാംസോഷീഥ്യഡ് ളഫ്രത്ര പുപ്ങ്ങംനഡ്, പര്ഥോരാോം ഴ൒തുജോള, പര്പ്പൈറ വിബഩാബത്തളങ്ങ ൌത്സവങ്ന് ൌത്സവങ്ന്ന്ഠ്ങള് ഊഉപ്ആപഹധങ് ്യന്പപളമാന്.'
+                    : 'Thurayilkunnu Sree Subrahmanya Swami Temple at Karunagappally, Kerala — an ancient temple dedicated to Lord Subrahmanya (Murugan). Daily Panchangam, traditional poojas, and grand festivals including Uthrattathi Mahotsavam, Thaipusam and Skanda Sasthi.'}
+                url="/"
+            />
             <Banner />
             <FestivalCountdown />
 
