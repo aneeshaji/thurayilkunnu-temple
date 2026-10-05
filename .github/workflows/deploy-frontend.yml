@@ -56,7 +56,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port:     21
-          protocol: ftps-legacy
+          protocol: ftp
           local-dir:  ./dist/
           server-dir: /thurayilkunnutemple.com/
           # Remove remote files that are no longer in dist/ (clean deploy)
