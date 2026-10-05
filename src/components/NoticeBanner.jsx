@@ -8,20 +8,23 @@ import '../styles/NoticeBoard.css';
 
 const TEMPLE_NOTICES = [
     {
-        id: 'general-welcome',
-        tag_en: 'Temple Notice',
-        tag_ml: 'ക്ഷേത്ര അറിയിപ്പ്',
-        tagType: 'amber',
-        urgent: false,
-        date_en: 'Daily',
-        date_ml: 'നിത്യം',
-        title_en: 'Welcome to Thurayilkunnu Sree Subramanya Swami Temple',
-        title_ml: 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലേക്ക് സ്വാഗതം',
-        desc_en: 'All devotees and visitors are cordially welcome to take part in the daily poojas and spiritual activities of the temple.',
-        desc_ml: 'ക്ഷേത്രത്തിലെ നിത്യ പൂജകളിലും ആത്മീയ പരിപാടികളിലും പങ്കാളികളാകാൻ എല്ലാ ഭക്തരെയും സന്ദർശകരെയും സാദരം ക്ഷണിക്കുന്നു.',
-        actionLink: '/about',
-        actionText_en: 'Know More',
-        actionText_ml: 'കൂടുതൽ അറിയുക'
+        id: 'skanda-sasthi-2026',
+        tag_en: 'Major Festival',
+        tag_ml: 'പ്രധാന ഉത്സവം',
+        tagType: 'gold',
+        urgent: true,
+        timings: true,
+        date_en: '15 November 2026 (Sunday)',
+        date_ml: '2026 നവംബർ 15 (ഞായർ)',
+        title_en: 'Skanda Sasthi',
+        title_ml: 'സ്കന്ദ ഷഷ്ഠി',
+        desc_en: 'The most auspicious Shasti day of 2026. Devotees are invited for Subrahmanya Sashti pooja, Soorasamharam, fasting and vratams. Special arrangements will be announced by the temple office.',
+        desc_ml: '2026 ലെ ഏറ്റവും ശുഭമായ ശഷ്ഠി ദിവസം. ഭക്തർക്കായി സുബ്രഹ്മണ്യ ഷഷ്ഠി പൂജ, ശൂരസംഹാരം, ഉപവാസവും വ്രതങ്ങളും നടത്തുന്നു. പ്രത്യേക സാഹചര്യങ്ങൾ ക്ഷേത്ര ഓഫീസ് അറിയിച്ചു നൽകും.',
+        timings_en: 'Pooja and Soorasamharam timings will be announced by the temple office.',
+        timings_ml: 'പൂജയും ശൂരസംഹാരവും സമയങ്ങൾ ക്ഷേത്ര ഓഫീസ് അറിയിച്ചു നൽകും.',
+        actionLink: '/festivals',
+        actionText_en: 'View Shasti Days',
+        actionText_ml: 'ശഷ്ഠി ദിവസങ്ങൾ കാണുക'
     }
 ];
 

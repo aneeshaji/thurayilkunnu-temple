@@ -6,10 +6,10 @@ import { SITE_URL, buildTempleSchema } from '../constants/site';
 const SEO = ({ title, description, keywords, image, url, schema }) => {
     const { i18n } = useTranslation();
 
-    const siteName = "Thurayilkunnu Sree Subramanya Swami Temple";
-    const defaultDescription = "Ancient seat of divinity in Karunagappally, Kerala. Home to Lord Subramanya, offering spiritual grace, traditional poojas, and grand festivals.";
+    const siteName = "Thurayilkunnu Sree Subrahmanya Swami Temple";
+    const defaultDescription = "Ancient seat of divinity in Karunagappally, Kerala. Home to Lord Subrahmanya, offering spiritual grace, traditional poojas, and grand festivals.";
     const defaultImage = `${SITE_URL}/og-image.jpg`;
-    const defaultKeywords = "Thurayilkunnu Temple, Subramanya Swami, Karunagappally, Kerala Temple, Murugan, Thaipusam, Hindu Temple";
+    const defaultKeywords = "Thurayilkunnu Temple, Subrahmanya Swami, Karunagappally, Kerala Temple, Murugan, Thaipusam, Hindu Temple";
 
     const finalTitle = title ? `${title} | ${siteName}` : siteName;
     const finalDescription = description || defaultDescription;

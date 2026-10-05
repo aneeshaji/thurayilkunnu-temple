@@ -43,7 +43,7 @@ const NoticeModal = ({ isOpen, onClose, notices }) => {
                             <div>
                                 <h3>{t('notices.modal_title')}</h3>
                                 <p className="notice-modal-subtitle">
-                                    <MapPin size={12} /> Thurayilkunnu Sree Subramanya Swami Temple
+                                    <MapPin size={12} /> Thurayilkunnu Sree Subrahmanya Swami Temple
                                 </p>
                             </div>
                         </div>

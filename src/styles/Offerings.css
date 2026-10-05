@@ -264,6 +264,266 @@
     transform: translateY(-1px);
 }
 
+/* ---- BOOKING NOT AVAILABLE DIALOG ---- */
+.booking-unavailable-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(12, 10, 9, 0.72);
+    backdrop-filter: blur(4px);
+    animation: bookingUnavailableFade 0.25s ease;
+}
+
+.booking-unavailable-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    background: linear-gradient(160deg, #FFFBEB 0%, #FEF3C7 60%, #FDE68A 100%);
+    border: 1px solid #FCD34D;
+    border-top: 5px solid #B45309;
+    border-radius: 18px;
+    padding: 34px 30px 28px;
+    text-align: center;
+    color: #78350F;
+    box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.55);
+    animation: bookingUnavailablePop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lang-ml .booking-unavailable-dialog {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+}
+
+.booking-unavailable-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(120, 53, 15, 0.10);
+    color: #92400E;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.booking-unavailable-close:hover {
+    background: rgba(120, 53, 15, 0.22);
+}
+
+.booking-unavailable-icon {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FCD34D, #D97706);
+    color: #FFFFFF;
+    box-shadow: 0 8px 22px -8px rgba(180, 83, 9, 0.75);
+}
+
+.booking-unavailable-title {
+    margin: 0 0 6px;
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 1.32rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #7C2D12;
+}
+
+.lang-ml .booking-unavailable-title {
+    font-family: 'Noto Serif Malayalam', serif;
+    font-size: 1.2rem;
+}
+
+.booking-unavailable-offering {
+    margin: 0 0 12px;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #B45309;
+}
+
+.booking-unavailable-text {
+    margin: 0 0 22px;
+    font-size: 0.94rem;
+    line-height: 1.7;
+    color: #78350F;
+}
+
+.booking-unavailable-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.booking-unavailable-primary,
+.booking-unavailable-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.lang-ml .booking-unavailable-primary,
+.lang-ml .booking-unavailable-secondary {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 0.88rem;
+    text-transform: none;
+}
+
+.booking-unavailable-primary {
+    background: linear-gradient(135deg, #D97706, #B45309);
+    color: #FFFFFF;
+    border: none;
+    box-shadow: 0 10px 24px -10px rgba(180, 83, 9, 0.85);
+}
+
+.booking-unavailable-primary:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+.booking-unavailable-secondary {
+    background: transparent;
+    color: #92400E;
+    border: 1px solid #F59E0B;
+}
+
+.booking-unavailable-secondary:hover {
+    background: rgba(180, 83, 9, 0.10);
+}
+
+@keyframes bookingUnavailableFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bookingUnavailablePop {
+    from { opacity: 0; transform: translateY(18px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .booking-unavailable-overlay,
+    .booking-unavailable-dialog {
+        animation: none;
+    }
+}
+
+/* ---- BOOKING UNAVAILABLE NOTICE BANNER ---- */
+.booking-pending-notice {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 2rem 0 0;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+    border: 1px solid #FDE68A;
+    border-left: 5px solid #D97706;
+    border-radius: 14px;
+    box-shadow: 0 8px 26px -14px rgba(217, 119, 6, 0.55);
+    color: #78350F;
+}
+
+.booking-pending-notice > svg {
+    flex-shrink: 0;
+    color: #B45309;
+}
+
+.booking-pending-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.booking-pending-text strong {
+    font-family: var(--font-display, Georgia, serif);
+    font-size: 1.02rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.booking-pending-text span {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #92400E;
+}
+
+.lang-ml .booking-pending-text strong {
+    font-family: 'Noto Serif Malayalam', serif;
+    font-size: 1rem;
+}
+
+.lang-ml .booking-pending-text span {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 0.92rem;
+}
+
+.booking-pending-contact {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #D97706, #B45309);
+    color: #FFFFFF;
+    border-radius: 30px;
+    font-family: var(--font-eyebrow, 'Outfit', sans-serif);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+}
+
+.lang-ml .booking-pending-contact {
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    font-size: 0.84rem;
+    text-transform: none;
+}
+
+.booking-pending-contact:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 8px 20px -8px rgba(180, 83, 9, 0.65);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .booking-pending-notice {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px 18px;
+    }
+
+    .booking-pending-contact {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 @media (max-width: 640px) {
     .offering-list-card {
         padding: 1rem;

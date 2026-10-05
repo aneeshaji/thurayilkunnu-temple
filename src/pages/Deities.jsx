@@ -31,11 +31,11 @@ const Deities = () => {
 
     const deitiesData = [
         {
-            id: 'subramanya',
-            name: t('deities.list.subramanya.name'),
+            id: 'subrahmanya',
+            name: t('deities.list.subrahmanya.name'),
             subtitle: isML ? 'വേൽമുരുകൻ · ദേവസേനാപതി' : 'The Lord of Vel & Supreme Commander',
-            description: t('deities.list.subramanya.desc'),
-            image: '/images/deities/subramanya.jpg',
+            description: t('deities.list.subrahmanya.desc'),
+            image: '/images/deities/subrahmanya.jpg',
             main: true,
             badge: isML ? 'പ്രധാന പ്രതിഷ്ഠ' : 'Presiding Sanctum Deity',
             mantra: 'Om Saravanabhavaya Namaha ॐ',
@@ -98,7 +98,7 @@ const Deities = () => {
                 title={t('deities.page_title')}
                 description={t('deities.page_intro')}
                 url="/deities"
-                image="/images/deities/subramanya.jpg"
+                image="/images/deities/subrahmanya.jpg"
             />
             {/* ---- LUXURY INNER PAGE HERO ---- */}
             <PageHero

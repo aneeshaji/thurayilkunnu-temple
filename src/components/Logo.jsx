@@ -20,7 +20,7 @@ const Logo = ({ className = '', scrolled = false }) => {
           THURAYILKUNNU
         </span>
         <span className="logo-brand-descriptor">
-          SREE SUBRAMANYA SWAMI TEMPLE
+          SREE SUBRAHMANYA SWAMI TEMPLE
         </span>
       </div>
     </div>

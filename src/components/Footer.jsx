@@ -115,7 +115,7 @@ const Footer = () => {
                     <h4 className="section-title">{isML ? 'വിശേഷാൽ വഴിപാടുകൾ' : 'Sacred Vazhipadus'}</h4>
                     <ul className="footer-nav-list">
                         <li><Link to="/offerings"><ChevronRight size={14} className="link-arrow" /> {isML ? 'ഗണപതി ഹോമം' : 'Ganapathy Homam'}</Link></li>
-                        <li><Link to="/offerings"><ChevronRight size={14} className="link-arrow" /> {isML ? 'സുബ്രഹ്മണ്യ പുഷ്പാഞ്ജലി' : 'Subramanya Pushpanjali'}</Link></li>
+                        <li><Link to="/offerings"><ChevronRight size={14} className="link-arrow" /> {isML ? 'സുബ്രഹ്മണ്യ പുഷ്പാഞ്ജലി' : 'Subrahmanya Pushpanjali'}</Link></li>
                         <li><Link to="/offerings"><ChevronRight size={14} className="link-arrow" /> {isML ? 'അന്നദാനം സമർപ്പണം' : 'Annadanam Samarpanam'}</Link></li>
                         <li><Link to="/offerings"><ChevronRight size={14} className="link-arrow" /> {isML ? 'പാലഭിഷേകവും ഭസ്മവും' : 'Palabhishekam & Bhasmam'}</Link></li>
                         <li><Link to="/festivals"><ChevronRight size={14} className="link-arrow" /> {isML ? 'തൈപ്പൂയ മഹോത്സവം' : 'Thaipusam Mahotsavam'}</Link></li>
@@ -189,7 +189,7 @@ const Footer = () => {
                     <p className="copy-text">
                         {isML
                             ? `പകർപ്പവകാശം © ${new Date().getFullYear()} - തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്ര ദേവസ്വം. സർവ്വ അവകാശങ്ങളും നിക്ഷിപ്തം.`
-                            : `Copyright © ${new Date().getFullYear()} - Thurayilkunnu Sree Subramanya Swami Temple Devaswom. All Rights Reserved.`}
+                            : `Copyright © ${new Date().getFullYear()} - Thurayilkunnu Sree Subrahmanya Swami Temple Devaswom. All Rights Reserved.`}
                     </p>
                     <div className="footer-legal-links">
                         <Link to="/privacy-policy">{isML ? 'സ്വകാര്യതാ നയം' : 'Privacy Policy'}</Link>

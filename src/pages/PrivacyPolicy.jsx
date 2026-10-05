@@ -60,16 +60,18 @@ We do NOT use your data for advertising, profiling, or commercial marketing of a
             icon: <Lock size={22} />,
             titleEn: 'Data Security & Retention',
             titleMl: 'ഡാറ്റ സുരക്ഷ & സൂക്ഷിപ്പ്',
-            contentEn: `• Contact form submissions are delivered to our email address via Web3Forms, a third-party form delivery service, and are handled only by temple office staff.
+            contentEn: `• Contact form submissions are sent directly from our own web server to our email address and are handled only by temple office staff.
 • Vazhipadu booking details are completed over WhatsApp and handled only by temple office staff.
-• Our servers do not store personal data; submissions are delivered straight to our email inbox.
+• We do not store your details in any database. Submissions are relayed to our email inbox and are not retained on the server.
 • Email newsletter data is handled through secure channels and never shared.
+• Contact submissions are rate limited to reduce spam and abuse.
 • We retain contact information only as long as necessary for the stated purpose.
 • You may request deletion of your data at any time by contacting us directly.`,
-            contentMl: `• കോൺടാക്ട് ഫോം അഭ്യർത്ഥനകൾ Web3Forms എന്ന മൂന്നാം കക്ഷി ഫോം ഡെലിവറി സേവനത്തിലൂടെ ക്ഷേത്ര ഓഫീസ് ഇമെയിലിലേക്ക് അയയ്ക്കുന്നു; ഓഫീസ് ജീവനക്കാർ മാത്രം കൈകാര്യം ചെയ്യുന്നു.
+            contentMl: `• കോൺടാക്ട് ഫോം അഭ്യർത്ഥനകൾ ഞങ്ങളുടെ സെർവറിൽ നിന്നും നേരിട്ട് ക്ഷേത്ര ഓഫീസ് ഇമെയിലിലേക്ക് അയയ്ക്കുന്നു; ഓഫീസ് ജീവനക്കാർ മാത്രം കൈകാര്യം ചെയ്യുന്നു.
 • ബുക്കിംഗ് അഭ്യർത്ഥനകൾ വാട്‌സ്ആപ്പ് വഴി അയയ്‌ക്കുകയും ക്ഷേത്ര ഓഫീസ് ജീവനക്കാർ മാത്രം കൈകാര്യം ചെയ്യുകയും ചെയ്യുന്നു.
-• ഞങ്ങളുടെ സെർവറുകളിൽ വ്യക്തിഗത ഡേറ്റ സൂക്ഷിക്കുന്നില്ല; അഭ്യർത്ഥനകൾ നേരിട്ട് ഇമെയിൽ ഇൻബോക്സിലേക്കാണ് എത്തുന്നത്.
+• ഞങ്ങളുടെ ഡേറ്റാബേസിൽ വ്യക്തിഗത വിവരങ്ങൾ സൂക്ഷിക്കുന്നില്ല; അഭ്യർത്ഥനകൾ നേരിട്ട് ഇമെയിൽ ഇൻബോക്സിലേക്കാണ് എത്തുന്നത്.
 • ഇ-മെയിൽ ഡേറ്റ സുരക്ഷിതമായ ചാനലുകളിലൂടെ കൈകാര്യം ചെയ്യുകയും ഒരിക്കലും പങ്കിടുകയോ വിൽക്കുകയോ ചെയ്യില്ല.
+• സ്പാം തടയാൻ അഭ്യർത്ഥനകൾക്ക് പരിധി നിക്കിയാം.
 • ആവശ്യമായ കാലത്തേക്ക് മാത്രം ഡേറ്റ സൂക്ഷിക്കുന്നു.
 • നിങ്ങളുടെ ഡേറ്റ ഇല്ലാതാക്കാൻ എപ്പോൾ വേണമെങ്കിലും നമ്മുക്ക് നേരിട്ട് അറിയിക്കാം.`,
         },
@@ -79,17 +81,17 @@ We do NOT use your data for advertising, profiling, or commercial marketing of a
             titleMl: 'മൂന്നാം കക്ഷി സേവനങ്ങൾ',
             contentEn: `Our website may use the following third-party services:
 
-• **Web3Forms** — Contact form submissions are relayed to our email address. Web3Forms' privacy policy governs their data handling.
 • **WhatsApp (Meta)** — Vazhipadu booking details are exchanged via WhatsApp. Meta's privacy policy governs their data handling.
 • **Google Maps** — Temple location is displayed using a Google Maps embed.
+• **Gmail / Google Workspace** — Contact form messages are delivered to our mailbox using Google's email servers, subject to Google's privacy policy.
 • **i18next** — Language translation library (no data collection).
 
 We are not responsible for the privacy practices of third-party services linked from our site.`,
             contentMl: `ഞങ്ങളുടെ വെബ്‌സൈറ്റ് ഇനിപ്പറയുന്ന മൂന്നാം കക്ഷി സേവനങ്ങൾ ഉപയോഗിക്കാം:
 
-• **Web3Forms** — കോൺടാക്ട് ഫോം അഭ്യർത്ഥനകൾ ക്ഷേത്ര ഇമെയിലിലേക്ക് അയയ്ക്കുന്നു. Web3Forms ന്റെ സ്വകാര്യതാ നയം ബാധകം.
 • **WhatsApp (Meta)** — ബുക്കിംഗ് സ്ഥിരീകരണങ്ങൾ വാട്‌സ്ആപ്പ് വഴി അയക്കുന്നു. Meta-യുടെ സ്വകാര്യതാ നയം ബാധകം.
 • **Google Maps** — ക്ഷേത്ര സ്ഥാനം Google Maps എംബെഡ് ഉപയോഗിച്ച് കാണിക്കുന്നു.
+• **Gmail / Google Workspace** — കോൺടാക്ട് ഫോം സന്ദേശങ്ങൾ Google-ന്റെ ഇമെയിൽ സെർവറുകളിലൂടെ ഞങ്ങളുടെ ഇമെയിൽ ബോക്സിലേക്ക് എത്തിച്ചേരുന്നു; Google-ന്റെ സ്വകാര്യതാ നയം ബാധകം.
 • **i18next** — ഭാഷാ വിവർത്തന ലൈബ്രറി (ഡേറ്റ ശേഖരണമില്ല).`,
         },
         {
@@ -124,7 +126,7 @@ To exercise any of these rights, contact us at:
         <div className="legal-page">
             <SEO
                 title="Privacy Policy — Thurayilkunnu Temple"
-                description="Privacy Policy of Thurayilkunnu Sree Subramanya Swami Temple. Learn how we collect, use and protect your personal information."
+                description="Privacy Policy of Thurayilkunnu Sree Subrahmanya Swami Temple. Learn how we collect, use and protect your personal information."
                 url="/privacy-policy"
             />
 
@@ -161,7 +163,7 @@ To exercise any of these rights, contact us at:
                         <p className="legal-hero-subtitle">
                             {isML
                                 ? 'തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്ര ദേവസ്വം'
-                                : 'Thurayilkunnu Sree Subramanya Swami Temple Devaswom'}
+                                : 'Thurayilkunnu Sree Subrahmanya Swami Temple Devaswom'}
                         </p>
                         <p className="legal-updated">
                             {isML ? `അവസാനം അപ്ഡേറ്റ് ചെയ്തത്: ${lastUpdated}` : `Last Updated: ${lastUpdated}`}
@@ -177,7 +179,7 @@ To exercise any of these rights, contact us at:
                         <p>
                             {isML
                                 ? 'ഭഗവാൻ സുബ്രഹ്മണ്യന്റെ ഭക്തരുടെ സ്വകാര്യതയും വിശ്വാസവും ഞങ്ങൾ ആദരിക്കുന്നു. ഈ സ്വകാര്യതാ നയം, ഈ വെബ്‌സൈറ്റ് ഉപയോഗിക്കുമ്പോൾ നിങ്ങളുടെ ഡേറ്റ ഞങ്ങൾ എങ്ങനെ കൈകാര്യം ചെയ്യുന്നു എന്ന് വ്യക്തമാക്കുന്നു.'
-                                : 'We respect the privacy and trust of all devotees of Lord Subramanya. This Privacy Policy explains how we handle your data when you use this website for vazhipadu bookings, offerings, or information queries.'}
+                                : 'We respect the privacy and trust of all devotees of Lord Subrahmanya. This Privacy Policy explains how we handle your data when you use this website for vazhipadu bookings, offerings, or information queries.'}
                         </p>
                     </div>
 

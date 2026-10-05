@@ -12,10 +12,11 @@ dist
 dist-ssr
 *.local
 
-# Local environment files (Web3Forms access key etc.)
+# Local environment files (SMTP credentials, API config)
 .env
 .env.*
 !.env.example
+server/.env
 
 # Editor directories and files
 .vscode/*

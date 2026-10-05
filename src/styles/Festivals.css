@@ -148,6 +148,122 @@
     border: 1px solid rgba(28, 25, 23, 0.08);
 }
 
+/* ── SHASTI DAYS 2026 ── */
+.shasti-section {
+    background: #FFFDF8;
+    border-top: 1px solid rgba(197, 138, 20, 0.14);
+}
+
+.shasti-intro {
+    max-width: 44rem;
+    margin: 1.1rem auto 0;
+    color: #57534E;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.shasti-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.1rem;
+}
+
+.shasti-item {
+    background: #FFFFFF;
+    border: 1px solid rgba(197, 138, 20, 0.22);
+    border-radius: 20px;
+    padding: 1.4rem 1rem 1.25rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    box-shadow: 0 8px 24px rgba(28, 25, 23, 0.04);
+    position: relative;
+    overflow: hidden;
+}
+
+.shasti-item::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: linear-gradient(90deg, #C58A14, #E8B84B, #C58A14);
+    opacity: 0.55;
+}
+
+.shasti-day {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.1rem, 3.4vw, 2.7rem);
+    font-weight: 600;
+    line-height: 1.1;
+    color: #B45309;
+}
+
+.shasti-month {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: #1C1917;
+}
+
+.shasti-weekday {
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #78716C;
+}
+
+.shasti-badge {
+    margin-top: 0.7rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: linear-gradient(135deg, #B45309, #C58A14);
+    color: #FFFDF8;
+    font-size: 0.74rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    line-height: 1.35;
+}
+
+.shasti-major {
+    background: linear-gradient(160deg, #FFF8E7, #FFFFFF 60%);
+    border-color: rgba(197, 138, 20, 0.55);
+    box-shadow: 0 14px 38px rgba(180, 83, 9, 0.14);
+}
+
+.shasti-major::before {
+    opacity: 1;
+    height: 4px;
+}
+
+.shasti-major .shasti-day {
+    font-size: clamp(2.5rem, 4vw, 3.1rem);
+}
+
+.shasti-footnote {
+    margin: 2.4rem auto 0;
+    max-width: 42rem;
+    text-align: center;
+    color: #78716C;
+    font-size: 0.86rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 992px) {
+    .shasti-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+    .shasti-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+    .shasti-item { padding: 1.1rem 0.7rem 1rem; }
+}
+
 .card-footer {
     margin-top: auto;
     padding-top: 1.5rem;

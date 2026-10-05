@@ -69,11 +69,11 @@ const Festivals = () => {
             id: 4,
             name: t('festivals_page.list.skanda.name'),
             date: t('festivals_page.list.skanda.date'),
-            tag: isML ? 'ശൂരസംഹാരവും വ്രതാനുഷ്ഠാനങ്ങളും' : '6 Sacred Days of Soorasamharam',
+            tag: isML ? '✦ 2026 ലെ പ്രധാന ഉത്സവം — ശൂരസംഹാരവും വ്രതാനുഷ്ഠാനങ്ങളും' : '✦ Major Festival 2026 — Soorasamharam & Vratams',
             description: t('festivals_page.list.skanda.desc'),
             image: '/images/gallery/pooja_ritual_1.jpg',
             icon: <Sparkles size={24} />,
-            highlights: isML ? ['ശൂരസംഹാരം', 'സുബ്രഹ്മണ്യ പൂജ', 'ഷഷ്ഠി വ്രതം'] : ['Soorasamharam Ritual', 'Special Subramanya Pooja', 'Fasting & Vows']
+            highlights: isML ? ['ശൂരസംഹാരം', 'സുബ്രഹ്മണ്യ പൂജ', 'ഷഷ്ഠി വ്രതം'] : ['Soorasamharam Ritual', 'Special Subrahmanya Pooja', 'Fasting & Vows']
         },
         {
             id: 5,
@@ -97,11 +97,38 @@ const Festivals = () => {
         }
     ];
 
+    /* ---- SHASTI DAYS 2026 ----
+     * `major: true` highlights 15 November (Skanda Sasthi), the year's major festival.
+     */
+    const shastiDays2026 = [
+        { month: 'January', monthMl: 'ജനുവരി', day: '24', weekday: 'Saturday', weekdayMl: 'ശനി' },
+        { month: 'February', monthMl: 'ഫെബ്രുവരി', day: '23', weekday: 'Monday', weekdayMl: 'തിങ്കൾ' },
+        { month: 'March', monthMl: 'മാർച്ച്', day: '24', weekday: 'Tuesday', weekdayMl: 'ചൊവ്വ' },
+        { month: 'April', monthMl: 'ഏപ്രിൽ', day: '22', weekday: 'Wednesday', weekdayMl: 'ബുധൻ' },
+        { month: 'May', monthMl: 'മെയ്', day: '21', weekday: 'Thursday', weekdayMl: 'വ്യാഴം' },
+        { month: 'June', monthMl: 'ജൂൺ', day: '20', weekday: 'Saturday', weekdayMl: 'ശനി' },
+        { month: 'July', monthMl: 'ജൂലൈ', day: '19', weekday: 'Sunday', weekdayMl: 'ഞായർ' },
+        { month: 'August', monthMl: 'ആഗസ്റ്റ്', day: '18', weekday: 'Tuesday', weekdayMl: 'ചൊവ്വ' },
+        { month: 'September', monthMl: 'സെപ്റ്റംബർ', day: '17', weekday: 'Thursday', weekdayMl: 'വ്യാഴം' },
+        { month: 'October', monthMl: 'ഒക്ടോബർ', day: '16', weekday: 'Friday', weekdayMl: 'വെള്ളി' },
+        {
+            month: 'November',
+            monthMl: 'നവംബർ',
+            day: '15',
+            weekday: 'Sunday',
+            weekdayMl: 'ഞായർ',
+            major: true,
+            noteEn: 'Skanda Sasthi — Major Festival',
+            noteMl: 'സ്കന്ദ ഷഷ്ഠി — പ്രധാന ഉത്സവം'
+        },
+        { month: 'December', monthMl: 'ഡിസംബർ', day: '15', weekday: 'Tuesday', weekdayMl: 'ചൊവ്വ' }
+    ];
+
     return (
         <div className={`festivals-page ${isML ? 'lang-ml' : ''}`}>
             <SEO 
                 title={t('festivals_page.title')} 
-                description="Experience the vibrant and spiritual festivals at Thurayilkunnu Sree Subramanya Swami Temple."
+                description="Experience the vibrant and spiritual festivals at Thurayilkunnu Sree Subrahmanya Swami Temple."
                 url="/festivals"
             />
             {/* ---- LUXURY INNER PAGE HERO ---- */}
@@ -209,6 +236,64 @@ const Festivals = () => {
                 </div>
             </section>
 
+            {/* ---- SHASTI DAYS 2026 CALENDAR ---- */}
+            <section className="festivals-container section-padding shasti-section">
+                <div className="container">
+                    <div className="section-head text-center" style={{ marginBottom: '3rem' }}>
+                        <span className="section-label" style={{ justifyContent: 'center' }}>
+                            <Calendar size={18} />
+                            <span>{isML ? '2026 ശഷ്ഠി ദിവസങ്ങൾ' : 'Shasti Days 2026'}</span>
+                        </span>
+                        <h2 className="heading-secondary">
+                            {isML ? 'ശ്രീ സുബ്രഹ്മണ്യ ഷഷ്ഠി പൂജാ ദിവസങ്ങൾ' : 'Subrahmanya Sashti Pooja Days'}
+                        </h2>
+                        <p className="shasti-intro">
+                            {isML
+                                ? '2026 ലെ ശ്രീ സുബ്രഹ്മണ്യ സ്വാമിക്കുള്ള ശഷ്ഠി ദിവസങ്ങൾ. നവംബർ 15, ഞായർ — സ്കന്ദ ഷഷ്ഠി ആണ് ആസംവർഷത്തിലെ പ്രധാന ഉത്സവം.'
+                                : 'All Shasti days for Sri Subrahmanya Swami in 2026. November 15, Sunday — Skanda Sasthi is the major festival of the year.'}
+                        </p>
+                    </div>
+
+                    <motion.ul
+                        className="shasti-grid"
+                        variants={stagger}
+                        {...inViewProps()}
+                    >
+                        {shastiDays2026.map((d) => (
+                            <motion.li
+                                key={`${d.month}-${d.day}`}
+                                className={`shasti-item ${d.major ? 'shasti-major' : ''}`}
+                                variants={cardVariant}
+                                whileHover={{ y: -6, scale: 1.02 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <span className="shasti-day">
+                                    {d.day}
+                                </span>
+                                <span className="shasti-month">
+                                    {isML ? d.monthMl : d.month}
+                                </span>
+                                <span className="shasti-weekday">
+                                    {isML ? d.weekdayMl : d.weekday}
+                                </span>
+                                {d.major && (
+                                    <span className="shasti-badge">
+                                        <Star size={13} />
+                                        {isML ? d.noteMl : d.noteEn}
+                                    </span>
+                                )}
+                            </motion.li>
+                        ))}
+                    </motion.ul>
+
+                    <p className="shasti-footnote">
+                        {isML
+                            ? 'ദിവസങ്ങൾ ക്ഷേത്ര ഓഫീസിന്റെ ഔദ്യോഗിക കലണ്ടരനുസരിച്ചാണ്. പൂജാ സമയവും ചടങ്ങുകൾക്കും മാറ്റാവുന്നതാണെങ്കിൽ ഓഫീസിനെ ബന്ധപ്പെടുക.'
+                            : 'Dates follow the official temple office calendar. Timings and rituals may be adjusted — please confirm with the temple office.'}
+                    </p>
+                </div>
+            </section>
+
             {/* ---- INFO STRIP ---- */}
             <motion.div
                 className="festival-info-strip"
@@ -264,7 +349,7 @@ const Festivals = () => {
                                         {isML ? 'ഉത്രട്ടാതി മഹോത്സവം 2026 — ഔദ്യോഗിക അറിയിപ്പ്' : 'Uthrattathi Mahotsavam 2026 — Official Circular'}
                                     </h3>
                                     <p className="poster-modal-sub">
-                                        {isML ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം' : 'Thurayilkunnu Sree Subramanya Swami Temple'}
+                                        {isML ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം' : 'Thurayilkunnu Sree Subrahmanya Swami Temple'}
                                     </p>
                                 </div>
                                 <button 

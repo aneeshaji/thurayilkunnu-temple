@@ -64,7 +64,7 @@ const Gallery = () => {
         },
         {
             id: 5,
-            url: '/images/gallery/subramanya_vigraham.jpg',
+            url: '/images/gallery/subrahmanya_vigraham.jpg',
             title: 'Presiding Sanctum Deity — Lord Murugan with Vel & Peacock',
             titleMl: 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമി തിരുവിഗ്രഹം — വേലും ദിവ്യമയിലും',
             category: 'Deity'

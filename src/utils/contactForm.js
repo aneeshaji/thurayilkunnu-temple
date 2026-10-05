@@ -1,22 +1,20 @@
 /**
- * Web3Forms access key is supplied at build time so it is never committed.
- * Sign up free at https://web3forms.com and add the key to a local .env file:
+ * Contact submissions are sent to the site's own Nodemailer endpoint, which
+ * relays them to info@thurayilkunnutemple.com over Gmail SMTP. The server
+ * lives in /server and is deployed separately, so no SMTP credentials or
+ * third-party keys are ever exposed in the browser bundle.
  *
- *   VITE_WEB3FORMS_ACCESS_KEY=your_access_key_here
- *
- * Without a key the contact form falls back to opening the visitor's mail
- * client with the message pre-filled, so the form never silently fails.
+ * Override the path only if the endpoint is mounted elsewhere:
+ *   VITE_CONTACT_API_URL=/api/contact
  */
-const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
-const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+const API_URL = import.meta.env.VITE_CONTACT_API_URL || '/api/contact';
 
 const CONTACT_EMAIL = 'info@thurayilkunnutemple.com';
 
-export const isEmailConfigured = Boolean(ACCESS_KEY);
-
-const buildFallbackMailto = ({ name, phone, subject, message }) => {
+const buildFallbackMailto = ({ name, email, phone, subject, message }) => {
     const body = [
         `Name: ${name}`,
+        `Email: ${email || 'Not provided'}`,
         `Phone: ${phone || 'Not provided'}`,
         `Inquiry: ${subject || 'General Inquiry'}`,
         '',
@@ -29,31 +27,29 @@ const buildFallbackMailto = ({ name, phone, subject, message }) => {
 };
 
 export const sendContactEmail = async (formData) => {
-    if (!ACCESS_KEY) {
-        window.location.href = buildFallbackMailto(formData);
-        return { ok: true, fallback: true };
-    }
-
     try {
-        const response = await fetch(WEB3FORMS_ENDPOINT, {
+        const response = await fetch(API_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 Accept: 'application/json'
             },
             body: JSON.stringify({
-                access_key: ACCESS_KEY,
-                subject: `[${formData.subject || 'General Inquiry'}] ${formData.name}`,
                 name: formData.name,
-                phone: formData.phone || 'Not provided',
+                email: formData.email,
+                phone: formData.phone,
+                subject: formData.subject,
                 message: formData.message,
-                from_name: formData.name,
-                replyto: formData.email || undefined,
                 botcheck: ''
             })
         });
 
-        const result = await response.json();
+        let result = {};
+        try {
+            result = await response.json();
+        } catch {
+            result = {};
+        }
 
         if (!response.ok || !result.success) {
             return {
@@ -66,7 +62,8 @@ export const sendContactEmail = async (formData) => {
     } catch {
         return {
             ok: false,
-            error: 'Network error while sending. Please check your connection and try again, or call the temple office.'
+            error: 'Could not reach the temple server. You can send this message using your own email app instead.',
+            mailto: buildFallbackMailto(formData)
         };
     }
 };

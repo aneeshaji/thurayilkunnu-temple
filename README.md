@@ -1,4 +1,4 @@
-# Thurayilkunnu Sree Subramanya Swami Temple
+# Thurayilkunnu Sree Subrahmanya Swami Temple
 ### തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം
 
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
@@ -7,7 +7,7 @@
 [![i18n](https://img.shields.io/badge/i18n-English%20%7C%20Malayalam-success?style=flat-square)](https://react.i18next.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](./LICENSE)
 
-The official web portal and devotee progressive web application (PWA) for **Thurayilkunnu Sree Subramanya Swami Temple**, an ancient sanctuary of Lord Subramanya (Murugan) situated on the sacred hillock of Thurayilkunnu, Karunagappally, Kollam District, Kerala.
+The official web portal and devotee progressive web application (PWA) for **Thurayilkunnu Sree Subrahmanya Swami Temple**, an ancient sanctuary of Lord Subrahmanya (Murugan) situated on the sacred hillock of Thurayilkunnu, Karunagappally, Kollam District, Kerala.
 
 **Live Portal:** [thurayilkunnutemple.com](https://thurayilkunnutemple.com/)
 
@@ -34,9 +34,9 @@ The official web portal and devotee progressive web application (PWA) for **Thur
 
 ## About the Temple
 
-Established and consecrated in **1952**, the Thurayilkunnu Sree Subramanya Swami Temple carries over 70 years of spiritual heritage, adhering strictly to authentic Kerala tantric rituals. Nestled atop the peaceful hillock in Karunagappally, the temple serves as a beacon of serenity, drawing thousands of devotees seeking the blessings, strength, and divine protection of Lord Velayudha (Subramanya).
+Established and consecrated in **1952**, the Thurayilkunnu Sree Subrahmanya Swami Temple carries over 70 years of spiritual heritage, adhering strictly to authentic Kerala tantric rituals. Nestled atop the peaceful hillock in Karunagappally, the temple serves as a beacon of serenity, drawing thousands of devotees seeking the blessings, strength, and divine protection of Lord Velayudha (Subrahmanya).
 
-- **Presiding Deity:** Lord Subramanya Swami (Murugan / Balamurugan / Devasenapati)
+- **Presiding Deity:** Lord Subrahmanya Swami (Murugan / Balamurugan / Devasenapati)
 - **Consecration Year:** 1952
 - **Tradition:** Kerala Tantric Pooja Vidhi
 - **Location:** Thurayilkunnu, Maru: South, Alumkadavu P.O., Karunagappally, Kollam, Kerala - 690573
@@ -47,7 +47,7 @@ Established and consecrated in **1952**, the Thurayilkunnu Sree Subramanya Swami
 
 The temple complex houses the presiding sanctum along with revered Upadevathas (subsidiary shrines):
 
-1. **Lord Subramanya Swami (ശ്രീ സുബ്രഹ്മണ്യസ്വാമി):** Presiding Deity holding the divine Vel, seated on the peacock vahana; dispeller of karmic hindrances and fear.
+1. **Lord Subrahmanya Swami (ശ്രീ സുബ്രഹ്മണ്യസ്വാമി):** Presiding Deity holding the divine Vel, seated on the peacock vahana; dispeller of karmic hindrances and fear.
 2. **Lord Mahaganapathy (ശ്രീ മഹാഗണപതി):** The Lord of Beginnings, invoked through daily Ganapathy Homam to clear all obstacles.
 3. **Goddess Durga / Bhagavathy (ദുർഗ്ഗാ ഭഗവതി):** The Supreme Mother and protector, worshipped for health, prosperity, and fearlessness.
 4. **Lord Shiva (ശ്രീ മഹാദേവൻ):** The Supreme Yogi and Mrityunjaya, granting peace and longevity.
@@ -89,7 +89,7 @@ The sanctum doors are opened twice daily according to traditional temple routine
 
 - **Uthrattathi Mahotsavam (ഉത്രട്ടാതി മഹോത്സവം):** The premier annual temple festival celebrated with Parayeduppu, traditional Panchavadyam, and temple melams.
 - **Thaipusam Kavadi Mahotsavam (തൈപ്പൂയം കാവടിയാട്ടം):** Grand annual festival featuring vibrant Kavadi processions, Palabhishekam, and community Annadanam.
-- **Skanda Sashti & Soorasamharam (സ്കന്ദ ഷഷ്ഠി):** 6 sacred days of fasting, Soorasamharam re-enactment, and special Subramanya poojas.
+- **Skanda Sashti & Soorasamharam (സ്കന്ദ ഷഷ്ഠി):** 6 sacred days of fasting, Soorasamharam re-enactment, and special Subrahmanya poojas.
 - **Skanda Purana Yajnam (സ്കന്ദ പുരാണ യജ്ഞം):** Multi-day sacred Purana Parayanam, homams, and spiritual discourses.
 - **Thrikarthika Deepotsavam (തൃക്കാർത്തിക ദീപോത്സവം):** Festival of lights where the entire temple is illuminated with thousands of oil lamps (Chuttuvilakku).
 - **Vishu Kani Darshan (വിഷുക്കണി ദർശനം):** Auspicious dawn darshan welcoming the Malayalam New Year with Vishukkaineettam.
@@ -170,7 +170,7 @@ thurayilkunnu-temple/
 │   ├── constants/
 │   │   └── site.js           # Canonical domain, contact, address & Schema.org data
 │   ├── utils/
-│   │   ├── contactForm.js    # Web3Forms contact & newsletter delivery
+│   │   ├── contactForm.js    # Contact & newsletter delivery via the site's own API
 │   │   ├── darshanStatus.js  # Live IST temple door open/closed tracker
 │   │   └── nakshatras.js     # 27 Janma Nakshatra astrological metadata
 │   ├── App.jsx               # Application root layout & route definitions
@@ -240,9 +240,49 @@ npm run lint
 
 ---
 
+## Contact Form Server
+
+The contact form and newsletter form POST to a small Express + Nodemailer service that relays messages to `info@thurayilkunnutemple.com` over Gmail SMTP. SMTP credentials stay on the server and are never part of the browser bundle.
+
+- Endpoint: `POST /api/contact`
+- Health check: `GET /api/health`
+- Source: `server/server.js`
+- Abuse protection: honeypot field, payload caps, and per-IP rate limiting (`RATE_LIMIT_MAX` per 15 min)
+
+### Local testing
+
+```bash
+cd server
+npm install
+cp .env.example .env
+npm start
+```
+
+The Vite dev server runs separately with `npm run dev`.
+
+### Deploying on cPanel
+
+1. Confirm your host offers **Setup Node.js App** (cPanel → Software Center). Without it, use a PHP mailer at the same route instead — the front end needs no changes.
+2. Create a Google **App Password** for the mailbox: [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords). This requires 2-Step Verification. Do not use the account password.
+3. Upload the `server/` folder to `public_html/api`.
+4. cPanel → **Setup Node.js App** → Create Application:
+   - Node.js version: 18 or newer
+   - Application mode: Production
+   - Application root: `api`
+   - Application URL: `thurayilkunnutemple.com/api`
+   - Application startup file: `server.js`
+5. Click **Run NPM Install** in the application panel.
+6. Add the environment variables from `server/.env.example` (`SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, `MAIL_TO`, `MAIL_FROM`), then **Restart** the application.
+7. Deploy the static build: upload the contents of `dist/` to `public_html/`.
+8. Verify `https://thurayilkunnutemple.com/api/health` returns `{"ok":true,...}` with `smtpConfigured:true`, then submit the form once.
+
+`public/.htaccess` already excludes `^api/` from the SPA rewrite, so the endpoint is not swallowed by the `index.html` fallback. The Content-Security-Policy `connect-src` is `'self'`, which covers same-origin API calls.
+
+---
+
 ## Contact & Location
 
-- **Address:** Thurayilkunnu Sree Subramanya Swami Temple, Thurayilkunnu, Maru: South, Alumkadavu P.O., Karunagappally, Kollam District, Kerala - 690573, India
+- **Address:** Thurayilkunnu Sree Subrahmanya Swami Temple, Thurayilkunnu, Maru: South, Alumkadavu P.O., Karunagappally, Kollam District, Kerala - 690573, India
 - **Phone:** [+91 79943 42205](tel:+917994342205) / [+91 90727 22205](tel:+919072722205)
 - **Email:** info@thurayilkunnutemple.com
 - **Coordinates:** `9.1258969° N, 76.5064915° E`

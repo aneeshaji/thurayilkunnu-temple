@@ -43,7 +43,7 @@ const NotFound = () => {
                     <p className="not-found-desc">
                         {isML 
                             ? 'നിങ്ങൾ തിരയുന്ന പേജ് മാറ്റപ്പെട്ടിരിക്കാം അല്ലെങ്കിൽ ലഭ്യമല്ല. ഭഗവാൻ സുബ്രഹ്മണ്യസ്വാമിയുടെ അനുഗ്രഹം നിങ്ങളുടെ പാതയെ നയിക്കട്ടെ.'
-                            : 'The page you are looking for has moved or does not exist in our temple archives. May Lord Subramanya Swamy guide your steps back to serenity.'}
+                            : 'The page you are looking for has moved or does not exist in our temple archives. May Lord Subrahmanya Swamy guide your steps back to serenity.'}
                     </p>
 
                     {/* Quick navigation buttons */}

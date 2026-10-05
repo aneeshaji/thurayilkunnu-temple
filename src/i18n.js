@@ -19,8 +19,8 @@ const resources = {
             },
             home: {
                 welcome_subtitle: "Since Generations",
-                welcome_title: "Thurayilkunnu Sree Subramanya Swami Temple",
-                welcome_desc1: "Thurayilkunnu Sree Subramanya Swami Temple is a haven of peace and spirituality, attracting devotees from all walks of life. Dedicated to Lord Subramanya, the temple is a beacon of serenity and heritage, offering a sanctuary for those seeking blessings and inner strength.",
+                welcome_title: "Thurayilkunnu Sree Subrahmanya Swami Temple",
+                welcome_desc1: "Thurayilkunnu Sree Subrahmanya Swami Temple is a haven of peace and spirituality, attracting devotees from all walks of life. Dedicated to Lord Subrahmanya, the temple is a beacon of serenity and heritage, offering a sanctuary for those seeking blessings and inner strength.",
                 welcome_desc2: "Experience the divine presence through our sacred rituals and long-standing traditions that have blessed families for decades.",
                 learn_more: "Learn More About Us",
                 location_chip: "Karunagappally, Kerala",
@@ -38,7 +38,7 @@ const resources = {
                 },
                 quote: {
                     mantra: "Om Saravana Bhava",
-                    blessing: "May Lord Subramanya bless you with health, wealth, and prosperity."
+                    blessing: "May Lord Subrahmanya bless you with health, wealth, and prosperity."
                 },
                 offerings: {
                     section_label: "What We Offer",
@@ -70,12 +70,12 @@ const resources = {
                 },
                 banner: {
                     slide1: {
-                        title: "Thurayilkunnu Sree Subramanya Swami Temple",
+                        title: "Thurayilkunnu Sree Subrahmanya Swami Temple",
                         subtitle: "A place of divine solace and spiritual heritage"
                     },
                     slide2: {
                         title: "Divine Blessings",
-                        subtitle: "Experience the presence of Lord Subramanya"
+                        subtitle: "Experience the presence of Lord Subrahmanya"
                     },
                     slide3: {
                         title: "Traditional Majesty",
@@ -111,14 +111,14 @@ const resources = {
                 hero_subtitle: "A sacred hillock sanctuary consecrated in strict accordance with authentic Kerala tantric traditions.",
                 history_title: "History & Significance",
                 history_heading: "Legacy of Thurayilkunnu",
-                history_p1: "The Thurayilkunnu Sree Subramanya Swami Temple is an ancient seat of divinity, believed to have been established centuries ago. It stands as a testament to the rich cultural and spiritual heritage of Kerala. The temple architecture follows the traditional Kerala style, with intricate wood carvings and a copper-plated roof that glows in the sunlight.",
-                history_p2: "Devotees believe that the idol of Lord Subramanya here is self-manifested (Swayambhu), radiating immense power and grace. The serene atmosphere of the temple complex provides a perfect setting for meditation and prayer.",
+                history_p1: "The Thurayilkunnu Sree Subrahmanya Swami Temple is an ancient seat of divinity, believed to have been established centuries ago. It stands as a testament to the rich cultural and spiritual heritage of Kerala. The temple architecture follows the traditional Kerala style, with intricate wood carvings and a copper-plated roof that glows in the sunlight.",
+                history_p2: "Devotees believe that the idol of Lord Subrahmanya here is self-manifested (Swayambhu), radiating immense power and grace. The serene atmosphere of the temple complex provides a perfect setting for meditation and prayer.",
                 history_p3: "Sree Subrahmanya Swami Temple, Thurayilkunnu, is a Hindu temple dedicated to Lord Subrahmanya, located at Alumkadavu P.O., Karunagappally, Kerala. The temple conducts regular worship, special poojas, traditional religious observances and festival programmes. The temple is associated with Sree Narayana Dharma Paripalana Yogam, Branch No. 192, Thurayilkunnu. Devotees and visitors are welcome to participate in the temple's spiritual and religious activities.",
                 seo_description: "Sree Subrahmanya Swami Temple, Thurayilkunnu, is a Hindu temple dedicated to Lord Subrahmanya, located at Alumkadavu P.O., Karunagappally, Kerala. The temple conducts regular worship, special poojas, traditional religious observances and festival programmes. The temple is associated with Sree Narayana Dharma Paripalana Yogam, Branch No. 192, Thurayilkunnu. Devotees and visitors are welcome to participate in the temple's spiritual and religious activities.",
                 legend_title: "Spiritual Significance",
                 legend_heading: "A Hillock of Faith and Peace",
                 legend_quote: "A place of worship, prayer and inner peace.",
-                legend_p1: "Thurayilkunnu is regarded as a place of deep spiritual energy, where devotees feel the grace of Lord Subramanya. Set amidst the calm greenery of the hillock, the temple offers a peaceful space for prayer, meditation and reflection. It remains a centre of faith for the local community and for pilgrims from the surrounding regions.",
+                legend_p1: "Thurayilkunnu is regarded as a place of deep spiritual energy, where devotees feel the grace of Lord Subrahmanya. Set amidst the calm greenery of the hillock, the temple offers a peaceful space for prayer, meditation and reflection. It remains a centre of faith for the local community and for pilgrims from the surrounding regions.",
                 architecture_title: "Architecture",
                 architecture_heading: "Traditional Kerala Temple Style",
                 architecture_p1: "The temple reflects the traditional Kerala style of temple architecture, creating a serene and sacred atmosphere for worship. The temple complex offers devotees a peaceful space to offer prayers and take part in the daily rituals and festival celebrations.",
@@ -127,15 +127,15 @@ const resources = {
                 arch_feat3: "Space for Prayer & Rituals",
                 arch_location: "A sacred space for worship and devotion.",
                 cta_title: "Experience the Peace Yourself",
-                cta_desc: "Join our daily poojas and festivals to witness the divine aura of Thurayilkunnu Sree Subramanya Swami Temple.",
+                cta_desc: "Join our daily poojas and festivals to witness the divine aura of Thurayilkunnu Sree Subrahmanya Swami Temple.",
                 cta_btn: "Plan Your Visit"
             },
             deities: {
                 page_title: "Divine Deities",
-                page_intro: "The temple is the abode of Sree Subramanya Swami along with revered Upadevathas. The divine aura fills the hearts of devotees with peace and devotion.",
+                page_intro: "The temple is the abode of Sree Subrahmanya Swami along with revered Upadevathas. The divine aura fills the hearts of devotees with peace and devotion.",
                 list: {
-                    subramanya: {
-                        name: "Sree Subramanya Swami",
+                    subrahmanya: {
+                        name: "Sree Subrahmanya Swami",
                         desc: "The presiding deity, Lord Murugan, is worshipped here in his divine form as the commander of the gods and dispeller of sorrows."
                     },
                     ganapathy: {
@@ -172,7 +172,7 @@ const resources = {
                     thulabharam: { name: "Thulabharam", desc: "Offering one's weight in items like jaggery, banana, etc." },
                     panchamrutham: { name: "Panchamrutham", desc: "Divine sweet offering made of five ingredients." },
                     bhasmabhishekam: { name: "Bhasmabhishekam", desc: "Sacred ash anointing for health and purity." },
-                    palabhishekam: { name: "Palabhishekam", desc: "Milk anointing to please Lord Subramanya." },
+                    palabhishekam: { name: "Palabhishekam", desc: "Milk anointing to please Lord Subrahmanya." },
                     chuttuvilakku: { name: "Chuttu Vilakku", desc: "Lighting all the lamps around the temple shrine." },
                     vidyarambham: { name: "Vidyarambham", desc: "Initiation into the world of learning and letters." },
                     annadanam: { name: "Annadanam", desc: "Sacred offering of food to the devotees." }
@@ -190,7 +190,7 @@ const resources = {
                     skanda_purana_yajnam: {
                         name: "Skanda Purana Yajnam",
                         date: "December (last week — dates to be confirmed)",
-                        desc: "A sacred Yajnam (fire sacrifice) conducted with the complete recitation of the Skanda Purana, invoking the supreme grace of Lord Subramanya for the welfare of all devotees."
+                        desc: "A sacred Yajnam (fire sacrifice) conducted with the complete recitation of the Skanda Purana, invoking the supreme grace of Lord Subrahmanya for the welfare of all devotees."
                     },
                     thaipusam: {
                         name: "Thaipusam",
@@ -199,8 +199,8 @@ const resources = {
                     },
                     skanda: {
                         name: "Skanda Sashti",
-                        date: "October / November",
-                        desc: "A six-day festival commemorating the victory of Lord Subramanya over the demon Surapadman. Usually includes Soorasamharam."
+                        date: "15 November 2026 (Sunday)",
+                        desc: "A six-day festival commemorating the victory of Lord Subrahmanya over the demon Surapadman. Usually includes Soorasamharam."
                     },
                     vishu: {
                         name: "Vishu",
@@ -241,7 +241,7 @@ const resources = {
             gallery: {
                 hero_badge: "Divine Moments",
                 hero_title: "Temple Gallery",
-                hero_subtitle: "Exploring the spiritual beauty and architectural grandeur of Thurayilkunnu Sree Subramanya Swami Temple through the lens.",
+                hero_subtitle: "Exploring the spiritual beauty and architectural grandeur of Thurayilkunnu Sree Subrahmanya Swami Temple through the lens.",
                 footer_title: "Capturing Centuries of Faith",
                 footer_desc: "Our gallery is continuously updated with photos from recent festivals and temple rituals. Visit often to stay connected with the divine aura of Thurayilkunnu."
             },
@@ -283,7 +283,7 @@ const resources = {
             pooja_schedule: {
                 badge: "Sanctum Timings",
                 title: "Daily Pooja Timetable",
-                subtitle: "Traditional Tantric rituals performed daily at the holy sanctum of Lord Subramanya",
+                subtitle: "Traditional Tantric rituals performed daily at the holy sanctum of Lord Subrahmanya",
                 morning_session: "Morning Nirmalyam & Poojas",
                 evening_session: "Evening Sandhya Poojas & Deeparadhana",
                 special_days_title: "Special Auspicious Days",
@@ -291,11 +291,11 @@ const resources = {
                 events: [
                     { time: "05:00 AM", name: "Nada Thurakkal & Nirmalya Darshanam", desc: "The holy sanctum opens with conch resonance; devotees witness Lord in yesterday's sacred floral embellishments." },
                     { time: "05:30 AM", name: "Usha Pooja, Abhishekam & Ganapathy Homam", desc: "Dawn abhishekam with pure mountain water, sacred milk, and sacred fire invocation at Lord Ganesha shrine." },
-                    { time: "10:00 AM", name: "Ucha Pooja & Maha Naivedyam", desc: "Noon grand ritual, payasam naivedyam offering to the presiding deity Lord Subramanya." },
+                    { time: "10:00 AM", name: "Ucha Pooja & Maha Naivedyam", desc: "Noon grand ritual, payasam naivedyam offering to the presiding deity Lord Subrahmanya." },
                     { time: "10:30 AM", name: "Ucha Nada Adakkal", desc: "Sanctum door closes for afternoon rest until evening." },
                     { time: "05:30 PM", name: "Sandhya Nada Thurakkal", desc: "Sanctum opens for evening rituals as temple courtyard brass oil lamps are lit." },
                     { time: "06:45 PM", name: "Sandhya Deeparadhana", desc: "The grand evening ritual with temple bells, multi-tiered brass oil lamps, and divine camphor aarti." },
-                    { time: "07:30 PM", name: "Athazha Pooja", desc: "Night sacred meal offering to Lord Subramanya accompanied by sacred mantras." },
+                    { time: "07:30 PM", name: "Athazha Pooja", desc: "Night sacred meal offering to Lord Subrahmanya accompanied by sacred mantras." },
                     { time: "08:00 PM", name: "Thrippuka & Sreekovil Nada Adakkal", desc: "Sanctum sanctified with sacred herbal incense (Ashtagandham), final prayer and sanctum doors close for the night." }
                 ]
             },
@@ -339,12 +339,12 @@ const resources = {
                 view_notice: "View Official Circular",
                 close_notice: "Close Circular",
                 notice_modal_title: "Official Administrative Committee Notice",
-                notice_modal_sub: "Thurayilkunnu Sree Subramanya Swami Temple Administrative Committee Announcement",
+                notice_modal_sub: "Thurayilkunnu Sree Subrahmanya Swami Temple Administrative Committee Announcement",
                 call_btn: "Call",
                 house_label: "Residence",
                 phone_label: "Phone",
                 trust_reg_title: "Trust Legal Registration",
-                trust_reg_desc: "Thurayilkunnu Sree Subramanya Swami Temple Trust is a registered public charitable and religious trust under the Travancore-Cochin Literary, Scientific and Charitable Societies Registration Act.",
+                trust_reg_desc: "Thurayilkunnu Sree Subrahmanya Swami Temple Trust is a registered public charitable and religious trust under the Travancore-Cochin Literary, Scientific and Charitable Societies Registration Act.",
                 office_hours: "Office Timings: 08:00 AM – 12:30 PM & 04:30 PM – 07:30 PM Daily | Office: +91 90727 22205"
             },
             vazhipadu_booking: {
@@ -514,7 +514,7 @@ const resources = {
                 page_title: "ദിവ്യ ദേവതകൾ",
                 page_intro: "ശ്രീ സുബ്രഹ്മണ്യസ്വാമിയും ഉപദേവതകളും കുടികൊള്ളുന്ന പുണ്യധാമമാണിത്. ഭഗവാന്റെ സാന്നിധ്യം ഭക്തരുടെ ഹൃദയങ്ങളിൽ സമാധാനവും ഭക്തിയും നിറയ്ക്കുന്നു.",
                 list: {
-                    subramanya: {
+                    subrahmanya: {
                         name: "ശ്രീ സുബ്രഹ്മണ്യസ്വാമി",
                         desc: "ദേവസേനാധിപനായി ഭഗവാൻ സുബ്രഹ്മണ്യനെ പ്രധാന പ്രതിഷ്ഠയായി ആരാധിക്കുന്നു. സർവ്വ ദുഃഖങ്ങളും അകറ്റുന്ന കാരുണ്യമൂർത്തി."
                     },
@@ -579,7 +579,7 @@ const resources = {
                     },
                     skanda: {
                         name: "സ്കന്ദ ഷഷ്ഠി",
-                        date: "ഒക്ടോബർ / നവംബർ",
+                        date: "2026 നവംബർ 15 (ഞായർ)",
                         desc: "ശൂരപദ്മനെ ഭഗവാൻ നിഗ്രഹിച്ചതിന്റെ സ്മരണയ്ക്കായി നടത്തുന്ന ആറ് ദിവസത്തെ ഉത്സവം. ഇതിൽ ശൂരസംഹാരമാണ് പ്രധാന ചടങ്ങ്."
                     },
                     vishu: {

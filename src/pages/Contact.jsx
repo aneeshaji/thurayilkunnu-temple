@@ -45,6 +45,7 @@ const Contact = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formError, setFormError] = useState('');
+    const [formMailto, setFormMailto] = useState('');
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -72,6 +73,7 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setFormError('');
+        setFormMailto('');
         setIsSubmitting(true);
 
         const result = await sendContactEmail(formData);
@@ -79,6 +81,7 @@ const Contact = () => {
 
         if (!result.ok) {
             setFormError(result.error);
+            setFormMailto(result.mailto || '');
             return;
         }
 
@@ -91,7 +94,7 @@ const Contact = () => {
         <div className="contact-page">
             <SEO 
                 title={t('contact_page.title')} 
-                description="Get in touch with Thurayilkunnu Sree Subramanya Swami Temple. Find our address, phone number, and location map." 
+                description="Get in touch with Thurayilkunnu Sree Subrahmanya Swami Temple. Find our address, phone number, and location map." 
                 url="/contact"
             />
 
@@ -288,6 +291,11 @@ const Contact = () => {
                                             <div className="form-error-banner" role="alert">
                                                 <AlertCircle size={18} />
                                                 <span>{isML ? 'സന്ദേശം അയക്കാൻ കഴിഞ്ഞില്ല. ക്ഷേത്ര ഓഫീസിലേക്ക് വിളിക്കുക.' : formError}</span>
+                                                {formMailto && !isML && (
+                                                    <a className="form-error-mailto" href={formMailto}>
+                                                        Send with my email app
+                                                    </a>
+                                                )}
                                             </div>
                                         )}
 
@@ -346,14 +354,14 @@ const Contact = () => {
                         transition={{ duration: 0.4 }}
                     >
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.9573887019623!2d76.5039166!3d9.1259022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0603c90dbd04c3%3A0x1293f97cb13f1948!2sThurayilkunnu%20Sree%20Subramanya%20Swami%20Temple!5e0!3m2!1sen!2sin!4v1711972800000!5m2!1sen!2sin" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.9573887019623!2d76.5039166!3d9.1259022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0603c90dbd04c3%3A0x1293f97cb13f1948!2sThurayilkunnu%20Sree%20Subrahmanya%20Swami%20Temple!5e0!3m2!1sen!2sin!4v1711972800000!5m2!1sen!2sin" 
                             width="100%" 
                             height="440" 
                             style={{ border: 0 }} 
                             allowFullScreen="" 
                             loading="lazy" 
                             referrerPolicy="no-referrer-when-downgrade"
-                            title="Thurayilkunnu Sree Subramanya Swami Temple Location Map"
+                            title="Thurayilkunnu Sree Subrahmanya Swami Temple Location Map"
                         />
                         <motion.a
                             href="https://maps.app.goo.gl/nf1ogELnNM7MpmC46"

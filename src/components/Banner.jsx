@@ -46,7 +46,7 @@ const Banner = () => {
             highlight: isML ? 'ശാന്തിക്കും' : 'Divine Peace',
             desc: isML 
                 ? 'ഗണപതി ഹോമം, സുബ്രഹ്മണ്യ പൂജ, മൃത്യുഞ്ജയ ഹോമം തുടങ്ങിയ പുണ്യ വഴിപാടുകൾ ഭക്തിപൂർവ്വം സമർപ്പിക്കാം.' 
-                : 'Perform Ganapathy Homam, Subramanya Pooja, and special vazhipadus for health, prosperity, and peace.'
+                : 'Perform Ganapathy Homam, Subrahmanya Pooja, and special vazhipadus for health, prosperity, and peace.'
         },
         {
             url: '/images/banners/banner5.jpg',

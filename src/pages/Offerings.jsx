@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { Sparkles, Heart, CreditCard, Clock, Info, ChevronRight, Tag, Flame, CheckCircle, CheckCircle2, X, MessageCircle, Calendar, User, Star, AlertCircle, Printer, ExternalLink } from 'lucide-react';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
@@ -26,6 +27,14 @@ const inViewProps = (margin = '-60px') => ({
     viewport: { once: true, margin }
 });
 
+/* ---- ONLINE BOOKING PAUSED ----
+ * Vazhipadu (offering) booking is not available on the website for the time
+ * being. Offerings are listed for reference only and devotees are asked to
+ * visit the temple office to book. Set this to `true` to bring the whole
+ * booking modal (form, receipt, WhatsApp handoff) back online.
+ */
+const BOOKING_ENABLED = false;
+
 const Offerings = () => {
     const { t, i18n } = useTranslation();
     const currentLang = i18n.language?.startsWith('ml') ? 'ml' : 'en';
@@ -43,6 +52,9 @@ const Offerings = () => {
     const [prasadamMode, setPrasadamMode] = useState('counter');
     const [formError, setFormError] = useState('');
 
+    // "Booking not available for now" toast, shown when a Book button is clicked
+    const [pendingOffering, setPendingOffering] = useState(null);
+
     const offeringsData = [
         // ── ARCHANA / DAILY ──
         {
@@ -52,9 +64,9 @@ const Offerings = () => {
             nameMl: 'അർച്ചന',
             name: isML ? 'അർച്ചന' : 'Archana',
             price: '₹15',
-            descEn: 'Sacred chanting of the divine names of Lord Subramanya for blessings.',
+            descEn: 'Sacred chanting of the divine names of Lord Subrahmanya for blessings.',
             descMl: 'ഭഗവാൻ സുബ്രഹ്മണ്യന്റെ നാമങ്ങൾ ജപിച്ചു നടത്തുന്ന പൂജ.',
-            description: isML ? 'ഭഗവാൻ സുബ്രഹ്മണ്യന്റെ നാമങ്ങൾ ജപിച്ചു നടത്തുന്ന പൂജ.' : 'Sacred chanting of the divine names of Lord Subramanya for blessings.',
+            description: isML ? 'ഭഗവാൻ സുബ്രഹ്മണ്യന്റെ നാമങ്ങൾ ജപിച്ചു നടത്തുന്ന പൂജ.' : 'Sacred chanting of the divine names of Lord Subrahmanya for blessings.',
             icon: <Heart size={20} />,
             image: '/images/offerings/archana_pushpanjali.jpg',
             benefit: 'Peace, health and spiritual growth',
@@ -199,16 +211,16 @@ const Offerings = () => {
         {
             id: 11,
             category: 'daily',
-            nameEn: 'Subramanya Kavacha Manthrarchana',
+            nameEn: 'Subrahmanya Kavacha Manthrarchana',
             nameMl: 'സുബ്രഹ്മണ്യ കവച മന്ത്രർച്ചന',
-            name: isML ? 'സുബ്രഹ്മണ്യ കവച മന്ത്രർച്ചന' : 'Subramanya Kavacha Manthrarchana',
+            name: isML ? 'സുബ്രഹ്മണ്യ കവച മന്ത്രർച്ചന' : 'Subrahmanya Kavacha Manthrarchana',
             price: '₹30',
-            descEn: 'Lord Subramanya protective mantra archana for devotees.',
+            descEn: 'Lord Subrahmanya protective mantra archana for devotees.',
             descMl: 'ശ്രീ സുബ്രഹ്മണ്യ ഭഗവാന്റെ കവച മന്ത്ര അർച്ചന.',
-            description: isML ? 'ശ്രീ സുബ്രഹ്മണ്യ ഭഗവാന്റെ കവച മന്ത്ര അർച്ചന.' : 'Lord Subramanya protective mantra archana for devotees.',
+            description: isML ? 'ശ്രീ സുബ്രഹ്മണ്യ ഭഗവാന്റെ കവച മന്ത്ര അർച്ചന.' : 'Lord Subrahmanya protective mantra archana for devotees.',
             icon: <Heart size={20} />,
             image: '/images/offerings/archana_pushpanjali.jpg',
-            benefit: "Subramanya's divine shield and grace",
+            benefit: "Subrahmanya's divine shield and grace",
             benefitMl: 'ദൈവ കൃപ, ദോഷ ശമനം, ഐശ്വര്യം'
         },
         {
@@ -244,16 +256,16 @@ const Offerings = () => {
         {
             id: 14,
             category: 'daily',
-            nameEn: 'Subramanya Moola Manthrarchana',
+            nameEn: 'Subrahmanya Moola Manthrarchana',
             nameMl: 'സുബ്രഹ്മണ്യ മൂല മന്ത്രർച്ചന',
-            name: isML ? 'സുബ്രഹ്മണ്യ മൂല മന്ത്രർച്ചന' : 'Subramanya Moola Manthrarchana',
+            name: isML ? 'സുബ്രഹ്മണ്യ മൂല മന്ത്രർച്ചന' : 'Subrahmanya Moola Manthrarchana',
             price: '₹30',
-            descEn: 'Root mantra archana of Lord Subramanya for powerful divine blessings.',
+            descEn: 'Root mantra archana of Lord Subrahmanya for powerful divine blessings.',
             descMl: 'ശ്രീ സുബ്രഹ്മണ്യ ഭഗവാന്റെ മൂലമന്ത്ര അർച്ചന.',
-            description: isML ? 'ശ്രീ സുബ്രഹ്മണ്യ ഭഗവാന്റെ മൂലമന്ത്ര അർച്ചന.' : 'Root mantra archana of Lord Subramanya for powerful divine blessings.',
+            description: isML ? 'ശ്രീ സുബ്രഹ്മണ്യ ഭഗവാന്റെ മൂലമന്ത്ര അർച്ചന.' : 'Root mantra archana of Lord Subrahmanya for powerful divine blessings.',
             icon: <Heart size={20} />,
             image: '/images/offerings/archana_pushpanjali.jpg',
-            benefit: 'Supreme divine blessings of Lord Subramanya',
+            benefit: 'Supreme divine blessings of Lord Subrahmanya',
             benefitMl: 'ദൈവ കൃപ, കാര്യ സിദ്ധി, ദോഷ ശമനം'
         },
         {
@@ -263,9 +275,9 @@ const Offerings = () => {
             nameMl: 'അഷ്ടോത്തര മന്ത്രർച്ചന',
             name: isML ? 'അഷ്ടോത്തര മന്ത്രർച്ചന' : 'Ashtothara Manthrarchana',
             price: '₹30',
-            descEn: '108-name mantra archana of Lord Subramanya for complete wellbeing.',
+            descEn: '108-name mantra archana of Lord Subrahmanya for complete wellbeing.',
             descMl: 'ഭഗവാൻ സുബ്രഹ്മണ്യന്റെ 108 നാമ മന്ത്ര അർച്ചന.',
-            description: isML ? 'ഭഗവാൻ സുബ്രഹ്മണ്യന്റെ 108 നാമ മന്ത്ര അർച്ചന.' : '108-name mantra archana of Lord Subramanya for complete wellbeing.',
+            description: isML ? 'ഭഗവാൻ സുബ്രഹ്മണ്യന്റെ 108 നാമ മന്ത്ര അർച്ചന.' : '108-name mantra archana of Lord Subrahmanya for complete wellbeing.',
             icon: <Heart size={20} />,
             image: '/images/offerings/archana_pushpanjali.jpg',
             benefit: 'Complete wellbeing and divine blessings',
@@ -304,16 +316,16 @@ const Offerings = () => {
         {
             id: 18,
             category: 'daily',
-            nameEn: 'Subramanya Sahasranama Archana',
+            nameEn: 'Subrahmanya Sahasranama Archana',
             nameMl: 'സുബ്രഹ്മണ്യ സഹസ്രനാമർച്ചന',
-            name: isML ? 'സുബ്രഹ്മണ്യ സഹസ്രനാമർച്ചന' : 'Subramanya Sahasranama Archana',
+            name: isML ? 'സുബ്രഹ്മണ്യ സഹസ്രനാമർച്ചന' : 'Subrahmanya Sahasranama Archana',
             price: '₹50',
-            descEn: '1000-name archana of Lord Subramanya for supreme blessings.',
+            descEn: '1000-name archana of Lord Subrahmanya for supreme blessings.',
             descMl: 'ഭഗവാൻ സുബ്രഹ്മണ്യന്റെ 1000 നാമ അർച്ചന.',
-            description: isML ? 'ഭഗവാൻ സുബ്രഹ്മണ്യന്റെ 1000 നാമ അർച്ചന.' : '1000-name archana of Lord Subramanya for supreme blessings.',
+            description: isML ? 'ഭഗവാൻ സുബ്രഹ്മണ്യന്റെ 1000 നാമ അർച്ചന.' : '1000-name archana of Lord Subrahmanya for supreme blessings.',
             icon: <Heart size={20} />,
             image: '/images/offerings/archana_pushpanjali.jpg',
-            benefit: 'Supreme divine blessings of Lord Subramanya',
+            benefit: 'Supreme divine blessings of Lord Subrahmanya',
             benefitMl: 'സർവ്വ ദോഷ ശമനം, ആത്മ ഉന്നതി'
         },
         {
@@ -625,16 +637,16 @@ const Offerings = () => {
         {
             id: 39,
             category: 'abhishekam',
-            nameEn: 'Subramanya Pooja',
+            nameEn: 'Subrahmanya Pooja',
             nameMl: 'സുബ്രഹ്മണ്യ പൂജ',
-            name: isML ? 'സുബ്രഹ്മണ്യ പൂജ' : 'Subramanya Pooja',
+            name: isML ? 'സുബ്രഹ്മണ്യ പൂജ' : 'Subrahmanya Pooja',
             price: '₹125',
-            descEn: 'Special pooja dedicated to Lord Subramanya for comprehensive blessings.',
+            descEn: 'Special pooja dedicated to Lord Subrahmanya for comprehensive blessings.',
             descMl: 'ഭഗവാൻ സുബ്രഹ്മണ്യനു സമർപ്പിക്കുന്ന വിശേഷ പൂജ.',
-            description: isML ? 'ഭഗവാൻ സുബ്രഹ്മണ്യനു സമർപ്പിക്കുന്ന വിശേഷ പൂജ.' : 'Special pooja dedicated to Lord Subramanya for comprehensive blessings.',
+            description: isML ? 'ഭഗവാൻ സുബ്രഹ്മണ്യനു സമർപ്പിക്കുന്ന വിശേഷ പൂജ.' : 'Special pooja dedicated to Lord Subrahmanya for comprehensive blessings.',
             icon: <Sparkles size={20} />,
             image: '/images/offerings/archana_pushpanjali.jpg',
-            benefit: 'Complete divine blessings of Lord Subramanya',
+            benefit: 'Complete divine blessings of Lord Subrahmanya',
             benefitMl: 'സർവ്വ ദൈവ കൃപ, കാര്യ സിദ്ധി'
         },
         {
@@ -675,9 +687,9 @@ const Offerings = () => {
             nameMl: 'സ്കന്ദ കാവടി പൂജ',
             name: isML ? 'സ്കന്ദ കാവടി പൂജ' : 'Skanda Kavadi Pooja',
             price: '₹40',
-            descEn: 'Sacred Kavadi pooja offered to Lord Subramanya.',
+            descEn: 'Sacred Kavadi pooja offered to Lord Subrahmanya.',
             descMl: 'ഭഗവാൻ സ്കന്ദനു സമർപ്പിക്കുന്ന കാവടി പൂജ.',
-            description: isML ? 'ഭഗവാൻ സ്കന്ദനു സമർപ്പിക്കുന്ന കാവടി പൂജ.' : 'Sacred Kavadi pooja offered to Lord Subramanya.',
+            description: isML ? 'ഭഗവാൻ സ്കന്ദനു സമർപ്പിക്കുന്ന കാവടി പൂജ.' : 'Sacred Kavadi pooja offered to Lord Subrahmanya.',
             icon: <Sparkles size={20} />,
             image: '/images/offerings/archana_pushpanjali.jpg',
             benefit: 'Divine grace and fulfilment of vows',
@@ -780,9 +792,9 @@ const Offerings = () => {
             nameMl: 'പഞ്ചാമൃതം',
             name: isML ? 'പഞ്ചാമൃതം' : 'Panchamrutham',
             price: '₹100',
-            descEn: 'Divine five-ingredient sacred fruit nectar pleasing to Lord Subramanya.',
+            descEn: 'Divine five-ingredient sacred fruit nectar pleasing to Lord Subrahmanya.',
             descMl: 'അഞ്ച് മധുരവസ്തുക്കൾ ചേർത്തുള്ള വിശിഷ്ട നിവേദ്യം.',
-            description: isML ? 'അഞ്ച് മധുരവസ്തുക്കൾ ചേർത്തുള്ള വിശിഷ്ട നിവേദ്യം.' : 'Divine five-ingredient sacred fruit nectar pleasing to Lord Subramanya.',
+            description: isML ? 'അഞ്ച് മധുരവസ്തുക്കൾ ചേർത്തുള്ള വിശിഷ്ട നിവേദ്യം.' : 'Divine five-ingredient sacred fruit nectar pleasing to Lord Subrahmanya.',
             icon: <Tag size={20} />,
             image: '/images/offerings/palabhishekam.jpg',
             benefit: 'Divine 5-ingredient fruit offering for good health',
@@ -1083,9 +1095,9 @@ const Offerings = () => {
             nameMl: 'വേൽ പൂജ',
             name: isML ? 'വേൽ പൂജ' : 'Vel Pooja',
             price: '₹25',
-            descEn: 'Sacred spear (Vel) pooja of Lord Subramanya for victory and blessings.',
+            descEn: 'Sacred spear (Vel) pooja of Lord Subrahmanya for victory and blessings.',
             descMl: 'ഭഗവാൻ സ്കന്ദന്റെ ശ്രീ വേൽ അർച്ചന, കാര്യ സിദ്ധി.',
-            description: isML ? 'ഭഗവാൻ സ്കന്ദന്റെ ശ്രീ വേൽ അർച്ചന, കാര്യ സിദ്ധി.' : 'Sacred spear (Vel) pooja of Lord Subramanya for victory and blessings.',
+            description: isML ? 'ഭഗവാൻ സ്കന്ദന്റെ ശ്രീ വേൽ അർച്ചന, കാര്യ സിദ്ധി.' : 'Sacred spear (Vel) pooja of Lord Subrahmanya for victory and blessings.',
             icon: <Sparkles size={20} />,
             image: '/images/offerings/archana_pushpanjali.jpg',
             benefit: 'Victory and divine blessings',
@@ -1137,6 +1149,8 @@ const Offerings = () => {
         : offeringsData.filter(o => o.category === activeFilter);
 
     const handleOpenOffering = (offering) => {
+        if (!BOOKING_ENABLED) return;
+        setPendingOffering(null);
         setSelectedOffering(offering);
         setDevoteeName('');
         setDevoteeStar('');
@@ -1150,7 +1164,25 @@ const Offerings = () => {
         setBookingReceipt(null);
     };
 
+    // While online booking is paused, a Book click shows the "not available" message
+    // instead of the booking modal. It closes on Escape or after 7 seconds.
+    const handleBookClick = (offering) => {
+        if (BOOKING_ENABLED) {
+            handleOpenOffering(offering);
+            return;
+        }
+
+        setPendingOffering(offering);
+    };
+
+    const handleClosePending = () => setPendingOffering(null);
+
     const handleSelectFromNakshatra = (offeringId, starId) => {
+        if (!BOOKING_ENABLED) {
+            const found = offeringsData.find(o => o.id === offeringId);
+            if (found) setPendingOffering(found);
+            return;
+        }
         const found = offeringsData.find(o => o.id === offeringId) || offeringsData[0];
         setSelectedOffering(found);
         setDevoteeName('');
@@ -1225,7 +1257,7 @@ const Offerings = () => {
 
 ദയവായി ബുക്കിംഗ് സ്ഥിരീകരിക്കുവാൻ അഭ്യർത്ഥിക്കുന്നു. നന്ദി!`
         : `Swami Saranam 🙏
-I would like to book the following Vazhipadu at Thurayilkunnu Sree Subramanya Swami Temple:
+I would like to book the following Vazhipadu at Thurayilkunnu Sree Subrahmanya Swami Temple:
 
 • *Token Reference:* #${tokenNum}
 • *Offering:* ${resolvedOfferingName}
@@ -1242,11 +1274,81 @@ Please confirm my booking. Thank you!`;
         window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
     };
 
+    // Auto-dismiss the "booking not available" message and close it on Escape
+    useEffect(() => {
+        if (!pendingOffering) return undefined;
+
+        const timer = setTimeout(() => setPendingOffering(null), 7000);
+        const onKeyDown = (e) => {
+            if (e.key === 'Escape') setPendingOffering(null);
+        };
+        window.addEventListener('keydown', onKeyDown);
+
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener('keydown', onKeyDown);
+        };
+    }, [pendingOffering]);
+
     return (
         <div className="offerings-page">
+            {/* ---- "BOOKING NOT AVAILABLE" MESSAGE ---- */}
+            {pendingOffering && (
+                <div className="booking-unavailable-overlay" onClick={handleClosePending}>
+                    <div
+                        className="booking-unavailable-dialog"
+                        role="alertdialog"
+                        aria-modal="true"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button
+                            type="button"
+                            className="booking-unavailable-close"
+                            onClick={handleClosePending}
+                            aria-label="Close"
+                        >
+                            <X size={20} />
+                        </button>
+
+                        <div className="booking-unavailable-icon">
+                            <Info size={26} />
+                        </div>
+
+                        <h3 className="booking-unavailable-title">
+                            {isML ? 'ബുക്കിംഗ് ഇപ്പോൾ ലഭ്യമല്ല' : 'Booking Not Available For Now'}
+                        </h3>
+
+                        <p className="booking-unavailable-offering">
+                            {isML
+                                ? (pendingOffering.nameMl || pendingOffering.name)
+                                : (pendingOffering.nameEn || pendingOffering.name)}
+                        </p>
+
+                        <p className="booking-unavailable-text">
+                            {isML
+                                ? 'ഓൺലൈൻ വഴിപാട് ബുക്കിംഗ് ഇപ്പോൾ ലഭ്യമല്ല. വഴിപാടുകൾ ബുക്ക് ചെയ്യാൻ ക്ഷേത്ര ഓഫീസിൽ സന്ദർശിക്കുക. ഓൺലൈൻ ബുക്കിംഗ് ഉടൻ ലഭ്യമാകും.'
+                                : 'Online vazhipadu booking is not available at the moment. To book offerings (Vazhipadukal), please visit the temple office. Online booking will be added soon.'}
+                        </p>
+
+                        <div className="booking-unavailable-actions">
+                            <Link className="booking-unavailable-primary" to="/contact">
+                                {isML ? 'ഓഫീസിലേക്ക് ബന്ധപ്പെടുക' : 'Contact Temple Office'}
+                            </Link>
+                            <button
+                                type="button"
+                                className="booking-unavailable-secondary"
+                                onClick={handleClosePending}
+                            >
+                                {isML ? 'അടയ്ക്കുക' : 'Close'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <SEO 
                 title={t('offerings_page.title')} 
-                description={isML ? 'തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ നിത്യപൂജകളും വിശേഷാൽ വഴിപാടുകളും ഓൺലൈനായി ബുക്ക് ചെയ്യാം.' : 'Book poojas, vazhipadu, and special offerings at Thurayilkunnu Sree Subramanya Swami Temple.'}
+                description={isML ? 'തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ നിത്യപൂജകളും വിശേഷാൽ വഴിപാടുകളും. വഴിപാട് ബുക്ക് ചെയ്യാൻ ക്ഷേത്ര ഓഫീസിലേക്ക് വരാവുന്നു.' : 'Explore poojas, vazhipadu, and special offerings at Thurayilkunnu Sree Subrahmanya Swami Temple. Visit the temple office to book vazhipadu.'}
                 url="/offerings"
             />
             {/* ---- LUXURY INNER PAGE HERO ---- */}
@@ -1257,6 +1359,28 @@ Please confirm my booking. Thank you!`;
                 bgImage="/images/banners/banner_offerings.jpg"
                 currentPage={t('navbar.offerings')}
             />
+
+            {/* ---- BOOKING UNAVAILABLE NOTICE (shown while BOOKING_ENABLED is false) ---- */}
+            {!BOOKING_ENABLED && (
+                <div className="container">
+                    <div className="booking-pending-notice" role="status">
+                        <Info size={18} />
+                        <div className="booking-pending-text">
+                            <strong>
+                                {isML ? 'ഓൺലൈൻ വഴിപാട് ബുക്കിംഗ് ഉടൻ ലഭ്യമാകും' : 'Online Vazhipadu Booking Coming Soon'}
+                            </strong>
+                            <span>
+                                {isML
+                                    ? 'ഇപ്പോൾ വഴിപാടുകൾ വിവരമായി മാത്രം ലിസ്റ്റ് ചെയ്തിരിക്കുന്നു. വഴിപാട് (വഴിപാടുകൾ) ബുക്ക് ചെയ്യാൻ ക്ഷേത്ര ഓഫീസിൽ സന്ദർശിക്കുക.'
+                                    : 'For now, offerings are listed here for reference only. To book offerings (Vazhipadukal), please visit the temple office.'}
+                            </span>
+                        </div>
+                        <Link className="booking-pending-contact" to="/contact">
+                            {isML ? 'ഓഫീസിലേക്ക് ബന്ധപ്പെടുക' : 'Contact Office'}
+                        </Link>
+                    </div>
+                </div>
+            )}
 
             {/* ---- NAKSHATRA (STAR) VAZHIPADU RECOMMENDER ---- */}
             <NakshatraRecommender onSelectOffering={handleSelectFromNakshatra} />
@@ -1317,7 +1441,7 @@ Please confirm my booking. Thank you!`;
                                     layout
                                     whileHover={{ y: -4, boxShadow: `0 16px 40px -8px ${accent.border}30` }}
                                     transition={{ duration: 0.3 }}
-                                    onClick={() => handleOpenOffering(offering)}
+                                    onClick={() => handleBookClick(offering)}
                                     style={{ cursor: 'pointer', '--cat-accent': accent.border, '--cat-bg': accent.bg, '--cat-text': accent.text }}
                                 >
                                     {/* Icon circle */}
@@ -1340,7 +1464,7 @@ Please confirm my booking. Thank you!`;
                                                 <Star size={11} />
                                                 {isML ? (offering.benefitMl || offering.benefit) : offering.benefit}
                                             </span>
-                                            <button className="olc-book-btn" onClick={(e) => { e.stopPropagation(); handleOpenOffering(offering); }}>
+<button className="olc-book-btn" onClick={(e) => { e.stopPropagation(); handleBookClick(offering); }}>
                                                 <span>{isML ? 'ബുക്ക്' : 'Book'}</span>
                                                 <ChevronRight size={13} />
                                             </button>
@@ -1354,7 +1478,8 @@ Please confirm my booking. Thank you!`;
                 </div>
             </section>
 
-            {/* ---- RICH DEVOTEE BOOKING MODAL & DIGITAL RECEIPT ---- */}
+            {/* ---- RICH DEVOTEE BOOKING MODAL & DIGITAL RECEIPT (disabled while BOOKING_ENABLED is false) ---- */}
+            {BOOKING_ENABLED && (
             <AnimatePresence>
                 {selectedOffering && (
                     <motion.div
@@ -1398,7 +1523,7 @@ Please confirm my booking. Thank you!`;
                                         <div className="slip-temple-heading">
                                             <div className="slip-om-symbol">ॐ</div>
                                             <h4>തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം</h4>
-                                            <p>Thurayilkunnu Sree Subramanya Swami Temple, Karunagappally</p>
+                                            <p>Thurayilkunnu Sree Subrahmanya Swami Temple, Karunagappally</p>
                                             <div className="slip-token-row">
                                                 <span className="slip-token-label">{isML ? 'ടോക്കൺ നമ്പർ' : 'Token Reference No:'}</span>
                                                 <span className="slip-token-number">#{bookingReceipt.token}</span>
@@ -1630,6 +1755,7 @@ Please confirm my booking. Thank you!`;
                     </motion.div>
                 )}
             </AnimatePresence>
+            )}
 
             {/* ---- INFO SECTION ---- */}
             <motion.section
@@ -1648,8 +1774,12 @@ Please confirm my booking. Thank you!`;
                                     <Info size={16} />
                                     <span>{isML ? 'വഴിപാട് കൗണ്ടർ' : 'Vazhipadu Counter'}</span>
                                 </div>
-                                <h2>{t('offerings_page.booking_title')}</h2>
-                                <p>{t('offerings_page.booking_desc')}</p>
+                                <h2>{isML ? 'ഓഫീസിലേക്ക് വഴിപാട് ബുക്ക് ചെയ്യുക' : 'Book Vazhipadu at the Temple Office'}</h2>
+                                <p>
+                                    {isML
+                                        ? 'ഓൺലൈൻ ബുക്കിംഗ് ഉടൻ ലഭ്യമാകും. ഇപ്പോൾ വഴിപാട് ബുക്ക് ചെയ്യേണ്ടതിന് ക്ഷേത്ര ഓഫീസിൽ സന്ദർശിക്കുക. ഗണപതി ഹോമം പോലുള്ള വിശേഷ പൂജകൾക്ക് കുറഞ്ഞത് ഒരു ദിവസം മുമ്പ് അറിയിപ്പിക്കണം.'
+                                        : 'Online booking will be available soon. For now, please visit the temple office to book vazhipadu. Special poojas such as Ganapathy Homam should be notified at least one day in advance.'}
+                                </p>
                                 <div className="time-chips">
                                     <motion.div className="time-chip" whileHover={{ scale: 1.03 }}>
                                         <Clock size={16} />

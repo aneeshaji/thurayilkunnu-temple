@@ -22,7 +22,7 @@ export const melshanthiData = {
     nameMl: 'ശ്രീ അനിൽ ഗോകുലം ശാന്തി',
     image: '/images/committee/melshanthi.jpg',
     imageFull: '/images/committee/melshanthi_full.jpg',
-    descriptionEn: 'Chief sanctum priest conducting daily Nirmalyam, Abhishekam, Ucha Pooja, Deeparadhana, and special archana rituals at the holy sanctum of Lord Subramanya.',
+    descriptionEn: 'Chief sanctum priest conducting daily Nirmalyam, Abhishekam, Ucha Pooja, Deeparadhana, and special archana rituals at the holy sanctum of Lord Subrahmanya.',
     descriptionMl: 'നിത്യേനയുള്ള നിർമ്മാല്യം, അഭിഷേകങ്ങൾ, ഉച്ചപൂജ, സന്ധ്യാ ദീപാരാധന, പ്രത്യേക അർച്ചനകൾ എന്നിവ ശ്രീകോവിലിൽ ഭക്തിപൂർവ്വം നിർവ്വഹിക്കുന്ന മുഖ്യ ശാന്തി.'
 };
 

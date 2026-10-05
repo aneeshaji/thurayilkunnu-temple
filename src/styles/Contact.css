@@ -447,6 +447,7 @@ html.lang-ml .info-header h2 {
 .form-error-banner {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
     gap: 0.6rem;
     padding: 0.85rem 1rem;
     margin-bottom: 1rem;
@@ -459,6 +460,19 @@ html.lang-ml .info-header h2 {
 }
 
 .form-error-banner svg { flex-shrink: 0; margin-top: 2px; }
+
+.form-error-banner > span { flex: 1; min-width: 0; }
+
+.form-error-mailto {
+    flex-basis: 100%;
+    margin-left: 1.75rem;
+    color: #7F1D1D;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.form-error-mailto:hover { color: #450A0A; }
 
 .email-text {
     color: #B45309;

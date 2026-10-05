@@ -300,7 +300,7 @@ const Home = () => {
     ];
 
     const deities = [
-        { name: t('deities.list.subramanya.name'), desc: t('deities.list.subramanya.desc'), image: '/images/deities/subramanya.jpg', featured: true, badge: isML ? 'പ്രധാന പ്രതിഷ്ഠ' : 'Presiding Deity' },
+        { name: t('deities.list.subrahmanya.name'), desc: t('deities.list.subrahmanya.desc'), image: '/images/deities/subrahmanya.jpg', featured: true, badge: isML ? 'പ്രധാന പ്രതിഷ്ഠ' : 'Presiding Deity' },
         { name: t('deities.list.ganapathy.name'), desc: t('deities.list.ganapathy.desc'), image: '/images/deities/ganapathy.jpg', featured: false },
         { name: t('deities.list.bhagavathy.name'), desc: t('deities.list.bhagavathy.desc'), image: '/images/deities/bhagavathy.jpg', featured: false },
         { name: t('deities.list.sivan.name'), desc: t('deities.list.sivan.desc'), image: '/images/deities/sivan.jpg', featured: false },
@@ -343,7 +343,7 @@ const Home = () => {
                             whileHover={{ scale: 1.02 }}
                             transition={{ duration: 0.5 }}
                         >
-                            <img src="/images/banners/banner2.jpg" alt="Thurayilkunnu Sree Subramanya Swami Temple Sanctum" />
+                            <img src="/images/banners/banner2.jpg" alt="Thurayilkunnu Sree Subrahmanya Swami Temple Sanctum" />
                             <div className="arch-badge">
                                 <span>{isML ? '✦ ദിവ്യ കൃപയുടെ സങ്കേതം' : '✦ Seat of Divine Grace'}</span>
                             </div>

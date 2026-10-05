@@ -29,7 +29,7 @@ import {
     ExternalLink,
     Home,
     X,
-    FileText,
+    // FileText, // unused while the "View Official Notice" button is disabled
     MessageCircle
 } from 'lucide-react';
 // eslint-disable-next-line no-unused-vars
@@ -116,7 +116,7 @@ const NEARBY_SHRINES = [
         distanceMl: 'സമീപം · തുറയിൽക്കുന്ന് (നടക്കാൻ ദൂരം)',
         deityEn: 'Lord Mahaganapathy (Vighneshwara)',
         deityMl: 'ശ്രീ മഹാഗണപതി (വിഘ്നേശ്വരൻ)',
-        descEn: 'A revered Ganapathy temple within the Thurayilkunnu precinct at Maru South, Ayanivelikulangara. Devotees traditionally seek Ganapathy blessings here before proceeding for Subramanya Swami darshan.',
+        descEn: 'A revered Ganapathy temple within the Thurayilkunnu precinct at Maru South, Ayanivelikulangara. Devotees traditionally seek Ganapathy blessings here before proceeding for Subrahmanya Swami darshan.',
         descMl: 'തുറയിൽക്കുന്ന് മരു സൗത്ത്, അയനിവേലിക്കുളങ്ങര ഗ്രാമത്തിൽ സ്ഥിതിചെയ്യുന്ന ഗണപതി ക്ഷേത്രം. സുബ്രഹ്മണ്യ സ്വാമി ദർശനത്തിന് മുൻപ് ഭക്തർ ഗണപതി ആശീർവാദം തേടി ഇവിടെ എത്തുന്നു.',
         mapUrl: 'https://share.google/Ey1UbVoY73DBsI2d2'
     },
@@ -173,7 +173,9 @@ const NEARBY_SHRINES = [
 const About = () => {
     const { t, i18n } = useTranslation();
     const isML = i18n.language === 'ml';
-    const [isPosterModalOpen, setIsPosterModalOpen] = useState(false);
+    // Poster modal temporarily disabled along with the "View Official Notice" button.
+    // Restore these two lines to bring the official-notice modal back.
+    // const [isPosterModalOpen, setIsPosterModalOpen] = useState(false);
     const [activeHistoryImg, setActiveHistoryImg] = useState(0);
 
     const historyImages = [
@@ -341,7 +343,7 @@ const About = () => {
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ duration: 0.4 }}
                             >
-                                <img src="/images/gallery/subramanya_sanctum.jpg" alt="Temple Legend" />
+                                <img src="/images/gallery/subrahmanya_sanctum.jpg" alt="Temple Legend" />
                             </motion.div>
                             <div className="corner-decor" />
                         </motion.div>
@@ -652,17 +654,9 @@ const About = () => {
                                 <p className="admin-section-sub">
                                     {isML 
                                         ? 'തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്ര ഭരണസമിതി ഭാരവാഹികളും അംഗങ്ങളും'
-                                        : 'Governing council and committee members of Thurayilkunnu Sree Subramanya Swami Temple'}
+                                        : 'Governing council and committee members of Thurayilkunnu Sree Subrahmanya Swami Temple'}
                                 </p>
                             </div>
-                            <button 
-                                type="button" 
-                                className="notice-circular-btn"
-                                onClick={() => setIsPosterModalOpen(true)}
-                            >
-                                <FileText size={15} />
-                                <span>{isML ? 'ഔദ്യോഗിക അറിയിപ്പ് കാണുക' : 'View Official Notice'}</span>
-                            </button>
                         </div>
 
                         {/* Executive Leadership Grid (3 Leaders) */}
@@ -795,7 +789,8 @@ const About = () => {
                         </div>
                     </div>
 
-                    {/* Notice Lightbox Modal */}
+                    {/* Notice Lightbox Modal — disabled with the "View Official Notice" button.
+                        Restore the useState line above and uncomment this block to bring it back.
                     {isPosterModalOpen && (
                         <div className="poster-modal-overlay" onClick={() => setIsPosterModalOpen(false)}>
                             <div className="poster-modal-dialog" onClick={(e) => e.stopPropagation()}>
@@ -804,8 +799,8 @@ const About = () => {
                                         <h3 className="poster-modal-title">{t('administration.notice_modal_title')}</h3>
                                         <p className="poster-modal-sub">{t('administration.notice_modal_sub')}</p>
                                     </div>
-                                    <button 
-                                        type="button" 
+                                    <button
+                                        type="button"
                                         className="poster-modal-close"
                                         onClick={() => setIsPosterModalOpen(false)}
                                         aria-label="Close"
@@ -814,24 +809,24 @@ const About = () => {
                                     </button>
                                 </div>
                                 <div className="poster-modal-body">
-                                    <img 
-                                        src={committeeData.posterImage} 
-                                        alt="Official Temple Administrative Committee Announcement" 
-                                        className="poster-modal-img" 
+                                    <img
+                                        src={committeeData.posterImage}
+                                        alt="Official Temple Administrative Committee Announcement"
+                                        className="poster-modal-img"
                                     />
                                 </div>
                                 <div className="poster-modal-footer">
-                                    <a 
-                                        href={committeeData.posterImage} 
-                                        target="_blank" 
-                                        rel="noopener noreferrer" 
+                                    <a
+                                        href={committeeData.posterImage}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="poster-download-btn"
                                     >
                                         <ExternalLink size={15} />
                                         <span>{isML ? 'പൂർണ്ണ രൂപത്തിൽ തുറക്കുക' : 'Open Full Image'}</span>
                                     </a>
-                                    <button 
-                                        type="button" 
+                                    <button
+                                        type="button"
                                         className="poster-close-action"
                                         onClick={() => setIsPosterModalOpen(false)}
                                     >
@@ -840,7 +835,7 @@ const About = () => {
                                 </div>
                             </div>
                         </div>
-                    )}
+                    )} */}
 
 
 
@@ -866,7 +861,7 @@ const About = () => {
                         <p className="description-text" style={{ maxWidth: '750px', margin: '0 auto 2.5rem' }}>
                             {isML
                                 ? 'തുറയിൽകുന്ന് സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്ര ദർശനത്തോടൊപ്പം സന്ദർശിക്കാവുന്ന കരുനാഗപ്പള്ളിയിലെയും സമീപപ്രദേശങ്ങളിലെയും പ്രധാന പുണ്യകേന്ദ്രങ്ങൾ.'
-                                : 'Devotees visiting Thurayilkunnu Sree Subramanya Swami Temple can also complete their sacred pilgrimage with these renowned holy shrines in and around Karunagappally.'}
+                                : 'Devotees visiting Thurayilkunnu Sree Subrahmanya Swami Temple can also complete their sacred pilgrimage with these renowned holy shrines in and around Karunagappally.'}
                         </p>
                     </div>
 

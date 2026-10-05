@@ -20,7 +20,7 @@ const TermsOfService = () => {
             titleMl: 'നിബന്ധനകൾ സ്വീകരിക്കൽ',
             contentEn: `By accessing and using this website (thurayilkunnu.in or its hosted equivalent), you agree to be bound by these Terms of Service. If you do not agree, please do not use this website.
 
-This website is operated by Thurayilkunnu Sree Subramanya Swami Temple Devaswom, a registered religious and charitable institution in Karunagappally, Kerala, India.`,
+This website is operated by Thurayilkunnu Sree Subrahmanya Swami Temple Devaswom, a registered religious and charitable institution in Karunagappally, Kerala, India.`,
             contentMl: `ഈ വെബ്‌സൈറ്റ് ആക്‌സസ് ചെയ്ത് ഉപയോഗിക്കുന്നതിലൂടെ, ഈ സേവന നിബന്ധനകൾ അനുസരിക്കാൻ നിങ്ങൾ സമ്മതിക്കുന്നു. നിങ്ങൾ സമ്മതിക്കുന്നില്ലെങ്കിൽ, ദയവായി ഈ വെബ്‌സൈറ്റ് ഉപയോഗിക്കരുത്.`,
         },
         {
@@ -84,7 +84,7 @@ You agree not to use this website for any unlawful purpose or in any way that co
             contentEn: `• The content on this website is provided for informational and devotional purposes only.
 • Festival dates, pooja timings, and event schedules are subject to change without notice. Please contact the temple directly to confirm.
 • We are not liable for any direct, indirect, or consequential damages arising from the use of this website.
-• External links to third-party sites (WhatsApp, Google Maps, Web3Forms, etc.) are provided for convenience; we do not endorse or take responsibility for their content.
+• External links to third-party sites (WhatsApp, Google Maps, Google Workspace email, etc.) are provided for convenience; we do not endorse or take responsibility for their content.
 
 **Governing Law:** These terms are governed by the laws of Kerala, India. Any disputes shall be subject to the jurisdiction of courts in Kollam District, Kerala.`,
             contentMl: `• ഈ വെബ്‌സൈറ്റിലെ ഉള്ളടക്കം വിവര ആവശ്യങ്ങൾക്ക് മാത്രം.
@@ -97,7 +97,7 @@ You agree not to use this website for any unlawful purpose or in any way that co
         <div className="legal-page">
             <SEO
                 title="Terms of Service — Thurayilkunnu Temple"
-                description="Terms of Service for Thurayilkunnu Sree Subramanya Swami Temple website. Understand the conditions governing use of our website and services."
+                description="Terms of Service for Thurayilkunnu Sree Subrahmanya Swami Temple website. Understand the conditions governing use of our website and services."
                 url="/terms-of-service"
             />
 
@@ -134,7 +134,7 @@ You agree not to use this website for any unlawful purpose or in any way that co
                         <p className="legal-hero-subtitle">
                             {isML
                                 ? 'തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്ര ദേവസ്വം'
-                                : 'Thurayilkunnu Sree Subramanya Swami Temple Devaswom'}
+                                : 'Thurayilkunnu Sree Subrahmanya Swami Temple Devaswom'}
                         </p>
                         <p className="legal-updated">
                             {isML ? `അവസാനം അപ്ഡേറ്റ് ചെയ്തത്: ${lastUpdated}` : `Last Updated: ${lastUpdated}`}
