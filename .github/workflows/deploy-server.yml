@@ -8,7 +8,6 @@ on:
       - 'server/**'
       - '.github/workflows/deploy-server.yml'
 
-  # Allow manual trigger from GitHub Actions tab
   workflow_dispatch:
 
 jobs:
@@ -21,20 +20,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ── 2. Install server production dependencies ──────────────────────────
-      - name: Install server dependencies (production only)
-        working-directory: ./server
-        run: npm ci --omit=dev
-
-      # ── 3. Deploy server/ → cPanel Node.js app directory via FTP ───────────
-      #
-      #  On cPanel, set up a Node.js App pointing at:
-      #    Application Root : thurayilkunnutemple.com-server
-      #    Application Startup File: server.js
-      #
-      #  The FTP server-dir below must match the Application Root you chose.
+      # ── 2. Upload source files only (NO node_modules) ─────────────────────
+      #  We exclude node_modules here and let cPanel run npm install itself.
+      #  This avoids uploading thousands of files over FTP (was timing out).
       # ──────────────────────────────────────────────────────────────────────
-      - name: Deploy to cPanel via FTP
+      - name: Deploy source files to cPanel via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server:   ${{ secrets.FTP_SERVER }}
@@ -43,7 +33,6 @@ jobs:
           port:     21
           protocol: ftp
           local-dir:  ./server/
-          # This folder must match what you set as "Application Root" in cPanel
           server-dir: /thurayilkunnutemple.com-server/
           dangerous-clean-slate: false
           exclude: |
@@ -51,3 +40,25 @@ jobs:
             **/.git*/**
             .env
             .env.*
+            **/node_modules/**
+
+      # ── 3. Run npm install on cPanel via UAPI ─────────────────────────────
+      #  cPanel Node.js App API installs deps & restarts the app automatically.
+      #  Requires: CPANEL_USERNAME and CPANEL_API_TOKEN secrets.
+      #  Create the token: cPanel → Security → Manage API Tokens → Create
+      # ──────────────────────────────────────────────────────────────────────
+      - name: Install dependencies & restart via cPanel API
+        run: |
+          echo "Running npm install on cPanel..."
+          curl -sf \
+            -H "Authorization: cpanel ${{ secrets.CPANEL_USERNAME }}:${{ secrets.CPANEL_API_TOKEN }}" \
+            "https://${{ secrets.FTP_SERVER }}:2083/execute/NodeJS/npm_install?app_name=thurayilkunnutemple.com-server" \
+            -o /tmp/npm_install.json
+          cat /tmp/npm_install.json
+
+          echo "Restarting Node.js app..."
+          curl -sf \
+            -H "Authorization: cpanel ${{ secrets.CPANEL_USERNAME }}:${{ secrets.CPANEL_API_TOKEN }}" \
+            "https://${{ secrets.FTP_SERVER }}:2083/execute/NodeJS/restart_app?app_name=thurayilkunnutemple.com-server" \
+            -o /tmp/restart.json
+          cat /tmp/restart.json
