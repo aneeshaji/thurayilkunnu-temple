@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { SITE_URL, TEMPLE_NAME_EN, TEMPLE_NAME_ML, buildTempleSchema } from '../constants/site';
@@ -8,7 +8,7 @@ const SEO = ({ title, description, keywords, image, url, schema, noIndex = false
 
     const siteName = TEMPLE_NAME_EN;
     const defaultDescription = "Ancient seat of divinity in Karunagappally, Kerala. Home to Lord Subrahmanya, offering spiritual grace, traditional poojas, and grand festivals.";
-    const defaultImage = `${SITE_URL}/og-image.jpg`;
+    const defaultImage = `${SITE_URL}/og-image.jpg?v=4`;
     const defaultKeywords = "Thurayilkunnu Temple, Subrahmanya Swami, Karunagappally, Kerala Temple, Murugan, Thaipusam, Hindu Temple";
 
     const finalTitle = title ? `${title} | ${siteName}` : siteName;
@@ -56,6 +56,7 @@ const SEO = ({ title, description, keywords, image, url, schema, noIndex = false
             <meta property="og:site_name" content={siteName} />
             <meta property="og:locale" content={isML ? 'ml_IN' : 'en_IN'} />
             <meta property="og:locale:alternate" content={isML ? 'en_IN' : 'ml_IN'} />
+            <link rel="image_src" href={finalImage} />
 
             {/* Twitter */}
             <meta name="twitter:card" content="summary_large_image" />

@@ -46,7 +46,7 @@ export const buildTempleSchema = ({ image, description, alternateName } = {}) =>
     alternateName: alternateName || TEMPLE_NAME_ML,
     description: description || 'An ancient temple dedicated to Lord Subrahmanya (Murugan) at Karunagappally, Kerala, serving devotees for generations with traditional rituals and spiritual grace.',
     url: SITE_URL,
-    image: image || `${SITE_URL}/og-image.jpg`,
+    image: image || `${SITE_URL}/og-image.jpg?v=4`,
     telephone: PHONE_PRIMARY,
     email: CONTACT_EMAIL,
     address: {
