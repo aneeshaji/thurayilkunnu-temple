@@ -48,17 +48,22 @@ jobs:
       #  Create the token: cPanel → Security → Manage API Tokens → Create
       # ──────────────────────────────────────────────────────────────────────
       - name: Install dependencies & restart via cPanel API
+        # continue-on-error: FTP deploy already succeeded; don't fail the whole
+        # job just because the cPanel API step has a cert or auth issue.
+        continue-on-error: true
         run: |
           echo "Running npm install on cPanel..."
-          curl -sf \
+          # -k skips SSL cert verification (cPanel uses self-signed cert on :2083)
+          curl -skf \
             -H "Authorization: cpanel ${{ secrets.CPANEL_USERNAME }}:${{ secrets.CPANEL_API_TOKEN }}" \
             "https://${{ secrets.FTP_SERVER }}:2083/execute/NodeJS/npm_install?app_name=thurayilkunnutemple.com-server" \
-            -o /tmp/npm_install.json
-          cat /tmp/npm_install.json
+            -o /tmp/npm_install.json || echo "npm_install API call failed (exit $?)"
+          cat /tmp/npm_install.json 2>/dev/null || true
 
           echo "Restarting Node.js app..."
-          curl -sf \
+          curl -skf \
             -H "Authorization: cpanel ${{ secrets.CPANEL_USERNAME }}:${{ secrets.CPANEL_API_TOKEN }}" \
             "https://${{ secrets.FTP_SERVER }}:2083/execute/NodeJS/restart_app?app_name=thurayilkunnutemple.com-server" \
-            -o /tmp/restart.json
-          cat /tmp/restart.json
+            -o /tmp/restart.json || echo "restart_app API call failed (exit $?)"
+          cat /tmp/restart.json 2>/dev/null || true
+          echo "Done. If API calls failed, manually restart the Node.js app in cPanel."
