@@ -8,7 +8,7 @@ const SEO = ({ title, description, keywords, image, url, schema, noIndex = false
 
     const siteName = TEMPLE_NAME_EN;
     const defaultDescription = "Ancient seat of divinity in Karunagappally, Kerala. Home to Lord Subrahmanya, offering spiritual grace, traditional poojas, and grand festivals.";
-    const defaultImage = `${SITE_URL}/og-image.jpg?v=4`;
+    const defaultImage = `${SITE_URL}/og-image.jpg?v=5`;
     const defaultKeywords = "Thurayilkunnu Temple, Subrahmanya Swami, Karunagappally, Kerala Temple, Murugan, Thaipusam, Hindu Temple";
 
     const finalTitle = title ? `${title} | ${siteName}` : siteName;
