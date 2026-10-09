@@ -291,9 +291,9 @@ const Contact = () => {
                                             <div className="form-error-banner" role="alert">
                                                 <AlertCircle size={18} />
                                                 <span>{isML ? 'സന്ദേശം അയക്കാൻ കഴിഞ്ഞില്ല. ക്ഷേത്ര ഓഫീസിലേക്ക് വിളിക്കുക.' : formError}</span>
-                                                {formMailto && !isML && (
+                                                {formMailto && (
                                                     <a className="form-error-mailto" href={formMailto}>
-                                                        Send with my email app
+                                                        {isML ? 'ഇമെയിൽ ആപ്പ് വഴി അയക്കുക' : 'Send with my email app'}
                                                     </a>
                                                 )}
                                             </div>

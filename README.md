@@ -240,43 +240,22 @@ npm run lint
 
 ---
 
-## Contact Form Server
+## Contact Form Mailer
 
-The contact form and newsletter form POST to a small Express + Nodemailer service that relays messages to `info@thurayilkunnutemple.com` over Gmail SMTP. SMTP credentials stay on the server and are never part of the browser bundle.
+The contact form and newsletter form submit to a lightweight server endpoint that relays messages to `info@thurayilkunnutemple.com`. No credentials or private mail configurations are ever exposed in the browser bundle.
 
-- Endpoint: `POST /api/contact`
-- Health check: `GET /api/health`
-- Source: `server/server.js`
-- Abuse protection: honeypot field, payload caps, and per-IP rate limiting (`RATE_LIMIT_MAX` per 15 min)
+- **Endpoint:** `POST /api/contact`
+- **Production Implementation:** `public/api/contact.php` (hosted on cPanel / LiteSpeed web server)
+- **Local Dev Support:** Integrated dev server middleware in `vite.config.js`
+- **Abuse Protection:** Honeypot verification (`botcheck`), character limits, and IP rate limiting
 
-### Local testing
+### Production Deployment (cPanel)
 
-```bash
-cd server
-npm install
-cp .env.example .env
-npm start
-```
-
-The Vite dev server runs separately with `npm run dev`.
-
-### Deploying on cPanel
-
-1. Confirm your host offers **Setup Node.js App** (cPanel → Software Center). Without it, use a PHP mailer at the same route instead — the front end needs no changes.
-2. Create a Google **App Password** for the mailbox: [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords). This requires 2-Step Verification. Do not use the account password.
-3. Upload the `server/` folder to `public_html/api`.
-4. cPanel → **Setup Node.js App** → Create Application:
-   - Node.js version: 18 or newer
-   - Application mode: Production
-   - Application root: `api`
-   - Application URL: `thurayilkunnutemple.com/api`
-   - Application startup file: `server.js`
-5. Click **Run NPM Install** in the application panel.
-6. Add the environment variables from `server/.env.example` (`SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, `MAIL_TO`, `MAIL_FROM`), then **Restart** the application.
-7. Deploy the static build: upload the contents of `dist/` to `public_html/`.
-8. Verify `https://thurayilkunnutemple.com/api/health` returns `{"ok":true,...}` with `smtpConfigured:true`, then submit the form once.
-
-`public/.htaccess` already excludes `^api/` from the SPA rewrite, so the endpoint is not swallowed by the `index.html` fallback. The Content-Security-Policy `connect-src` is `'self'`, which covers same-origin API calls.
+The endpoint is served natively by PHP on cPanel without requiring any Node.js application managers or background daemons:
+1. `public/api/contact.php` is copied to `dist/api/contact.php` during `npm run build`.
+2. `public/.htaccess` routes `/api/contact` directly to `api/contact.php`.
+3. Emails are dispatched directly to `info@thurayilkunnutemple.com` using cPanel's local mail transport.
+4. Deployment is automated via GitHub Actions ([`.github/workflows/deploy-frontend.yml`](.github/workflows/deploy-frontend.yml)).
 
 ---
 

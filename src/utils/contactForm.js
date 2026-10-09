@@ -1,8 +1,9 @@
 /**
- * Contact submissions are sent to the site's own Nodemailer endpoint, which
- * relays them to info@thurayilkunnutemple.com over Gmail SMTP. The server
- * lives in /server and is deployed separately, so no SMTP credentials or
- * third-party keys are ever exposed in the browser bundle.
+ * Contact submissions are sent to the site's contact endpoint (/api/contact),
+ * which relays devotee enquiries to info@thurayilkunnutemple.com.
+ *
+ * In production (cPanel/LiteSpeed), this routes to /api/contact.php.
+ * In local dev, Vite handles this to verify form flows cleanly.
  *
  * Override the path only if the endpoint is mounted elsewhere:
  *   VITE_CONTACT_API_URL=/api/contact
@@ -54,7 +55,8 @@ export const sendContactEmail = async (formData) => {
         if (!response.ok || !result.success) {
             return {
                 ok: false,
-                error: result?.message || 'Unable to send your message right now. Please try again or call the temple office.'
+                error: result?.message || 'Unable to send your message right now. Please try again or call the temple office.',
+                mailto: buildFallbackMailto(formData)
             };
         }
 

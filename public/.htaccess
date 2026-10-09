@@ -6,7 +6,10 @@
   RewriteEngine On
   RewriteBase /
 
-  # Never rewrite the Nodemailer contact endpoint to the SPA
+  # Route /api/contact to the production PHP mailer script
+  RewriteRule ^api/contact/?$ api/contact.php [L,QSA]
+
+  # Never rewrite other api endpoints to the SPA
   RewriteRule ^api/ - [L]
 
   # Don't rewrite files or directories that exist
