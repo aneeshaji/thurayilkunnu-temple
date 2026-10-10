@@ -6,18 +6,27 @@
   RewriteEngine On
   RewriteBase /
 
-  # Route /api/contact to the production PHP mailer script
+  # 1. Force HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # 2. Canonical redirect www to non-www
+  RewriteCond %{HTTP_HOST} ^www\.thurayilkunnutemple\.com$ [NC]
+  RewriteRule ^ https://thurayilkunnutemple.com%{REQUEST_URI} [L,R=301]
+
+  # 3. Route /api/contact to the production PHP mailer script
   RewriteRule ^api/contact/?$ api/contact.php [L,QSA]
 
-  # Never rewrite other api endpoints to the SPA
+  # 4. Never rewrite other api endpoints to the SPA
   RewriteRule ^api/ - [L]
 
-  # Don't rewrite files or directories that exist
+  # 5. Don't rewrite files or directories that exist (e.g. sitemap.xml, robots.txt, images)
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Rewrite all other URLs to /index.html (Single Page App routing)
+  # 6. Rewrite all other URLs to /index.html (Single Page App routing)
   RewriteRule ^ index.html [L]
 </IfModule>
 
@@ -27,6 +36,8 @@
 <IfModule mod_mime.c>
   AddType application/manifest+json .webmanifest
   AddType application/json .json
+  AddType application/xml .xml
+  AddType text/xml .xml
   AddType image/svg+xml .svg .svgz
   AddType image/webp .webp
 </IfModule>
@@ -92,12 +103,3 @@
   Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
 </IfModule>
 
-# ----------------------------------------------------------------------
-# Force HTTPS
-# ----------------------------------------------------------------------
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{HTTPS} !=on
-  RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-</IfModule>

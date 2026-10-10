@@ -7,6 +7,70 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { getDarshanStatus } from '../utils/darshanStatus';
 import '../styles/Banner.css';
 
+const DarshanGlassCard = ({ darshanStatus, isML, className = '' }) => (
+    <div className={`hero-glass-card ${className}`}>
+        {/* Card Header */}
+        <div className="glass-card-header">
+            <div className="status-indicator">
+                <span className={`pulse-dot ${darshanStatus.open ? 'pulse-dot--open' : 'pulse-dot--closed'}`} />
+                <div>
+                    <span className={`status-label ${darshanStatus.open ? 'status-label--open' : 'status-label--closed'}`}>
+                        {darshanStatus.label}
+                    </span>
+                    <span className="status-sub">{darshanStatus.sub}</span>
+                </div>
+            </div>
+            <div className="card-temple-badge">
+                <Sparkles size={18} className="card-sparkle-icon" />
+            </div>
+        </div>
+
+        <div className="glass-card-body">
+            <div className="info-row">
+                <div className="info-icon-box">
+                    <Sun size={18} />
+                </div>
+                <div>
+                    <strong>{isML ? 'രാവിലെ പൂജാ സമയം' : 'Morning Pooja Hours'}</strong>
+                    <p>05:00 AM – 10:30 AM</p>
+                </div>
+            </div>
+
+            <div className="info-divider" />
+
+            <div className="info-row">
+                <div className="info-icon-box">
+                    <Flame size={18} />
+                </div>
+                <div>
+                    <strong>{isML ? 'വൈകിട്ട് ദീപാരാധന' : 'Evening Deeparadhana'}</strong>
+                    <p>05:30 PM – 08:00 PM</p>
+                </div>
+            </div>
+
+            <div className="info-divider" />
+
+            <div className="info-row">
+                <div className="info-icon-box">
+                    <MapPin size={18} />
+                </div>
+                <div>
+                    <strong>{isML ? 'ക്ഷേത്ര സ്ഥാനം' : 'Location'}</strong>
+                    <p>{isML ? 'തുറയിൽകുന്ന്, മരു: സൗത്ത്, കരുനാഗപ്പള്ളി' : 'Thurayilkunnu, Maru: South, Karunagappally'}</p>
+                </div>
+            </div>
+        </div>
+
+        <div className="glass-card-footer">
+            <Link to="/contact" className="card-action-btn card-action-btn--dir">
+                <MapPin size={13} />
+                <span>{isML ? 'ദിശ കാണുക & ഭൂപടം' : 'View Directions & Map'}</span>
+                <ArrowRight size={13} />
+            </Link>
+        </div>
+    </div>
+);
+
 const Banner = () => {
     const { i18n } = useTranslation();
     const isML = i18n.language === 'ml';
@@ -80,184 +144,135 @@ const Banner = () => {
     const nextSlide = () => setCurrentIndex((currentIndex + 1) % slides.length);
 
     return (
-        <header className={`sanctuary-hero ${isML ? 'lang-ml' : ''}`}>
-            {/* Ambient Animated Gold Dust & Glowing Embers */}
-            <div className="ambient-particles">
-                <div className="particle p1" />
-                <div className="particle p2" />
-                <div className="particle p3" />
-                <div className="particle p4" />
-                <div className="ember-spark e1" />
-                <div className="ember-spark e2" />
-                <div className="ember-spark e3" />
-                <div className="ember-spark e4" />
-            </div>
+        <div className="sanctuary-hero-wrapper">
+            <header className={`sanctuary-hero ${isML ? 'lang-ml' : ''}`}>
+                {/* Ambient Animated Gold Dust & Glowing Embers */}
+                <div className="ambient-particles">
+                    <div className="particle p1" />
+                    <div className="particle p2" />
+                    <div className="particle p3" />
+                    <div className="particle p4" />
+                    <div className="ember-spark e1" />
+                    <div className="ember-spark e2" />
+                    <div className="ember-spark e3" />
+                    <div className="ember-spark e4" />
+                </div>
 
-            {/* Background Slideshow with Zoom & Fade */}
-            <div className="hero-slider">
-                {slides.map((slide, idx) => (
-                    <div
-                        key={idx}
-                        className={`hero-slide-bg ${idx === currentIndex ? 'active' : ''}`}
-                        style={{ backgroundImage: `url(${slide.url})` }}
-                    />
-                ))}
-                <div className="hero-overlay" />
-            </div>
+                {/* Background Slideshow with Zoom & Fade */}
+                <div className="hero-slider">
+                    {slides.map((slide, idx) => (
+                        <div
+                            key={idx}
+                            className={`hero-slide-bg ${idx === currentIndex ? 'active' : ''}`}
+                            style={{ backgroundImage: `url(${slide.url})` }}
+                        />
+                    ))}
+                    <div className="hero-overlay" />
+                </div>
 
-            {/* Slide Progress Bar */}
-            <div className="hero-progress-bar">
-                <div key={currentIndex} className="hero-progress-fill" />
-            </div>
+                {/* Slide Progress Bar */}
+                <div className="hero-progress-bar">
+                    <div key={currentIndex} className="hero-progress-fill" />
+                </div>
 
-            {/* Main Hero Content Grid */}
-            <div className="hero-container">
-                <div className="hero-content">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={currentIndex}
-                            initial={{ opacity: 0, y: 24 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -24 }}
-                            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                        >
-                            {/* Eyebrow Pill */}
+                {/* Main Hero Content Grid */}
+                <div className="hero-container">
+                    <div className="hero-content">
+                        <AnimatePresence mode="wait">
                             <motion.div
-                                className="hero-badge-pill"
-                                whileHover={{ scale: 1.05 }}
+                                key={currentIndex}
+                                initial={{ opacity: 0, y: 24 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -24 }}
+                                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                             >
-                                <Sparkles size={14} className="badge-sparkle" />
-                                <span>{slides[currentIndex].tag}</span>
+                                {/* Eyebrow Pill */}
+                                <motion.div
+                                    className="hero-badge-pill"
+                                    whileHover={{ scale: 1.05 }}
+                                >
+                                    <Sparkles size={14} className="badge-sparkle" />
+                                    <span>{slides[currentIndex].tag}</span>
+                                </motion.div>
+
+                                {/* Headline with Royal Cinzel Serif */}
+                                <h1 className="hero-main-title">
+                                    {slides[currentIndex].title}{' '}
+                                    <span className="hero-gold-text">{slides[currentIndex].highlight}</span>
+                                </h1>
+
+                                <p className="hero-subtitle">
+                                    {slides[currentIndex].desc}
+                                </p>
+                            </motion.div>
+                        </AnimatePresence>
+
+                        {/* Action Buttons */}
+                        <div className="hero-cta-group">
+                            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.98 }}>
+                                <Link to="/offerings" className="hero-btn-primary">
+                                    <span>{isML ? 'പൂജ ബുക്ക് ചെയ്യുക' : 'Book Pooja'}</span>
+                                    <ArrowRight size={17} />
+                                </Link>
                             </motion.div>
 
-                            {/* Headline with Royal Cinzel Serif */}
-                            <h1 className="hero-main-title">
-                                {slides[currentIndex].title}{' '}
-                                <span className="hero-gold-text">{slides[currentIndex].highlight}</span>
-                            </h1>
-
-                            <p className="hero-subtitle">
-                                {slides[currentIndex].desc}
-                            </p>
-                        </motion.div>
-                    </AnimatePresence>
-
-                    {/* Action Buttons */}
-                    <div className="hero-cta-group">
-                        <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.98 }}>
-                            <Link to="/offerings" className="hero-btn-primary">
-                                <span>{isML ? 'പൂജ ബുക്ക് ചെയ്യുക' : 'Book Pooja'}</span>
-                                <ArrowRight size={17} />
-                            </Link>
-                        </motion.div>
-
-                        <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.98 }}>
-                            <Link to="/about" className="hero-btn-glass">
-                                <span>{isML ? 'ക്ഷേത്ര ചരിത്രം അറിയാം' : 'Explore History'}</span>
-                            </Link>
-                        </motion.div>
+                            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.98 }}>
+                                <Link to="/about" className="hero-btn-glass">
+                                    <span>{isML ? 'ക്ഷേത്ര ചരിത്രം അറിയാം' : 'Explore History'}</span>
+                                </Link>
+                            </motion.div>
+                        </div>
                     </div>
+
+                    {/* Live Darshan Status Glass Card (Desktop only) */}
+                    <motion.div
+                        className="hero-glass-card-wrapper hero-glass-card-wrapper--desktop"
+                        initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                        whileHover={{ y: -6 }}
+                    >
+                        <DarshanGlassCard darshanStatus={darshanStatus} isML={isML} />
+                    </motion.div>
                 </div>
 
-                {/* Live Darshan Status Glass Card */}
-                <motion.div
-                    className="hero-glass-card"
-                    initial={{ opacity: 0, scale: 0.95, y: 30 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    whileHover={{ y: -6 }}
-                >
-                    {/* Card Header */}
-                    <div className="glass-card-header">
-                        <div className="status-indicator">
-                            <span className={`pulse-dot ${darshanStatus.open ? 'pulse-dot--open' : 'pulse-dot--closed'}`} />
-                            <div>
-                                <span className={`status-label ${darshanStatus.open ? 'status-label--open' : 'status-label--closed'}`}>
-                                    {darshanStatus.label}
-                                </span>
-                                <span className="status-sub">{darshanStatus.sub}</span>
-                            </div>
+                {/* Slider Navigation & Indicators */}
+                <div className="hero-nav-bar">
+                    <div className="hero-slide-controls">
+                        <button className="nav-arrow" onClick={prevSlide} aria-label={isML ? "മുൻപത്തെ സ്ലൈഡ്" : "Previous slide"}>
+                            <ChevronLeft size={20} />
+                        </button>
+
+                        <div className="nav-dots">
+                            {slides.map((_, idx) => (
+                                <button
+                                    key={idx}
+                                    className={`nav-dot ${idx === currentIndex ? 'active' : ''}`}
+                                    onClick={() => setCurrentIndex(idx)}
+                                    aria-label={`Go to slide ${idx + 1}`}
+                                />
+                            ))}
                         </div>
-                        <div className="card-temple-badge">
-                            <Sparkles size={18} className="card-sparkle-icon" />
-                        </div>
+
+                        <button className="nav-arrow" onClick={nextSlide} aria-label={isML ? "അടുത്ത സ്ലൈഡ്" : "Next slide"}>
+                            <ChevronRight size={20} />
+                        </button>
                     </div>
 
-                    <div className="glass-card-body">
-                        <div className="info-row">
-                            <div className="info-icon-box">
-                                <Sun size={18} />
-                            </div>
-                            <div>
-                                <strong>{isML ? 'രാവിലെ പൂജാ സമയം' : 'Morning Pooja Hours'}</strong>
-                                <p>05:00 AM – 10:30 AM</p>
-                            </div>
-                        </div>
-
-                        <div className="info-divider" />
-
-                        <div className="info-row">
-                            <div className="info-icon-box">
-                                <Flame size={18} />
-                            </div>
-                            <div>
-                                <strong>{isML ? 'വൈകിട്ട് ദീപാരാധന' : 'Evening Deeparadhana'}</strong>
-                                <p>05:30 PM – 08:00 PM</p>
-                            </div>
-                        </div>
-
-                        <div className="info-divider" />
-
-                        <div className="info-row">
-                            <div className="info-icon-box">
-                                <MapPin size={18} />
-                            </div>
-                            <div>
-                                <strong>{isML ? 'ക്ഷേത്ര സ്ഥാനം' : 'Location'}</strong>
-                                <p>{isML ? 'തുറയിൽകുന്ന്, മരു: സൗത്ത്, കരുനാഗപ്പള്ളി' : 'Thurayilkunnu, Maru: South, Karunagappally'}</p>
-                            </div>
-                        </div>
+                    <div className="scroll-indicator">
+                        <span className="scroll-text">{isML ? 'തുടർന്നു വായിക്കാൻ താഴേക്ക് സ്ക്രോൾ ചെയ്യുക' : 'Scroll to Explore'}</span>
+                        <span className="scroll-bar"></span>
                     </div>
-
-                    <div className="glass-card-footer">
-                        <Link to="/contact" className="card-action-btn card-action-btn--dir">
-                            <MapPin size={13} />
-                            <span>{isML ? 'ദിശ കാണുക & ഭൂപടം' : 'View Directions & Map'}</span>
-                            <ArrowRight size={13} />
-                        </Link>
-                    </div>
-                </motion.div>
-            </div>
-
-            {/* Slider Navigation & Indicators */}
-            <div className="hero-nav-bar">
-                <div className="hero-slide-controls">
-                    <button className="nav-arrow" onClick={prevSlide} aria-label={isML ? "മുൻപത്തെ സ്ലൈഡ്" : "Previous slide"}>
-                        <ChevronLeft size={20} />
-                    </button>
-
-                    <div className="nav-dots">
-                        {slides.map((_, idx) => (
-                            <button
-                                key={idx}
-                                className={`nav-dot ${idx === currentIndex ? 'active' : ''}`}
-                                onClick={() => setCurrentIndex(idx)}
-                                aria-label={`Go to slide ${idx + 1}`}
-                            />
-                        ))}
-                    </div>
-
-                    <button className="nav-arrow" onClick={nextSlide} aria-label={isML ? "അടുത്ത സ്ലൈഡ്" : "Next slide"}>
-                        <ChevronRight size={20} />
-                    </button>
                 </div>
+            </header>
 
-                <div className="scroll-indicator">
-                    <span className="scroll-text">{isML ? 'തുടർന്നു വായിക്കാൻ താഴേക്ക് സ്ക്രോൾ ചെയ്യുക' : 'Scroll to Explore'}</span>
-                    <span className="scroll-bar"></span>
+            {/* Mobile Darshan Status Section (Shown directly below hero banner on mobile / tablet) */}
+            <section className="hero-mobile-darshan-section" aria-label={isML ? "ദർശന സമയം" : "Darshan Timings"}>
+                <div className="container">
+                    <DarshanGlassCard darshanStatus={darshanStatus} isML={isML} className="hero-glass-card--mobile" />
                 </div>
-            </div>
-        </header>
+            </section>
+        </div>
     );
 };
 
