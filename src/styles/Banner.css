@@ -327,10 +327,6 @@
     width: 100%;
 }
 
-.hero-mobile-darshan-section {
-    display: none;
-}
-
 .hero-glass-card {
     background: rgba(255, 255, 255, 0.96);
     border: 1px solid rgba(217, 119, 6, 0.40);
@@ -694,37 +690,39 @@
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
-    .hero-glass-card-wrapper--desktop {
+    .hero-glass-card-wrapper,
+    .hero-glass-card {
         display: none !important;
     }
 
     .hero-container {
         grid-template-columns: 1fr;
-        max-width: 800px;
-        padding-top: 110px;
-        padding-bottom: 2rem;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 120px 2rem 2.5rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         gap: 1.5rem;
     }
 
-    .hero-mobile-darshan-section {
-        display: block;
-        padding: 1.5rem 1.25rem 2rem;
-        background: #FAFAF9;
-        border-top: 1px solid rgba(217, 119, 6, 0.15);
-        position: relative;
-        z-index: 5;
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    .hero-glass-card--mobile {
-        max-width: 520px;
-        margin: 0 auto;
-        background: #FFFFFF;
-        border: 1px solid rgba(217, 119, 6, 0.35);
-        border-radius: 20px;
-        padding: 1.6rem;
-        box-shadow: 
-            0 16px 40px rgba(28, 25, 23, 0.08),
-            0 2px 8px rgba(28, 25, 23, 0.04);
+    .hero-subtitle {
+        max-width: 580px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-cta-group {
+        justify-content: center;
     }
 }
 
@@ -753,18 +751,15 @@
 
 @media (max-width: 540px) {
     .sanctuary-hero {
-        min-height: calc(88svh - var(--notice-banner-height, 36px));
+        min-height: calc(82svh - var(--notice-banner-height, 36px));
     }
     .hero-container { padding: 88px 1.1rem 1rem; gap: 1.2rem; }
-    .hero-main-title { font-size: clamp(1.75rem, 7vw, 2.6rem); line-height: 1.12; }
+    .hero-main-title { font-size: clamp(1.75rem, 7vw, 2.5rem); line-height: 1.12; }
     .hero-subtitle { font-size: 0.9rem; line-height: 1.62; margin-bottom: 1.4rem; }
     .hero-badge-pill { font-size: 0.68rem; padding: 5px 12px; gap: 6px; }
     .hero-cta-group { gap: 0.8rem; }
     .hero-btn-primary,
     .hero-btn-glass { padding: 0.78rem 1.3rem; font-size: 0.81rem; }
-    .hero-mobile-darshan-section { padding: 1.25rem 1rem 1.75rem; }
-    .hero-glass-card--mobile { border-radius: 18px; padding: 1.3rem; }
-    .glass-card-header { flex-wrap: wrap; gap: 0.5rem; }
     .hero-nav-bar { padding: 0 1rem 1.5rem; }
     .nav-arrow { width: 38px; height: 38px; }
     .scroll-indicator { display: none; }

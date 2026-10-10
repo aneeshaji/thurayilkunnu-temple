@@ -144,8 +144,7 @@ const Banner = () => {
     const nextSlide = () => setCurrentIndex((currentIndex + 1) % slides.length);
 
     return (
-        <div className="sanctuary-hero-wrapper">
-            <header className={`sanctuary-hero ${isML ? 'lang-ml' : ''}`}>
+        <header className={`sanctuary-hero ${isML ? 'lang-ml' : ''}`}>
                 {/* Ambient Animated Gold Dust & Glowing Embers */}
                 <div className="ambient-particles">
                     <div className="particle p1" />
@@ -265,14 +264,6 @@ const Banner = () => {
                     </div>
                 </div>
             </header>
-
-            {/* Mobile Darshan Status Section (Shown directly below hero banner on mobile / tablet) */}
-            <section className="hero-mobile-darshan-section" aria-label={isML ? "ദർശന സമയം" : "Darshan Timings"}>
-                <div className="container">
-                    <DarshanGlassCard darshanStatus={darshanStatus} isML={isML} className="hero-glass-card--mobile" />
-                </div>
-            </section>
-        </div>
     );
 };
 
