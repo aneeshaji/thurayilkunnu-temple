@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import Logo from './Logo.jsx';
 import { sendContactEmail } from '../utils/contactForm';
-import { CONTACT_EMAIL, PHONE_PRIMARY, PHONE_SECONDARY } from '../constants/site';
+import { CONTACT_EMAIL, PHONE_PRIMARY, PHONE_SECONDARY, FACEBOOK_URL, INSTAGRAM_URL } from '../constants/site';
 import '../styles/Footer.css';
 
 const Footer = () => {
@@ -84,10 +84,10 @@ const Footer = () => {
                     <div className="social-icons-wrapper">
                         <span className="social-label">{isML ? 'ഭക്തജന ചാനലുകൾ' : 'Devotee Channels'}</span>
                         <div className="social-icons">
-                            <a href="https://www.facebook.com/thurayilkunnutemple" className="social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <a href={FACEBOOK_URL} className="social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                                 <Facebook size={16} />
                             </a>
-                            <a href="https://www.instagram.com/thurayilkunnutemple" className="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <a href={INSTAGRAM_URL} className="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                                 <Instagram size={16} />
                             </a>
                             <a href="https://maps.app.goo.gl/nf1ogELnNM7MpmC46" className="social-icon social-icon--gmb" aria-label="Google Business Profile" target="_blank" rel="noopener noreferrer">

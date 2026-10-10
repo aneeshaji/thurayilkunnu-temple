@@ -33,9 +33,12 @@ export const OPENING_HOURS = [
     }
 ];
 
+export const FACEBOOK_URL = 'https://www.facebook.com/thurayilkunnutemple/';
+export const INSTAGRAM_URL = 'https://www.instagram.com/thurayilkunnutemple/';
+
 export const SOCIAL_LINKS = [
-    'https://www.facebook.com/thurayilkunnutemple',
-    'https://www.instagram.com/thurayilkunnutemple'
+    FACEBOOK_URL,
+    INSTAGRAM_URL
 ];
 
 export const buildTempleSchema = ({ image, description, alternateName } = {}) => ({
