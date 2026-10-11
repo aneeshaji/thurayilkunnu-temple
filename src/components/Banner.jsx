@@ -138,6 +138,16 @@ const Banner = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [, setTick] = useState(0);
+    const [loadedIndices, setLoadedIndices] = useState(() => new Set([0, 1]));
+
+    useEffect(() => {
+        setLoadedIndices((prev) => {
+            const next = new Set(prev);
+            next.add(currentIndex);
+            next.add((currentIndex + 1) % slides.length);
+            return next;
+        });
+    }, [currentIndex, slides.length]);
 
     useEffect(() => {
         const interval = setInterval(() => setTick((t) => t + 1), 60000);
@@ -176,7 +186,9 @@ const Banner = () => {
                         <div
                             key={idx}
                             className={`hero-slide-bg ${idx === currentIndex ? 'active' : ''}`}
-                            style={{ backgroundImage: `url(${slide.url})` }}
+                            style={{
+                                backgroundImage: loadedIndices.has(idx) ? `url(${slide.url})` : 'none'
+                            }}
                         />
                     ))}
                     <div className="hero-overlay" />

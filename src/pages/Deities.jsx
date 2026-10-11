@@ -95,10 +95,16 @@ const Deities = () => {
     return (
         <div className={`deities-page ${isML ? 'lang-ml' : ''}`}>
             <SEO
-                title={t('deities.page_title')}
-                description={t('deities.page_intro')}
+                title={isML ? 'പ്രധാന പ്രതിഷ്ഠകളും ഉപദേവതകളും' : 'Presiding & Subsidiary Deities'}
+                description={isML
+                    ? 'തുറയിൽക്കുന്ന് ക്ഷേത്രത്തിലെ പ്രധാന പ്രതിഷ്ഠയായ ശ്രീ സുബ്രഹ്മണ്യസ്വാമിയും (മുരുകൻ), ഉപദേവതകളായ ശ്രീ മഹാഗണപതി, ദുർഗ്ഗാ ഭഗവതി, മഹാദേവൻ, നാഗരാജാവ് എന്നിവരുടെ പുണ്യ സന്നിധികൾ.'
+                    : 'Discover the divine sanctums of Thurayilkunnu Temple — Presiding Deity Lord Subrahmanya (Murugan), and Upadevathas Lord Ganapathy, Goddess Durga Bhagavathy, Lord Mahadeva, and Nagaraja.'}
+                keywords={isML
+                    ? 'തുറയിൽക്കുന്ന് പ്രതിഷ്ഠകൾ, സുബ്രഹ്മണ്യസ്വാമി മുരുകൻ, മഹാഗണപതി, ദുർഗ്ഗാ ഭഗവതി, മഹാദേവൻ, നാഗരാജാവ് സർപ്പക്കാവ്, കരുനാഗപ്പള്ളി'
+                    : 'Thurayilkunnu deities, Lord Subrahmanya Murugan, Mahaganapathy shrine, Durga Bhagavathy temple Kerala, Mahadeva Shiva, Nagaraja serpent shrine Karunagappally'}
                 url="/deities"
                 image="/images/deities/subrahmanya.jpg"
+                breadcrumbs={[{ name: isML ? 'പ്രതിഷ്ഠകൾ' : 'Deities', url: '/deities' }]}
             />
             {/* ---- LUXURY INNER PAGE HERO ---- */}
             <PageHero

@@ -236,12 +236,18 @@ const Gallery = () => {
     });
 
     return (
-        <div className="gallery-page">
+        <div className={`gallery-page ${isML ? 'lang-ml' : ''}`}>
             <SEO
-                title={t('gallery.hero_title')}
-                description={t('gallery.hero_subtitle')}
+                title={isML ? 'ക്ഷേത്ര ചിത്രശാല & ഉത്സവ ദൃശ്യങ്ങൾ' : 'Temple Photo Gallery & Festival Moments'}
+                description={isML
+                    ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ മനോഹരമായ ചിത്രങ്ങൾ — ശ്രീകോവിൽ, കൊടിമരം, തൈപ്പൂയം, കാവടിയാട്ടം, ദീപാലങ്കാരം, നിത്യ ദർശനം.'
+                    : 'Explore divine photos of Thurayilkunnu Sree Subrahmanya Swami Temple — Sanctum Sanctorum, Dwajasthambam, Thaipusam festivals, Kavadiyattam, and festive illuminations.'}
+                keywords={isML
+                    ? 'തുറയിൽക്കുന്ന് ചിത്രങ്ങൾ, ക്ഷേത്ര ഫോട്ടോകൾ, തൈപ്പൂയം കാവടിയാട്ടം ചിത്രങ്ങൾ, കൊടിമരം, കൊല്ലം ക്ഷേത്രങ്ങൾ'
+                    : 'Thurayilkunnu temple photos, temple gallery Kerala, Thaipusam photos Karunagappally, Murugan temple images, Dwajasthambam'}
                 url="/gallery"
                 image="/images/gallery/temple_night_dwajam.jpg"
+                breadcrumbs={[{ name: isML ? 'ചിത്രശാല' : 'Gallery', url: '/gallery' }]}
             />
             {/* ---- LUXURY INNER PAGE HERO ---- */}
             <PageHero

@@ -3,48 +3,108 @@ import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { SITE_URL, TEMPLE_NAME_EN, TEMPLE_NAME_ML, buildTempleSchema } from '../constants/site';
 
-const SEO = ({ title, description, keywords, image, url, schema, noIndex = false }) => {
+const SEO = ({
+    title,
+    description,
+    keywords,
+    image,
+    url = '',
+    schema,
+    breadcrumbs,
+    faqs,
+    noIndex = false
+}) => {
     const { i18n } = useTranslation();
 
     const siteName = TEMPLE_NAME_EN;
-    const defaultDescription = "Ancient seat of divinity in Karunagappally, Kerala. Home to Lord Subrahmanya, offering spiritual grace, traditional poojas, and grand festivals.";
+    const defaultDescription = "Ancient seat of divinity in Karunagappally, Kerala. Dedicated to Lord Subrahmanya (Murugan), offering spiritual grace, traditional tantric poojas, daily Panchangam, and grand festivals like Thaipusam & Skanda Shashti.";
     const defaultImage = `${SITE_URL}/og-image.jpg?v=5`;
-    const defaultKeywords = "Thurayilkunnu Temple, Subrahmanya Swami, Karunagappally, Kerala Temple, Murugan, Thaipusam, Hindu Temple";
+    const defaultKeywords = "Thurayilkunnu Temple, Thurayilkunnu Sree Subrahmanya Swami Temple, Murugan Temple Kerala, Karunagappally Temple, Lord Subrahmanya, Thaipusam Mahotsavam, Skanda Shashti, Kavadiyattam, vazhipadu booking, Kerala Hindu temple, Alumkadavu";
 
-    const finalTitle = title ? `${title} | ${siteName}` : siteName;
+    const finalTitle = title ? `${title} | ${siteName}` : `${siteName} | Karunagappally, Kerala`;
     const finalDescription = description || defaultDescription;
     const finalImage = image ? (image.startsWith('http') ? image : `${SITE_URL}${image}`) : defaultImage;
     const finalKeywords = keywords || defaultKeywords;
 
     const isML = Boolean(i18n.language?.startsWith('ml'));
-    const baseUrl = `${SITE_URL}${url || ''}`;
+    const cleanPath = url === '/' || !url ? '' : (url.startsWith('/') ? url : `/${url}`);
+    const baseUrl = `${SITE_URL}${cleanPath}`;
 
-    const withLang = (lang) => `${baseUrl}?lng=${lang}`;
-    const currentUrl = withLang(isML ? 'ml' : 'en');
+    // Standard canonical URL
+    const canonicalUrl = isML ? `${baseUrl}?lng=ml` : baseUrl;
+    const enUrl = `${baseUrl}?lng=en`;
+    const mlUrl = `${baseUrl}?lng=ml`;
+    const defaultUrl = baseUrl || `${SITE_URL}/`;
 
-    const finalSchema = schema || buildTempleSchema({
-        image: defaultImage,
-        description: defaultDescription,
-        alternateName: isML ? TEMPLE_NAME_EN : TEMPLE_NAME_ML
-    });
+    // Build schemas collection
+    const schemas = [];
+
+    // Main schema (or custom passed schema)
+    if (schema) {
+        if (Array.isArray(schema)) {
+            schemas.push(...schema);
+        } else {
+            schemas.push(schema);
+        }
+    } else {
+        schemas.push(buildTempleSchema({
+            image: finalImage,
+            description: finalDescription,
+            alternateName: isML ? TEMPLE_NAME_EN : TEMPLE_NAME_ML
+        }));
+    }
+
+    // Breadcrumb schema
+    if (breadcrumbs && breadcrumbs.length > 0) {
+        const breadcrumbItems = [
+            { name: isML ? 'ഹോം' : 'Home', url: '/' },
+            ...breadcrumbs
+        ];
+        schemas.push({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: breadcrumbItems.map((item, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                name: item.name,
+                item: item.url.startsWith('http') ? item.url : `${SITE_URL}${item.url}`
+            }))
+        });
+    }
+
+    // FAQ schema
+    if (faqs && faqs.length > 0) {
+        schemas.push({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((faq) => ({
+                '@type': 'Question',
+                name: faq.q,
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: faq.a
+                }
+            }))
+        });
+    }
 
     return (
         <Helmet>
-            <html lang={i18n.language} />
+            <html lang={isML ? 'ml' : 'en'} />
             <title>{finalTitle}</title>
-            <link rel="canonical" href={currentUrl} />
+            <link rel="canonical" href={canonicalUrl} />
             <meta name="description" content={finalDescription} />
             <meta name="keywords" content={finalKeywords} />
-            <meta name="robots" content={noIndex ? 'noindex, follow' : 'index, follow'} />
+            <meta name="robots" content={noIndex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
 
-            {/* Hreflang — must mirror the alternates in sitemap.xml */}
-            <link rel="alternate" hrefLang="en" href={withLang('en')} />
-            <link rel="alternate" hrefLang="ml" href={withLang('ml')} />
-            <link rel="alternate" hrefLang="x-default" href={withLang('en')} />
+            {/* Hreflang alternates */}
+            <link rel="alternate" hrefLang="en" href={enUrl} />
+            <link rel="alternate" hrefLang="ml" href={mlUrl} />
+            <link rel="alternate" hrefLang="x-default" href={defaultUrl} />
 
             {/* Open Graph / Facebook / WhatsApp */}
             <meta property="og:type" content="website" />
-            <meta property="og:url" content={currentUrl} />
+            <meta property="og:url" content={canonicalUrl} />
             <meta property="og:title" content={finalTitle} />
             <meta property="og:description" content={finalDescription} />
             <meta property="og:image" content={finalImage} />
@@ -66,8 +126,12 @@ const SEO = ({ title, description, keywords, image, url, schema, noIndex = false
             <meta name="twitter:image" content={finalImage} />
             <meta name="twitter:image:alt" content={isML ? TEMPLE_NAME_ML : siteName} />
 
-            {/* Structured Data */}
-            <script type="application/ld+json">{JSON.stringify(finalSchema)}</script>
+            {/* Structured Data (Schema.org) */}
+            {schemas.map((s, idx) => (
+                <script key={idx} type="application/ld+json">
+                    {JSON.stringify(s)}
+                </script>
+            ))}
         </Helmet>
     );
 };

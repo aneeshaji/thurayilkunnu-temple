@@ -41,17 +41,22 @@ export const SOCIAL_LINKS = [
     INSTAGRAM_URL
 ];
 
+export const MAPS_URL = 'https://maps.google.com/?q=9.1258969,76.5064915';
+
 export const buildTempleSchema = ({ image, description, alternateName } = {}) => ({
     '@context': 'https://schema.org',
     '@type': 'HinduTemple',
     '@id': `${SITE_URL}/#temple`,
     name: TEMPLE_NAME_EN,
     alternateName: alternateName || TEMPLE_NAME_ML,
-    description: description || 'An ancient temple dedicated to Lord Subrahmanya (Murugan) at Karunagappally, Kerala, serving devotees for generations with traditional rituals and spiritual grace.',
+    description: description || 'An ancient Hindu temple dedicated to Lord Subrahmanya (Murugan) at Karunagappally, Kerala, renowned for its spiritual aura, daily traditional poojas, and grand festivals like Thaipusam and Skanda Shashti.',
     url: SITE_URL,
     image: image || `${SITE_URL}/og-image.jpg?v=5`,
     telephone: PHONE_PRIMARY,
     email: CONTACT_EMAIL,
+    priceRange: '₹',
+    publicAccess: true,
+    hasMap: MAPS_URL,
     address: {
         '@type': 'PostalAddress',
         ...TEMPLE_ADDRESS
@@ -62,4 +67,54 @@ export const buildTempleSchema = ({ image, description, alternateName } = {}) =>
     },
     openingHoursSpecification: OPENING_HOURS,
     sameAs: SOCIAL_LINKS
+});
+
+export const buildBreadcrumbSchema = (items = []) => ({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        item: item.url.startsWith('http') ? item.url : `${SITE_URL}${item.url}`
+    }))
+});
+
+export const buildFaqSchema = (faqs = []) => ({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.a
+        }
+    }))
+});
+
+export const buildEventSchema = ({ name, description, startDate, endDate, image, url }) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name,
+    description,
+    startDate,
+    endDate: endDate || startDate,
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    location: {
+        '@type': 'Place',
+        name: TEMPLE_NAME_EN,
+        address: {
+            '@type': 'PostalAddress',
+            ...TEMPLE_ADDRESS
+        }
+    },
+    image: image ? (image.startsWith('http') ? image : `${SITE_URL}${image}`) : `${SITE_URL}/og-image.jpg?v=5`,
+    organizer: {
+        '@type': 'Organization',
+        name: TEMPLE_NAME_EN,
+        url: SITE_URL
+    },
+    url: url ? (url.startsWith('http') ? url : `${SITE_URL}${url}`) : SITE_URL
 });

@@ -91,11 +91,18 @@ const Contact = () => {
     };
 
     return (
-        <div className="contact-page">
+        <div className={`contact-page ${isML ? 'lang-ml' : ''}`}>
             <SEO 
-                title={t('contact_page.title')} 
-                description="Get in touch with Thurayilkunnu Sree Subrahmanya Swami Temple. Find our address, phone number, and location map." 
+                title={isML ? 'ക്ഷേത്രവുമായി ബന്ധപ്പെടുക & വിലാസം' : 'Contact Temple & Location Map'} 
+                description={isML
+                    ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രവുമായി ബന്ധപ്പെടാനുള്ള വിലാസം, ഫോൺ നമ്പറുകൾ (7994342205, 9072722205), ഇമെയിൽ, റൂട്ട് മാപ്പ്. കരുനാഗപ്പള്ളി, കൊല്ലം.'
+                    : 'Get in touch with Thurayilkunnu Sree Subrahmanya Swami Temple — phone numbers, email, official address at Alumkadavu, Karunagappally, and Google Maps location.'} 
+                keywords={isML
+                    ? 'തുറയിൽക്കുന്ന് ക്ഷേത്രം ഫോൺ നമ്പർ, ക്ഷേത്രം വിലാസം, കരുനാഗപ്പള്ളി ക്ഷേത്രങ്ങൾ, ദേവസ്വം ഓഫീസ്, ആലുംകടവ്'
+                    : 'Thurayilkunnu temple contact number, temple office Karunagappally, address, route map, Alumkadavu temple contact'}
                 url="/contact"
+                image="/images/banners/banner_contact.jpg"
+                breadcrumbs={[{ name: isML ? 'ബന്ധപ്പെടുക' : 'Contact', url: '/contact' }]}
             />
 
             {/* ---- LUXURY INNER PAGE HERO ---- */}

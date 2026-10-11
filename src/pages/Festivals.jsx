@@ -6,6 +6,7 @@ import { Calendar, Star, Sparkles, ChevronRight, Clock, Flame, Bell, Eye, Extern
 import { motion, AnimatePresence } from 'framer-motion';
 import SEO from '../components/SEO';
 import PageHero from '../components/PageHero';
+import { buildEventSchema } from '../constants/site';
 import '../styles/Festivals.css';
 
 /* ---- ANIMATION VARIANTS ---- */
@@ -127,12 +128,43 @@ const Festivals = () => {
         { month: 'December', monthMl: 'ഡിസംബർ', day: '15', weekday: 'Tuesday', weekdayMl: 'ചൊവ്വ' }
     ];
 
+    const festivalSchemas = [
+        buildEventSchema({
+            name: isML ? 'സ്കന്ദഷഷ്ടി മഹോത്സവം 2026' : 'Grand Skanda Shashti Mahotsavam 2026',
+            description: isML
+                ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ സ്കന്ദഷഷ്ടി മഹോത്സവം — ഷഷ്ടി പൂജ, വിശേഷാൽ ദീപാരാധന, പുഷ്പാഭിഷേകം.'
+                : 'Grand Skanda Shashti Mahotsavam at Thurayilkunnu Sree Subrahmanya Swami Temple — Shashti pooja, floral decor, and special offerings.',
+            startDate: '2026-11-15T05:00:00+05:30',
+            endDate: '2026-11-15T21:00:00+05:30',
+            image: '/images/festivals/skanda_sashti.jpg',
+            url: '/festivals'
+        }),
+        buildEventSchema({
+            name: isML ? 'തൈപ്പൂയം മഹോത്സവവും കാവടിയാട്ടവും' : 'Thaipusam Mahotsavam & Kavadiyattam',
+            description: isML
+                ? 'പ്രസിദ്ധമായ തൈപ്പൂയം മഹോത്സവം — ഭക്തിസാന്ദ്രമായ കാവടിയാട്ടം, പീലിക്കാവടി, പൂക്കാവടി, പഞ്ചവാദ്യം, അന്നദാനം.'
+                : 'Sacred Thaipusam Mahotsavam with traditional Kavadiyattam, Panchavadyam, and special poojas dedicated to Lord Murugan.',
+            startDate: '2027-01-22T05:00:00+05:30',
+            endDate: '2027-01-22T22:00:00+05:30',
+            image: '/images/festivals/thaipusam.jpg',
+            url: '/festivals'
+        })
+    ];
+
     return (
         <div className={`festivals-page ${isML ? 'lang-ml' : ''}`}>
             <SEO 
-                title={t('festivals_page.title')} 
-                description="Experience the vibrant and spiritual festivals at Thurayilkunnu Sree Subrahmanya Swami Temple."
+                title={isML ? 'വിശേഷാൽ മഹോത്സവങ്ങൾ' : 'Temple Festivals & Celebrations'}
+                description={isML
+                    ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ വാർഷിക മഹോത്സവങ്ങൾ — തൈപ്പൂയം, സ്കന്ദഷഷ്ടി, കാവടിയാട്ടം, പ്രതിഷ്ഠാദിനം (ഉത്രട്ടാതി), തൃക്കാർത്തിക. ഉത്സവ തീയതികളും പൂജാ വിവരങ്ങളും.'
+                    : 'Discover holy festivals at Thurayilkunnu Sree Subrahmanya Swami Temple, Karunagappally — Thaipusam with Kavadiyattam, Grand Skanda Shashti, Prathishta Dinam (Uthrattathi), and Thrikarthika.'}
+                keywords={isML
+                    ? 'തുറയിൽക്കുന്ന് ഉത്സവങ്ങൾ, തൈപ്പൂയം മഹോത്സവം, സ്കന്ദഷഷ്ടി 2026, കാവടിയാട്ടം കൊല്ലം, കരുനാഗപ്പള്ളി ക്ഷേത്ര ഉത്സവങ്ങൾ, ഉത്രട്ടാതി ഉത്സവം, തൃക്കാർത്തിക'
+                    : 'Thurayilkunnu temple festivals, Thaipusam Kerala, Skanda Shashti 2026, Kavadiyattam Karunagappally, Kollam temple festivals, Subrahmanya festivals Kerala'}
                 url="/festivals"
+                image="/images/banners/banner_festivals.jpg"
+                breadcrumbs={[{ name: isML ? 'ഉത്സവങ്ങൾ' : 'Festivals', url: '/festivals' }]}
+                schema={festivalSchemas}
             />
             {/* ---- LUXURY INNER PAGE HERO ---- */}
             <PageHero

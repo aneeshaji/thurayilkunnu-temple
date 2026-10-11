@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
@@ -222,11 +222,18 @@ const About = () => {
     };
 
     return (
-        <div className="about-page">
+        <div className={`about-page ${isML ? 'lang-ml' : ''}`}>
             <SEO 
-                title={t('about.title')} 
-                description={t('about.seo_description')}
+                title={isML ? 'ക്ഷേത്ര ചരിത്രവും പൈതൃകവും' : 'Temple History & Spiritual Heritage'}
+                description={isML 
+                    ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിന്റെ പവിത്രമായ ചരിത്രം, സ്ഥലപുരാണം, താന്ത്രിക പാരമ്പര്യം, ശ്രീകോവിൽ വാസ്തുവിദ്യ. കരുനാഗപ്പള്ളിയിലെ പുണ്യ സങ്കേതം.' 
+                    : 'Discover the sacred history, spiritual heritage, and authentic Kerala tantric traditions of Thurayilkunnu Sree Subrahmanya Swami Temple at Karunagappally, Kollam.'}
+                keywords={isML
+                    ? 'തുറയിൽക്കുന്ന് ചരിത്രം, സ്ഥലപുരാണം, സുബ്രഹ്മണ്യ ക്ഷേത്രം കരുനാഗപ്പള്ളി, താന്ത്രിക വിധി, ക്ഷേത്ര ഭരണസമിതി'
+                    : 'Thurayilkunnu temple history, sthala puranam, Karunagappally spiritual heritage, Lord Subrahmanya temple Kerala, tantric rituals'}
                 url="/about"
+                image="/images/banners/banner_about.jpg"
+                breadcrumbs={[{ name: isML ? 'ക്ഷേത്രത്തെക്കുറിച്ച്' : 'About Temple', url: '/about' }]}
             />
             {/* ---- LUXURY INNER PAGE HERO ---- */}
             <PageHero

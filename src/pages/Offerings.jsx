@@ -1347,9 +1347,16 @@ Please confirm my booking. Thank you!`;
             )}
 
             <SEO 
-                title={t('offerings_page.title')} 
-                description={isML ? 'തുറയിൽകുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ നിത്യപൂജകളും വിശേഷാൽ വഴിപാടുകളും. വഴിപാട് ബുക്ക് ചെയ്യാൻ ക്ഷേത്ര ഓഫീസിലേക്ക് വരാവുന്നു.' : 'Explore poojas, vazhipadu, and special offerings at Thurayilkunnu Sree Subrahmanya Swami Temple. Visit the temple office to book vazhipadu.'}
+                title={isML ? 'നിത്യ പൂജകളും വിശേഷാൽ വഴിപാടുകളും' : 'Sacred Poojas & Vazhipadu Offerings'} 
+                description={isML 
+                    ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ നിത്യപൂജകൾ, ഗണപതി ഹോമം, പാലഭിഷേകം, പുഷ്പാഞ്ജലി, മൃത്യുഞ്ജയ ഹോമം, തുലാഭാരം തുടങ്ങിയ വിശേഷാൽ വഴിപാടുകൾ.' 
+                    : 'Explore traditional poojas and sacred vazhipadu at Thurayilkunnu Temple — Ganapathy Homam, Palabhishekam, Archana, Mrithyunjaya Homam, and Thulabharam at Karunagappally, Kerala.'}
+                keywords={isML
+                    ? 'തുറയിൽക്കുന്ന് വഴിപാടുകൾ, പൂജാ നിരക്കുകൾ, ഗണപതി ഹോമം, പാലഭിഷേകം, പുഷ്പാഞ്ജലി, മൃത്യുഞ്ജയ ഹോമം, തുലാഭാരം, കരുനാഗപ്പള്ളി'
+                    : 'Thurayilkunnu offerings, temple vazhipadu Kerala, Ganapathy Homam booking, Palabhishekam Murugan, pooja rates Karunagappally, temple offerings list'}
                 url="/offerings"
+                image="/images/banners/banner_offerings.jpg"
+                breadcrumbs={[{ name: isML ? 'വഴിപാടുകൾ' : 'Offerings', url: '/offerings' }]}
             />
             {/* ---- LUXURY INNER PAGE HERO ---- */}
             <PageHero

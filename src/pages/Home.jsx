@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SEO from '../components/SEO';
 import Banner from '../components/Banner';
 import PanchangamWidget from '../components/PanchangamWidget';
+import { buildEventSchema } from '../constants/site';
 import '../styles/Home.css';
 
 /* ---- MOTION ANIMATION VARIANTS ---- */
@@ -315,14 +316,66 @@ const Home = () => {
         { name: t('deities.list.nagaraja.name'), desc: t('deities.list.nagaraja.desc'), image: '/images/deities/nagaraja.jpg', featured: false }
     ];
 
+    const homeFaqs = isML ? [
+        {
+            q: 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ ദർശന സമയം എപ്പോഴാണ്?',
+            a: 'രാവിലെ 05:00 AM മുതൽ 10:30 AM വരെയും, വൈകുന്നേരം 05:30 PM മുതൽ 08:00 PM വരെയുമാണ് നിത്യ ദർശന സമയം.'
+        },
+        {
+            q: 'ക്ഷേത്രം എവിടെയാണ് സ്ഥിതി ചെയ്യുന്നത്? എങ്ങനെ എത്തിച്ചേരാം?',
+            a: 'കേരളത്തിലെ കൊല്ലം ജില്ലയിൽ കരുനാഗപ്പള്ളിക്ക് സമീപം തുറയിൽക്കുന്ന്, മാരു സൗത്ത്, ആലുംകടവ് പി.ഒ. യിലാണ് ക്ഷേത്രം സ്ഥിതി ചെയ്യുന്നത്. കരുനാഗപ്പള്ളി റെയിൽവേ സ്റ്റേഷനിൽ നിന്നും ബസ് സ്റ്റാൻഡിൽ നിന്നും എളുപ്പത്തിൽ എത്തിച്ചേരാം.'
+        },
+        {
+            q: 'ക്ഷേത്രത്തിലെ പ്രധാന പ്രതിഷ്ഠയും ഉപദേവതകളും ഏതെല്ലാമാണ്?',
+            a: 'പ്രധാന പ്രതിഷ്ഠ ശ്രീ സുബ്രഹ്മണ്യസ്വാമിയാണ് (മുരുകൻ). കൂടാതെ ശ്രീ മഹാഗണപതി, ദുർഗ്ഗാ ഭഗവതി, മഹാദേവൻ, നാഗരാജാവ് എന്നിവരാണ് ഉപദേവതകൾ.'
+        },
+        {
+            q: 'ക്ഷേത്രത്തിലെ പ്രധാന വാർഷിക മഹോത്സവങ്ങൾ ഏവ?',
+            a: 'തൈപ്പൂയം മഹോത്സവം, സ്കന്ദഷഷ്ടി മഹോത്സവം, പ്രതിഷ്ഠാദിന ഉത്സവം (ഉത്രട്ടാതി), തൃക്കാർത്തിക എന്നിവയാണ് പ്രധാന ആഘോഷങ്ങൾ.'
+        }
+    ] : [
+        {
+            q: 'What are the daily darshan timings at Thurayilkunnu Sree Subrahmanya Swami Temple?',
+            a: 'The temple is open daily from 05:00 AM to 10:30 AM in the morning, and from 05:30 PM to 08:00 PM in the evening.'
+        },
+        {
+            q: 'Where is Thurayilkunnu Temple located and how to reach?',
+            a: 'The temple is located at Thurayilkunnu, Maru South, Alumkadavu P.O., Karunagappally, Kollam district, Kerala 690573. Easily accessible by road from Karunagappally town and railway station.'
+        },
+        {
+            q: 'Who is the presiding deity of Thurayilkunnu Temple?',
+            a: 'The presiding deity is Lord Subrahmanya (Murugan). Shrines for Lord Ganapathy, Goddess Durga Bhagavathy, Lord Mahadeva, and Nagaraja are also situated in the courtyard.'
+        },
+        {
+            q: 'What are the major annual festivals celebrated at the temple?',
+            a: 'Major annual festivals include Thaipusam Mahotsavam with Kavadiyattam, Grand Skanda Shashti Mahotsavam, Prathishta Dinam (Uthrattathi), and Thrikarthika.'
+        }
+    ];
+
+    const upcomingFestivalEvent = buildEventSchema({
+        name: isML ? 'സ്കന്ദഷഷ്ടി മഹോത്സവം 2026' : 'Skanda Shashti Mahotsavam 2026',
+        description: isML 
+            ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ സ്കന്ദഷഷ്ടി മഹോത്സവം — ഷഷ്ടി പൂജ, വിശേഷാൽ അഭിഷേകങ്ങൾ, പുഷ്പാഭിഷേകം, ദീപാരാധന.'
+            : 'Grand Skanda Shashti Mahotsavam at Thurayilkunnu Sree Subrahmanya Swami Temple, Karunagappally — Shashti pooja, sacred abhishekams, and deeparadhana.',
+        startDate: '2026-11-15T05:00:00+05:30',
+        endDate: '2026-11-15T21:00:00+05:30',
+        image: '/images/festivals/skanda_sashti.jpg',
+        url: '/festivals'
+    });
+
     return (
         <div className={`sanctuary-home-page ${isML ? 'lang-ml' : ''}`}>
             <SEO
-                title={isML ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം' : 'Thurayilkunnu Sree Subrahmanya Swami Temple'}
+                title={isML ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം | കരുനാഗപ്പള്ളി' : 'Thurayilkunnu Sree Subrahmanya Swami Temple | Karunagappally, Kerala'}
                 description={isML
-                    ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം, കരുനാഗപ്പള്ളി. നിത്യ പൂജകൾ, വഴിപാടുകൾ, സ്കന്ദഷഷ്ടി മഹോത്സവം, ഉത്രട്ടാതി ഉത്സവം എന്നിവയുടെ വിവരങ്ങൾ.'
-                    : 'Thurayilkunnu Sree Subrahmanya Swami Temple at Karunagappally, Kerala — an ancient temple dedicated to Lord Subrahmanya (Murugan). Daily Panchangam, traditional poojas, and grand festivals including Skanda Shashti Mahotsavam and Uthrattathi.'}
+                    ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം, കരുനാഗപ്പള്ളി, കൊല്ലം. നിത്യ പൂജകൾ, വഴിപാടുകൾ, സ്കന്ദഷഷ്ടി മഹോത്സവം, തൈപ്പൂയം, പ്രതിഷ്ഠാദിനം, നിത്യ പഞ്ചാംഗം.'
+                    : 'Thurayilkunnu Sree Subrahmanya Swami Temple at Karunagappally, Kollam, Kerala — ancient Hindu shrine dedicated to Lord Subrahmanya (Murugan). Daily Panchangam, traditional poojas, Thaipusam & Skanda Shashti Mahotsavam.'}
+                keywords={isML
+                    ? 'തുറയിൽക്കുന്ന് ക്ഷേത്രം, സുബ്രഹ്മണ്യ സ്വാമി ക്ഷേത്രം, കരുനാഗപ്പള്ളി ക്ഷേത്രങ്ങൾ, മുരുകൻ ക്ഷേത്രം കേരളം, സ്കന്ദഷഷ്ടി, തൈപ്പൂയം, വഴിപാടുകൾ, പൂജാ സമയം, ആലുംകടവ്'
+                    : 'Thurayilkunnu temple, Thurayilkunnu Sree Subrahmanya Swami Temple, Karunagappally temple, Murugan temple Kerala, Lord Subrahmanya, Thaipusam 2026, Skanda Shashti, Kollam temples, vazhipadu, temple timings'}
                 url="/"
+                schema={[upcomingFestivalEvent]}
+                faqs={homeFaqs}
             />
             <Banner />
             <FestivalCountdown />
