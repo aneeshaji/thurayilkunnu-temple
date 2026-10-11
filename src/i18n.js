@@ -198,9 +198,9 @@ const resources = {
                         desc: "A major festival dedicated to Lord Murugan, celebrated with great fervor. Devotees carry Kavadis and perform ritualistic dances."
                     },
                     skanda: {
-                        name: "Skanda Sashti",
-                        date: "15 November 2026 (Sunday)",
-                        desc: "A six-day festival commemorating the victory of Lord Subrahmanya over the demon Surapadman. Usually includes Soorasamharam."
+                        name: "Skanda Shashti Mahotsavam 2026",
+                        date: "15 November 2026, Sunday (1202 Thulam 29)",
+                        desc: "The major festival of 2026 at Thurayilkunnu. Devotees are invited to dedicate Shashti Pooja, Temple Illumination & Floral Decoration (Kshethralankaram), and Chenda Melam as sacred offerings. Devaswom Office: 9072722205."
                     },
                     vishu: {
                         name: "Vishu",
@@ -578,9 +578,9 @@ const resources = {
                         desc: "ഭഗവാൻ സുബ്രഹ്മണ്യനായി സമർപ്പിച്ചിരിക്കുന്ന പ്രധാന ഉത്സവം. കാവടി ഏന്തിയും ആചാരപരമായ നൃത്തങ്ങൾ ചവിട്ടിയും ഭക്തർ ഈ ദിവസം ആഘോഷിക്കുന്നു."
                     },
                     skanda: {
-                        name: "സ്കന്ദ ഷഷ്ഠി",
-                        date: "2026 നവംബർ 15 (ഞായർ)",
-                        desc: "ശൂരപദ്മനെ ഭഗവാൻ നിഗ്രഹിച്ചതിന്റെ സ്മരണയ്ക്കായി നടത്തുന്ന ആറ് ദിവസത്തെ ഉത്സവം. ഇതിൽ ശൂരസംഹാരമാണ് പ്രധാന ചടങ്ങ്."
+                        name: "സ്കന്ദഷഷ്ടി മഹോത്സവം 2026",
+                        date: "2026 നവംബർ 15 ഞായറാഴ്ച (1202 തുലാം 29)",
+                        desc: "തുറയിൽക്കുന്ന് ക്ഷേത്രത്തിലെ 2026 ലെ പ്രധാന ഉത്സവം. അന്നേ ദിവസം ഷഷ്ടി പൂജ, ക്ഷേത്രാലങ്കാരം, ചെണ്ടമേളം തുടങ്ങിയവ ഭഗവാന് നേർച്ചയായി സമർപ്പിക്കുവാൻ ആഗ്രഹിക്കുന്ന ഭക്തജനങ്ങൾ എത്രയും വേഗം ദേവസ്വം ഓഫീസുമായോ 9072722205 എന്ന നമ്പരിലോ ബന്ധപ്പെടുക."
                     },
                     vishu: {
                         name: "വിഷു",

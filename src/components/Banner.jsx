@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Clock, MapPin, Sparkles, Calendar, ArrowRight, Sun, Flame } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Clock, MapPin, Sparkles, Calendar, ArrowRight, Sun, Flame, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 // eslint-disable-next-line no-unused-vars
@@ -76,6 +76,19 @@ const Banner = () => {
     const isML = i18n.language === 'ml';
 
     const slides = [
+        {
+            url: '/images/festivals/skanda_sashti.jpg',
+            tag: isML ? '✦ അടുത്ത പ്രധാന ഉത്സവം — 2026 നവംബർ 15 (1202 തുലാം 29)' : '✦ Next Major Festival — 15 November 2026 (1202 Thulam 29)',
+            title: isML ? 'സ്കന്ദഷഷ്ടി' : 'Grand Skanda Shashti',
+            highlight: isML ? 'മഹോത്സവം 2026' : 'Mahotsavam 2026',
+            desc: isML 
+                ? 'ഷഷ്ടി പൂജ, ക്ഷേത്രാലങ്കാരം, ചെണ്ടമേളം തുടങ്ങിയവ ഭഗവാന് നേർച്ചയായി സമർപ്പിക്കാം. ദേവസ്വം ഓഫീസ്: 9072722205.' 
+                : 'Devotees are invited to offer Shashti Pooja, Kshethralankaram (Floral & Illumination Decor), and Chenda Melam. Contact Devaswom: 9072722205.',
+            isFestivalSlide: true,
+            actionLink: '/festivals',
+            actionText: isML ? 'ഉത്സവ വിവരങ്ങൾ കാണുക' : 'View Festival Details',
+            phoneText: isML ? 'നേർച്ചയ്ക്ക് വിളിക്കുക: 9072722205' : 'Call Devaswom: 9072722205'
+        },
         {
             url: '/images/banners/banner1.jpg',
             tag: isML ? 'കരുനാഗപ്പള്ളിയിലെ പുണ്യ സങ്കേതം' : 'Divine Abode in Karunagappally, Kerala',
@@ -208,18 +221,42 @@ const Banner = () => {
 
                         {/* Action Buttons */}
                         <div className="hero-cta-group">
-                            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.98 }}>
-                                <Link to="/offerings" className="hero-btn-primary">
-                                    <span>{isML ? 'പൂജ ബുക്ക് ചെയ്യുക' : 'Book Pooja'}</span>
-                                    <ArrowRight size={17} />
-                                </Link>
-                            </motion.div>
+                            {slides[currentIndex].isFestivalSlide ? (
+                                <>
+                                    <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.98 }}>
+                                        <Link to={slides[currentIndex].actionLink} className="hero-btn-primary">
+                                            <span>{slides[currentIndex].actionText}</span>
+                                            <ArrowRight size={17} />
+                                        </Link>
+                                    </motion.div>
 
-                            <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.98 }}>
-                                <Link to="/about" className="hero-btn-glass">
-                                    <span>{isML ? 'ക്ഷേത്ര ചരിത്രം അറിയാം' : 'Explore History'}</span>
-                                </Link>
-                            </motion.div>
+                                    <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.98 }}>
+                                        <a 
+                                            href="tel:+919072722205" 
+                                            className="hero-btn-glass"
+                                            style={{ borderColor: 'rgba(252, 211, 77, 0.6)', color: '#FCD34D' }}
+                                        >
+                                            <Phone size={15} />
+                                            <span>{slides[currentIndex].phoneText}</span>
+                                        </a>
+                                    </motion.div>
+                                </>
+                            ) : (
+                                <>
+                                    <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.98 }}>
+                                        <Link to="/offerings" className="hero-btn-primary">
+                                            <span>{isML ? 'പൂജ ബുക്ക് ചെയ്യുക' : 'Book Pooja'}</span>
+                                            <ArrowRight size={17} />
+                                        </Link>
+                                    </motion.div>
+
+                                    <motion.div whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.98 }}>
+                                        <Link to="/about" className="hero-btn-glass">
+                                            <span>{isML ? 'ക്ഷേത്ര ചരിത്രം അറിയാം' : 'Explore History'}</span>
+                                        </Link>
+                                    </motion.div>
+                                </>
+                            )}
                         </div>
                     </div>
 

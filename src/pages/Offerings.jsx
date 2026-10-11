@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Sparkles, Heart, CreditCard, Clock, Info, ChevronRight, Tag, Flame, CheckCircle, CheckCircle2, X, MessageCircle, Calendar, User, Star, AlertCircle, Printer, ExternalLink } from 'lucide-react';
+import { Sparkles, Heart, CreditCard, Clock, Info, ChevronRight, Tag, Flame, CheckCircle, CheckCircle2, X, MessageCircle, Calendar, User, Star, AlertCircle, Printer, ExternalLink, Phone } from 'lucide-react';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import SEO from '../components/SEO';
@@ -1384,6 +1384,96 @@ Please confirm my booking. Thank you!`;
 
             {/* ---- NAKSHATRA (STAR) VAZHIPADU RECOMMENDER ---- */}
             <NakshatraRecommender onSelectOffering={handleSelectFromNakshatra} />
+
+            {/* ---- UPCOMING FESTIVAL VAZHIPADU DEDICATION BANNER ---- */}
+            <section className="festival-vazhipadu-highlight-section" style={{ padding: '0 0 1.5rem', background: '#FAF8F5' }}>
+                <div className="container">
+                    <div style={{
+                        background: 'linear-gradient(135deg, #1C1917 0%, #16120F 100%)',
+                        border: '1.5px solid rgba(217, 119, 6, 0.45)',
+                        borderRadius: '20px',
+                        padding: '1.5rem 1.8rem',
+                        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.25)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        gap: '20px',
+                        flexWrap: 'wrap'
+                    }}>
+                        <div style={{ flex: '1 1 500px' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                                <span style={{
+                                    background: 'linear-gradient(135deg, #FCD34D, #F59E0B)',
+                                    color: '#0C0A09',
+                                    fontSize: '0.74rem',
+                                    fontWeight: '800',
+                                    padding: '3px 10px',
+                                    borderRadius: '20px',
+                                    textTransform: 'uppercase'
+                                }}>
+                                    {isML ? 'പ്രത്യേക നേർച്ച ക്ഷണം' : 'Special Festival Offering'}
+                                </span>
+                                <span style={{ color: '#FDE68A', fontSize: '0.78rem', fontWeight: '700' }}>
+                                    {isML ? '2026 നവംബർ 15 (1202 തുലാം 29)' : '15 November 2026 (1202 Thulam 29)'}
+                                </span>
+                            </div>
+                            <h3 style={{
+                                color: '#FFFFFF',
+                                fontSize: '1.3rem',
+                                fontWeight: '800',
+                                margin: '0 0 6px',
+                                fontFamily: "'Cinzel', 'Noto Sans Malayalam', serif"
+                            }}>
+                                {isML ? 'സ്കന്ദഷഷ്ടി മഹോത്സവം — നേർച്ച സമർപ്പണങ്ങൾ' : 'Skanda Shashti Mahotsavam — Offerings Dedication'}
+                            </h3>
+                            <p style={{ color: 'rgba(255, 255, 255, 0.88)', fontSize: '0.88rem', margin: 0, lineHeight: 1.6 }}>
+                                {isML 
+                                    ? 'അന്നേ ദിവസം ഷഷ്ടി പൂജ, ക്ഷേത്രാലങ്കാരം, ചെണ്ടമേളം തുടങ്ങിയവ ഭഗവാന് നേർച്ചയായി സമർപ്പിക്കുവാൻ ആഗ്രഹിക്കുന്ന ഭക്തജനങ്ങൾ എത്രയും വേഗം ദേവസ്വം ഓഫീസുമായോ (9072722205) ബന്ധപ്പെടുക.'
+                                    : 'Devotees wishing to dedicate Shashti Pooja, Kshethralankaram (Floral & Illumination Decor), Chenda Melam, etc. are requested to contact Devaswom: 9072722205.'}
+                            </p>
+                        </div>
+                        <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
+                            <a 
+                                href="tel:+919072722205"
+                                style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '6px',
+                                    background: 'linear-gradient(135deg, #10B981, #059669)',
+                                    color: '#FFFFFF',
+                                    padding: '9px 18px',
+                                    borderRadius: '50px',
+                                    fontWeight: '800',
+                                    fontSize: '0.84rem',
+                                    textDecoration: 'none'
+                                }}
+                            >
+                                <Phone size={15} />
+                                <span>{isML ? 'വിളിക്കുക: 9072722205' : 'Call 9072722205'}</span>
+                            </a>
+                            <Link 
+                                to="/festivals"
+                                style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '6px',
+                                    background: 'rgba(255, 255, 255, 0.1)',
+                                    border: '1px solid rgba(252, 211, 77, 0.4)',
+                                    color: '#FDE68A',
+                                    padding: '9px 16px',
+                                    borderRadius: '50px',
+                                    fontWeight: '700',
+                                    fontSize: '0.84rem',
+                                    textDecoration: 'none'
+                                }}
+                            >
+                                <span>{isML ? 'വിവരങ്ങൾ' : 'Details'}</span>
+                                <ChevronRight size={14} />
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* ---- FILTER BAR & OFFERINGS GRID ---- */}
             <section className="offerings-container section-padding">

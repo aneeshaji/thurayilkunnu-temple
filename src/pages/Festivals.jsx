@@ -67,13 +67,16 @@ const Festivals = () => {
         },
         {
             id: 4,
-            name: t('festivals_page.list.skanda.name'),
-            date: t('festivals_page.list.skanda.date'),
-            tag: isML ? '✦ 2026 ലെ പ്രധാന ഉത്സവം — ശൂരസംഹാരവും വ്രതാനുഷ്ഠാനങ്ങളും' : '✦ Major Festival 2026 — Soorasamharam & Vratams',
-            description: t('festivals_page.list.skanda.desc'),
-            image: '/images/gallery/pooja_ritual_1.jpg',
+            name: isML ? 'സ്കന്ദഷഷ്ടി മഹോത്സവം' : 'Skanda Shashti Mahotsavam',
+            date: isML ? '2026 നവംബർ 15 ഞായറാഴ്ച (1202 തുലാം 29)' : '15 November 2026, Sunday (1202 Thulam 29)',
+            tag: isML ? '✦ 2026 ലെ അടുത്ത പ്രധാന ഉത്സവം — നവംബർ 15' : '✦ Next Major Festival 2026 — 15 November',
+            description: isML 
+                ? 'തുറയിൽക്കുന്ന് ക്ഷേത്രത്തിലെ 2026 ലെ പ്രധാന ഉത്സവം. അന്നേ ദിവസം ഷഷ്ടി പൂജ, ക്ഷേത്രാലങ്കാരം, ചെണ്ടമേളം തുടങ്ങിയവ ഭഗവാന് നേർച്ചയായി സമർപ്പിക്കാം. ദേവസ്വം ഓഫീസ്: 9072722205.'
+                : 'Major temple festival of 2026 at Thurayilkunnu. Devotees are invited to sponsor Shashti Pooja, Temple Illumination & Floral Decoration, and Chenda Melam. Office: 9072722205.',
+            image: '/images/festivals/skanda_sashti_2026_poster.jpg',
             icon: <Sparkles size={24} />,
-            highlights: isML ? ['ശൂരസംഹാരം', 'സുബ്രഹ്മണ്യ പൂജ', 'ഷഷ്ഠി വ്രതം'] : ['Soorasamharam Ritual', 'Special Subrahmanya Pooja', 'Fasting & Vows']
+            highlights: isML ? ['ഷഷ്ടി പൂജ', 'ക്ഷേത്രാലങ്കാരം', 'ചെണ്ടമേളം സമർപ്പണം', 'വ്രതാനുഷ്ഠാനങ്ങൾ'] : ['Shashti Pooja', 'Temple Decoration', 'Chenda Melam', 'Fasting & Vows'],
+            posterImage: '/images/festivals/skanda_sashti_2026_poster.jpg'
         },
         {
             id: 5,
@@ -170,6 +173,92 @@ const Festivals = () => {
                 </div>
             </section>
 
+            {/* ---- 2026 NEXT MAJOR FESTIVAL SPOTLIGHT (SKANDA SHASHTI MAHOTSAVAM) ---- */}
+            <section className="mahotsavam-spotlight-section">
+                <div className="container">
+                    <motion.div 
+                        className="mahotsavam-spotlight-card"
+                        {...inViewProps()}
+                        variants={cardVariant}
+                    >
+                        <div className="spotlight-top-badge-row">
+                            <span className="spotlight-gold-badge">
+                                <Sparkles size={14} />
+                                <span>{isML ? '2026 ലെ അടുത്ത മഹാ ഉത്സവം' : 'Next Major Festival 2026'}</span>
+                            </span>
+                            <span className="spotlight-dates-badge">
+                                <Calendar size={14} />
+                                <span>{isML ? '2026 നവംബർ 15 ഞായറാഴ്ച (1202 തുലാം 29)' : '15 November 2026, Sunday (1202 Thulam 29)'}</span>
+                            </span>
+                        </div>
+
+                        <div className="spotlight-grid">
+                            <div className="spotlight-info-col">
+                                <span className="spotlight-subtitle">
+                                    {isML ? 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം തുറയിൽകുന്ന്' : 'Thurayilkunnu Sree Subrahmanya Swami Temple'}
+                                </span>
+                                <h2 className="spotlight-title">
+                                    {isML ? 'സ്കന്ദഷഷ്ടി മഹോത്സവം' : 'Skanda Shashti Mahotsavam'}
+                                </h2>
+                                <p className="spotlight-address">
+                                    {isML ? 'കരുനാഗപ്പള്ളി, കൊല്ലം • ക്ഷേത്ര ഓഫീസ്: 9072722205' : 'Karunagappally, Kollam • Temple Office: 9072722205'}
+                                </p>
+
+                                <div className="pongala-highlight-box" style={{ background: 'linear-gradient(135deg, rgba(217, 119, 6, 0.28) 0%, rgba(180, 83, 9, 0.16) 100%)', borderColor: '#FCD34D' }}>
+                                    <div className="pongala-badge" style={{ background: '#D97706' }}>
+                                        <Flame size={13} />
+                                        <span>{isML ? 'വിശേഷാൽ നേർച്ച സമർപ്പണങ്ങൾ' : 'Special Offerings Dedication'}</span>
+                                    </div>
+                                    <p style={{ color: '#FFFFFF', margin: '10px 0 0', lineHeight: 1.65, fontSize: '0.92rem' }}>
+                                        {isML 
+                                            ? 'അന്നേ ദിവസം ഷഷ്ടി പൂജ, ക്ഷേത്രാലങ്കാരം, ചെണ്ടമേളം തുടങ്ങിയവ ഭഗവാന് നേർച്ചയായി സമർപ്പിക്കുവാൻ ആഗ്രഹിക്കുന്ന ഭക്തജനങ്ങൾ എത്രയും വേഗം ദേവസ്വം ഓഫീസുമായോ താഴെക്കാണുന്ന നമ്പരിലോ ബന്ധപ്പെടുക.'
+                                            : 'Devotees wishing to offer Shashti Pooja, Kshethralankaram (Temple Floral & Illumination Decor), Chenda Melam, etc. are requested to contact the Devaswom Office immediately.'}
+                                    </p>
+                                </div>
+
+                                <div className="spotlight-actions">
+                                    <a href="tel:+919072722205" className="spotlight-action-btn primary">
+                                        <Phone size={15} />
+                                        <span>{isML ? 'വിളിക്കുക: 9072722205' : 'Call Devaswom: 9072722205'}</span>
+                                    </a>
+                                    <button 
+                                        type="button" 
+                                        className="spotlight-action-btn secondary"
+                                        onClick={() => setActivePosterModal('/images/festivals/skanda_sashti_2026_poster.jpg')}
+                                    >
+                                        <Eye size={15} />
+                                        <span>{isML ? 'ഔദ്യോഗിക നോട്ടീസ് കാണുക' : 'View Official Circular'}</span>
+                                    </button>
+                                    <Link to="/offerings" className="spotlight-action-btn gold-link">
+                                        <Heart size={15} />
+                                        <span>{isML ? 'വഴിപാടുകൾ' : 'Offerings'}</span>
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div 
+                                className="spotlight-poster-frame" 
+                                onClick={() => setActivePosterModal('/images/festivals/skanda_sashti_2026_poster.jpg')}
+                                role="button"
+                                tabIndex={0}
+                                title={isML ? 'പോസ്റ്റർ വലുതാക്കി കാണാൻ ക്ലിക്ക് ചെയ്യുക' : 'Click to view full poster'}
+                            >
+                                <img 
+                                    src="/images/festivals/skanda_sashti_2026_poster.jpg" 
+                                    alt="Skanda Shashti Mahotsavam Poster" 
+                                    className="spotlight-poster-img" 
+                                    style={{ width: '100%', height: 'auto', maxHeight: '480px', objectFit: 'cover' }}
+                                />
+                                <div className="spotlight-zoom-hint">
+                                    <Eye size={13} />
+                                    <span>{isML ? 'പോസ്റ്റർ വലുതാക്കി കാണുക' : 'Click to View Full Poster'}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+
             {/* ---- OTHER FESTIVALS TIMELINE/GRID ---- */}
             <section className="festivals-container section-padding">
                 <div className="container">
@@ -222,7 +311,18 @@ const Festivals = () => {
                                         ))}
                                     </div>
 
-                                    <div className="card-footer">
+                                    <div className="card-footer" style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+                                        {festival.posterImage && (
+                                            <button 
+                                                type="button" 
+                                                className="learn-more"
+                                                onClick={() => setActivePosterModal(festival.posterImage)}
+                                                style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+                                            >
+                                                <Eye size={15} />
+                                                <span>{isML ? 'അറിയിപ്പ് കാണുക' : 'View Circular'}</span>
+                                            </button>
+                                        )}
                                         <Link to="/offerings" className="learn-more">
                                             <span>{isML ? 'വിശേഷാൽ വഴിപാടുകൾ' : 'Special Offerings'}</span>
                                             <ChevronRight size={16} />
@@ -346,10 +446,10 @@ const Festivals = () => {
                             <div className="poster-modal-header">
                                 <div>
                                     <h3 className="poster-modal-title">
-                                        {isML ? 'ഉത്രട്ടാതി മഹോത്സവം 2026 — ഔദ്യോഗിക അറിയിപ്പ്' : 'Uthrattathi Mahotsavam 2026 — Official Circular'}
+                                        {isML ? 'സ്കന്ദഷഷ്ടി മഹോത്സവം 2026 — ഔദ്യോഗിക അറിയിപ്പ്' : 'Skanda Shashti Mahotsavam 2026 — Official Circular'}
                                     </h3>
                                     <p className="poster-modal-sub">
-                                        {isML ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം' : 'Thurayilkunnu Sree Subrahmanya Swami Temple'}
+                                        {isML ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം • 2026 നവംബർ 15 (1202 തുലാം 29)' : 'Thurayilkunnu Sree Subrahmanya Swami Temple • 15 Nov 2026'}
                                     </p>
                                 </div>
                                 <button 

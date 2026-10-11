@@ -9,22 +9,24 @@ import '../styles/NoticeBoard.css';
 const TEMPLE_NOTICES = [
     {
         id: 'skanda-sasthi-2026',
-        tag_en: 'Major Festival',
-        tag_ml: 'പ്രധാന ഉത്സവം',
+        tag_en: 'Next Major Festival',
+        tag_ml: 'അടുത്ത പ്രധാന ഉത്സവം',
         tagType: 'gold',
         urgent: true,
         timings: true,
-        date_en: '15 November 2026 (Sunday)',
-        date_ml: '2026 നവംബർ 15 (ഞായർ)',
-        title_en: 'Skanda Sasthi',
-        title_ml: 'സ്കന്ദ ഷഷ്ഠി',
-        desc_en: 'The most auspicious Shasti day of 2026. Devotees are invited for Subrahmanya Sashti pooja, Soorasamharam, fasting and vratams. Special arrangements will be announced by the temple office.',
-        desc_ml: '2026 ലെ ഏറ്റവും ശുഭമായ ശഷ്ഠി ദിവസം. ഭക്തർക്കായി സുബ്രഹ്മണ്യ ഷഷ്ഠി പൂജ, ശൂരസംഹാരം, ഉപവാസവും വ്രതങ്ങളും നടത്തുന്നു. പ്രത്യേക സാഹചര്യങ്ങൾ ക്ഷേത്ര ഓഫീസ് അറിയിച്ചു നൽകും.',
-        timings_en: 'Pooja and Soorasamharam timings will be announced by the temple office.',
-        timings_ml: 'പൂജയും ശൂരസംഹാരവും സമയങ്ങൾ ക്ഷേത്ര ഓഫീസ് അറിയിച്ചു നൽകും.',
+        date_en: '15 November 2026, Sunday (1202 Thulam 29)',
+        date_ml: '2026 നവംബർ 15 ഞായറാഴ്ച (1202 തുലാം 29)',
+        title_en: 'Skanda Shashti Mahotsavam',
+        title_ml: 'സ്കന്ദഷഷ്ടി മഹോത്സവം',
+        desc_en: 'Devotees wishing to offer Shashti Pooja, Temple Decoration (Kshethralankaram), Chenda Melam, etc. as sacred offerings are requested to contact the Devaswom Office immediately at 9072722205.',
+        desc_ml: 'അന്നേ ദിവസം ഷഷ്ടി പൂജ, ക്ഷേത്രാലങ്കാരം, ചെണ്ടമേളം തുടങ്ങിയവ ഭഗവാന് നേർച്ചയായി സമർപ്പിക്കുവാൻ ആഗ്രഹിക്കുന്ന ഭക്തജനങ്ങൾ എത്രയും വേഗം ദേവസ്വം ഓഫീസുമായോ 9072722205 എന്ന നമ്പരിലോ ബന്ധപ്പെടുക.',
+        timings_en: 'Special Shashti Pooja, Chenda Melam & Kshethralankaram throughout the auspicious day.',
+        timings_ml: 'വിശേഷാൽ ഷഷ്ടി പൂജ, ചെണ്ടമേളം, ക്ഷേത്രാലങ്കാരം എന്നിവ അന്നേ ദിവസം ഭക്തിപൂർവ്വം നടക്കുന്നു.',
+        posterImage: '/images/festivals/skanda_sashti_2026_poster.jpg',
+        helpline: '9072722205',
         actionLink: '/festivals',
-        actionText_en: 'View Shasti Days',
-        actionText_ml: 'ശഷ്ഠി ദിവസങ്ങൾ കാണുക'
+        actionText_en: 'View Festival Details',
+        actionText_ml: 'ഉത്സവ വിവരങ്ങൾ കാണുക'
     }
 ];
 
