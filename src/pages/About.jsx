@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
@@ -181,7 +181,7 @@ const About = () => {
     const historyImages = [
         {
             src: '/images/gallery/temple_night_dwajam.jpg',
-            captionEn: 'The Sacred Kodimaram (Flagstaff) Illuminated at Night',
+            captionEn: 'Lord Subrahmanya Swami – Sanctum Darshan with Sacred Vel & Mayil',
             captionMl: 'ദീപം തെളിഞ്ഞ രാവിലെ ക്ഷേത്ര സന്നിധിയും പ്രകാശമാനമായ കൊടിമരവും'
         },
         {
