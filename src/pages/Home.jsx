@@ -334,77 +334,112 @@ const Home = () => {
                 variants={fadeInUp}
             >
                 <div className="sanctuary-container">
-                    <div className="event-spotlight-card">
-                        <div className="spotlight-top-badge-row">
-                            <span className="spotlight-gold-badge">
-                                <Sparkles size={14} />
-                                <span>{isML ? 'അടുത്ത മഹാ ഉത്സവം' : 'Next Major Festival'}</span>
-                            </span>
-                            <span className="spotlight-dates-badge">
-                                <Calendar size={14} />
-                                <span>{isML ? '2026 നവംബർ 15 ഞായറാഴ്ച (1202 തുലാം 29)' : '15 November 2026, Sunday (1202 Thulam 29)'}</span>
-                            </span>
+                    <div className="event-proclamation-card">
+                        {/* Top Ornamental Header Band */}
+                        <div className="proclamation-header-band">
+                            <div className="proclamation-eyebrow">
+                                <span className="proclamation-gold-sparkle">✦</span>
+                                <span className="proclamation-eyebrow-text">
+                                    {isML ? 'അടുത്ത പ്രധാന ഉത്സവം • 1202 തുലാം 29' : 'Next Major Festival • 1202 Thulam 29'}
+                                </span>
+                                <span className="proclamation-gold-sparkle">✦</span>
+                            </div>
+                            <div className="proclamation-date-chip">
+                                <Calendar size={14} className="proclamation-cal-icon" />
+                                <span>{isML ? '2026 നവംബർ 15 ഞായറാഴ്ച' : 'Sunday, 15 November 2026'}</span>
+                            </div>
                         </div>
 
-                        <div className="spotlight-grid">
-                            <div className="spotlight-info-col">
-                                <span className="spotlight-subtitle">
-                                    {isML ? 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം തുറയിൽകുന്ന്' : 'Thurayilkunnu Sree Subrahmanya Swami Temple'}
+                        <div className="proclamation-main-grid">
+                            {/* Left Side: Devotional Details */}
+                            <div className="proclamation-copy-col">
+                                <span className="proclamation-temple-name">
+                                    {isML ? 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം തുറയിൽക്കുന്ന്' : 'Thurayilkunnu Sree Subrahmanya Swami Temple'}
                                 </span>
-                                <h2 className="spotlight-title">
-                                    {isML ? 'സ്കന്ദഷഷ്ടി മഹോത്സവം 2026' : 'Skanda Shashti Mahotsavam 2026'}
+                                <h2 className="proclamation-title">
+                                    {isML ? 'സ്കന്ദഷഷ്ടി മഹോത്സവം' : 'Skanda Shashti Mahotsavam'}
+                                    <span className="proclamation-year-accent"> 2026</span>
                                 </h2>
-                                <p className="spotlight-lead">
+                                <p className="proclamation-lead">
                                     {isML 
                                         ? 'അന്നേ ദിവസം ഷഷ്ടി പൂജ, ക്ഷേത്രാലങ്കാരം, ചെണ്ടമേളം തുടങ്ങിയവ ഭഗവാന് നേർച്ചയായി സമർപ്പിക്കുവാൻ ആഗ്രഹിക്കുന്ന ഭക്തജനങ്ങൾ എത്രയും വേഗം ദേവസ്വം ഓഫീസുമായോ താഴെക്കാണുന്ന നമ്പരിലോ ബന്ധപ്പെടുക.'
-                                        : 'Devotees wishing to dedicate Shashti Pooja, Temple Decoration (Kshethralankaram), Chenda Melam, etc. as sacred offerings are requested to contact the Devaswom Office immediately.'}
+                                        : 'Devotees wishing to dedicate sacred Shashti Pooja, Temple Illumination & Floral Decoration (Kshethralankaram), and Chenda Melam to the Lord are cordially invited to contact the Devaswom Office.'}
                                 </p>
 
-                                <div className="spotlight-offerings-pills">
-                                    <span className="offering-chip">✦ {isML ? 'ഷഷ്ടി പൂജ' : 'Shashti Pooja'}</span>
-                                    <span className="offering-chip">✦ {isML ? 'ക്ഷേത്രാലങ്കാരം' : 'Kshethralankaram'}</span>
-                                    <span className="offering-chip">✦ {isML ? 'ചെണ്ടമേളം സമർപ്പണം' : 'Chenda Melam'}</span>
-                                    <span className="offering-chip">✦ {isML ? 'ഉപവാസ വ്രതങ്ങൾ' : 'Shashti Vratams'}</span>
+                                {/* Sacred Dedications 4-Box Grid */}
+                                <div className="proclamation-dedications-grid">
+                                    <div className="dedication-tile">
+                                        <span className="dedication-symbol">🪔</span>
+                                        <div className="dedication-text">
+                                            <strong>{isML ? 'ഷഷ്ടി പൂജ' : 'Shashti Pooja'}</strong>
+                                            <span>{isML ? 'വിശേഷാൽ അർച്ചന' : 'Sacred Archana'}</span>
+                                        </div>
+                                    </div>
+                                    <div className="dedication-tile">
+                                        <span className="dedication-symbol">🌺</span>
+                                        <div className="dedication-text">
+                                            <strong>{isML ? 'ക്ഷേത്രാലങ്കാരം' : 'Kshethralankaram'}</strong>
+                                            <span>{isML ? 'ദീപ-പുഷ്പാലങ്കാരം' : 'Illumination & Florals'}</span>
+                                        </div>
+                                    </div>
+                                    <div className="dedication-tile">
+                                        <span className="dedication-symbol">🥁</span>
+                                        <div className="dedication-text">
+                                            <strong>{isML ? 'ചെണ്ടമേളം' : 'Chenda Melam'}</strong>
+                                            <span>{isML ? 'മേള സമർപ്പണം' : 'Traditional Ensemble'}</span>
+                                        </div>
+                                    </div>
+                                    <div className="dedication-tile">
+                                        <span className="dedication-symbol">🕉️</span>
+                                        <div className="dedication-text">
+                                            <strong>{isML ? 'വ്രതാനുഷ്ഠാനം' : 'Shashti Vratam'}</strong>
+                                            <span>{isML ? 'ഉപവാസ പ്രാർത്ഥന' : 'Devotional Fasting'}</span>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div className="spotlight-actions-row">
-                                    <a href="tel:+919072722205" className="spotlight-btn-call">
-                                        <Phone size={16} />
-                                        <span>{isML ? 'വിളിക്കുക: 9072722205' : 'Call 9072722205'}</span>
+                                {/* Action Buttons Row */}
+                                <div className="proclamation-actions-group">
+                                    <a href="tel:+919072722205" className="proclamation-call-btn">
+                                        <Phone size={15} />
+                                        <span>{isML ? 'വിളിക്കുക: 9072722205' : 'Call: 90727 22205'}</span>
                                     </a>
 
                                     <button 
                                         type="button" 
-                                        className="spotlight-btn-circular"
+                                        className="proclamation-circular-btn"
                                         onClick={() => setActivePosterModal('/images/festivals/skanda_sashti_2026_poster.jpg')}
                                     >
-                                        <Eye size={16} />
-                                        <span>{isML ? 'ഔദ്യോഗിക നോട്ടീസ് കാണുക' : 'View Official Circular'}</span>
+                                        <Eye size={15} />
+                                        <span>{isML ? 'പൂർണ്ണ അറിയിപ്പ് കാണുക' : 'View Full Poster'}</span>
                                     </button>
 
-                                    <Link to="/festivals" className="spotlight-btn-link">
-                                        <span>{isML ? 'എല്ലാ ഉത്സവങ്ങളും' : 'All Festivals'}</span>
-                                        <ChevronRight size={15} />
+                                    <Link to="/festivals" className="proclamation-calendar-link">
+                                        <span>{isML ? 'ഉത്സവ കലണ്ടർ' : 'Festival Calendar'}</span>
+                                        <ChevronRight size={14} />
                                     </Link>
                                 </div>
                             </div>
 
-                            <div className="spotlight-media-col">
+                            {/* Right Side: Uncropped Framed Poster */}
+                            <div className="proclamation-poster-col">
                                 <div 
-                                    className="spotlight-poster-frame"
+                                    className="proclamation-poster-easel"
                                     onClick={() => setActivePosterModal('/images/festivals/skanda_sashti_2026_poster.jpg')}
                                     role="button"
                                     tabIndex={0}
-                                    title={isML ? 'പോസ്റ്റർ വലുതാക്കി കാണാൻ ക്ലിക്ക് ചെയ്യുക' : 'Click to zoom poster'}
+                                    title={isML ? 'പോസ്റ്റർ പൂർണ്ണ രൂപത്തിൽ കാണാൻ ക്ലിക്ക് ചെയ്യുക' : 'Click to view full poster'}
                                 >
-                                    <img 
-                                        src="/images/festivals/skanda_sashti_2026_poster.jpg" 
-                                        alt="Skanda Shashti Mahotsavam 2026 Poster" 
-                                        className="spotlight-poster-img"
-                                    />
-                                    <div className="spotlight-zoom-hint">
-                                        <Eye size={14} />
-                                        <span>{isML ? 'വലുതാക്കി കാണുക' : 'Click to Enlarge'}</span>
+                                    <div className="poster-brass-matting">
+                                        <img 
+                                            src="/images/festivals/skanda_sashti_2026_poster.jpg" 
+                                            alt="Skanda Shashti Mahotsavam 2026 Official Circular" 
+                                            className="proclamation-poster-image"
+                                        />
+                                        <div className="poster-click-lens-badge">
+                                            <Eye size={13} />
+                                            <span>{isML ? 'വലുതാക്കി കാണുക' : 'Click to Enlarge'}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -1276,31 +1276,29 @@
 
 .event-proclamation-card {
     background: 
-        radial-gradient(circle at 12% 18%, rgba(254, 205, 211, 0.55) 0%, transparent 45%), /* Festive Kumkum/Lotus Pink */
-        radial-gradient(circle at 88% 12%, rgba(254, 240, 138, 0.65) 0%, transparent 45%), /* Radiant Saffron Sunshine */
-        radial-gradient(circle at 55% 92%, rgba(253, 186, 116, 0.48) 0%, transparent 48%), /* Marigold Temple Orange */
-        radial-gradient(circle at 92% 82%, rgba(221, 214, 254, 0.42) 0%, transparent 42%), /* Divine Twilight Violet */
-        linear-gradient(135deg, #FFFDF9 0%, #FFF5EB 35%, #FEF3C7 75%, #FFF1F2 100%);
-    color: #1F1610;
-    border-radius: 28px;
+        radial-gradient(circle at 80% 25%, rgba(217, 119, 6, 0.18) 0%, transparent 55%),
+        radial-gradient(circle at 20% 80%, rgba(180, 83, 9, 0.12) 0%, transparent 50%),
+        linear-gradient(150deg, #1C1612 0%, #120D0A 100%);
+    color: #FFFFFF;
+    border-radius: 26px;
     padding: clamp(1.8rem, 3.5vw, 2.8rem);
-    border: 1.5px solid rgba(245, 158, 11, 0.35);
+    border: 1.5px solid rgba(252, 211, 77, 0.45);
     box-shadow: 
-        0 24px 60px rgba(180, 83, 9, 0.12),
-        0 0 45px rgba(251, 191, 36, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        0 24px 60px rgba(12, 10, 9, 0.45),
+        0 0 35px rgba(217, 119, 6, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
     position: relative;
     overflow: hidden;
 }
 
 .event-proclamation-card::before {
-    content: '?';
+    content: 'ॐ';
     position: absolute;
     top: -2.5rem;
     right: -1rem;
     font-size: 15rem;
     font-family: 'Cinzel', serif;
-    color: rgba(217, 119, 6, 0.06);
+    color: rgba(217, 119, 6, 0.04);
     pointer-events: none;
 }
 
@@ -1313,7 +1311,7 @@
     flex-wrap: wrap;
     margin-bottom: 1.6rem;
     padding-bottom: 1.25rem;
-    border-bottom: 1px solid rgba(217, 119, 6, 0.22);
+    border-bottom: 1px solid rgba(217, 119, 6, 0.25);
 }
 
 .proclamation-eyebrow {
@@ -1325,33 +1323,29 @@
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    color: #C2410C;
-    background: rgba(254, 215, 170, 0.35);
-    padding: 5px 12px;
-    border-radius: 20px;
-    border: 1px solid rgba(249, 115, 22, 0.25);
+    color: #FCD34D;
 }
 
 .proclamation-gold-sparkle {
-    color: #EA580C;
+    color: #F59E0B;
 }
 
 .proclamation-date-chip {
-    background: linear-gradient(135deg, rgba(254, 240, 138, 0.85) 0%, rgba(254, 215, 170, 0.95) 100%);
-    color: #7C2D12;
-    border: 1px solid rgba(217, 119, 6, 0.4);
-    padding: 7px 18px;
+    background: rgba(217, 119, 6, 0.2);
+    color: #FDE68A;
+    border: 1px solid rgba(252, 211, 77, 0.4);
+    padding: 6px 16px;
     border-radius: 30px;
-    font-size: 0.84rem;
-    font-weight: 800;
+    font-size: 0.82rem;
+    font-weight: 700;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 4px 14px rgba(194, 65, 12, 0.12);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .proclamation-cal-icon {
-    color: #C2410C;
+    color: #FCD34D;
 }
 
 /* Main Grid */
@@ -1375,11 +1369,11 @@
 }
 
 .proclamation-temple-name {
-    color: #C2410C;
+    color: #F59E0B;
     font-size: 0.88rem;
-    font-weight: 800;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1.4px;
+    letter-spacing: 1.2px;
     display: block;
     margin-bottom: 0.4rem;
 }
@@ -1387,31 +1381,29 @@
 .proclamation-title {
     font-family: 'Cinzel', 'Noto Sans Malayalam', serif;
     font-size: clamp(2rem, 3.2vw, 2.7rem);
-    font-weight: 900;
+    font-weight: 800;
     line-height: 1.2;
     margin: 0 0 1rem;
-    background: linear-gradient(135deg, #7F1D1D 0%, #991B1B 25%, #C2410C 65%, #B45309 100%);
+    background: linear-gradient(135deg, #FFFFFF 0%, #FEF3C7 50%, #FCD34D 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 0.5px;
-    filter: drop-shadow(0 2px 6px rgba(153, 27, 27, 0.08));
 }
 
 .proclamation-year-accent {
-    color: #EA580C;
+    color: #F59E0B;
     font-family: var(--font-eyebrow, 'Outfit', sans-serif);
-    font-weight: 900;
+    font-weight: 800;
 }
 
 .proclamation-lead {
-    color: #4A3E35;
-    font-size: 0.96rem;
-    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.95rem;
+    line-height: 1.7;
     margin: 0 0 1.5rem;
-    font-weight: 500;
 }
 
-/* Dedications 4-Box Grid with Vibrant Colorful Micro-Accents */
+/* Dedications 4-Box Grid */
 .proclamation-dedications-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1429,26 +1421,22 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    background: rgba(255, 255, 255, 0.82);
-    border: 1.5px solid rgba(245, 158, 11, 0.28);
-    border-radius: 16px;
-    padding: 11px 15px;
-    box-shadow: 0 4px 15px rgba(180, 83, 9, 0.06);
-    backdrop-filter: blur(12px);
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(217, 119, 6, 0.35);
+    border-radius: 14px;
+    padding: 10px 14px;
+    transition: all 0.25s ease;
 }
 
 .dedication-tile:hover {
-    background: #FFFFFF;
-    border-color: #F59E0B;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(217, 119, 6, 0.16);
+    background: rgba(217, 119, 6, 0.15);
+    border-color: rgba(252, 211, 77, 0.6);
+    transform: translateY(-2px);
 }
 
 .dedication-symbol {
-    font-size: 1.45rem;
+    font-size: 1.35rem;
     flex-shrink: 0;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .dedication-text {
@@ -1457,15 +1445,14 @@
 }
 
 .dedication-text strong {
-    font-size: 0.88rem;
-    font-weight: 800;
-    color: #1F1610;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: #FFFFFF;
 }
 
 .dedication-text span {
-    font-size: 0.75rem;
-    color: #C2410C;
-    font-weight: 600;
+    font-size: 0.74rem;
+    color: #FDE68A;
 }
 
 /* Actions Group */
@@ -1480,62 +1467,59 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: linear-gradient(135deg, #F59E0B 0%, #EA580C 100%);
-    color: #FFFFFF;
-    padding: 12px 24px;
+    background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 50%, #D97706 100%);
+    color: #1A120B;
+    padding: 11px 22px;
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 800;
     text-decoration: none;
-    box-shadow: 0 6px 22px rgba(234, 88, 12, 0.35);
+    box-shadow: 0 6px 20px rgba(217, 119, 6, 0.45);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .proclamation-call-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(234, 88, 12, 0.5);
-    color: #FFFFFF;
+    box-shadow: 0 10px 28px rgba(217, 119, 6, 0.6);
+    color: #000000;
 }
 
 .proclamation-circular-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.92);
-    border: 1.5px solid rgba(194, 65, 12, 0.35);
-    color: #9A3412;
-    padding: 11px 22px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(252, 211, 77, 0.5);
+    color: #FDE68A;
+    padding: 10px 20px;
     border-radius: 50px;
-    font-size: 0.86rem;
+    font-size: 0.85rem;
     font-weight: 700;
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(180, 83, 9, 0.08);
     transition: all 0.25s ease;
 }
 
 .proclamation-circular-btn:hover {
-    background: #FFFFFF;
-    border-color: #EA580C;
-    color: #7C2D12;
+    background: rgba(252, 211, 77, 0.18);
+    border-color: #FCD34D;
+    color: #FFFFFF;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(194, 65, 12, 0.15);
 }
 
 .proclamation-calendar-link {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    color: #9A3412;
-    font-size: 0.84rem;
-    font-weight: 700;
+    color: #D1C7B7;
+    font-size: 0.82rem;
+    font-weight: 600;
     text-decoration: none;
     padding: 8px 12px;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .proclamation-calendar-link:hover {
-    color: #EA580C;
-    transform: translateX(3px);
+    color: #FCD34D;
 }
 
 /* Poster Easel & Uncropped Frame */
@@ -1554,13 +1538,13 @@
 }
 
 .poster-brass-matting {
-    background: linear-gradient(145deg, #FFFBEB 0%, #FEF3C7 60%, #FDE68A 100%);
-    border: 2.5px solid #F59E0B;
-    border-radius: 20px;
+    background: #0E0B08;
+    border: 2px solid rgba(252, 211, 77, 0.75);
+    border-radius: 18px;
     box-shadow: 
-        0 20px 48px rgba(180, 83, 9, 0.16), 
-        0 0 35px rgba(251, 191, 36, 0.35);
-    padding: 9px;
+        0 20px 50px rgba(0, 0, 0, 0.75), 
+        0 0 35px rgba(217, 119, 6, 0.25);
+    padding: 8px;
     position: relative;
     overflow: hidden;
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
@@ -1570,9 +1554,9 @@
 .proclamation-poster-easel:hover .poster-brass-matting {
     transform: translateY(-4px) scale(1.015);
     box-shadow: 
-        0 26px 60px rgba(180, 83, 9, 0.24), 
-        0 0 45px rgba(245, 158, 11, 0.45);
-    border-color: #EA580C;
+        0 26px 60px rgba(0, 0, 0, 0.85), 
+        0 0 45px rgba(217, 119, 6, 0.4);
+    border-color: #FCD34D;
 }
 
 .proclamation-poster-image {

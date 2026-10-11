@@ -184,7 +184,7 @@ const Festivals = () => {
                         <div className="spotlight-top-badge-row">
                             <span className="spotlight-gold-badge">
                                 <Sparkles size={14} />
-                                <span>{isML ? '2026 ലെ അടുത്ത മഹാ ഉത്സവം' : 'Next Major Festival 2026'}</span>
+                                <span>{isML ? 'ആഗതമായ മഹോത്സവം — ഇപ്പോൾ രജിസ്റ്റർ ചെയ്യൂ' : 'Upcoming Grand Celebration — Dedicate Now'}</span>
                             </span>
                             <span className="spotlight-dates-badge">
                                 <Calendar size={14} />
@@ -242,12 +242,13 @@ const Festivals = () => {
                                 role="button"
                                 tabIndex={0}
                                 title={isML ? 'പോസ്റ്റർ വലുതാക്കി കാണാൻ ക്ലിക്ക് ചെയ്യുക' : 'Click to view full poster'}
+                                style={{ background: 'linear-gradient(160deg, #FFF8E7 0%, #FDE68A 35%, #F59E0B 70%, #D97706 100%)' }}
                             >
                                 <img 
                                     src="/images/festivals/skanda_sashti_2026_poster.jpg" 
                                     alt="Skanda Shashti Mahotsavam Poster" 
                                     className="spotlight-poster-img" 
-                                    style={{ width: '100%', height: 'auto', maxHeight: '480px', objectFit: 'cover' }}
+                                    style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }}
                                 />
                                 <div className="spotlight-zoom-hint">
                                     <Eye size={13} />

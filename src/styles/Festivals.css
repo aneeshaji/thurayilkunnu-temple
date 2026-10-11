@@ -659,24 +659,23 @@
     border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
-    border: 2px solid rgba(252, 211, 77, 0.65);
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(217, 119, 6, 0.25);
-    transition: transform 0.3s ease;
-    max-height: 480px;
-    background: #000;
+    border: 2px solid rgba(252, 211, 77, 0.75);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 28px rgba(217, 119, 6, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(160deg, #FFF8E7 0%, #FDE68A 35%, #F59E0B 70%, #D97706 100%);
 }
 
 .spotlight-poster-frame:hover {
-    transform: scale(1.02);
+    transform: scale(1.025);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55), 0 0 36px rgba(217, 119, 6, 0.5);
 }
 
 .spotlight-poster-img {
     width: 100%;
     height: auto;
-    max-height: 480px;
-    object-fit: cover;
-    object-position: top;
     display: block;
+    margin: 0 auto;
+    object-fit: cover;
 }
 
 .spotlight-zoom-hint {
