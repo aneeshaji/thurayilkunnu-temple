@@ -42,6 +42,64 @@ export const SOCIAL_LINKS = [
 ];
 
 export const MAPS_URL = 'https://maps.google.com/?q=9.1258969,76.5064915';
+export const SITE_BRAND_NAME = 'Thurayilkunnu Temple';
+
+export const buildWebSiteSchema = () => ({
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    name: SITE_BRAND_NAME,
+    alternateName: [
+        TEMPLE_NAME_EN,
+        'തുറയിൽക്കുന്ന് ക്ഷേത്രം',
+        'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം',
+        'Thurayilkunnu'
+    ],
+    url: `${SITE_URL}/`
+});
+
+export const buildSiteNavigationSchema = (isML = false) => ({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Main Navigation',
+    itemListElement: [
+        {
+            '@type': 'SiteNavigationElement',
+            position: 1,
+            name: isML ? 'ക്ഷേത്ര ചരിത്രം' : 'History & Heritage',
+            description: 'Sacred history and spiritual heritage of the temple',
+            url: `${SITE_URL}/about`
+        },
+        {
+            '@type': 'SiteNavigationElement',
+            position: 2,
+            name: isML ? 'ഉത്സവങ്ങൾ' : 'Festivals',
+            description: 'Thaipusam Mahotsavam and Skanda Shashti celebrations',
+            url: `${SITE_URL}/festivals`
+        },
+        {
+            '@type': 'SiteNavigationElement',
+            position: 3,
+            name: isML ? 'വഴിപാടുകൾ' : 'Offerings & Vazhipadu',
+            description: 'Traditional poojas, archana and vazhipadu booking',
+            url: `${SITE_URL}/offerings`
+        },
+        {
+            '@type': 'SiteNavigationElement',
+            position: 4,
+            name: isML ? 'പ്രതിഷ്ഠകൾ' : 'Deities',
+            description: 'Lord Subrahmanya Swami and Upadevathas',
+            url: `${SITE_URL}/deities`
+        },
+        {
+            '@type': 'SiteNavigationElement',
+            position: 5,
+            name: isML ? 'ദർശന സമയവും വിവരങ്ങളും' : 'Darshan Timings & Contact',
+            description: 'Temple opening hours, location and administration contact',
+            url: `${SITE_URL}/contact`
+        }
+    ]
+});
 
 export const buildTempleSchema = ({ image, description, alternateName } = {}) => ({
     '@context': 'https://schema.org',

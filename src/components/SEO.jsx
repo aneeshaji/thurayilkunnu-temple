@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import { SITE_URL, TEMPLE_NAME_EN, TEMPLE_NAME_ML, buildTempleSchema } from '../constants/site';
+import { SITE_URL, TEMPLE_NAME_EN, TEMPLE_NAME_ML, buildTempleSchema, buildWebSiteSchema, buildSiteNavigationSchema } from '../constants/site';
 
 const SEO = ({
     title,
@@ -21,13 +21,24 @@ const SEO = ({
     const defaultImage = `${SITE_URL}/og-image.jpg?v=5`;
     const defaultKeywords = "Thurayilkunnu Temple, Thurayilkunnu Sree Subrahmanya Swami Temple, Murugan Temple Kerala, Karunagappally Temple, Lord Subrahmanya, Thaipusam Mahotsavam, Skanda Shashti, Kavadiyattam, vazhipadu booking, Kerala Hindu temple, Alumkadavu";
 
-    const finalTitle = title ? `${title} | ${siteName}` : `${siteName} | Karunagappally, Kerala`;
+    const isML = Boolean(i18n.language?.startsWith('ml'));
+    const cleanPath = url === '/' || !url ? '' : (url.startsWith('/') ? url : `/${url}`);
+    const isHomepage = cleanPath === '';
+
+    let finalTitle;
+    if (title) {
+        if (title.includes(siteName) || title.includes(TEMPLE_NAME_ML)) {
+            finalTitle = title;
+        } else {
+            finalTitle = `${title} | ${siteName}`;
+        }
+    } else {
+        finalTitle = isHomepage ? siteName : `${siteName} | Karunagappally`;
+    }
+
     const finalDescription = description || defaultDescription;
     const finalImage = image ? (image.startsWith('http') ? image : `${SITE_URL}${image}`) : defaultImage;
     const finalKeywords = keywords || defaultKeywords;
-
-    const isML = Boolean(i18n.language?.startsWith('ml'));
-    const cleanPath = url === '/' || !url ? '' : (url.startsWith('/') ? url : `/${url}`);
     const baseUrl = `${SITE_URL}${cleanPath}`;
 
     // Standard canonical URL
@@ -39,19 +50,26 @@ const SEO = ({
     // Build schemas collection
     const schemas = [];
 
-    // Main schema (or custom passed schema)
+    // Homepage essential schemas for Google Site Names and Sitelinks
+    if (isHomepage) {
+        schemas.push(buildWebSiteSchema());
+        schemas.push(buildSiteNavigationSchema(isML));
+    }
+
+    // Temple schema
+    schemas.push(buildTempleSchema({
+        image: finalImage,
+        description: finalDescription,
+        alternateName: isML ? TEMPLE_NAME_EN : TEMPLE_NAME_ML
+    }));
+
+    // Additional custom schemas (e.g. Festival Event)
     if (schema) {
         if (Array.isArray(schema)) {
             schemas.push(...schema);
         } else {
             schemas.push(schema);
         }
-    } else {
-        schemas.push(buildTempleSchema({
-            image: finalImage,
-            description: finalDescription,
-            alternateName: isML ? TEMPLE_NAME_EN : TEMPLE_NAME_ML
-        }));
     }
 
     // Breadcrumb schema

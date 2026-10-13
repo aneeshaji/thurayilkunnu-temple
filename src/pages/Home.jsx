@@ -366,7 +366,7 @@ const Home = () => {
     return (
         <div className={`sanctuary-home-page ${isML ? 'lang-ml' : ''}`}>
             <SEO
-                title={isML ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം | കരുനാഗപ്പള്ളി' : 'Thurayilkunnu Sree Subrahmanya Swami Temple | Karunagappally, Kerala'}
+                title={isML ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം' : 'Thurayilkunnu Sree Subrahmanya Swami Temple'}
                 description={isML
                     ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം, കരുനാഗപ്പള്ളി, കൊല്ലം. നിത്യ പൂജകൾ, വഴിപാടുകൾ, സ്കന്ദഷഷ്ടി മഹോത്സവം, തൈപ്പൂയം, പ്രതിഷ്ഠാദിനം, നിത്യ പഞ്ചാംഗം.'
                     : 'Thurayilkunnu Sree Subrahmanya Swami Temple at Karunagappally, Kollam, Kerala — ancient Hindu shrine dedicated to Lord Subrahmanya (Murugan). Daily Panchangam, traditional poojas, Thaipusam & Skanda Shashti Mahotsavam.'}
