@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import { SITE_URL, TEMPLE_NAME_EN, TEMPLE_NAME_ML, buildTempleSchema, buildWebSiteSchema, buildSiteNavigationSchema } from '../constants/site';
+import { SITE_URL, TEMPLE_NAME_EN, TEMPLE_NAME_ML, SITE_BRAND_NAME, buildTempleSchema, buildWebSiteSchema, buildSiteNavigationSchema } from '../constants/site';
 
 const SEO = ({
     title,
@@ -131,7 +131,7 @@ const SEO = ({
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
             <meta property="og:image:alt" content={isML ? TEMPLE_NAME_ML : siteName} />
-            <meta property="og:site_name" content={siteName} />
+            <meta property="og:site_name" content={SITE_BRAND_NAME} />
             <meta property="og:locale" content={isML ? 'ml_IN' : 'en_IN'} />
             <meta property="og:locale:alternate" content={isML ? 'en_IN' : 'ml_IN'} />
             <link rel="image_src" href={finalImage} />

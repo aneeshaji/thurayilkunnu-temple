@@ -202,6 +202,11 @@ const Banner = () => {
                 {/* Main Hero Content Grid */}
                 <div className="hero-container">
                     <div className="hero-content">
+                        {/* Persistent Semantic H1 for Google Search & Site Name recognition */}
+                        <h1 className="sr-only">
+                            {isML ? 'തുറയിൽക്കുന്ന് ക്ഷേത്രം — ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം' : 'Thurayilkunnu Temple — Sree Subrahmanya Swami Temple'}
+                        </h1>
+
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={currentIndex}
@@ -220,10 +225,10 @@ const Banner = () => {
                                 </motion.div>
 
                                 {/* Headline with Royal Cinzel Serif */}
-                                <h1 className="hero-main-title">
+                                <h2 className="hero-main-title">
                                     {slides[currentIndex].title}{' '}
                                     <span className="hero-gold-text">{slides[currentIndex].highlight}</span>
-                                </h1>
+                                </h2>
 
                                 <p className="hero-subtitle">
                                     {slides[currentIndex].desc}

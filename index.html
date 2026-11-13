@@ -31,7 +31,7 @@
     <meta name="msapplication-TileColor" content="#1C1917" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="Thurayilkunnu" />
+    <meta name="apple-mobile-web-app-title" content="Thurayilkunnu Temple" />
 
     <!-- ===================== SEO ===================== -->
     <title>Thurayilkunnu Sree Subrahmanya Swami Temple</title>
@@ -70,23 +70,41 @@
     <meta name="twitter:image" content="https://thurayilkunnutemple.com/og-image.jpg?v=5" />
     <meta name="twitter:image:alt" content="Thurayilkunnu Sree Subrahmanya Swami Temple Sanctum" />
 
-    <!-- ===================== STRUCTURED DATA (Schema.org) ===================== -->
+    <!-- ===================== ACCESSIBILITY / SEO STYLES ===================== -->
+    <style>
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+
+    <!-- ===================== GOOGLE SITE NAME STRUCTURED DATA ===================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Thurayilkunnu Temple",
+      "alternateName": [
+        "Thurayilkunnu Sree Subrahmanya Swami Temple",
+        "തുറയിൽക്കുന്ന് ക്ഷേത്രം",
+        "തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം"
+      ],
+      "url": "https://thurayilkunnutemple.com/"
+    }
+    </script>
+
+    <!-- ===================== TEMPLE & NAVIGATION STRUCTURED DATA ===================== -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://thurayilkunnutemple.com/#website",
-          "name": "Thurayilkunnu Temple",
-          "alternateName": [
-            "Thurayilkunnu Sree Subrahmanya Swami Temple",
-            "തുറയിൽക്കുന്ന് ക്ഷേത്രം",
-            "തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം",
-            "Thurayilkunnu"
-          ],
-          "url": "https://thurayilkunnutemple.com/"
-        },
         {
           "@type": "HinduTemple",
           "@id": "https://thurayilkunnutemple.com/#temple",
@@ -175,7 +193,14 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Crawlable semantic structure for search engines prior to client-side hydration -->
+      <header class="sr-only">
+        <h1>Thurayilkunnu Temple</h1>
+        <h2>Thurayilkunnu Sree Subrahmanya Swami Temple</h2>
+        <p>Ancient seat of divinity at Karunagappally, Kerala. Dedicated to Lord Subrahmanya (Murugan).</p>
+      </header>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
