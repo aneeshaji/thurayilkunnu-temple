@@ -188,9 +188,9 @@ const resources = {
                         desc: "The 10-day grand annual Uthrattathi festival celebrated with Kodiyettu, Thanka Anki & Thanka Vel Ratha Ghoshayathra, Kathakali, Kavadi Abhishekam, Thurayilkunnu Pongala (Feb 19), Pallivetta, Panchavadyam, Pakalkkazhcha, and Arattu."
                     },
                     skanda_purana_yajnam: {
-                        name: "Skanda Purana Yajnam",
-                        date: "December (last week — dates to be confirmed)",
-                        desc: "A sacred Yajnam (fire sacrifice) conducted with the complete recitation of the Skanda Purana, invoking the supreme grace of Lord Subrahmanya for the welfare of all devotees."
+                        name: "4th Skanda Purana Vichara Sathram",
+                        date: "22 – 27 December 2026 (1202 Dhanu 07 – 12)",
+                        desc: "A 6-day auspicious spiritual discourse and recitation of the Skanda Purana with daily sacred Annadanam, invoking the supreme grace of Lord Subrahmanya for the welfare and prosperity of all devotees."
                     },
                     thaipusam: {
                         name: "Thaipusam",
@@ -568,9 +568,9 @@ const resources = {
                         desc: "തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ 10 ദിവസം നീണ്ടുനിൽക്കുന്ന ഉത്രട്ടാതി മഹോത്സവം. തൃക്കൊടിയേറ്റ്, തങ്കഅങ്കി-തങ്കവേൽ രഥഘോഷയാത്രകൾ, കഥകളി, കാവടി അഭിഷേകം, തുറയിൽക്കുന്ന് പൊങ്കാല (ഫെബ്രുവരി 19), പള്ളിവേട്ട, പഞ്ചവാദ്യം, ഗംഭീര പകൽക്കാഴ്ച, തിരുആറാട്ട് എന്നിവയോടെ ഭക്തിസാന്ദ്രമായി കൊണ്ടാടുന്നു."
                     },
                     skanda_purana_yajnam: {
-                        name: "സ്കന്ദ പുരാണ യജ്ഞം",
-                        date: "ഡിസംബർ അവസാന ആഴ്ച (തീയതി സ്ഥിരീകരിക്കാൻ ബാക്കി)",
-                        desc: "സ്കന്ദ പുരാണം പൂർണ്ണമായി പാരായണം ചെയ്ത് നടത്തുന്ന പുണ്യ യജ്ഞം. ഭഗവാൻ സുബ്രഹ്മണ്യ സ്വാമിയുടെ ദിവ്യ അനുഗ്രഹം ഭക്തർക്കും ലോകസമൃദ്ധിക്കും വേണ്ടി ഹോമം ചെയ്ത് ആഘോഷിക്കുന്നു."
+                        name: "നാലാമത് സ്കന്ദപുരാണ വിചാര സത്രം",
+                        date: "2026 ഡിസംബർ 22 മുതൽ 27 വരെ (1202 ധനു 07 - 12)",
+                        desc: "ഭഗവാൻ ശ്രീ സുബ്രഹ്മണ്യസ്വാമിയുടെ ദിവ്യാനുഗ്രഹത്തിനായി 6 ദിവസം നീണ്ടുനിൽക്കുന്ന സ്കന്ദപുരാണ വിചാര സത്രവും പുണ്യ അന്നദാനവും. പ്രഭാത-രാത്രി ഭക്ഷണ സ്പോൺസർഷിപ്പുകൾക്കായി ദേവസ്വം ഓഫീസുമായി ബന്ധപ്പെടുക."
                     },
                     thaipusam: {
                         name: "തൈപ്പൂയം",

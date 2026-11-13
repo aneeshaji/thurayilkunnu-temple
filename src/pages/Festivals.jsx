@@ -50,11 +50,12 @@ const Festivals = () => {
             id: 2,
             name: t('festivals_page.list.skanda_purana_yajnam.name'),
             date: t('festivals_page.list.skanda_purana_yajnam.date'),
-            tag: isML ? 'പുണ്യ പുരാണ പാരായണവും യജ്ഞവും' : 'Sacred Fire Ritual & Purana Parayanam',
+            tag: isML ? '✦ ആഗതമായ അടുത്ത പ്രധാന ഉത്സവം — ഡിസംബർ 22 - 27' : '✦ Next Major Festival — 22 to 27 December',
             description: t('festivals_page.list.skanda_purana_yajnam.desc'),
-            image: '/images/gallery/festival_devotees_1.jpg',
+            image: '/images/festivals/skanda_purana_sathram_2026_poster.jpg',
             icon: <Flame size={24} />,
-            highlights: isML ? ['സ്കന്ദപുരാണ പാരായണം', 'പുണ്യ ഹോമം', 'ഭക്തജന അനുഗ്രഹം'] : ['Skanda Purana Parayanam', 'Sacred Homam', 'Devotee Blessings']
+            highlights: isML ? ['പ്രഭാത-രാത്രി ഭക്ഷണ സ്പോൺസർഷിപ്പ്', 'സ്കന്ദപുരാണ പാരായണം', 'അന്നദാന സാധനങ്ങൾ', 'നിത്യ അന്നദാനം'] : ['Breakfast & Dinner Sponsorship', 'Skanda Purana Recitation', 'Provisions Offering', 'Daily Annadanam'],
+            posterImage: '/images/festivals/skanda_purana_sathram_2026_poster.jpg'
         },
         {
             id: 3,
@@ -129,6 +130,16 @@ const Festivals = () => {
     ];
 
     const festivalSchemas = [
+        buildEventSchema({
+            name: isML ? 'നാലാമത് സ്കന്ദപുരാണ വിചാര സത്രം 2026' : '4th Skanda Purana Vichara Sathram 2026',
+            description: isML
+                ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ നാലാമത് സ്കന്ദപുരാണ വിചാര സത്രം — സ്കന്ദപുരാണ പാരായണം, ആത്മീയ പ്രഭാഷണങ്ങൾ, നിത്യ അന്നദാനം.'
+                : '4th Skanda Purana Vichara Sathram at Thurayilkunnu Sree Subrahmanya Swami Temple — 6-day spiritual discourse, recitation and Annadanam.',
+            startDate: '2026-12-22T06:00:00+05:30',
+            endDate: '2026-12-27T21:00:00+05:30',
+            image: '/images/festivals/skanda_purana_sathram_2026_poster.jpg',
+            url: '/festivals'
+        }),
         buildEventSchema({
             name: isML ? 'സ്കന്ദഷഷ്ടി മഹോത്സവം 2026' : 'Grand Skanda Shashti Mahotsavam 2026',
             description: isML
@@ -205,7 +216,7 @@ const Festivals = () => {
                 </div>
             </section>
 
-            {/* ---- 2026 NEXT MAJOR FESTIVAL SPOTLIGHT (SKANDA SHASHTI MAHOTSAVAM) ---- */}
+            {/* ---- 2026 NEXT MAJOR FESTIVAL SPOTLIGHT (4TH SKANDA PURANA VICHARA SATHRAM) ---- */}
             <section className="mahotsavam-spotlight-section">
                 <div className="container">
                     <motion.div 
@@ -216,35 +227,35 @@ const Festivals = () => {
                         <div className="spotlight-top-badge-row">
                             <span className="spotlight-gold-badge">
                                 <Sparkles size={14} />
-                                <span>{isML ? 'ആഗതമായ മഹോത്സവം — ഇപ്പോൾ രജിസ്റ്റർ ചെയ്യൂ' : 'Upcoming Grand Celebration — Dedicate Now'}</span>
+                                <span>{isML ? 'ആഗതമായ പുണ്യ സത്രം — മുൻകൂട്ടി സമർപ്പിക്കൂ' : 'Upcoming Sacred Sathram — Sponsor & Dedicate'}</span>
                             </span>
                             <span className="spotlight-dates-badge">
                                 <Calendar size={14} />
-                                <span>{isML ? '2026 നവംബർ 15 ഞായറാഴ്ച (1202 തുലാം 29)' : '15 November 2026, Sunday (1202 Thulam 29)'}</span>
+                                <span>{isML ? '2026 ഡിസംബർ 22 മുതൽ 27 വരെ (1202 ധനു 07 - 12)' : '22 – 27 December 2026 (1202 Dhanu 07 – 12)'}</span>
                             </span>
                         </div>
 
                         <div className="spotlight-grid">
                             <div className="spotlight-info-col">
                                 <span className="spotlight-subtitle">
-                                    {isML ? 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം തുറയിൽകുന്ന്' : 'Thurayilkunnu Sree Subrahmanya Swami Temple'}
+                                    {isML ? 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം തുറയിൽക്കുന്ന്' : 'Thurayilkunnu Sree Subrahmanya Swami Temple'}
                                 </span>
                                 <h2 className="spotlight-title">
-                                    {isML ? 'സ്കന്ദഷഷ്ടി മഹോത്സവം' : 'Skanda Shashti Mahotsavam'}
+                                    {isML ? 'നാലാമത് സ്കന്ദപുരാണ വിചാര സത്രം' : '4th Skanda Purana Vichara Sathram'}
                                 </h2>
                                 <p className="spotlight-address">
-                                    {isML ? 'കരുനാഗപ്പള്ളി, കൊല്ലം • ക്ഷേത്ര ഓഫീസ്: 9072722205' : 'Karunagappally, Kollam • Temple Office: 9072722205'}
+                                    {isML ? 'കരുനാഗപ്പള്ളി, കൊല്ലം • ക്ഷേത്ര ദേവസ്വം ഓഫീസ്: 9072722205' : 'Karunagappally, Kollam • Temple Office: 9072722205'}
                                 </p>
 
                                 <div className="pongala-highlight-box" style={{ background: 'linear-gradient(135deg, rgba(217, 119, 6, 0.28) 0%, rgba(180, 83, 9, 0.16) 100%)', borderColor: '#FCD34D' }}>
                                     <div className="pongala-badge" style={{ background: '#D97706' }}>
                                         <Flame size={13} />
-                                        <span>{isML ? 'വിശേഷാൽ നേർച്ച സമർപ്പണങ്ങൾ' : 'Special Offerings Dedication'}</span>
+                                        <span>{isML ? 'ഭക്ഷണ സ്പോൺസർഷിപ്പും ദ്രവ്യ സമർപ്പണങ്ങളും' : 'Food Sponsorship & Sacred Offerings'}</span>
                                     </div>
                                     <p style={{ color: '#FFFFFF', margin: '10px 0 0', lineHeight: 1.65, fontSize: '0.92rem' }}>
                                         {isML 
-                                            ? 'അന്നേ ദിവസം ഷഷ്ടി പൂജ, ക്ഷേത്രാലങ്കാരം, ചെണ്ടമേളം തുടങ്ങിയവ ഭഗവാന് നേർച്ചയായി സമർപ്പിക്കുവാൻ ആഗ്രഹിക്കുന്ന ഭക്തജനങ്ങൾ എത്രയും വേഗം ദേവസ്വം ഓഫീസുമായോ താഴെക്കാണുന്ന നമ്പരിലോ ബന്ധപ്പെടുക.'
-                                            : 'Devotees wishing to offer Shashti Pooja, Kshethralankaram (Temple Floral & Illumination Decor), Chenda Melam, etc. are requested to contact the Devaswom Office immediately.'}
+                                            ? 'നാലാമത് സ്കന്ദപുരാണ വിചാര സത്രത്തോടനുബന്ധിച്ച് പ്രഭാതഭക്ഷണം, രാത്രിഭക്ഷണം എന്നിവ സ്പോൺസർ ചെയ്യുവാൻ ഉദ്ദേശിക്കുന്ന ഭക്തജനങ്ങളും അരി, പച്ചക്കറി, പലവ്യഞ്ജനങ്ങൾ, പൂജാ ദ്രവ്യങ്ങൾ തുടങ്ങിയവ മുൻകൂറായി സമർപ്പിക്കുവാൻ ആഗ്രഹിക്കുന്ന ഭക്തജനങ്ങളും എത്രയും പെട്ടെന്ന് ദേവസ്വം ഓഫീസുമായോ 9072722205 എന്ന നമ്പരിലോ വിവരം അറിയിക്കണമെന്ന് അഭ്യർത്ഥിക്കുന്നു.'
+                                            : 'In connection with the 4th Skanda Purana Vichara Sathram, devotees wishing to sponsor morning breakfast (Prabhatha Bhojanam) or dinner (Rathri Bhojanam), or offer rice, vegetables, groceries, and pooja offerings in advance are cordially requested to contact the Devaswom Office at 9072722205.'}
                                     </p>
                                 </div>
 
@@ -256,7 +267,7 @@ const Festivals = () => {
                                     <button 
                                         type="button" 
                                         className="spotlight-action-btn secondary"
-                                        onClick={() => setActivePosterModal('/images/festivals/skanda_sashti_2026_poster.jpg')}
+                                        onClick={() => setActivePosterModal('/images/festivals/skanda_purana_sathram_2026_poster.jpg')}
                                     >
                                         <Eye size={15} />
                                         <span>{isML ? 'ഔദ്യോഗിക നോട്ടീസ് കാണുക' : 'View Official Circular'}</span>
@@ -270,15 +281,15 @@ const Festivals = () => {
 
                             <div 
                                 className="spotlight-poster-frame" 
-                                onClick={() => setActivePosterModal('/images/festivals/skanda_sashti_2026_poster.jpg')}
+                                onClick={() => setActivePosterModal('/images/festivals/skanda_purana_sathram_2026_poster.jpg')}
                                 role="button"
                                 tabIndex={0}
                                 title={isML ? 'പോസ്റ്റർ വലുതാക്കി കാണാൻ ക്ലിക്ക് ചെയ്യുക' : 'Click to view full poster'}
                                 style={{ background: 'linear-gradient(160deg, #FFF8E7 0%, #FDE68A 35%, #F59E0B 70%, #D97706 100%)' }}
                             >
                                 <img 
-                                    src="/images/festivals/skanda_sashti_2026_poster.jpg" 
-                                    alt="Skanda Shashti Mahotsavam Poster" 
+                                    src="/images/festivals/skanda_purana_sathram_2026_poster.jpg" 
+                                    alt="4th Skanda Purana Vichara Sathram 2026 Official Circular" 
                                     className="spotlight-poster-img" 
                                     style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }}
                                 />

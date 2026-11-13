@@ -54,11 +54,11 @@ const UPCOMING_FESTIVALS = [
         tagMl: 'ദീപോത്സവം'
     },
     { 
-        name: 'Skanda Purana Yajnam', 
-        nameMl: 'സ്കന്ദ പുരാണ യജ്ഞം', 
-        date: new Date('2026-12-28'), 
-        tag: 'Sacred Yajnam',
-        tagMl: 'വിശേഷാൽ പുണ്യ യജ്ഞം'
+        name: '4th Skanda Purana Vichara Sathram', 
+        nameMl: 'നാലാമത് സ്കന്ദപുരാണ വിചാര സത്രം', 
+        date: new Date('2026-12-22T06:00:00+05:30'), 
+        tag: '6-Day Sacred Sathram (1202 Dhanu 07 - 12)',
+        tagMl: '6 ദിവസത്തെ പുണ്യ സത്രം (1202 ധനു 07 - 12)'
     },
     { 
         name: 'Thaipusam Kavadi Mahotsavam', 
@@ -288,12 +288,12 @@ const Home = () => {
 
     const festivals = [
         { 
-            name: isML ? 'സ്കന്ദഷഷ്ടി മഹോത്സവം' : 'Skanda Shashti Mahotsavam', 
-            date: isML ? '2026 നവംബർ 15 (1202 തുലാം 29)' : '15 November 2026 (1202 Thulam 29)', 
+            name: isML ? 'നാലാമത് സ്കന്ദപുരാണ വിചാര സത്രം' : '4th Skanda Purana Vichara Sathram', 
+            date: isML ? '2026 ഡിസംബർ 22 - 27 (1202 ധനു 07 - 12)' : '22 – 27 December 2026 (1202 Dhanu 07 – 12)', 
             desc: isML 
-                ? 'ഷഷ്ടി പൂജ, ക്ഷേത്രാലങ്കാരം, ചെണ്ടമേളം എന്നിവ ഭഗവാന് സമർപ്പിക്കാം. ദേവസ്വം ഓഫീസ്: 9072722205.' 
-                : 'Special Shashti Pooja, Temple Decoration, and Chenda Melam dedication. Office: 9072722205.', 
-            image: '/images/festivals/skanda_sashti_2026_poster.jpg' 
+                ? 'പ്രഭാത-രാത്രി ഭക്ഷണ സ്പോൺസർഷിപ്പ്, അന്നദാന സാധനങ്ങൾ, പൂജാ ദ്രവ്യങ്ങൾ എന്നിവ മുൻകൂറായി സമർപ്പിക്കാം. ദേവസ്വം ഓഫീസ്: 9072722205.' 
+                : 'Sponsorship of morning & dinner Annadanam, rice, vegetables, groceries, and pooja offerings. Office: 9072722205.', 
+            image: '/images/festivals/skanda_purana_sathram_2026_poster.jpg' 
         },
         { 
             name: isML ? 'ഉത്രട്ടാതി തിരുമഹോത്സവം' : 'Annual Uthrattathi Mahotsavam', 
@@ -303,7 +303,14 @@ const Home = () => {
                 : 'Grand 10-day annual temple festival and auspicious Thurayilkunnu Pongala.', 
             image: '/images/festivals/thurayilkunnu_pongala_wide.jpg' 
         },
-        { name: t('festivals_page.list.skanda_purana_yajnam.name'), date: t('festivals_page.list.skanda_purana_yajnam.date'), desc: t('festivals_page.list.skanda_purana_yajnam.desc'), image: '/images/gallery/festival_devotees_1.jpg' },
+        { 
+            name: isML ? 'സ്കന്ദഷഷ്ടി മഹോത്സവം' : 'Skanda Shashti Mahotsavam', 
+            date: isML ? 'തുലാം (നവംബർ)' : 'Thulam (November)', 
+            desc: isML 
+                ? 'ഷഷ്ടി പൂജ, ക്ഷേത്രാലങ്കാരം, ചെണ്ടമേളം എന്നിവ ഭഗവാന് സമർപ്പിക്കുന്ന പുണ്യ ഉത്സവം.' 
+                : 'Special Shashti Pooja, Temple Decoration, and Chenda Melam dedication.', 
+            image: '/images/festivals/skanda_sashti.jpg' 
+        },
         { name: t('festivals_page.list.thaipusam.name'), date: t('festivals_page.list.thaipusam.date'), desc: t('festivals_page.list.thaipusam.desc'), image: '/images/gallery/deity_procession_1.jpg' },
         { name: t('festivals_page.list.thrikarthika.name'), date: t('festivals_page.list.thrikarthika.date'), desc: t('festivals_page.list.thrikarthika.desc'), image: '/images/festivals/thrikarthika.jpg' }
     ];
@@ -353,13 +360,13 @@ const Home = () => {
     ];
 
     const upcomingFestivalEvent = buildEventSchema({
-        name: isML ? 'സ്കന്ദഷഷ്ടി മഹോത്സവം 2026' : 'Skanda Shashti Mahotsavam 2026',
+        name: isML ? 'നാലാമത് സ്കന്ദപുരാണ വിചാര സത്രം 2026' : '4th Skanda Purana Vichara Sathram 2026',
         description: isML 
-            ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ സ്കന്ദഷഷ്ടി മഹോത്സവം — ഷഷ്ടി പൂജ, വിശേഷാൽ അഭിഷേകങ്ങൾ, പുഷ്പാഭിഷേകം, ദീപാരാധന.'
-            : 'Grand Skanda Shashti Mahotsavam at Thurayilkunnu Sree Subrahmanya Swami Temple, Karunagappally — Shashti pooja, sacred abhishekams, and deeparadhana.',
-        startDate: '2026-11-15T05:00:00+05:30',
-        endDate: '2026-11-15T21:00:00+05:30',
-        image: '/images/festivals/skanda_sashti.jpg',
+            ? 'തുറയിൽക്കുന്ന് ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രത്തിലെ നാലാമത് സ്കന്ദപുരാണ വിചാര സത്രം — സ്കന്ദപുരാണ പാരായണം, ആത്മീയ പ്രഭാഷണങ്ങൾ, പ്രഭാത-രാത്രി പുണ്യ അന്നദാനം.'
+            : '4th Skanda Purana Vichara Sathram at Thurayilkunnu Sree Subrahmanya Swami Temple, Karunagappally — sacred Skanda Purana recitation, divine discourses, and morning/night Annadanam.',
+        startDate: '2026-12-22T06:00:00+05:30',
+        endDate: '2026-12-27T21:00:00+05:30',
+        image: '/images/festivals/skanda_purana_sathram_2026_poster.jpg',
         url: '/festivals'
     });
 
@@ -380,7 +387,7 @@ const Home = () => {
             <Banner />
             <FestivalCountdown />
 
-            {/* ---- UPCOMING MAJOR EVENT SPOTLIGHT (SKANDA SHASHTI MAHOTSAVAM) ---- */}
+            {/* ---- UPCOMING MAJOR EVENT SPOTLIGHT (4TH SKANDA PURANA VICHARA SATHRAM) ---- */}
             <motion.section 
                 className="sanctuary-section event-spotlight-section" 
                 {...inViewProps()} 
@@ -393,13 +400,13 @@ const Home = () => {
                             <div className="proclamation-eyebrow">
                                 <span className="proclamation-gold-sparkle">✦</span>
                                 <span className="proclamation-eyebrow-text">
-                                    {isML ? 'അടുത്ത പ്രധാന ഉത്സവം • 1202 തുലാം 29' : 'Next Major Festival • 1202 Thulam 29'}
+                                    {isML ? 'അടുത്ത പ്രധാന ഉത്സവം • 1202 ധനു 07 - 12' : 'Next Major Festival • 1202 Dhanu 07 - 12'}
                                 </span>
                                 <span className="proclamation-gold-sparkle">✦</span>
                             </div>
                             <div className="proclamation-date-chip">
                                 <Calendar size={14} className="proclamation-cal-icon" />
-                                <span>{isML ? '2026 നവംബർ 15 ഞായറാഴ്ച' : 'Sunday, 15 November 2026'}</span>
+                                <span>{isML ? '2026 ഡിസംബർ 22 - 27 (ചൊവ്വ - ഞായർ)' : '22 – 27 December 2026 (Tue – Sun)'}</span>
                             </div>
                         </div>
 
@@ -410,43 +417,43 @@ const Home = () => {
                                     {isML ? 'ശ്രീ സുബ്രഹ്മണ്യസ്വാമി ക്ഷേത്രം തുറയിൽക്കുന്ന്' : 'Thurayilkunnu Sree Subrahmanya Swami Temple'}
                                 </span>
                                 <h2 className="proclamation-title">
-                                    {isML ? 'സ്കന്ദഷഷ്ടി മഹോത്സവം' : 'Skanda Shashti Mahotsavam'}
+                                    {isML ? 'നാലാമത് സ്കന്ദപുരാണ വിചാര സത്രം' : '4th Skanda Purana Vichara Sathram'}
                                     <span className="proclamation-year-accent"> 2026</span>
                                 </h2>
                                 <p className="proclamation-lead">
                                     {isML 
-                                        ? 'അന്നേ ദിവസം ഷഷ്ടി പൂജ, ക്ഷേത്രാലങ്കാരം, ചെണ്ടമേളം തുടങ്ങിയവ ഭഗവാന് നേർച്ചയായി സമർപ്പിക്കുവാൻ ആഗ്രഹിക്കുന്ന ഭക്തജനങ്ങൾ എത്രയും വേഗം ദേവസ്വം ഓഫീസുമായോ താഴെക്കാണുന്ന നമ്പരിലോ ബന്ധപ്പെടുക.'
-                                        : 'Devotees wishing to dedicate sacred Shashti Pooja, Temple Illumination & Floral Decoration (Kshethralankaram), and Chenda Melam to the Lord are cordially invited to contact the Devaswom Office.'}
+                                        ? 'നാലാമത് സ്കന്ദപുരാണ വിചാര സത്രത്തോടനുബന്ധിച്ച് പ്രഭാതഭക്ഷണം, രാത്രിഭക്ഷണം എന്നിവ സ്പോൺസർ ചെയ്യുവാൻ ഉദ്ദേശിക്കുന്ന ഭക്തജനങ്ങളും അരി, പച്ചക്കറി, പലവ്യഞ്ജനങ്ങൾ, പൂജാ ദ്രവ്യങ്ങൾ തുടങ്ങിയവ മുൻകൂറായി സമർപ്പിക്കുവാൻ ആഗ്രഹിക്കുന്ന ഭക്തജനങ്ങളും എത്രയും പെട്ടെന്ന് ദേവസ്വം ഓഫീസുമായോ താഴെക്കാണുന്ന നമ്പരിലോ ബന്ധപ്പെടുക.'
+                                        : 'In connection with the 4th Skanda Purana Vichara Sathram, devotees wishing to sponsor morning breakfast (Prabhatha Bhojanam) or dinner (Rathri Bhojanam), or offer rice, vegetables, groceries, and pooja offerings in advance are cordially requested to contact the Devaswom Office.'}
                                 </p>
 
                                 {/* Sacred Dedications 4-Box Grid */}
                                 <div className="proclamation-dedications-grid">
                                     <div className="dedication-tile">
+                                        <span className="dedication-symbol">🍲</span>
+                                        <div className="dedication-text">
+                                            <strong>{isML ? 'പ്രഭാതഭക്ഷണം' : 'Breakfast Sponsorship'}</strong>
+                                            <span>{isML ? 'അന്നദാന സമർപ്പണം' : 'Prabhatha Bhojanam'}</span>
+                                        </div>
+                                    </div>
+                                    <div className="dedication-tile">
+                                        <span className="dedication-symbol">🌙</span>
+                                        <div className="dedication-text">
+                                            <strong>{isML ? 'രാത്രിഭക്ഷണം' : 'Dinner Sponsorship'}</strong>
+                                            <span>{isML ? 'അന്നദാന സമർപ്പണം' : 'Rathri Bhojanam'}</span>
+                                        </div>
+                                    </div>
+                                    <div className="dedication-tile">
+                                        <span className="dedication-symbol">🌾</span>
+                                        <div className="dedication-text">
+                                            <strong>{isML ? 'അന്നദാന ദ്രവ്യങ്ങൾ' : 'Annadanam Provisions'}</strong>
+                                            <span>{isML ? 'അരി, പച്ചക്കറി, പലവ്യഞ്ജനങ്ങൾ' : 'Rice, Vegetables & Provisions'}</span>
+                                        </div>
+                                    </div>
+                                    <div className="dedication-tile">
                                         <span className="dedication-symbol">🪔</span>
                                         <div className="dedication-text">
-                                            <strong>{isML ? 'ഷഷ്ടി പൂജ' : 'Shashti Pooja'}</strong>
-                                            <span>{isML ? 'വിശേഷാൽ അർച്ചന' : 'Sacred Archana'}</span>
-                                        </div>
-                                    </div>
-                                    <div className="dedication-tile">
-                                        <span className="dedication-symbol">🌺</span>
-                                        <div className="dedication-text">
-                                            <strong>{isML ? 'ക്ഷേത്രാലങ്കാരം' : 'Kshethralankaram'}</strong>
-                                            <span>{isML ? 'ദീപ-പുഷ്പാലങ്കാരം' : 'Illumination & Florals'}</span>
-                                        </div>
-                                    </div>
-                                    <div className="dedication-tile">
-                                        <span className="dedication-symbol">🥁</span>
-                                        <div className="dedication-text">
-                                            <strong>{isML ? 'ചെണ്ടമേളം' : 'Chenda Melam'}</strong>
-                                            <span>{isML ? 'മേള സമർപ്പണം' : 'Traditional Ensemble'}</span>
-                                        </div>
-                                    </div>
-                                    <div className="dedication-tile">
-                                        <span className="dedication-symbol">🕉️</span>
-                                        <div className="dedication-text">
-                                            <strong>{isML ? 'വ്രതാനുഷ്ഠാനം' : 'Shashti Vratam'}</strong>
-                                            <span>{isML ? 'ഉപവാസ പ്രാർത്ഥന' : 'Devotional Fasting'}</span>
+                                            <strong>{isML ? 'പൂജാ ദ്രവ്യങ്ങൾ' : 'Pooja Offerings'}</strong>
+                                            <span>{isML ? 'ഹോമ-പൂജാ സമർപ്പണം' : 'Sacred Ritual Items'}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -461,7 +468,7 @@ const Home = () => {
                                     <button 
                                         type="button" 
                                         className="proclamation-circular-btn"
-                                        onClick={() => setActivePosterModal('/images/festivals/skanda_sashti_2026_poster.jpg')}
+                                        onClick={() => setActivePosterModal('/images/festivals/skanda_purana_sathram_2026_poster.jpg')}
                                     >
                                         <Eye size={15} />
                                         <span>{isML ? 'പൂർണ്ണ അറിയിപ്പ് കാണുക' : 'View Full Poster'}</span>
@@ -478,15 +485,15 @@ const Home = () => {
                             <div className="proclamation-poster-col">
                                 <div 
                                     className="proclamation-poster-easel"
-                                    onClick={() => setActivePosterModal('/images/festivals/skanda_sashti_2026_poster.jpg')}
+                                    onClick={() => setActivePosterModal('/images/festivals/skanda_purana_sathram_2026_poster.jpg')}
                                     role="button"
                                     tabIndex={0}
                                     title={isML ? 'പോസ്റ്റർ പൂർണ്ണ രൂപത്തിൽ കാണാൻ ക്ലിക്ക് ചെയ്യുക' : 'Click to view full poster'}
                                 >
                                     <div className="poster-brass-matting">
                                         <img 
-                                            src="/images/festivals/skanda_sashti_2026_poster.jpg" 
-                                            alt="Skanda Shashti Mahotsavam 2026 Official Circular" 
+                                            src="/images/festivals/skanda_purana_sathram_2026_poster.jpg" 
+                                            alt="4th Skanda Purana Vichara Sathram 2026 Official Circular" 
                                             className="proclamation-poster-image"
                                         />
                                         <div className="poster-click-lens-badge">

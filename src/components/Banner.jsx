@@ -78,15 +78,15 @@ const Banner = () => {
     const slides = [
         {
             url: '/images/festivals/skanda_sashti.jpg',
-            tag: isML ? '✦ അടുത്ത പ്രധാന ഉത്സവം — 2026 നവംബർ 15 (1202 തുലാം 29)' : '✦ Next Major Festival — 15 November 2026 (1202 Thulam 29)',
-            title: isML ? 'സ്കന്ദഷഷ്ടി' : 'Grand Skanda Shashti',
-            highlight: isML ? 'മഹോത്സവം 2026' : 'Mahotsavam 2026',
+            tag: isML ? '✦ അടുത്ത പ്രധാന ഉത്സവം — 2026 ഡിസംബർ 22 - 27 (1202 ധനു 07 - 12)' : '✦ Next Major Festival — 22 to 27 December 2026 (1202 Dhanu 07 - 12)',
+            title: isML ? 'നാലാമത് സ്കന്ദപുരാണ' : '4th Skanda Purana',
+            highlight: isML ? 'വിചാര സത്രം 2026' : 'Vichara Sathram 2026',
             desc: isML 
-                ? 'ഷഷ്ടി പൂജ, ക്ഷേത്രാലങ്കാരം, ചെണ്ടമേളം തുടങ്ങിയവ ഭഗവാന് നേർച്ചയായി സമർപ്പിക്കാം. ദേവസ്വം ഓഫീസ്: 9072722205.' 
-                : 'Devotees are invited to offer Shashti Pooja, Kshethralankaram (Floral & Illumination Decor), and Chenda Melam. Contact Devaswom: 9072722205.',
+                ? 'പ്രഭാത-രാത്രി ഭക്ഷണ സ്പോൺസർഷിപ്പ്, അന്നദാന സാധനങ്ങൾ, പൂജാ ദ്രവ്യങ്ങൾ എന്നിവ മുൻകൂറായി സമർപ്പിക്കാൻ ബന്ധപ്പെടുക: 9072722205.' 
+                : 'Sponsor morning & night Annadanam, rice, vegetables, provisions and sacred pooja offerings for the 6-day Sathram. Contact: 9072722205.',
             isFestivalSlide: true,
             actionLink: '/festivals',
-            actionText: isML ? 'ഉത്സവ വിവരങ്ങൾ കാണുക' : 'View Festival Details',
+            actionText: isML ? 'സത്ര വിവരങ്ങൾ കാണുക' : 'View Sathram Details',
             phoneText: isML ? 'നേർച്ചയ്ക്ക് വിളിക്കുക: 9072722205' : 'Call Devaswom: 9072722205'
         },
         {
